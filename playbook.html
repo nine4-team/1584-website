@@ -407,23 +407,40 @@
         }
 
         .cta-button {
-            display: inline-block;
-            padding: 16px 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
             background: #9a7d55;
             color: #FAFAF7;
             text-decoration: none;
             font-family: 'Avenir', sans-serif;
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 15px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-radius: 2px;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
             transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
         }
 
         .cta-button:hover {
-            background: #b8945f;
-            transform: translateY(-1px);
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
         }
 
         /* About Blurb */
@@ -496,8 +513,8 @@
             }
 
             .cta-button {
-                padding: 14px 32px;
-                font-size: 13px;
+                padding: 14px 28px;
+                font-size: 14px;
             }
         }
 
@@ -576,7 +593,7 @@
 
             <div class="callout">Interior design is not a line item on your budget. It is a revenue lever. How you design your property determines whether it sits in the profitable top tier or gets squeezed in the middle.</div>
 
-            <p>This playbook will show you how.</p>
+            <p>This playbook will show you how to design a rental that stands out &mdash; and cash flows accordingly.</p>
         </section>
 
         <div class="section-divider"></div>
