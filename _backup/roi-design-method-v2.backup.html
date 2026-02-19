@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The ROI Design Method Guide - 1584 Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            background-color: #FAFAF7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-synthesis: none;
+        }
+
+        strong,
+        b {
+            font-weight: 700;
+            font-synthesis: none;
+            color: #9a7d55;
+        }
+
+        /* Typography System */
+        .font-primary {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .font-secondary {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+        }
+
+        /* Baskerville italic utility - match style-guide-showcase sizing and weight */
+        .baskerville-italic {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 1.4;
+        }
+
+        /* Avenir Body Large utility shared by important callout text
+           Use a more specific selector so it cannot be overridden by .text-body later in the stylesheet */
+        .text-body.callout-body-large {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            /* Responsive size slightly larger than regular body but not huge */
+            font-size: clamp(18px, 2.2vw, 22px);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* Spacing Scale */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-sm {
+            padding: 48px 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Typography utilities */
+        .text-hero {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: normal;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #1A1A1A;
+        }
+
+        .text-heading {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: normal;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            margin-top: 48px;
+            color: #1A1A1A;
+        }
+
+        /* Section subtitle style - match .text-heading size and use same serif as titles */
+        .section-subtitle {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(28px, 4vw, 36px);
+            color: #9a7d55;
+            margin: 0;
+            margin-top: 4px;
+            font-weight: 500;
+            line-height: 1.25;
+        }
+
+        /* reduce gap between H2 and subtitle so they sit closely together */
+        .text-hero.section-with-subtitle {
+            margin-bottom: 0;
+        }
+
+        .text-subheading {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(22px, 3.5vw, 28px);
+            font-weight: normal;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            margin-top: 32px;
+            color: #2C2C2C;
+        }
+
+        .text-subheading-small {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(18px, 3vw, 22px);
+            font-weight: normal;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            margin-top: 24px;
+            color: #2C2C2C;
+        }
+
+        .text-body-large {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            color: #2C2C2C;
+        }
+
+        .text-body {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            color: #2C2C2C;
+        }
+
+        .text-emphasis {
+            font-weight: 600;
+            color: #1A1A1A;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 75vh; /* half viewport height */
+            min-height: 50vh;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0; /* no top offset on this page (no nav) */
+            padding-top: 0;
+            display: flex;
+            align-items: center; /* vertically center content */
+            justify-content: center;
+            text-align: center;
+            background-image: url('images_optimized/portfolio/gallery/676899eefb63bcf5286c7c48-1920.webp');
+            background-size: cover;
+            background-position: 20% 29%;
+            background-repeat: no-repeat;
+            color: #F5F2ED;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Existing top-down dark overlay plus an additional black gradient rising from the bottom */
+            background: linear-gradient(to bottom, rgba(26, 26, 26, 0.8) 0%, rgba(26, 26, 26, 0.3) 60%),
+                        linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* vertically center the inner content */
+            align-items: center; /* horizontally center */
+            padding: 0 24px;
+        }
+
+        .hero-logo {
+            height: 140px;
+            width: auto;
+            margin-bottom: 24px;
+            display: block;
+            opacity: 0.95;
+        }
+
+        .hero h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 300;
+            line-height: 1.1;
+            color: #F5F2ED;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-family: 'Avenir', sans-serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.4;
+            color: #F5F2ED;
+            margin-bottom: 0;
+            max-width: 900px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6), 1px 1px 4px rgba(0,0,0,0.8);
+        }
+
+        /* Section Styles */
+        .section-alt {
+            background-color: #F5F2ED;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        ul li, ol li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+            color: #2C2C2C;
+        }
+
+        ul li strong, ol li strong {
+            color: #9a7d55;
+        }
+
+        /* Category boxes */
+        .category-box {
+            background: #FAFAF7;
+            border-left: 4px solid #9a7d55;
+            padding: 24px;
+            margin-bottom: 32px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .category-box h4 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 8px;
+            color: #1A1A1A;
+        }
+
+        .category-box .category-subtitle {
+            font-size: 14px;
+            color: #9a7d55;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        /* Mistake/Strategy boxes */
+        .mistake-box {
+            background: #F5F2ED;
+            padding: 24px;
+            margin-bottom: 24px;
+            border-radius: 4px;
+            border-left: 4px solid #D4C5B3;
+        }
+
+        .mistake-box h5 {
+            font-family: 'Avenir', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1A1A1A;
+        }
+
+        /* Checklist items */
+        .checklist-item {
+            background: #FAFAF7;
+            padding: 20px;
+            margin-bottom: 16px;
+            border-radius: 4px;
+            border-left: 3px solid #9a7d55;
+        }
+
+        .checklist-item h5 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: 18px;
+            font-weight: normal;
+            margin-bottom: 8px;
+            color: #1A1A1A;
+        }
+
+        .checklist-item ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        /* Callout boxes */
+        .callout {
+            background: #E8E4DF;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 4px;
+            border-left: 4px solid #9a7d55;
+        }
+
+        .callout-important {
+            background: #F5F2ED; /* soft beige from style-guide-showcase */
+            color: #1A1A1A; /* warm black for body text */
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 4px;
+        }
+
+        /* White-background variant for important callouts */
+        .callout-important-white {
+            background: #FAFAF7; /* warm white */
+            color: #1A1A1A; /* warm black text */
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 4px;
+        }
+        /* Normalize paragraph margins inside callouts so top/bottom spacing is driven by container padding */
+        .callout-important p,
+        .callout-important-white p {
+            margin: 0;
+        }
+        /* Add small spacing between consecutive paragraphs in a callout */
+        .callout-important p + p,
+        .callout-important-white p + p {
+            margin-top: 8px;
+        }
+
+        /* Before You Go callout styling */
+        .before-you-go-callout {
+            background: #FAFAF7;
+            padding: 32px 40px;
+            margin: 32px 0 48px;
+            border-radius: 4px;
+            border-left: 4px solid #9a7d55;
+        }
+
+        .before-you-go-callout p {
+            margin: 0;
+        }
+
+        .before-you-go-callout p + p {
+            margin-top: 16px;
+        }
+
+        /* Button styles (match index.html) */
+        .btn {
+            padding: 16px 32px;
+            border-radius: 25pt;
+            font-family: 'Avenir', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #F5F2ED;
+            border-color: #F5F2ED;
+        }
+
+        .btn-secondary:hover {
+            background: #FAFAF7;
+            color: #1A1A1A;
+        }
+
+        /* Divider */
+        .divider {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #D4C5B3, transparent);
+            margin: 64px 0;
+        }
+
+        /* Short left-aligned thin divider used under section subtitles */
+        .subtitle-divider {
+            width: 36px;
+            height: 1px;
+            background: #D4C5B3;
+            margin: 36px 0 36px 0; /* top right bottom left - left aligned */
+            border-radius: 0;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            padding: 64px 0;
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 16px;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 16px;
+        }
+
+        /* Sticky CTA header used as page nav replacement (matches footer styling) */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            top: auto;
+            left: 0;
+            right: 0;
+            background: #1A1A1A;
+            color: #FAFAF7;
+            z-index: 1200;
+            box-shadow: 0 -6px 20px rgba(0,0,0,0.06);
+        }
+
+        /* Prevent page content from being hidden by the sticky CTA/footer.
+           Uses a CSS variable so the height can be adjusted in one place.
+           Includes the safe-area-inset for devices with notches. */
+        :root {
+            --sticky-cta-height: 72px;
+        }
+
+        body {
+            padding-bottom: calc(var(--sticky-cta-height) + env(safe-area-inset-bottom));
+        }
+
+        .sticky-cta .sticky-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px; /* keep heading and button adjacent and centered */
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta .sticky-inner { padding: 12px 16px; }
+        }
+
+        /* Match footer heading typography so sticky matches footer exactly */
+        .sticky-cta h3 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: 28px;
+            font-weight: normal;
+            margin: 0;
+            color: #FAFAF7;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 60px;
+                min-height: 100vh;
+            }
+
+            .section {
+                padding: 48px 0;
+            }
+
+            .section-sm {
+                padding: 32px 0;
+            }
+
+            .category-box,
+            .mistake-box,
+            .checklist-item {
+                padding: 16px;
+            }
+
+            ul, ol {
+                margin-left: 20px;
+            }
+
+            .before-you-go-callout {
+                padding: 24px 20px;
+            }
+        }
+
+        /* Large desktop overrides (match index.html) */
+        @media (min-width: 1440px) {
+            .hero-subtitle {
+                font-size: clamp(18px, 2.5vw, 24px);
+                max-width: 600px;
+            }
+        }
+
+        /* Parallax background on desktop: use fixed attachment where supported, fall back to scroll on small screens */
+        @media (min-width: 768px) {
+            .hero {
+                background-attachment: fixed;
+                /* keep X-position as in original and allow Y to be centered */
+                background-position: 20% 50%;
+                background-size: cover;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                background-attachment: scroll; /* mobile-friendly fallback */
+            }
+        }
+
+        /* Popup Modal Styles (copied from index.html to reproduce exact popup styling) */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 26, 26, 0.9);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-container {
+            background: #FAFAF7;
+            border: 4px solid #9a7d55;
+            max-width: 800px;
+            max-height: 90vh;
+            width: 100%;
+            position: relative;
+            transform: scale(0.9) translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup-overlay.active .popup-container {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+
+        .popup-header {
+            background: #FAFAF7;
+            color: #1A1A1A;
+            padding: 24px 32px;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid #E8E4DF;
+        }
+
+        .popup-header h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 400;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: #9a7d55;
+            font-size: 28px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background: rgba(154, 125, 85, 0.1);
+        }
+
+        .popup-content {
+            padding: 32px;
+            overflow-y: auto;
+            max-height: calc(90vh - 140px);
+        }
+
+        .popup-footer {
+            background: #F5F2ED;
+            padding: 24px 32px;
+            text-align: center;
+            border-top: 1px solid #E8E4DF;
+        }
+
+        .popup-footer p {
+            margin: 0;
+            font-size: 14px;
+            color: #735C3A;
+            font-style: italic;
+        }
+
+        /* Survey embed container */
+        .survey-container {
+            margin: 0 -32px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .survey-container iframe {
+            border: none;
+            width: 100%;
+            max-width: 100%;
+            height: 600px;
+            background: #FAFAF7;
+        }
+
+        /* Mobile responsive popup */
+        @media (max-width: 768px) {
+            .popup-overlay {
+                padding: 20px 16px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .popup-container {
+                max-height: 90vh;
+                height: auto;
+                max-width: 100%;
+                width: 100%;
+                border: 6px solid #9a7d55;
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            }
+
+            .popup-header {
+                padding: 16px 20px;
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                background: #FAFAF7;
+                border-bottom: 1px solid #E8E4DF;
+                flex-shrink: 0;
+            }
+
+            .popup-content {
+                padding: 0;
+                flex: 1;
+                overflow-y: auto;
+                max-height: calc(90vh - 140px);
+            }
+
+            .popup-footer {
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sticky-cta" role="region" aria-label="Have Questions CTA">
+        <div class="sticky-inner">
+            <h3 style="margin:0;">Questions?</h3>
+            <a id="survey-trigger" href="#contact" class="btn btn-secondary" role="button" aria-label="Request a Call">Request a Call</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/1584_logo_white_thick.png" alt="1584 Design" width="200" height="100" loading="lazy" decoding="async" class="hero-logo">
+            <h1>ROI Design Method</h1>
+            <p class="hero-subtitle">Our Strategic Framework for Maximizing Vacation Rental Cash Flow Through Interior Design</p>
+        </div>
+    </section>
+
+    <!-- Part 1: Strategic Budgeting -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-hero section-with-subtitle">Part 1: Strategic Budgeting</h2>
+            <p class="section-subtitle">Spending the Right Amount</p>
+            <div class="subtitle-divider" aria-hidden="true"></div>
+
+            <h3 class="text-heading">Why Most Budget Estimates Fall Short</h3>
+            <p class="text-body">When most investors budget for furnishing their vacation rental, they think about furniture. Maybe they think about some accessories. But they rarely account for the full scope of costs required to get a property guest-ready and keep it performing at a high level.</p>
+
+            <div class="callout-important">
+                <p class="text-body callout-body-large">Here's the truth: <strong>your project has more costs than just furnishings.</strong></p>
+            </div>
+
+            <p class="text-body">Understanding the complete cost structure is critical for two reasons:</p>
+            <ol>
+                <li><strong>Avoid surprise costs</strong> that blow your budget mid-project</li>
+                <li><strong>Allocate strategically</strong> across all categories to maximize ROI</li>
+            </ol>
+
+            <p class="text-body">Request a call with our team to get specific budget numbers tailored to your property. This section explains the methodology behind those calculations.</p>
+
+            <h3 class="text-heading">The Complete Cost Categories</h3>
+            <p class="text-body">Most investors dramatically underestimate total costs because they only think about furniture. Here are all the categories you need to account for:</p>
+
+            <div class="category-box">
+                <h4>Category 1: Furnishings</h4>
+                <p class="category-subtitle">Furniture + Accessories + Finishing Touches</p>
+                <p class="text-body">This is the part most people think of first — beds, sofas, dining tables, and other large furniture pieces. But what they often forget to budget for are the accessories and finishing touches: rugs, curtains, artwork, throw pillows, and all those smaller items that actually make a space feel cozy and complete. Most investors only calculate the big furniture pieces they're familiar with purchasing, not realizing that these "extras" are where costs really add up — and they're not optional if you want your property to feel welcoming instead of incomplete and cold.</p>
+                <p class="text-body"><strong>What's included:</strong></p>
+                <ul>
+                    <li>All furniture pieces sized and quantity-planned for your property's full capacity (beds for all sleeping areas, seating for everyone, dining tables and chairs for full capacity, etc.)</li>
+                    <li>Window treatments (curtains, blinds, shades)</li>
+                    <li>Rugs and floor coverings</li>
+                    <li>Lighting fixtures and lamps</li>
+                    <li>Artwork and mirrors</li>
+                    <li>Accessories and finishing touches (pillows, throws, decor objects, greenery)</li>
+                </ul>
+                <p class="text-body"><strong>Why including accessories and finishing touches matters for ROI:</strong> This is where you create the visual impact that stops the scroll, converts bookings, creates memorable experiences, and increases repeat bookings and referrals.</p>
+            </div>
+
+            <div class="category-box">
+                <h4>Category 2: Logistics & Delivery</h4>
+                <p class="category-subtitle">Fuel, Transport, Receiving & Storage</p>
+                <p class="text-body">Someone has to get all those items from the store (or warehouse) to your property. If you're sourcing from multiple vendors — which you almost certainly will be — this adds up fast.</p>
+                <p class="text-body"><strong>What's included:</strong></p>
+                <ul>
+                    <li>Delivery fees from multiple vendors</li>
+                    <li>Fuel costs for deal hunting and pickups</li>
+                    <li>Storage fees if items arrive before your property is ready</li>
+                    <li>Receiving coordination costs</li>
+                </ul>
+                <p class="text-body"><strong>Why investors miss this:</strong> They see "free shipping" on individual items and don't realize the cumulative cost of coordinating dozens of deliveries. They also don't factor in storage costs — but storing furniture locally in advance of closing enables a quick turnaround to get your property earning income fast. Every week a closed property sits empty is lost revenue you'll never recover. Strategic pre-ordering with storage can get you guest-ready within two weeks of closing instead of sitting vacant for months while you shop and wait for deliveries.</p>
+            </div>
+
+            <div class="category-box">
+                <h4>Category 3: Kitchen Equipment & Supplies</h4>
+                <p class="category-subtitle">Everything Guests Need for Meals</p>
+                <p class="text-body">Your kitchen needs to be fully functional, not just furnished. Guests expect a complete kitchen.</p>
+                <p class="text-body"><strong>What's included:</strong></p>
+                <ul>
+                    <li>Complete cookware sets (pots, pans, baking sheets)</li>
+                    <li>Dinnerware for full capacity (plates, bowls, glasses, mugs)</li>
+                    <li>Utensils, serving pieces, cutting boards, knives</li>
+                    <li>Small appliances (coffee maker, toaster, blender, etc.)</li>
+                    <li>High chair (for family-friendly properties)</li>
+                    <li>Grill and grill tools</li>
+                </ul>
+                <p class="text-body"><strong>Why it matters for ROI:</strong> The kitchen is the heart of the home, and many guests cook meals during their stay. Quality kitchen equipment increases your likelihood of five-star reviews, while inadequate supplies show up in negative reviews and hurt rebooking rates. Don't skimp here.</p>
+            </div>
+
+            <div class="category-box">
+                <h4>Category 4: Property Management Requirements</h4>
+                <p class="category-subtitle">Essential Items Often Overlooked</p>
+                <p class="text-body">Property management companies (and local regulations) typically require certain items that many investors forget to budget for.</p>
+                <p class="text-body"><strong>What's included:</strong></p>
+                <ul>
+                    <li>Mattress and pillow protectors for all beds</li>
+                    <li>Cleaning equipment (vacuum, mop, etc.)</li>
+                    <li>Safety equipment (fire extinguishers, first aid kit, smoke/CO detectors)</li>
+                    <li>Personal care essentials (ironing board, iron, blow dryer)</li>
+                </ul>
+                <p class="text-body"><strong>Why investors miss this:</strong> They focus on guest-facing design elements and forget about operational necessities.</p>
+            </div>
+
+            <div class="category-box">
+                <h4>Category 5: Installation Services</h4>
+                <p class="category-subtitle">Professional Labor for Proper Setup</p>
+                <p class="text-body">Unless you're planning to do everything yourself (which can work for small properties but rarely scales well), you'll need professional help.</p>
+                <p class="text-body"><strong>What's included:</strong></p>
+                <ul>
+                    <li>Movers for large furniture pieces</li>
+                    <li>Furniture assembly for flat-pack items</li>
+                    <li>Fixture mounting (TVs, shelving, curtain rods, artwork)</li>
+                </ul>
+                <p class="text-body"><strong>Why it matters:</strong> Poor installation — crooked art, improperly mounted TVs, wobbly furniture — shows in photos and creates safety/liability issues.</p>
+            </div>
+
+            <div class="category-box">
+                <h4>Category 6: Design Services</h4>
+                <p class="category-subtitle">Professional Planning & Procurement</p>
+                <p class="text-body">If you're working with a designer, this covers their services.</p>
+                <p class="text-body"><strong>What's included:</strong></p>
+                <ul>
+                    <li>Design planning and concept development</li>
+                    <li>Sourcing and procurement</li>
+                    <li>Project management and coordination</li>
+                    <li>Furnishings and finishing touches placement</li>
+                </ul>
+                <p class="text-body"><strong>Why it matters for ROI:</strong> Creating a high-performing vacation rental requires specialized expertise in both design principles and the vacation rental market. A designer who understands vacation rentals helps ensure your investment translates into the best occupancy rates and nightly rates possible for your property. Even if you have design experience, you likely don't have the time to source, coordinate, and install everything while managing your other responsibilities. Professional design services are fundamentally about risk management — ensuring you get the ROI you need rather than gambling with an expensive asset.</p>
+            </div>
+
+            <h3 class="text-heading">Common Budgeting Mistakes to Avoid</h3>
+
+            <div class="mistake-box">
+                <h5>Mistake #1: Overlooking Furniture Markups When Budgeting</h5>
+                <p class="text-body"><strong>The Problem:</strong> Many interior designers charge lower design fees but make their real money through furniture markups (often 30-50%). If you don't account for this when budgeting, you can end up with surprises. The issue is that this structure can create a misalignment of incentives — the designer makes more when you spend more on furniture, not necessarily when your property performs better.</p>
+                <p class="text-body"><strong>The Result:</strong> If you budget based only on the design fee without considering markup, your actual furnishings costs can be significantly higher than expected.</p>
+                <p class="text-body"><strong>The Solution:</strong> Ask upfront how designers structure their fees. If they use furniture markups, factor that into your budget planning from the start. Some designers charge transparent fees and pass through trade discounts, others use markups — either can work, but you need to know which model you're working with and plan accordingly.</p>
+            </div>
+
+            <div class="mistake-box">
+                <h5>Mistake #2: Failure to Consider Expense Categories</h5>
+                <p class="text-body"><strong>The Problem:</strong> You hire someone for "just the design" or "just help picking furniture," but you don't account for all the other categories above. You end up with unexpected costs for delivery, installation, etc.</p>
+                <p class="text-body"><strong>The Result:</strong> Your "well-planned" budget balloons, causing unwelcome surprises and stress.</p>
+                <p class="text-body"><strong>The Solution:</strong> Use the complete budget framework above. Account for ALL categories, not just furniture and decor.</p>
+            </div>
+
+            <div class="mistake-box">
+                <h5>Mistake #3: Not Calibrating Budget to Market Positioning</h5>
+                <p class="text-body"><strong>The Problem:</strong> You either aim for an arbitrary low number (like $30k or $50k all-in) without considering your competitive set, or you overspend without a strategic framework for what actually drives performance in your market.</p>
+                <p class="text-body"><strong>The Result:</strong> Underspending leads to a property that looks generic and cheap, can't differentiate in search results, and struggles with occupancy. Overspending leads to a beautiful property that'll take longer to deliver an ROI on your design investment. Either way, you've misaligned your investment with market realities.</p>
+                <p class="text-body"><strong>The Solution:</strong> Look at your competitive set — the properties you're actually competing against. Your budget should be calibrated to create a property that stands out favorably in that specific context. Use the Strategic Spending Guide below to invest strategically, not arbitrarily high or low.</p>
+            </div>
+
+            <div class="mistake-box">
+                <h5>Mistake #4: Aggressively Under-Furnishing to Minimize Costs</h5>
+                <p class="text-body"><strong>The Problem:</strong> You try to furnish your property with the bare minimum number of items — skipping accessories, limiting art, cutting back on throw pillows, leaving surfaces bare, omitting rugs or curtains to save money.</p>
+                <p class="text-body"><strong>The Result:</strong> Your property looks incomplete and feels cold in photos. You can't achieve the "magazine effect" that stops the scroll. Spaces photograph poorly because they lack depth and layering. Even if you spent adequately on furniture, the property still underperforms because it doesn't look finished or feel welcoming.</p>
+                <p class="text-body"><strong>The Solution:</strong> Understand that accessories, finishing touches, and layering elements are not optional extras — they're essential components of creating spaces that photograph well and convert bookings. A comprehensive budget accounts for all necessary items, not just furniture. Use it to ensure you're furnishing completely, not just minimally.</p>
+            </div>
+
+            <h3 class="text-heading">Getting a Custom Budget Assessment</h3>
+            <p class="text-body">Working with our team, we'll provide customized budget recommendations across all categories based on your property details.</p>
+
+            <p class="text-body"><strong>What we'll need from you:</strong></p>
+            <ul>
+                <li>Property size (bedrooms, bathrooms, square footage)</li>
+                <li>Sleeping capacity</li>
+            </ul>
+
+            <p class="text-body"><strong>What you'll get:</strong></p>
+            <ul>
+                <li>Room-by-room budget ranges</li>
+                <li>Recommended items for each room</li>
+                <li>Category-by-category cost breakdown</li>
+                <li>Total project budget range</li>
+            </ul>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Part 2: Strategic Spending -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="text-hero section-with-subtitle">Part 2: Strategic Spending Guide</h2>
+            <p class="section-subtitle">Spending Your Budget Wisely</p>
+            <div class="subtitle-divider" aria-hidden="true"></div>
+
+            <p class="text-body-large">Getting your budget range right is step one. But even with a perfect budget, you can still fail if you spend on the wrong things.</p>
+
+            <p class="text-body">This section will show you where we recommend investing for maximum impact on:</p>
+            <ol>
+                <li><strong>Stopping the scroll</strong> (getting clicks to your listing)</li>
+                <li><strong>Converting bookings</strong> (turning browsers into bookers)</li>
+                <li><strong>Creating memorable experiences</strong> (driving reviews, repeat guests, and referrals)</li>
+            </ol>
+
+            <h3 class="text-heading">Need-to-Haves (By Room)</h3>
+            <p class="text-body">Through our experience designing vacation rentals, we've learned which items make the difference between properties that perform well and those that struggle. When investors skip these items to save money, we consistently see it negatively impact their property's performance. These are the things we don't compromise on.</p>
+
+            <h4 class="text-subheading">Bedrooms</h4>
+
+            <div class="checklist-item">
+                <h5>Curtains</h5>
+                <ul>
+                    <li><strong>Why:</strong> Create privacy, control light, add color/texture, create coziness, improve accoustics, and make it feel complete.</li>
+                    <li><strong>Impact on performance:</strong> Properties without proper window treatments feel unfinished in photos and uncomfortable in person, which can impact reviews and repeat bookings. When possible, blackout curtains are the best option.</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Rugs</h5>
+                <ul>
+                    <li><strong>Why:</strong> Define the space, add warmth and texture, anchor furniture groupings, reduce noise</li>
+                    <li><strong>Impact on performance:</strong> Rooms without rugs feel cold and bare in photos; they lack the cohesive foundation needed for that magazine effect</li>
+                    <li><strong>Note:</strong> Size and quality matter here - don't skimp</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Quality Mattresses</h5>
+                <ul>
+                    <li><strong>Why:</strong> Sleep quality could be THE most important factor in guest satisfaction</li>
+                    <li><strong>Impact on performance:</strong> Bad mattresses generate negative reviews that kill occupancy rates</li>
+                    <li><strong>Critical:</strong> Never compromise on mattress quality</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Layered Bedding</h5>
+                <ul>
+                    <li><strong>Why:</strong> Creates visual appeal in photos, feels luxurious in person</li>
+                    <li><strong>Impact on performance:</strong> Helps stop the scroll and contributes to positive reviews; complete layering is essential for magazine effect</li>
+                    <li><strong>What to include:</strong> Quality sheets, duvet/comforter, decorative pillows (2-4), throw blanket, bed skirt or platform frame</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Nightstands & Bedside Lighting (Both Sides)</h5>
+                <ul>
+                    <li><strong>Why:</strong> Functionality and symmetry; guests need surface space and lighting control</li>
+                    <li><strong>Impact on performance:</strong> Missing nightstands or asymmetrical setups look incomplete in photos</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Adequate Storage</h5>
+                <ul>
+                    <li><strong>Why:</strong> Guests need somewhere to unpack; lack of storage generates complaints</li>
+                    <li><strong>Impact on performance:</strong> Shows up in reviews when missing</li>
+                    <li><strong>What to include:</strong> Dresser, closet with hangers, luggage racks</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Wall Art</h5>
+                <ul>
+                    <li><strong>Why:</strong> Fills vertical space, adds personality, contributes to theme/cohesion</li>
+                    <li><strong>Impact on performance:</strong> Blank walls make spaces feel cold and unfinished</li>
+                </ul>
+            </div>
+
+            <h4 class="text-subheading">Living Rooms</h4>
+
+            <div class="checklist-item">
+                <h5>Area Rug (Properly Sized)</h5>
+                <ul>
+                    <li><strong>Why:</strong> Anchors the seating area, defines the space, adds warmth</li>
+                    <li><strong>Impact on performance:</strong> Wrong rug size is one of the most common arrangement mistakes; it makes spaces feel disconnected</li>
+                    <li><strong>Sizing rule:</strong> Front legs of all seating furniture should be on the rug</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Curtains (All Windows)</h5>
+                <ul>
+                    <li><strong>Why:</strong> Creates visual unity, controls light, adds color and texture</li>
+                    <li><strong>Impact on performance:</strong> Essential for that magazine effect; rooms without curtains feel bare and cold</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Seating for Full Capacity</h5>
+                <ul>
+                    <li><strong>Why:</strong> Groups need to gather comfortably; inadequate seating segregates people</li>
+                    <li><strong>Impact on performance:</strong> Appears in negative reviews when insufficient</li>
+                    <li><strong>What to include:</strong> Sofa/sectional + accent chairs + ottomans as needed</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Coffee Table + Side Tables</h5>
+                <ul>
+                    <li><strong>Why:</strong> Functional necessity + surface styling opportunity</li>
+                    <li><strong>Impact on performance:</strong> Contributes to magazine effect through styling</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Layered Lighting</h5>
+                <ul>
+                    <li><strong>Why:</strong> Creates ambiance, highlights design elements, provides functionality</li>
+                    <li><strong>What to include:</strong> Overhead/ceiling + floor lamps + table lamps</li>
+                    <li><strong>Impact on performance:</strong> Poor lighting kills the mood and shows in photos</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Layered Accessories</h5>
+                <ul>
+                    <li><strong>Why:</strong> Creates depth, personality, and that "magazine effect"</li>
+                    <li><strong>What to include:</strong> Throw pillows, throw blankets, coffee table books, trays, decorative objects</li>
+                    <li><strong>Impact on performance:</strong> This is what separates properties that stop the scroll from those that don't</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Wall Art / Mirrors</h5>
+                <ul>
+                    <li><strong>Why:</strong> Fills vertical space, adds visual interest, can make spaces feel larger</li>
+                    <li><strong>Impact on performance:</strong> Essential for avoiding the "cold and generic" trap</li>
+                </ul>
+            </div>
+
+            <h4 class="text-subheading">Dining Areas</h4>
+
+            <div class="checklist-item">
+                <h5>Dining Table Sized for Capacity</h5>
+                <ul>
+                    <li><strong>Why:</strong> Groups need to eat together; undersized tables force splitting up</li>
+                    <li><strong>Impact on performance:</strong> Mentioned in reviews when inadequate</li>
+                    <li><strong>Note:</strong> Don't compromise on capacity</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Comfortable Seating for All</h5>
+                <ul>
+                    <li><strong>Why:</strong> Functionality + comfort matters for meal times</li>
+                    <li><strong>Impact on performance:</strong> Uncomfortable dining chairs generate complaints</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Statement Lighting</h5>
+                <ul>
+                    <li><strong>Why:</strong> Creates focal point, defines the space, adds visual drama</li>
+                    <li><strong>Impact on performance:</strong> Makes dining areas photograph beautifully</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Centerpiece/Styling</h5>
+                <ul>
+                    <li><strong>Why:</strong> Completes the look, adds color and life</li>
+                    <li><strong>What to include:</strong> Decorative bowl/tray, seasonal elements, or greenery</li>
+                </ul>
+            </div>
+
+            <h4 class="text-subheading">Kitchens</h4>
+
+            <div class="checklist-item">
+                <h5>Complete Cookware Set</h5>
+                <ul>
+                    <li><strong>Why:</strong> Guests expect to be able to cook full meals</li>
+                    <li><strong>Impact on performance:</strong> Missing items show up in negative reviews</li>
+                    <li><strong>What to include:</strong> Pots, pans, baking sheets, mixing bowls, measuring cups/spoons, utensils</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Dinnerware for Full Capacity</h5>
+                <ul>
+                    <li><strong>Why:</strong> Everyone needs to eat at once</li>
+                    <li><strong>What to include:</strong> Dinner plates, salad plates, bowls, mugs, glasses (water, wine)</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Small Appliances</h5>
+                <ul>
+                    <li><strong>Why:</strong> Expected amenities that impact convenience</li>
+                    <li><strong>What to include:</strong> Coffee maker (high-quality), toaster, blender, mixer (for larger properties)</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Window Treatment</h5>
+                <ul>
+                    <li><strong>Why:</strong> Softens the space, adds color/texture</li>
+                    <li><strong>Impact on performance:</strong> Kitchens photograph better with window treatments</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Counter Styling</h5>
+                <ul>
+                    <li><strong>Why:</strong> Contributes to magazine effect</li>
+                    <li><strong>What to include:</strong> Attractive canisters, cutting boards, fruit bowl, greenery</li>
+                </ul>
+            </div>
+
+            <h3 class="text-heading">The Power of Accessories: What Brings It All Together</h3>
+
+            <div class="callout">
+                <p class="text-body">Here's something many DIY investors miss: <strong>accessories are what create the "magazine effect."</strong></p>
+                <p class="text-body" style="margin-bottom: 0;">You can have all the right furniture pieces, but without proper accessorizing, your property will look like a furniture showroom instead of a home. And that difference — between "showroom" and "home" — is what determines whether you stop the scroll or get scrolled past.</p>
+            </div>
+
+            <h4 class="text-subheading">Essential Accessory Categories</h4>
+
+            <div class="checklist-item">
+                <h5>Greenery</h5>
+                <ul>
+                    <li><strong>Types:</strong> Faux plants (low maintenance), fresh plants (if you have regular maintenance), botanical prints</li>
+                    <li><strong>Where:</strong> Entry tables, coffee tables, kitchen counters, bathroom vanities, bedroom dressers, shelving</li>
+                    <li><strong>Why it matters:</strong> Brings life and color; softens hard edges; adds organic element</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Pottery & Vessels</h5>
+                <ul>
+                    <li><strong>Types:</strong> Decorative bowls, vases, planters, jars, urns</li>
+                    <li><strong>Where:</strong> Coffee tables, dining tables, console tables, shelving, mantels</li>
+                    <li><strong>Why it matters:</strong> Adds texture, height variation, and sculptural interest</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Art</h5>
+                <ul>
+                    <li><strong>Types:</strong> Framed prints, canvas art, photography, mirrors</li>
+                    <li><strong>Where:</strong> Every room needs wall art scaled appropriately to the space</li>
+                    <li><strong>Why it matters:</strong> Fills vertical space; creates focal points; reinforces theme and color palette</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Textiles</h5>
+                <ul>
+                    <li><strong>Types:</strong> Throw pillows, throw blankets, decorative bedding, table runners</li>
+                    <li><strong>Where:</strong> Sofas, beds, chairs, dining tables</li>
+                    <li><strong>Why it matters:</strong> Adds color, pattern, texture, and coziness</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Books & Paper Goods</h5>
+                <ul>
+                    <li><strong>Types:</strong> Coffee table books, decorative book stacks, magazines</li>
+                    <li><strong>Where:</strong> Coffee tables, side tables, shelving</li>
+                    <li><strong>Why it matters:</strong> Adds personality, provides styling layers, gives guests something to browse</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>Trays & Styling Elements</h5>
+                <ul>
+                    <li><strong>Types:</strong> Decorative trays, boxes, candles, sculptural objects</li>
+                    <li><strong>Where:</strong> Coffee tables, nightstands, vanities, dining tables</li>
+                    <li><strong>Why it matters:</strong> Creates organization and cohesion when styling surfaces</li>
+                </ul>
+            </div>
+
+            <h3 class="text-heading">Strategic Color Selection</h3>
+            <p class="text-body">Color is one of your most powerful tools for stopping the scroll and creating cohesion. Here's how to use it strategically.</p>
+
+            <h4 class="text-subheading">Rule #1: Use Pop Colors to Stop the Scroll</h4>
+            <p class="text-body">In search results, color makes listings stand out. Properties with strategic pops of color get more clicks than all-neutral properties.</p>
+
+            <p class="text-body"><strong>How to do it:</strong></p>
+            <ul>
+                <li>Choose 1-2 accent colors that work with your theme and market positioning</li>
+                <li>Incorporate these colors through: throw pillows, curtains, area rugs, artwork, accessories</li>
+                <li>Make sure the pops appear in multiple rooms for cohesion</li>
+                <li>Ensure the colors are visible in your hero photos (the first images potential guests see)</li>
+            </ul>
+
+            <p class="text-body"><strong>Examples:</strong></p>
+            <ul>
+                <li>Coastal property: Pops of turquoise/aqua in pillows, art, accessories</li>
+                <li>Mountain cabin: Rich rust or deep green in throws, curtains, seating</li>
+                <li>Modern minimalist: Bold jewel tone accent (emerald, sapphire, amber) in strategic places</li>
+            </ul>
+
+            <h4 class="text-subheading">Rule #2: Master Undertone Matching</h4>
+            <p class="text-body">Nothing makes a property feel "off" faster than clashing undertones. When your wood tones, metals, and neutrals have mismatched undertones, the space feels disjointed even if people can't articulate why.</p>
+
+            <p class="text-body"><strong>Warm undertones:</strong> Golden, yellow, orange, red bases</p>
+            <ul>
+                <li>Wood: Oak, pine, walnut with golden tones</li>
+                <li>Metals: Gold, brass, bronze, copper</li>
+                <li>Neutrals: Cream, beige, warm gray, tan</li>
+            </ul>
+
+            <p class="text-body"><strong>Cool undertones:</strong> Blue, green, purple bases</p>
+            <ul>
+                <li>Wood: Maple, ash, gray-washed woods</li>
+                <li>Metals: Silver, chrome, nickel, matte black</li>
+                <li>Neutrals: Pure white, cool gray, blue-gray</li>
+            </ul>
+
+            <p class="text-body"><strong>How to do it:</strong></p>
+            <ul>
+                <li>Decide on a warm or cool undertone palette (or balanced neutral)</li>
+                <li>Ensure all major wood pieces share undertones</li>
+                <li>Keep metal finishes consistent throughout the property</li>
+                <li>Choose neutrals (paint colors, large furniture pieces) that align with your undertone choice</li>
+            </ul>
+
+            <h4 class="text-subheading">Rule #3: Balance Color and Contrast</h4>
+            <p class="text-body">Too much contrast creates visual chaos. Too little creates boring, flat spaces that don't photograph well or stop the scroll.</p>
+
+            <p class="text-body"><strong>The sweet spot:</strong></p>
+            <ul>
+                <li>60% dominant color (usually a neutral - your walls, large furniture pieces)</li>
+                <li>30% secondary color (complementary neutral or subtle color - rugs, curtains, some furniture)</li>
+                <li>10% accent colors (your pops - pillows, art, accessories)</li>
+                <li>Rules were made to be broken, so gut check your color balance and depart from these ratios when it feels right.</li>
+            </ul>
+
+            <p class="text-body"><strong>Contrast strategies:</strong></p>
+            <ul>
+                <li>Light walls + medium furniture + dark accents</li>
+                <li>Dark walls + light furniture + medium and bright accents</li>
+                <li>Monochromatic with texture variation + one punchy accent color</li>
+            </ul>
+
+            <h3 class="text-heading">Common Strategic Spending Mistakes</h3>
+
+            <div class="mistake-box">
+                <h5>Mistake #1: Buying Cheap Furniture to Save Money</h5>
+                <p class="text-body"><strong>Why it's tempting:</strong> You're trying to maximize short-term savings and cheap options seem "good enough."</p>
+                <p class="text-body"><strong>Why it's a mistake:</strong> Cheap furniture breaks down, wears out, or looks dated quickly in a high-use vacation rental environment. You end up paying for replacements within 2-3 years — sometimes spending as much as or more than if you'd purchased durable pieces originally. Plus, worn-out furniture shows up in photos and reviews, hurting your occupancy during those replacement years.</p>
+                <p class="text-body"><strong>The fix:</strong> Invest in durable, quality pieces for high-use items (sofas, beds, dining chairs). These are the foundation of your property and will be used heavily by guests. You can optimize costs on accessories and decor items that are easier and less expensive to replace or refresh.</p>
+            </div>
+
+            <div class="mistake-box">
+                <h5>Mistake #2: Cheap Mattresses</h5>
+                <p class="text-body"><strong>Why it's tempting:</strong> Mattresses are expensive and guests don't see them in photos.</p>
+                <p class="text-body"><strong>Why it's a mistake:</strong> Sleep quality is THE #1 driver of guest satisfaction. Bad mattresses generate negative reviews that kill occupancy. Every dollar saved on a cheap mattress costs you exponentially in lost bookings.</p>
+                <p class="text-body"><strong>The fix:</strong> This is arguably your single most important per-item investment. Never compromise on mattress quality.</p>
+            </div>
+
+            <div class="mistake-box">
+                <h5>Mistake #3: Skimping on the Kitchen</h5>
+                <p class="text-body"><strong>Why it's tempting:</strong> Guests aren't booking for the kitchen supplies.</p>
+                <p class="text-body"><strong>Why it's a mistake:</strong> Guests expect full kitchen functionality. Missing cookware, insufficient dinnerware, cheap knives, and poor small appliances lead to complaints and lower review scores.</p>
+                <p class="text-body"><strong>The fix:</strong> Budget adequately for complete kitchen equipment. Buy quality items that will last and meet guest expectations.</p>
+            </div>
+
+            <div class="mistake-box">
+                <h5>Mistake #4: Skipping the Need-to-Haves</h5>
+                <p class="text-body"><strong>Why it's tempting:</strong> Trying to hit a low budget number by cutting curtains, rugs, or accessories.</p>
+                <p class="text-body"><strong>Why it's a mistake:</strong> These items are critical for the magazine effect and make spaces feel complete. Without them, your property looks bare and unfinished, killing your ability to stop the scroll and convert bookings.</p>
+                <p class="text-body"><strong>The fix:</strong> Use the need-to-haves checklist above. Don't skip items just to hit a lower number.</p>
+            </div>
+
+            <div class="mistake-box">
+                <h5>Mistake #5: Overspending on Statement Pieces That Don't Drive Bookings</h5>
+                <p class="text-body"><strong>Why it's tempting:</strong> That $10,000 custom dining table or $2,000 designer pendant light looks amazing.</p>
+                <p class="text-body"><strong>Why it's a mistake:</strong> Guests rarely notice or value individual high-end pieces. They notice the overall effect. You can achieve the same visual impact with strategic mid-range pieces plus excellent styling.</p>
+                <p class="text-body"><strong>The fix:</strong> Save on individual furniture pieces, invest in layering and accessories. A $800 dining table with great styling looks as good in photos as a $10,000 table alone.</p>
+            </div>
+
+            <h3 class="text-heading">The Power of Themes (And How to Do Them Right)</h3>
+
+            <div class="callout">
+                <p class="text-body" style="margin-bottom: 0;">One of the most effective ways to stop the scroll and create memorable experiences is through theming. The best part? <strong>Themes don't have to cost more.</strong> Themes are really about cohesive creative vision and strategic selection, not about spending more money.</p>
+            </div>
+
+            <h4 class="text-subheading">What Makes a Good Theme</h4>
+
+            <div class="checklist-item">
+                <h5>1. It's distinctive and stands out from your competition (Zig when they zag)</h5>
+                <ul>
+                    <li>Good themes differentiate you in search results</li>
+                    <li>Look at what your competitors are doing and do something different</li>
+                    <li>Even if you use a popular theme, find a fresh angle or twist</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>2. It's distinctive but not gimmicky</h5>
+                <ul>
+                    <li>Should feel special without being over-the-top</li>
+                    <li>Guests should feel transported, not like they're in a theme park</li>
+                    <li><strong>Good:</strong> "Refined Coastal Retreat" with natural textures (linen, jute, weathered wood), subtle nautical touches (rope accents, driftwood art), sophisticated sea-inspired color palette (sand, sage, soft blue-gray)</li>
+                    <li><strong>Bad:</strong> "Beach Shack Bonanza" with plastic fish netting on walls, overtly nautical patterns, shell-covered everything, and aggressive blue-and-white stripes throughout</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>3. It creates a feeling, not just a look</h5>
+                <ul>
+                    <li>Think about what feeling you want guests to have</li>
+                    <li>Choose theme elements that evoke that feeling</li>
+                    <li>Examples: Cozy, Adventurous, Sophisticated, Playful, Serene</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <h5>4. It can be property-wide or room-specific</h5>
+                <ul>
+                    <li>You don't need one theme throughout the entire property</li>
+                    <li>A cohesive overall aesthetic with themed rooms is a powerful combination</li>
+                    <li>Example: Modern farmhouse aesthetic throughout with a whimsical woodland bunk room</li>
+                </ul>
+            </div>
+
+            <h4 class="text-subheading">Theme Execution on a Budget</h4>
+
+            <p class="text-body"><strong>Free or low-cost theme strategies:</strong></p>
+            <ul>
+                <li><strong>Color palette:</strong> Choose 3-4 colors that evoke your theme; use consistently</li>
+                <li><strong>Art selection:</strong> Choose prints/photos that reinforce your theme</li>
+                <li><strong>Accessories:</strong> Greenery, pottery, books, and textiles in theme-appropriate styles</li>
+            </ul>
+
+            <p class="text-body"><strong>Higher-impact investments:</strong></p>
+            <ul>
+                <li><strong>One themed room:</strong> Put extra budget into making one space (like a bunk room) really special with theming</li>
+                <li><strong>Entry moment:</strong> First impression matters - invest in making your entryway clearly establish the theme</li>
+                <li><strong>Hero photo spaces:</strong> Prioritize theme execution in the rooms that will be your primary listing photos</li>
+            </ul>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Part 3: Strategic Placement -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-hero section-with-subtitle">Part 3: Strategic Placement Guide</h2>
+            <p class="section-subtitle">Spending Your Space Wisely</p>
+            <div class="subtitle-divider" aria-hidden="true"></div>
+
+            <p class="text-body-large">You've set the right budget. You've purchased the right items. Now comes the moment of truth: arranging everything in your space.</p>
+
+            <p class="text-body">This is where many DIY investors often hit a wall. Because <strong>how you arrange your furniture and style your surfaces determines whether your property photographs well, feels good in person, and creates those memorable experiences that drive re-bookings and reviews.</strong></p>
+
+            <p class="text-body">Let's break down the core design principles and best practices that will help you arrange your space for maximum impact.</p>
+
+            <h3 class="text-heading">Core Design Principles</h3>
+
+            <h4 class="text-subheading">Principle #1: Proportion and Scale</h4>
+
+            <p class="text-body"><strong>What it means:</strong> The size relationships between objects in a space.</p>
+
+            <p class="text-body"><strong>Why it matters:</strong> Proportion affects how comfortable and harmonious a space feels. When proportions are off, people feel it as awkwardness even if they can't articulate what's wrong.</p>
+
+            <p class="text-body"><strong>Common proportion mistakes:</strong></p>
+            <ul>
+                <li>Tiny artwork above a large sofa (looks lost and creates imbalance)</li>
+                <li>Oversized furniture in a small room (makes space feel cramped)</li>
+                <li>Coffee table too small or large for the seating arrangement (disrupts visual balance)</li>
+                <li>Nightstands that don't relate to bed height (looks disconnected)</li>
+                <li>Undersized rugs that don't anchor the furniture grouping</li>
+                <li>Lamps that are too small or large for the tables they sit on</li>
+                <li>Dining chandeliers that overwhelm or get lost above the table</li>
+            </ul>
+
+            <h4 class="text-subheading">Principle #2: Symmetry and Balance</h4>
+
+            <p class="text-body"><strong>What it means:</strong> Creating visual equilibrium in a space, either through mirror-image symmetry or asymmetrical balance.</p>
+
+            <p class="text-body"><strong>Why it matters:</strong> Balanced spaces feel calm, intentional, and complete. Imbalanced spaces feel chaotic or unfinished.</p>
+
+            <p class="text-body"><strong>Common balance mistakes:</strong></p>
+            <ul>
+                <li>Asymmetrical nightstand arrangements (one side has a nightstand and lamp, the other doesn't)</li>
+                <li>Imbalanced wall arrangements (heavy artwork on one side, nothing on the other)</li>
+                <li>Off-center focal points that create visual tension</li>
+            </ul>
+
+            <h4 class="text-subheading">Principle #3: Negative Space</h4>
+
+            <p class="text-body"><strong>What it means:</strong> The empty space around and between design elements.</p>
+
+            <p class="text-body"><strong>Why it matters:</strong> Negative space gives the eye a place to rest. Too little negative space feels cluttered and chaotic. Too much feels empty and cold.</p>
+
+            <p class="text-body"><strong>Common negative space mistakes:</strong></p>
+            <ul>
+                <li>Filling every surface with accessories (too little negative space)</li>
+                <li>Leaving large wall areas completely blank (too much negative space)</li>
+                <li>Pushing all furniture against walls (creates too much negative space in the center)</li>
+                <li>Cluttered surfaces with no breathing room</li>
+                <li>Every wall decorated uniformly instead of creating focal points</li>
+            </ul>
+
+            <h4 class="text-subheading">Principle #4: Layering and Unification</h4>
+
+            <p class="text-body"><strong>What it means:</strong> Creating depth and cohesion through overlapping design elements. Layering applies at every scale - from full-room furniture arrangements down to how you style a single coffee table.</p>
+
+            <p class="text-body"><strong>Why it matters:</strong> Layering is what creates that cozy, magazine-worthy, "complete" feeling. Spaces without layering feel flat and unfinished. Unifying elements tie separate pieces together into a cohesive whole.</p>
+
+            <p class="text-body">This is a critical principle for creating spaces that photograph beautifully and feel good in person.</p>
+
+            <p class="text-body"><strong>Layering at room scale includes:</strong></p>
+            <ul>
+                <li>Foundation elements (rugs and curtains) that anchor and unify</li>
+                <li>Primary furniture that defines function</li>
+                <li>Secondary furniture that supports the primary pieces</li>
+                <li>Lighting that creates ambiance</li>
+                <li>Textiles that add color, pattern, and texture</li>
+                <li>Accessories that create depth and personality</li>
+            </ul>
+
+            <p class="text-body"><strong>Layering at surface scale includes:</strong></p>
+            <ul>
+                <li>Base elements (trays, large books) that create foundation</li>
+                <li>Height variation (tall, medium, short objects)</li>
+                <li>Multiple textures (pottery, greenery, books)</li>
+                <li>Overlapping or grouped arrangements rather than evenly spaced items</li>
+            </ul>
+
+            <p class="text-body"><strong>Common layering mistakes:</strong></p>
+            <ul>
+                <li>Rugs too small to unify furniture groupings (front legs should be on the rug)</li>
+                <li>Curtains hung too low or too short, losing their unifying effect</li>
+                <li>Missing textiles (no throw pillows, blankets, or softness)</li>
+                <li>Skipping accessories (spaces feel incomplete and don't photograph well)</li>
+                <li>Surface styling with everything the same height or evenly spaced (creates flatness)</li>
+                <li>Not connecting layers cohesively (each element feels random rather than intentional)</li>
+            </ul>
+
+            <h4 class="text-subheading">Principle #5: Space Flow and Partitioning</h4>
+
+            <p class="text-body"><strong>What it means:</strong> How the arrangement of furniture and design elements encourages movement through a space or creates separation between areas.</p>
+
+            <p class="text-body"><strong>Why it matters:</strong> Good flow brings people together naturally and makes spaces feel comfortable and functional. Poor flow segregates people, creates awkward spaces, and makes areas feel unusable.</p>
+
+            <p class="text-body"><strong>Common flow mistakes:</strong></p>
+            <ul>
+                <li>Seating arranged too far apart for comfortable conversation</li>
+                <li>Furniture blocking natural walkways</li>
+                <li>Conversation areas interrupted by traffic patterns</li>
+                <li>Missing focal points when entering rooms</li>
+                <li>Seating that faces walls instead of each other or focal points</li>
+            </ul>
+
+            <h3 class="text-heading">The Most Common Arrangement Mistakes</h3>
+
+            <p class="text-body">These are the mistakes that show up most frequently and have the biggest impact on how your property photographs and feels:</p>
+
+            <div class="mistake-box">
+                <h5>Incorrect curtain height</h5>
+                <p class="text-body">Either too low (bunching up on the floor) or too high above the ground (looking like they're wading through water). Both undermine the polished look curtains should create.</p>
+            </div>
+
+            <div class="mistake-box">
+                <h5>Incorrect rug placement and orientation</h5>
+                <p class="text-body">Rugs should unify furniture groupings and define spaces, but incorrect orientation works against this. For example, with beds: the rug should be perpendicular to the bed (running widthwise under and beyond the bed). When the rug runs parallel to the bed instead (lengthwise), the visual relationship feels off and the space feels constrained. The rug fails to properly anchor and frame the furniture.</p>
+            </div>
+
+            <div class="mistake-box">
+                <h5>Accessorizing as an afterthought</h5>
+                <p class="text-body">Not putting the same care into finishing touches that you put into furniture arrangements. When accessories aren't properly balanced or spaced on surfaces, people won't necessarily know why the space feels off, but it will feel off. The design principles above apply to surface styling just as much as room arrangements.</p>
+            </div>
+
+            <div class="mistake-box">
+                <h5>Poor proportion between objects</h5>
+                <p class="text-body">A tiny painting above a large furniture piece looks lost and creates imbalance. When the scale relationship between objects is wrong, the whole space feels awkward.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Conclusion -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="text-hero">Putting It All Together</h2>
+
+            <p class="text-body-large">You now have the strategic methodology behind the ROI Design Method:</p>
+
+            <div style="background: #FAFAF7; padding: 24px; border-radius: 8px; margin: 32px 0;">
+                <p class="text-body">✓ <strong>Strategic Budgeting Framework</strong> - You understand all cost categories and how to think about room-by-room allocation</p>
+                <p class="text-body">✓ <strong>Strategic Spending Principles</strong> - You know which items drive performance at each stage of the guest journey</p>
+                <p class="text-body" style="margin-bottom: 0;">✓ <strong>Strategic Placement Principles</strong> - You understand the design fundamentals for arrangement and styling</p>
+            </div>
+
+            <h3 class="text-heading">Using Your Complete Toolkit</h3>
+
+            <p class="text-body">This guide works alongside your other tools:</p>
+
+            <p class="text-body"><strong>Custom Budget Assessment:</strong> Request a call to get specific dollar recommendations for each room and category, tailored to your property.</p>
+
+            <p class="text-body"><strong>ROI Calculator Tool:</strong> Input your current and projected performance metrics to see your potential cash flow increase and enterprise value gain.</p>
+
+            <p class="text-body"><strong>This Strategic Guide:</strong> Reference this methodology to understand the "why" behind every decision and ensure you're investing strategically.</p>
+
+            <h3 class="text-heading">Working With Us</h3>
+
+            <p class="text-body">If you'd like help with this process, here's what working with our team looks like:</p>
+
+            <p class="text-body"><strong>Our process:</strong></p>
+
+            <ol>
+                <li><strong>Project Assessment</strong> - Every project begins with understanding your goals, your property, and your budget.</li>
+                <li><strong>Design Planning</strong> - If we decide to take on your project, we'll conceptualize the overall creative direction to lay the foundation for a successful installation.</li>
+                <li><strong>Procurement</strong> - Next, we'll procure the furniture, accessories, and finishing touches that will go into your property. Depending on project parameters, conceptualization can happen iteratively alongside procurement.</li>
+                <li><strong>Installation</strong> - Installation is where everything comes together. We use principles like balance, proportion, and layering to make sure your property shines.</li>
+            </ol>
+
+            <h3 class="text-heading">Before You Go</h3>
+
+            <div class="before-you-go-callout">
+                <p class="text-body callout-body-large">Remember: You're going to furnish your property no matter what.<br>The only question is <strong>HOW</strong> you furnish it.</p>
+                <p class="text-body">You can: spend too little and struggle with low occupancy and poor reviews, spend too much on the wrong things and not see the ROI you need, or spend strategically using the ROI Design Method and maximize your cash flow.</p>
+            </div>
+
+            <p class="text-body-large" style="margin-top: 48px; margin-bottom: 12px;">We've given you the framework. The choice is yours.</p>
+
+            <p class="baskerville-italic" style="margin-top: 0; margin-bottom: 0;">Here's to your property's success.</p>
+        </div>
+    </section>
+
+
+    <!-- Inlined Request a Call Popup (copied and adapted from index.html) -->
+    <div class="popup-overlay" id="surveyPopup" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-description">
+        <div class="popup-container" tabindex="-1">
+            <div class="popup-header">
+                <h2 id="popup-title">Request a Call</h2>
+                <button class="popup-close" onclick="closeSurveyPopup()" aria-label="Close consultation request form">&times;</button>
+            </div>
+            <div class="popup-content">
+                <div class="survey-container">
+                    <iframe src="https://links.1584design.com/widget/survey/8drcQPAnkvQXNfTOqgTA"
+                            style="border:none;width:100%;"
+                            scrolling="no"
+                            id="8drcQPAnkvQXNfTOqgTA"
+                            title="Consultation Request Form"
+                            aria-describedby="popup-description">
+                    </iframe>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <p id="popup-description">Your information is secure and will only be used to respond to your consultation request.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup scripts (match index.html ordering: shared navigation then form embed) -->
+    <script src="js/navigation.js"></script>
+    <script src="https://links.1584design.com/js/form_embed.js"></script>
+    <script>
+        function openSurveyPopup() {
+            const popup = document.getElementById('surveyPopup');
+            if (popup) {
+                popup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+
+                const popupContainer = popup.querySelector('.popup-container');
+                if (popupContainer) popupContainer.focus();
+
+                const activeElement = document.activeElement;
+                popup.setAttribute('data-focus-return', activeElement ? (activeElement.id || 'survey-trigger') : 'survey-trigger');
+            }
+        }
+
+        function closeSurveyPopup() {
+            const popup = document.getElementById('surveyPopup');
+            if (popup) {
+                popup.classList.remove('active');
+                document.body.style.overflow = '';
+
+                const focusReturnId = popup.getAttribute('data-focus-return') || 'survey-trigger';
+                const triggerButton = document.querySelector(`#${focusReturnId}`) || document.querySelector('a[href="#contact"]');
+                if (triggerButton) triggerButton.focus();
+
+                popup.removeAttribute('data-focus-return');
+            }
+        }
+
+        // Close when clicking on overlay outside the container
+        document.addEventListener('click', function(event) {
+            const popup = document.getElementById('surveyPopup');
+            if (popup && popup.classList.contains('active')) {
+                const popupContainer = popup.querySelector('.popup-container');
+                const isClickInsidePopup = popupContainer && popupContainer.contains(event.target);
+                if (!isClickInsidePopup && event.target === popup) {
+                    closeSurveyPopup();
+                }
+            }
+        });
+
+        // Close on Escape and trap Tab focus
+        document.addEventListener('keydown', function(event) {
+            const popup = document.getElementById('surveyPopup');
+            if (popup && popup.classList.contains('active')) {
+                if (event.key === 'Escape') {
+                    closeSurveyPopup();
+                } else if (event.key === 'Tab') {
+                    const focusableElements = popup.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"]), iframe');
+                    if (focusableElements.length === 0) return;
+                    const firstFocusable = focusableElements[0];
+                    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+                    if (event.shiftKey) {
+                        if (document.activeElement === firstFocusable) {
+                            event.preventDefault();
+                            lastFocusable.focus();
+                        }
+                    } else {
+                        if (document.activeElement === lastFocusable) {
+                            event.preventDefault();
+                            firstFocusable.focus();
+                        }
+                    }
+                }
+            }
+        });
+
+        // Attach click handler to local contact anchors to open popup
+        document.addEventListener('DOMContentLoaded', function() {
+            const triggerButtons = document.querySelectorAll('a[href="#contact"]');
+            triggerButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openSurveyPopup();
+                });
+
+                if (!button.hasAttribute('data-popup-trigger')) {
+                    button.setAttribute('data-popup-trigger', 'survey');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -527,6 +527,15 @@
 
         const hasMore = nextIndex < shuffledSources.length;
 
+        if (!hasMore && autoLoadObserver) {
+            autoLoadObserver.disconnect();
+        }
+
+        // When auto-loading is active, the button stays permanently hidden
+        if (autoLoadObserver) {
+            return;
+        }
+
         if (hasMore) {
             loadMoreButton.hidden = false;
             loadMoreButton.setAttribute("aria-hidden", "false");
@@ -543,7 +552,59 @@
         appendBatch(SUBSEQUENT_BATCH_SIZE);
     }
 
-    if (loadMoreButton) {
+    // Auto-load: use IntersectionObserver on a sentinel near the grid bottom
+    var autoLoadObserver = null;
+    var autoLoadSentinel = null;
+    var autoLoadInFlight = false;
+
+    function isSentinelNearViewport() {
+        if (!autoLoadSentinel) return false;
+        var rect = autoLoadSentinel.getBoundingClientRect();
+        // Same 200px margin as the observer
+        return rect.top < window.innerHeight + 200;
+    }
+
+    function autoLoadBatch() {
+        if (autoLoadInFlight || nextIndex >= shuffledSources.length) {
+            return;
+        }
+        autoLoadInFlight = true;
+        appendBatch(SUBSEQUENT_BATCH_SIZE);
+        // After the batch is appended, check if sentinel is still near viewport
+        // Use rAF to let the DOM settle before measuring
+        window.requestAnimationFrame(function checkSentinel() {
+            autoLoadInFlight = false;
+            if (nextIndex < shuffledSources.length && isSentinelNearViewport()) {
+                autoLoadBatch();
+            }
+        });
+    }
+
+    if (loadMoreButton && "IntersectionObserver" in window) {
+        // Hide the button — auto-load replaces it
+        loadMoreButton.style.display = "none";
+        loadMoreButton.hidden = true;
+        loadMoreButton.setAttribute("aria-hidden", "true");
+
+        // Use the button's parent container as the sentinel
+        autoLoadSentinel = loadMoreButton.parentElement;
+
+        autoLoadObserver = new IntersectionObserver(function handleAutoLoad(entries) {
+            if (!entries[0].isIntersecting) {
+                return;
+            }
+            if (nextIndex >= shuffledSources.length) {
+                autoLoadObserver.disconnect();
+                return;
+            }
+            autoLoadBatch();
+        }, { rootMargin: "0px 0px 200px 0px" });
+
+        if (autoLoadSentinel) {
+            autoLoadObserver.observe(autoLoadSentinel);
+        }
+    } else if (loadMoreButton) {
+        // Fallback for browsers without IntersectionObserver
         loadMoreButton.addEventListener("click", handleLoadMoreClick);
     }
 

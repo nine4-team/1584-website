@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Goldilocks Method Investor's Guide | 1584 Design</title>
+    <style>
+        /* Design Palette from Sandra Bahama Agreement */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+        :root {
+            --dark: #212121;
+            --darker: #171717;
+            --gold: #b8860b;
+            --light-gold: rgba(184, 134, 11, 0.7);
+            --cream: #f8f5f0;
+            --light-grey: #f5f5f5;
+            --medium-grey: #e0e0e0;
+            --text: #333333;
+            --spacing-unit: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--cream);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--dark);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: calc(var(--spacing-unit) * 6);
+            color: var(--gold);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            font-weight: 300;
+            margin-top: calc(var(--spacing-unit) * 3);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            color: var(--dark);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: calc(var(--spacing-unit) * 6);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            color: var(--dark);
+            margin-top: calc(var(--spacing-unit) * 4);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        p {
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        strong {
+             font-weight: 500;
+        }
+
+        ul, ol {
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            padding-left: calc(var(--spacing-unit) * 5);
+        }
+
+        li {
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+        }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 10);
+        }
+
+        .narrow {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        .section {
+            padding: calc(var(--spacing-unit) * 4) 0;
+            position: relative;
+        }
+
+        .cover {
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(248, 245, 240, 0.8) 100%);
+            padding: calc(var(--spacing-unit) * 8) 0;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .logo {
+            position: relative;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        .logo img {
+            width: auto;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Divider */
+        .divider {
+            width: 50px;
+            height: 2px;
+            background-color: var(--gold);
+            margin: calc(var(--spacing-unit) * 5) auto;
+        }
+
+        /* Hero Section */
+        .hero-content {
+            background-color: white;
+            padding: calc(var(--spacing-unit) * 6);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background-color: white;
+            padding: calc(var(--spacing-unit) * 6);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: calc(var(--spacing-unit) * 6) 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: calc(var(--spacing-unit) * 3) 0;
+            font-size: 1rem;
+            background-color: var(--light-grey);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: calc(var(--spacing-unit) * 3);
+            text-align: left;
+            border-bottom: 1px solid var(--medium-grey);
+        }
+
+        .comparison-table th {
+            background-color: var(--gold);
+            color: white;
+            font-weight: 500;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table .property-a {
+            background-color: rgba(255, 182, 193, 0.1);
+        }
+
+        .comparison-table .property-b {
+            background-color: rgba(144, 238, 144, 0.1);
+        }
+
+        .comparison-table .metric {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        /* 5-Year Chart */
+        .chart-section {
+            background-color: white;
+            padding: calc(var(--spacing-unit) * 6);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: calc(var(--spacing-unit) * 6) 0;
+        }
+
+        .chart-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            height: 300px;
+            margin: calc(var(--spacing-unit) * 4) 0;
+            background-color: var(--light-grey);
+            border-radius: 8px;
+            padding: calc(var(--spacing-unit) * 3);
+        }
+
+        .bar {
+            width: 120px;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
+
+        .bar.property-a {
+            background-color: rgba(255, 182, 193, 0.8);
+            height: 120px;
+        }
+
+        .bar.property-b {
+            background-color: rgba(144, 238, 144, 0.8);
+            height: 220px;
+        }
+
+        .bar-value {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--dark);
+            color: white;
+            padding: calc(var(--spacing-unit) * 1);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+
+        .chart-label {
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Arbitrage Opportunities */
+        .arbitrage-section {
+            background-color: white;
+            padding: calc(var(--spacing-unit) * 6);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: calc(var(--spacing-unit) * 6) 0;
+        }
+
+        .arbitrage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+            margin: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        .arbitrage-item {
+            background-color: var(--light-grey);
+            padding: calc(var(--spacing-unit) * 4);
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .arbitrage-number {
+            display: inline-block;
+            background-color: var(--gold);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 600;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .arbitrage-item h4 {
+            color: var(--gold);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        /* Quote Box */
+        .quote-section {
+            background-color: var(--darker);
+            color: white;
+            padding: calc(var(--spacing-unit) * 6);
+            border-radius: 8px;
+            margin: calc(var(--spacing-unit) * 6) 0;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.4;
+        }
+
+        .quote-attribution {
+            margin-top: calc(var(--spacing-unit) * 3);
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            color: white;
+            padding: calc(var(--spacing-unit) * 8);
+            border-radius: 8px;
+            text-align: center;
+            margin: calc(var(--spacing-unit) * 6) 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--gold);
+            padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 4);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            color: white;
+            padding: calc(var(--spacing-unit) * 5) 0;
+            text-align: center;
+            margin-top: calc(var(--spacing-unit) * 8);
+        }
+
+        footer p {
+            color: white;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container { padding: 0 calc(var(--spacing-unit) * 5); }
+            .chart-container {
+                flex-direction: column;
+                height: auto;
+                gap: calc(var(--spacing-unit) * 3);
+            }
+            .bar {
+                width: 100%;
+                height: 60px;
+                margin-bottom: calc(var(--spacing-unit) * 2);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .cover h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.2rem; }
+            h4 { font-size: 1.1rem; }
+            .container { padding: 0 calc(var(--spacing-unit) * 5); }
+            .section { padding: calc(var(--spacing-unit) * 6) 0; }
+            .logo img { width: 200px; }
+            .arbitrage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover Section -->
+    <section class="cover">
+        <div class="logo">
+            <img src="https://storage.googleapis.com/msgsndr/zTjqcEq3Ndj90wvhfc47/media/684c87bb082624ba07154dd6.png" alt="1584 Design Logo">
+        </div>
+        <h1>The Goldilocks Method Investor's Guide</h1>
+        <p style="font-size: 1.2rem; margin-bottom: calc(var(--spacing-unit) * 2);">How Strategic Design Pays for Itself — and Then Pays You Back</p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container narrow">
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h2>1. The Real Risk Investors Face</h2>
+                <p>For short-term rental investors, the scariest scenario isn't overspending.<br>
+                It's having a property that doesn't cash flow because it fails to book.</p>
+                <ul>
+                    <li>Every month under-booked = you still pay mortgage, taxes, insurance, utilities, and maintenance.</li>
+                    <li>A single year of weak performance can erase years of equity gains.</li>
+                </ul>
+                <p>That's why design isn't just about aesthetics. Done strategically, it's a risk management tool that keeps your property reliably booked — so it at least pays for itself.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="hero-content">
+                <h2>2. Why Our Services Can Be "Effectively Free"</h2>
+                <p>Here's the bold claim: our interior design services are often free to investors.</p>
+                <p><strong>How? Three arbitrage opportunities offset our fees:</strong></p>
+            </div>
+
+            <!-- Arbitrage Opportunities -->
+            <div class="arbitrage-section">
+                <h3 style="text-align: center; color: var(--gold);">Three Ways We Make Design Pay for Itself</h3>
+                <div class="arbitrage-grid">
+                    <div class="arbitrage-item">
+                        <div class="arbitrage-number">1</div>
+                        <h4>Trade Discounts</h4>
+                        <p>Access to wholesale and designer-only pricing. Investors save thousands vs. retail.</p>
+                    </div>
+                    <div class="arbitrage-item">
+                        <div class="arbitrage-number">2</div>
+                        <h4>Deal Hunting</h4>
+                        <p>We log ~70,000 miles a year sourcing below-market furnishings. Those savings go straight back into your pocket.</p>
+                    </div>
+                    <div class="arbitrage-item">
+                        <div class="arbitrage-number">3</div>
+                        <h4>Strategic Investing</h4>
+                        <p>We know which items move the needle on bookings and nightly rates. Spend more where it matters, save where it doesn't.</p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: calc(var(--spacing-unit) * 4);"><strong>The combined effect of those savings often outweighs our design fee — making our services effectively cost-neutral.</strong></p>
+                <p style="text-align: center;">Like a good CPA, we don't just charge a fee — we find the savings that pay for it.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Case Study -->
+            <div class="hero-content">
+                <h2>3. Case Study: Two St. George Properties</h2>
+                <p>Let's look at what happens in the real world.</p>
+                <p>Two investors purchase identical properties:</p>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="comparison-section">
+                <h3 style="text-align: center; color: var(--gold);">Property A vs Property B: Real-World Results</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Property A<br><span style="font-size: 0.9rem; font-weight: 400;">Penny Pincher</span></th>
+                            <th>Property B<br><span style="font-size: 0.9rem; font-weight: 400;">Goldilocks Investor</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="metric">Furnishings/Design Budget</td>
+                            <td class="property-a">$50,000</td>
+                            <td class="property-b">$90,000</td>
+                        </tr>
+                        <tr>
+                            <td class="metric">Occupancy Rate</td>
+                            <td class="property-a">~55% at $325/night</td>
+                            <td class="property-b">~70% at $375/night</td>
+                        </tr>
+                        <tr>
+                            <td class="metric">Gross Revenue</td>
+                            <td class="property-a">≈ $65,300/year</td>
+                            <td class="property-b">≈ $95,800/year</td>
+                        </tr>
+                        <tr>
+                            <td class="metric">Net Cash Flow<br><span style="font-size: 0.8rem;">(After $4,500/mo expenses & mortgage)</span></td>
+                            <td class="property-a" style="color: #d32f2f; font-weight: 500;">- $11,500/year</td>
+                            <td class="property-b" style="color: #2e7d32; font-weight: 500;">+ $8,700/year</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="background-color: var(--light-grey); padding: calc(var(--spacing-unit) * 3); border-radius: 8px; margin-top: calc(var(--spacing-unit) * 3);">
+                    <h4 style="margin-bottom: calc(var(--spacing-unit) * 2); color: var(--gold);">Key Insight:</h4>
+                    <p><strong>Property A</strong> "saved" $40k upfront but bleeds cash every year.</p>
+                    <p><strong>Property B</strong> invested wisely, avoided negative cash flow, and came out ahead by ~$20,000 per year.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- 5-Year Chart -->
+            <div class="hero-content">
+                <h2>4. Long-Term ROI: The Gravy on Top</h2>
+                <p>When you zoom out, the difference is even more dramatic:</p>
+            </div>
+
+            <div class="chart-section">
+                <h3 style="text-align: center; color: var(--gold);">5-Year Cumulative Cash Flow Comparison</h3>
+                <div class="chart-container">
+                    <div class="chart-item" style="text-align: center;">
+                        <div class="bar property-a">
+                            <div class="bar-value">-$57,500</div>
+                        </div>
+                        <div class="chart-labels">
+                            <div class="chart-label">
+                                <strong>Property A</strong><br>
+                                Penny Pincher<br>
+                                Approach
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-item" style="text-align: center;">
+                        <div class="bar property-b">
+                            <div class="bar-value">+$43,500</div>
+                        </div>
+                        <div class="chart-labels">
+                            <div class="chart-label">
+                                <strong>Property B</strong><br>
+                                Goldilocks<br>
+                                Method
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: calc(var(--spacing-unit) * 4);"><strong>That's a $100,000 swing over just five years</strong> — on top of appreciation and tax advantages.</p>
+                <p style="text-align: center;">This is the bonus investors don't expect: not only does the design investment pay for itself through arbitrage, it also creates a meaningful return on design dollars.</p>
+            </div>
+
+            <!-- Quote Box -->
+            <div class="quote-section">
+                <div class="quote-text">
+                    "It's like hiring a CPA — our fee is paid for in the savings."
+                </div>
+                <div class="quote-attribution">
+                    — The Goldilocks Method Philosophy
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Bottom Line -->
+            <div class="hero-content">
+                <h2>5. The Bottom Line</h2>
+                <p>The Goldilocks Method isn't about medium budgets or "pretty design."<br>
+                It's about risk protection and wealth creation:</p>
+                <ul>
+                    <li>Your design fee is offset by savings (effectively free).</li>
+                    <li>Your property reliably books (cash flow protection).</li>
+                    <li>Over time, you enjoy outsized ROI compared to under-designed properties.</li>
+                </ul>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Ready to See Your Property's Numbers?</h2>
+                <p>Book a quick call with our team. We'll run your property's numbers so you can see exactly how design choices translate to cash flow and ROI.</p>
+                <a href="#" class="cta-button">Schedule Your Free Consultation</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container narrow">
+            <p>&copy; 2025 1584 Design LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

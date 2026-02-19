@@ -293,6 +293,7 @@ function generateNavigation() {
             { text: 'REVIEWS', href: '#reviews' },
             { text: 'PROCESS', href: '#process' },
             { text: 'ABOUT', href: 'about.html' },
+            { text: 'INVESTOR PLAYBOOK', href: 'playbook-optin.html' },
             { text: 'CONTACT', href: '#contact' }
         ],
         'about.html': [
@@ -300,6 +301,7 @@ function generateNavigation() {
             { text: 'REVIEWS', href: makeRootFragment('reviews') },
             { text: 'PROCESS', href: makeRootFragment('process') },
             { text: 'ABOUT', href: 'about.html', current: true },
+            { text: 'INVESTOR PLAYBOOK', href: 'playbook-optin.html' },
             { text: 'CONTACT', href: makeRootFragment('contact') }
         ],
         'portfolio.html': [
@@ -307,6 +309,15 @@ function generateNavigation() {
             { text: 'REVIEWS', href: makeRootFragment('reviews') },
             { text: 'PROCESS', href: makeRootFragment('process') },
             { text: 'ABOUT', href: 'about.html' },
+            { text: 'INVESTOR PLAYBOOK', href: 'playbook-optin.html' },
+            { text: 'CONTACT', href: makeRootFragment('contact') }
+        ],
+        'playbook-optin.html': [
+            { text: 'PORTFOLIO', href: 'portfolio.html' },
+            { text: 'REVIEWS', href: makeRootFragment('reviews') },
+            { text: 'PROCESS', href: makeRootFragment('process') },
+            { text: 'ABOUT', href: 'about.html' },
+            { text: 'INVESTOR PLAYBOOK', href: 'playbook-optin.html', current: true },
             { text: 'CONTACT', href: makeRootFragment('contact') }
         ]
     };
@@ -368,38 +379,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// CTA Button functionality (for pages that have it)
-function initCTAButton() {
-    const ctaBtn = document.querySelector('.cta-btn');
-    if (ctaBtn) {
-        ctaBtn.addEventListener('click', function(e) {
-            e.preventDefault();
 
-            // Simulate toolkit signup action
-            console.log('Sourcebook signup initiated:', {
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent
-            });
-
-            // Visual feedback
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-
-            // Here you would typically open a signup modal or redirect to signup page
-            alert('Signup form would open here. In a real implementation, this would open a modal or redirect to a signup page.');
-        });
-    }
+// Lazy-load GoHighLevel form_embed.js (only when popup opens)
+// Loading this script at page level creates z-index:10000 overlays that block clicks.
+let formEmbedLoaded = false;
+function loadFormEmbed() {
+    if (formEmbedLoaded) return;
+    formEmbedLoaded = true;
+    const script = document.createElement('script');
+    script.src = 'https://links.1584design.com/js/form_embed.js';
+    document.body.appendChild(script);
 }
-
-// Initialize CTA button if it exists
-document.addEventListener('DOMContentLoaded', initCTAButton);
 
 // Survey Popup Functions
 function openSurveyPopup() {
     const popup = document.getElementById('surveyPopup');
     if (popup) {
+        loadFormEmbed();
         popup.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
 

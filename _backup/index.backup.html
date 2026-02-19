@@ -53,6 +53,10 @@
             padding: 80px 0;
         }
 
+        .section-hidden {
+            display: none !important;
+        }
+
         /* Navigation */
         .navigation {
             position: fixed;
@@ -391,7 +395,8 @@
         /* Lead Magnet Section */
         .lead-magnet {
             position: relative;
-            background: #FAFAF7;
+            background: url('images/textures/gray_concrete.jpg') center / cover no-repeat;
+            background-attachment: fixed;
             min-height: auto;
             display: flex;
             align-items: center;
@@ -400,18 +405,39 @@
         }
 
         .lead-magnet::before {
-            display: none;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(148, 111, 81, 0.75);
+            z-index: 1;
         }
 
         .lead-magnet::after {
-            display: none;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 50%),
+                radial-gradient(
+                    ellipse at center,
+                    transparent 0%,
+                    rgba(26, 26, 26, 0.95) 100%
+                );
+            z-index: 2;
         }
 
         .lead-magnet-content {
             position: relative;
             z-index: 3;
             text-align: left;
-            color: #1A1A1A;
+            color: #FAFAF7;
             max-width: 1200px;
             padding: 48px 24px;
         }
@@ -427,9 +453,9 @@
             font-size: clamp(32px, 6vw, 48px);
             font-weight: 400;
             line-height: 1.2;
-            color: #1A1A1A;
             margin-bottom: 16px;
             letter-spacing: -0.02em;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
         .lead-magnet .subtitle {
@@ -437,23 +463,14 @@
             font-size: clamp(16px, 2vw, 20px);
             font-weight: 400;
             line-height: 1.4;
-            color: #2C2C2C;
+            color: #F5F2ED;
             margin-bottom: 32px;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6), 1px 1px 4px rgba(0,0,0,0.8);
         }
-
-        .lead-magnet .eyebrow {
-            font-family: 'Avenir', sans-serif;
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #9a7d55;
-            margin-bottom: 12px;
-        }
-
+        
         /* Grid layout */
         .grid {
           display: grid;
@@ -462,16 +479,22 @@
           margin: 48px 0;
           justify-content: center;
         }
-
+    
         @media (min-width: 768px) {
           .grid {
             grid-template-columns: repeat(2, 348px);
           }
         }
-
+    
+        @media (min-width: 1100px) {
+          .grid {
+            grid-template-columns: repeat(3, 348px);
+          }
+        }
+    
         /* Card */
         .card {
-
+          
           border: 0.5px solid rgba(255, 255, 255, 0.15);
           border-radius: 0.75rem;
           overflow: hidden;
@@ -479,12 +502,12 @@
           box-shadow: 0 12px 30px rgba(0,0,0,0.20), 0 6px 12px rgba(0,0,0,0.12);
           color: #374151;
         }
-
+    
         /* Image container */
         .image-container {
           width: 100%;
         }
-
+    
         .image-wrapper {
           width: 100%;
           background-position: center;
@@ -492,7 +515,7 @@
           position: relative;
           padding-top: 133.33%; /* 3:4 aspect ratio */
         }
-
+    
         /* Overlay */
         .overlay {
           position: absolute;
@@ -506,7 +529,7 @@
           padding: 1.5rem 1rem;
           background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.85) 12%, rgba(0,0,0,0.7) 25%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0) 85%);
         }
-
+    
         /* Typography */
         .card-title {
           font-family: 'Baskerville', Palatino, Garamond, serif;
@@ -516,7 +539,7 @@
           line-height: 1.25;
           margin: 0;
         }
-
+    
         .card-description {
           font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
           font-size: 0.875rem;
@@ -526,6 +549,18 @@
           margin-bottom: 0;
         }
 
+        /* Background images */
+        .bg-1 {
+            background-image: url('images/lead_magnet_toolkit/budget-estimator.webp');
+        }
+        
+        .bg-2 {
+            background-image: url('images/lead_magnet_toolkit/project-planner.webp');
+        }
+        
+        .bg-3 {
+            background-image: url('images/lead_magnet_toolkit/roi-design-guide.webp');
+        }
 
         /* CTA Button */
         .cta-container {
@@ -534,40 +569,27 @@
         }
 
         .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: #9a7d55;
+            background: transparent;
             color: #FAFAF7;
-            text-decoration: none;
-            padding: 16px 34px;
+            border: 2px solid #FAFAF7;
             border-radius: 25pt;
             font-family: 'Avenir', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 1.2px;
+            font-size: 16px;
+            font-weight: 500;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 16px 32px;
+            cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: none;
-            border: 2px solid #9a7d55;
         }
 
         .cta-btn:hover {
-            background: #1A1A1A;
-            color: #FAFAF7;
-            border-color: #1A1A1A;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+            background: #FAFAF7;
+            color: #1A1A1A;
         }
 
-        .cta-btn::after {
-            content: "\2192";
-            font-size: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-btn:hover::after {
-            transform: translateX(4px);
+        .cta-btn:active {
+            transform: scale(0.98);
         }
 
         /* Social Proof Section */
@@ -594,7 +616,6 @@
             bottom: 0;
             background: linear-gradient(to right, rgba(15, 10, 8, 0.95) 0%, rgba(40, 28, 20, 0.75) 25%, rgba(70, 48, 35, 0.55) 50%, rgba(100, 68, 48, 0.35) 75%, rgba(130, 95, 70, 0.2) 90%, transparent 100%);
             z-index: 1;
-            pointer-events: none;
         }
 
         .social-proof-content {
@@ -655,7 +676,7 @@
         }
 
         .google-reviews-btn::after {
-            content: "\2192";
+            content: "→";
             font-size: 16px;
             transition: transform 0.3s ease;
         }
@@ -771,25 +792,31 @@
             .lead-magnet {
                 min-height: auto;
             }
-
+   
             .lead-magnet-content {
                 padding: 32px 16px;
                 max-width: 100%;
             }
-
+   
             .lead-magnet h1 {
                 font-size: clamp(24px, 8vw, 36px);
             }
-
+   
             .lead-magnet .subtitle {
                 font-size: clamp(14px, 4vw, 16px);
                 margin-bottom: 24px;
+                padding: 12px 20px;
                 max-width: 90%;
             }
             .grid {
                 gap: 1.5rem;
             }
 
+
+            .cta-btn {
+                padding: 12px 24px;
+                font-size: 13px;
+            }
 
             .modal-container {
                 width: 100vw;
@@ -919,21 +946,26 @@
             .lead-magnet {
                 min-height: auto;
             }
-
+   
             .lead-magnet-content {
                 padding: 32px 16px;
                 max-width: 100%;
             }
-
+   
             .lead-magnet h1 {
                 font-size: clamp(24px, 8vw, 36px);
             }
-
+   
             .lead-magnet .subtitle {
                 font-size: 16px;
             }
             .grid {
                 gap: 1.5rem;
+            }
+
+            .cta-btn {
+                padding: 12px 24px;
+                font-size: 13px;
             }
 
             /* Footer mobile layout fix */
@@ -1021,7 +1053,7 @@
             }
         }
 
-        /* Mid-width fixes: 481-603px (isolated/surgical) */
+        /* Mid-width fixes: 481–603px (isolated/surgical) */
         @media (min-width: 481px) and (max-width: 603px) {
             .container { max-width: 100vw; margin: 0; padding: 0 16px; }
 
@@ -1031,6 +1063,9 @@
                 margin-left: calc(-50vw + 50%);
                 margin-right: calc(-50vw + 50%);
             }
+
+            /* Grids that commonly overflow in this band - portfolio cards handled by responsive breakpoints above */
+            .toolkit-showcase { grid-template-columns: repeat(2, minmax(180px, 1fr)); }
 
             /* Targeted horizontal overflow control */
             .hero, .portfolio-preview-section { overflow-x: hidden; }
@@ -1387,14 +1422,12 @@
             padding: 20px;
             opacity: 0;
             visibility: hidden;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .popup-overlay.active {
             opacity: 1;
             visibility: visible;
-            pointer-events: auto;
         }
 
         .popup-container {
@@ -1592,7 +1625,7 @@
             <ul class="nav-menu">
                 <!-- Navigation menu generated dynamically by JavaScript -->
             </ul>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
         </div>
     </nav>
 
@@ -1618,7 +1651,7 @@
         <div class="container">
             <div class="portfolio-preview-header">
                 <h2>Portfolio</h2>
-
+               
             </div>
 
             <div class="portfolio-preview-cards">
@@ -1655,20 +1688,6 @@
         </div>
     </section>
 
-    <!-- Lead Magnet Section -->
-    <section class="lead-magnet section">
-        <div class="container">
-            <div class="lead-magnet-content">
-                <p class="eyebrow">For Vacation Rental Owners</p>
-                <h1>The Property Performance Playbook</h1>
-                <p class="subtitle">The free guide to designing vacation rentals that outperform their comps.</p>
-
-                <div class="cta-container">
-                    <a class="cta-btn" href="playbook-optin.html">GET THE FREE PLAYBOOK</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Social Proof Section -->
     <section id="reviews" class="social-proof-section section">
@@ -1684,6 +1703,60 @@
             </div>
         </div>
     </section>
+
+    <!-- Lead Magnet Section -->
+    <a href="toolkit-optin.html" style="text-decoration: none; color: inherit;">
+    <section class="lead-magnet section section-hidden">
+        <div class="container">
+            <div class="lead-magnet-content">
+                <h1>Free Vacation Rental Toolkit</h1>
+                <p class="subtitle">Our custom set of investor tools designed to help you add $20,000 to your property's Net Operating Income using Interior Design</p>
+
+                <div class="grid">
+                    <!-- Card 1: Budget Estimator -->
+                    <div class="card">
+                      <div class="image-container">
+                        <div class="image-wrapper bg-1">
+                          <div class="overlay">
+                            <h2 class="card-title">Budget Estimator</h2>
+                            <p class="card-description">Estimates interior design project budgets</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                    <!-- Card 2: Project Planner -->
+                    <div class="card">
+                      <div class="image-container">
+                        <div class="image-wrapper bg-2">
+                          <div class="overlay">
+                            <h2 class="card-title">ROI Estimator</h2>
+                            <p class="card-description">Estimates ROI from interior design</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                    <!-- Card 3: Interior Design ROI Guide -->
+                    <div class="card">
+                      <div class="image-container">
+                        <div class="image-wrapper bg-3">
+                          <div class="overlay">
+                            <h2 class="card-title">ROI Design Method</h2>
+                            <p class="card-description">Our method for high-ROI interior design</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="cta-container">
+                    <a class="cta-btn" href="toolkit-optin.html">GET THE FREE TOOLKIT</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </a>
 
     <!-- Process Section -->
     <section id="process" class="process-section section">
@@ -1784,7 +1857,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+            <p>&copy; 2025 1584 Design. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1814,6 +1887,28 @@
 
     <!-- Shared Navigation JavaScript -->
     <script src="js/navigation.js"></script>
-    <!-- form_embed.js is lazy-loaded by openSurveyPopup() in navigation.js -->
+    <script src="https://links.1584design.com/js/form_embed.js"></script>
+    <script>
+        // CTA Button functionality for Lead Magnet
+        document.querySelector('.lead-magnet .cta-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Simulate toolkit signup action
+            console.log('Sourcebook signup initiated:', {
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent
+            });
+
+            // Visual feedback
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+
+            // Here you would typically open a signup modal or redirect to signup page
+            alert('Signup form would open here. In a real implementation, this would open a modal or redirect to a signup page.');
+        });
+    </script>
 </body>
 </html>
+
