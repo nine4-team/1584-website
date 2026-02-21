@@ -62,6 +62,7 @@
             background: rgba(26, 26, 26, 1);
             z-index: 1000;
             padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .nav-container {
@@ -182,7 +183,7 @@
             line-height: 1.4;
             color: #F5F2ED;
             margin-bottom: 32px;
-            max-width: 900px;
+            max-width: 1100px;
             margin-left: auto;
             margin-right: auto;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.6), 1px 1px 4px rgba(0,0,0,0.8);
@@ -251,7 +252,20 @@
         .btn-secondary:hover {
             background: #FAFAF7;
             color: #1A1A1A;
+            border-color: #FAFAF7;
             transform: translateY(-2px);
+        }
+
+        .btn-secondary::after {
+            content: "\2192";
+            font-size: 16px;
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover::after {
+            transform: translateX(4px);
         }
 
         /* Scroll Indicator */
@@ -455,6 +469,77 @@
             margin-bottom: 12px;
         }
 
+        /* Lead Magnet Grid */
+        .lead-magnet-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        @media (min-width: 768px) {
+            .lead-magnet-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 64px;
+            }
+        }
+
+        .lead-magnet-item {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .lead-magnet-item {
+                position: relative;
+            }
+
+            .lead-magnet-item:first-child::after {
+                content: '';
+                position: absolute;
+                top: 10%;
+                right: -32px;
+                bottom: 10%;
+                width: 1px;
+                background: rgba(154, 125, 85, 0.3);
+            }
+        }
+
+        .lead-magnet-item .eyebrow {
+            font-family: 'Avenir', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9a7d55;
+            margin-bottom: 12px;
+        }
+
+        .lead-magnet-item h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(28px, 4.5vw, 40px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #1A1A1A;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .lead-magnet-item .subtitle {
+            font-family: 'Avenir', sans-serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.5;
+            color: #2C2C2C;
+            margin-bottom: 24px;
+        }
+
+        .lead-magnet-item .cta-container {
+            text-align: center;
+            margin-top: 16px;
+        }
+
         /* Grid layout */
         .grid {
           display: grid;
@@ -571,70 +656,95 @@
             transform: translateX(4px);
         }
 
-        /* Social Proof Section */
-        .social-proof-section {
-            background-image: url('images/stoddards/DSC06177-HDR copy 5.jpg');
-            background-size: cover;
-            background-position: center 30%;
-            background-repeat: no-repeat;
+        /* Reviews Section */
+        .reviews-section {
+            background: #1A1A1A;
             text-align: center;
             position: relative;
-            height: 100vh;
+        }
+
+        .reviews-header {
+            margin-bottom: 56px;
+        }
+
+        .reviews-header h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 6vw, 48px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #FAFAF7;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .reviews-header .reviews-stars {
+            font-size: 28px;
+            color: #9a7d55;
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+        }
+
+        .reviews-header p {
+            font-size: 16px;
+            color: rgba(250, 250, 247, 0.6);
+            margin: 0;
+        }
+
+        .reviews-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            align-items: center;
-            padding-top: 120px; /* Account for fixed navigation (80px) + buffer */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto 56px;
         }
 
-        .social-proof-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to right, rgba(15, 10, 8, 0.95) 0%, rgba(40, 28, 20, 0.75) 25%, rgba(70, 48, 35, 0.55) 50%, rgba(100, 68, 48, 0.35) 75%, rgba(130, 95, 70, 0.2) 90%, transparent 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .social-proof-content {
-            position: relative;
-            z-index: 2;
+        .review-card {
+            background: rgba(250, 250, 247, 0.03);
+            border: 1px solid rgba(250, 250, 247, 0.08);
+            border-radius: 4px;
+            padding: 36px 28px;
+            text-align: left;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            padding: 0 40px;
         }
 
-        .testimonial-quote {
-            margin-bottom: 48px;
+        .review-card .review-stars {
+            font-size: 16px;
+            color: #9a7d55;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
         }
 
-        .testimonial-quote p {
+        .review-card .review-text {
             font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: clamp(24px, 4vw, 36px);
+            font-size: 19px;
             font-style: italic;
-            line-height: 1.6;
-            color: #FFFFFF;
-            margin: 0;
-            text-align: center;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 1px 1px 4px rgba(0, 0, 0, 0.9);
-            letter-spacing: 0.5px;
+            line-height: 1.7;
+            letter-spacing: 0.3px;
+            color: rgba(250, 250, 247, 0.85);
+            margin: 0 0 20px;
+            flex: 1;
         }
 
-        .social-proof-cta {
-            margin-top: 0;
+        .review-card .review-author {
+            font-family: 'Avenir', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #9a7d55;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .reviews-cta {
+            text-align: center;
         }
 
         .google-reviews-btn {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: transparent;
-            color: #FFFFFF;
+            background: #9a7d55;
+            color: #FAFAF7;
             text-decoration: none;
             padding: 16px 34px;
             border-radius: 25pt;
@@ -645,14 +755,15 @@
             text-transform: uppercase;
             transition: all 0.3s ease;
             box-shadow: none;
-            border: 2px solid #FFFFFF;
+            border: 2px solid #9a7d55;
         }
 
         .google-reviews-btn:hover {
-            background: #FFFFFF;
+            background: #FAFAF7;
             color: #1A1A1A;
+            border-color: #FAFAF7;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(250, 250, 247, 0.15);
         }
 
         .google-reviews-btn::after {
@@ -670,6 +781,11 @@
         @media (max-width: 768px) {
             .section {
                 padding: 64px 0;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
             }
 
             .hero {
@@ -782,7 +898,7 @@
                 font-size: clamp(24px, 8vw, 36px);
             }
 
-            .lead-magnet .subtitle {
+            .lead-magnet-content .subtitle {
                 font-size: clamp(14px, 4vw, 16px);
                 margin-bottom: 24px;
                 max-width: 90%;
@@ -876,21 +992,17 @@
 
             /* Portfolio cards now use consistent aspect-ratio sizing */
 
-            .social-proof-section {
-                min-height: 50vh;
+            .reviews-grid {
                 grid-template-columns: 1fr;
-                padding-top: 120px; /* Account for fixed navigation (80px) + buffer */
+                gap: 16px;
             }
 
-            .social-proof-content {
-                padding: 0 16px;
+            .reviews-header {
+                margin-bottom: 32px;
             }
 
-            .testimonial-quote p {
-                font-size: clamp(18px, 6vw, 24px);
-                line-height: 1.5;
-                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8), 1px 1px 3px rgba(0, 0, 0, 0.9);
-                letter-spacing: 0.3px;
+            .review-card {
+                padding: 28px 20px;
             }
 
             .google-reviews-btn {
@@ -930,7 +1042,7 @@
                 font-size: clamp(24px, 8vw, 36px);
             }
 
-            .lead-magnet .subtitle {
+            .lead-magnet-content .subtitle {
                 font-size: 16px;
             }
             .grid {
@@ -1042,9 +1154,9 @@
         @media (min-width: 1440px) {
             .hero-subtitle {
                 font-size: clamp(18px, 2.5vw, 24px);
-                max-width: 600px;
+                max-width: 900px;
             }
-            .lead-magnet .subtitle {
+            .lead-magnet-content .subtitle {
                 font-size: clamp(18px, 2.5vw, 24px);
                 max-width: 900px;
             }
@@ -1097,11 +1209,51 @@
             animation-delay: calc(var(--step-index) * 0.1s + 0.3s);
         }
 
+        /* Request a Call CTA Section */
+        .request-call-cta {
+            background: #FAFAF7;
+            text-align: center;
+            padding: 80px 24px;
+        }
+
+        .request-call-cta .eyebrow {
+            font-family: 'Avenir', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9a7d55;
+            margin-bottom: 12px;
+        }
+
+        .request-call-cta h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #1A1A1A;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .request-call-cta .subtitle {
+            font-family: 'Avenir', sans-serif;
+            font-size: clamp(16px, 2vw, 18px);
+            font-weight: 400;
+            line-height: 1.5;
+            color: #2C2C2C;
+            margin-bottom: 36px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         /* Footer */
         .footer {
             background-color: rgba(26, 26, 26, 1);
             color: #FAFAF7;
             padding: 80px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .footer-content {
@@ -1603,7 +1755,7 @@
             <img src="images/1584_logo_white_thick.png" alt="1584 Design" width="200" height="100" loading="lazy" decoding="async" class="hero-logo">
             <h1>Welcome to Our Passion</h1>
             <p class="hero-subtitle">
-                Crafting Extraordinary Spaces for Exclusive Clients through Full Service Interior Design
+                Creating Extraordinary Spaces for Second Home Owners and Short-Term Rental Investors through Full Service Interior Design
             </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-secondary">Request a Call</a>
@@ -1611,6 +1763,105 @@
         </div>
         <div class="scroll-indicator">
             <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Resources / Lead Magnet Section -->
+    <section id="resources" class="lead-magnet section">
+        <div class="container">
+            <div class="lead-magnet-grid">
+                <!-- Second Home Guide -->
+                <div class="lead-magnet-item">
+                    <p class="eyebrow">For Second Home Owners</p>
+                    <h2>Second Home Design Guide</h2>
+                    <p class="subtitle">The free interior design guide for second homes that feel like an escape &mdash; and unmistakably yours.</p>
+                    <div class="cta-container">
+                        <a class="cta-btn" href="guide-optin.html">GET THE FREE GUIDE</a>
+                    </div>
+                </div>
+                <!-- Vacation Rental Playbook -->
+                <div class="lead-magnet-item">
+                    <p class="eyebrow">For Vacation Rental Owners</p>
+                    <h2>STR Design Playbook</h2>
+                    <p class="subtitle">The free guide to designing short-term rental properties that cash flow and outperform their comps.</p>
+                    <div class="cta-container">
+                        <a class="cta-btn" href="playbook-optin.html">GET THE FREE PLAYBOOK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section section">
+        <div class="container">
+            <div class="reviews-header">
+                <h2>What Our Clients Say</h2>
+                <div class="reviews-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>5.0 stars across 50+ Google reviews</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Lisa is crazy talented! She helped with my bedroom remodel and I could not be happier. The end result was better than I&rsquo;d imagined! She understood my likes and dislikes and created a true sanctuary that I marvel over every single day."</p>
+                    <p class="review-author">&mdash; Allison Larkin</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Lisa is incredible! I have used her on multiple homes and businesses. She goes well beyond her job to make her clients satisfied. I&rsquo;ve recommended her to everyone and will continue to. If you have any doubts on who you would like for an interior designer, stop and call Lisa."</p>
+                    <p class="review-author">&mdash; Jace Jackson</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"You won&rsquo;t regret working with 1584 Design! They have an exceptional eye to detail and provide quality design. Lisa and Dakota are amazing to work with and provide such unique designs specific to your needs. Definitely the people to see if you need a vision for your space."</p>
+                    <p class="review-author">&mdash; Britt Farley</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Lisa and Dakota did an incredible job transforming my space... They have such a great eye for design and pulled everything together in a way that feels stylish, functional, and just so perfect for my style. Every detail feels so thoughtful, and the space now feels more put-together and inviting than I could have imagined."</p>
+                    <p class="review-author">&mdash; Kayla Morse</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"We had no experience with interior decorators... Lisa&rsquo;s personality is so warm, comfortable and friendly, that we immediately hit it off with her. As we saw her design boards come to life, they were even more appealing than we could imagine... The villa has gone from one of the least rented to one of the most rented due to Lisa&rsquo;s beautiful design transformation."</p>
+                    <p class="review-author">&mdash; Kelli Clark</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Lisa and Dakota did such an amazing job with our vacation rental. We have a daughter with a disability and we wanted to focus on sensory and accessible items... The items are so functional and useful, and they incorporated all these things with style so the house still looks so nice!"</p>
+                    <p class="review-author">&mdash; Carolina Townsend</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"I can&rsquo;t say enough about the way 1584 Design creates a space that is clean and perfectly edited. They have the ability to translate their clients&rsquo; visions into reality. Their eye for design is modern yet timeless."</p>
+                    <p class="review-author">&mdash; Desiree Contessa</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Lisa and Dakota, I honestly don&rsquo;t know where to start... Your designing touch has brought beauty and coziness to this place!... I can&rsquo;t stop looking around without a big smile on my face. We definitely picked the right people for this project, no doubt."</p>
+                    <p class="review-author">&mdash; CharReese Bradshaw</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"From start to finish, Lisa&rsquo;s enthusiasm, creativity, and passion for design shone through... Lisa&rsquo;s attention to detail is impeccable, and she clearly listens to her clients&rsquo; needs and preferences, ensuring that the final design not only reflects their vision, but exceeds their expectations."</p>
+                    <p class="review-author">&mdash; Tessa Mitchell</p>
+                </div>
+            </div>
+
+            <div class="reviews-cta">
+                <a href="https://www.google.com/search?sca_esv=0e47a412606519cc&rlz=1C5CHFA_enUS957US957&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzYvdsqWCV12sAOEP9Ju29Lu7e4mdzZIWLG_01mE-oRa9SL8vFpbTmECALAbcKFE-6Yq9hq_FQkpbow7cgJoP_syuyYQlPR4P5Dj9D7vM62D4heNLc-Imprs5DCzYJ170QWPM9JQ%3D&q=1584+Design+-+St.+George+Interior+Design+Reviews&sa=X&ved=2ahUKEwj846r3yq2MAxUeGEQIHWd0EDQQ0bkNegQIMBAD&biw=1440&bih=717&dpr=2" class="google-reviews-btn" target="_blank" rel="noopener noreferrer">
+                    See All Reviews on Google
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1649,39 +1900,9 @@
                             <source type="image/webp" srcset="images_optimized/portfolio/cards/DSC06465-HDR-320.webp 320w, images_optimized/portfolio/cards/DSC06465-HDR-480.webp 480w, images_optimized/portfolio/cards/DSC06465-HDR-640.webp 640w, images_optimized/portfolio/cards/DSC06465-HDR-768.webp 768w, images_optimized/portfolio/cards/DSC06465-HDR-1024.webp 1024w, images_optimized/portfolio/cards/DSC06465-HDR-1280.webp 1280w, images_optimized/portfolio/cards/DSC06465-HDR-1536.webp 1536w, images_optimized/portfolio/cards/DSC06465-HDR-1920.webp 1920w" sizes="(min-width: 80rem) 20vw, (min-width: 48rem) 33vw, 90vw">
                             <img src="images/portfolio_category_cards/DSC06465-HDR.jpg" alt="More Spaces Preview" width="1920" height="1280" loading="lazy" decoding="async">
                         </picture>
-                        <div class="card-title-overlay">More Spaces</div>
+                        <div class="card-title-overlay">Other Spaces</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lead Magnet Section -->
-    <section class="lead-magnet section">
-        <div class="container">
-            <div class="lead-magnet-content">
-                <p class="eyebrow">For Vacation Rental Owners</p>
-                <h1>The Property Performance Playbook</h1>
-                <p class="subtitle">The free guide to designing vacation rentals that outperform their comps.</p>
-
-                <div class="cta-container">
-                    <a class="cta-btn" href="playbook-optin.html">GET THE FREE PLAYBOOK</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof Section -->
-    <section id="reviews" class="social-proof-section section">
-        <div class="social-proof-content">
-            <div class="testimonial-quote">
-                <p>"Our villa has gone from one of the least rented villas in the resort to one of the most rented and the nightly rental fee has increased due to Lisa's beautiful design transformation."</p>
-            </div>
-
-            <div class="social-proof-cta">
-                <a href="https://www.google.com/search?sca_esv=0e47a412606519cc&rlz=1C5CHFA_enUS957US957&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzYvdsqWCV12sAOEP9Ju29Lu7e4mdzZIWLG_01mE-oRa9SL8vFpbTmECALAbcKFE-6Yq9hq_FQkpbow7cgJoP_syuyYQlPR4P5Dj9D7vM62D4heNLc-Imprs5DCzYJ170QWPM9JQ%3D&q=1584+Design+-+St.+George+Interior+Design+Reviews&sa=X&ved=2ahUKEwj846r3yq2MAxUeGEQIHWd0EDQQ0bkNegQIMBAD&biw=1440&bih=717&dpr=2" class="google-reviews-btn" target="_blank" rel="noopener noreferrer">
-                    See All Reviews on Google
-                </a>
             </div>
         </div>
     </section>
@@ -1691,7 +1912,7 @@
         <div class="container">
             <div class="process-content">
                 <div class="process-header">
-                    <h1>Our Process</h1>
+                    <h1>Process</h1>
                     <p class="subtitle">Our comprehensive design process ensures every project receives the attention and expertise it deserves, from initial consultation to final installation.</p>
                 </div>
 
@@ -1722,6 +1943,14 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Request a Call CTA -->
+    <section class="request-call-cta">
+        <p class="eyebrow">Get Started</p>
+        <h2>Ready to Transform Your Space?</h2>
+        <p class="subtitle">Tell us about your project and we'll schedule a call to discuss how we can bring your vision to life.</p>
+        <a href="#contact" class="cta-btn" onclick="openSurveyPopup(); return false;">Request a Call</a>
     </section>
 
     <!-- Footer -->
@@ -1776,8 +2005,9 @@
             <div class="footer-section">
                 <h3>Navigation</h3>
                 <ul class="footer-links">
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="#resources">Free Resources</a></li>
                     <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="#process">Process</a></li>
                     <li><a href="about.html">About Us</a></li>
                 </ul>
@@ -1798,7 +2028,7 @@
             </div>
             <div class="popup-content">
                 <div class="survey-container">
-                    <iframe src="https://links.1584design.com/widget/survey/8drcQPAnkvQXNfTOqgTA"
+                    <iframe data-src="https://links.1584design.com/widget/survey/8drcQPAnkvQXNfTOqgTA"
                             style="border:none;width:100%;"
                             scrolling="no"
                             id="8drcQPAnkvQXNfTOqgTA"

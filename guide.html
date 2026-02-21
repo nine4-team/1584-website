@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Second Home Design Guide | 1584 Design</title>
+    <meta name="description" content="The interior design guide for second homes that feel like an escape — and unmistakably yours. A guide by Lisa Fisher, Founder of 1584 Design.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #FAFAF7;
+            background-color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 1);
+            z-index: 1000;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Article Layout */
+        .article-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .article-header h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 5.5vw, 56px);
+            font-weight: 400;
+            color: #FAFAF7;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.5;
+            color: rgba(250, 250, 247, 0.7);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto 24px;
+        }
+
+        .article-byline {
+            font-size: 14px;
+            color: #9a7d55;
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #9a7d55;
+            margin: 56px auto;
+        }
+
+        /* Section Headers */
+        .article-wrapper h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 400;
+            color: #FAFAF7;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        /* Body Text */
+        .article-wrapper p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .article-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lead / Callout Text */
+        .callout, .stat-highlight {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            line-height: 1.6;
+            color: #E8DED0;
+            text-align: center;
+            padding: 36px 24px;
+            margin: 40px 0;
+            border-top: 1px solid #9a7d55;
+            border-bottom: 1px solid #9a7d55;
+            font-style: italic;
+        }
+
+        /* Bold Key Phrase */
+        .article-wrapper strong {
+            color: #FAFAF7;
+            font-weight: 600;
+        }
+
+        /* Stage Blocks */
+        .stage-block {
+            margin-bottom: 48px;
+        }
+
+        .stage-block h3 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            font-weight: 400;
+            color: #D4C5B3;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        /* Meta Labels */
+        .meta-label {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .meta-label strong {
+            color: #9a7d55;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* Identity Aspect Blocks */
+        .aspect-block {
+            margin-bottom: 28px;
+            padding-left: 20px;
+            border-left: 2px solid rgba(154, 125, 85, 0.3);
+        }
+
+        .article-wrapper .aspect-label {
+            font-family: 'Avenir', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #9a7d55;
+            margin-bottom: 8px;
+        }
+
+        /* Design Lens Cards */
+        .lens-card {
+            background: rgba(250, 250, 247, 0.03);
+            border: 1px solid rgba(250, 250, 247, 0.08);
+            border-radius: 4px;
+            padding: 40px 36px;
+            margin-bottom: 32px;
+        }
+
+        .lens-card h3 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(22px, 3vw, 28px);
+            font-weight: 400;
+            color: #FAFAF7;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .lens-label {
+            display: block;
+            margin-bottom: 16px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .lens-label strong {
+            color: #9a7d55;
+            font-weight: 600;
+        }
+
+        /* Bullet Lists */
+        .article-wrapper ul {
+            list-style: none;
+            margin: 0 0 24px 0;
+            padding: 0;
+        }
+
+        .article-wrapper ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .article-wrapper ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #9a7d55;
+            border-radius: 50%;
+        }
+
+        /* Toolkit Section Header */
+        .toolkit-section-header {
+            display: block;
+            font-family: 'Avenir', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(250, 250, 247, 0.35);
+            margin-top: 48px;
+            margin-bottom: 32px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.08);
+        }
+
+        /* Toolkit Items */
+        .toolkit-item {
+            margin-bottom: 32px;
+        }
+
+        .toolkit-item h4 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(18px, 2.4vw, 22px);
+            font-weight: 400;
+            color: #D4C5B3;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        /* Next Steps / Numbered */
+        .next-steps ol {
+            list-style: none;
+            counter-reset: steps;
+            margin: 0;
+            padding: 0;
+        }
+
+        .next-steps ol li {
+            counter-increment: steps;
+            position: relative;
+            padding-left: 48px;
+            margin-bottom: 24px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .next-steps ol li::before {
+            content: counter(steps) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: 24px;
+            color: #9a7d55;
+            font-weight: 400;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin: 56px 0 0;
+            padding: 48px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .cta-section p {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            color: #FAFAF7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
+            background: #9a7d55;
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* Founder Signature */
+        .founder-signature {
+            margin: 40px 0 0;
+        }
+
+        .founder-name {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 64px;
+            }
+
+            .article-wrapper {
+                padding: 110px 20px 60px;
+            }
+
+            .article-header {
+                margin-bottom: 48px;
+                padding-bottom: 36px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .callout, .stat-highlight {
+                font-size: clamp(22px, 6vw, 30px);
+                padding: 28px 16px;
+                margin: 32px 0;
+            }
+
+            .lens-card {
+                padding: 28px 24px;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-wrapper {
+                padding: 100px 16px 48px;
+            }
+
+            .article-wrapper p,
+            .article-wrapper ul li,
+            .meta-label,
+            .lens-label,
+            .next-steps ol li {
+                font-size: 16px;
+            }
+
+            .lens-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>The Second Home Design Guide</h1>
+            <p class="article-subtitle">The interior design guide for second homes that feel like an escape &mdash; and unmistakably yours.</p>
+        </header>
+
+        <!-- The Second Home Problem -->
+        <section>
+            <h2>The Second Home Problem</h2>
+
+            <p>You bought a second home for a reason. A place to slow down, to let the noise of daily life fall away, to be present with the people who matter most. A place where holidays become traditions, where ordinary weekends become the moments your family still talks about years later. That was the vision &mdash; and it was clear.</p>
+
+            <p>Most second homes don&rsquo;t deliver it. You arrive and instead of exhaling, something feels off. The spaces feel temporary. The furniture feels assembled rather than chosen. The place doesn&rsquo;t greet you &mdash; it just sits there. Instead of an escape, it feels like a house you happen to own.</p>
+
+            <div class="stat-highlight">A second home should feel like an escape &mdash; and like it could only belong to you.</div>
+
+            <p>The difference between that feeling and the one you were after is design &mdash; not decoration. Decoration fills rooms. Design shapes how a space makes you feel when you walk through the door. It determines whether you exhale &mdash; or start making an inventory of everything that still isn&rsquo;t right, everything that still falls short of the place you had in mind when you bought it.</p>
+
+            <p>But there&rsquo;s something more specific at work in the second homes that really deliver. A home can be well-executed &mdash; coherent, considered, well-furnished &mdash; and still feel like it belongs to someone else. That happens when the design reflects a generic version of the place, or nothing in particular, instead of the specific people who own it. The gap between a home that looks right and one that actually feels right is where most second home design falls short.</p>
+
+            <div class="callout">How you design your second home determines whether it becomes the place your family talks about all year &mdash; or just another property you maintain.</div>
+
+            <p>This guide shows you what closes that gap.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- The Intentional Home Framework -->
+        <section>
+            <h2>The Intentional Home Framework</h2>
+
+            <p>We&rsquo;ve designed enough second homes to know that the ones people love coming back to share three principles. Not about style or trends &mdash; about how a home feels, how it functions, and what it says about the people who own it.</p>
+
+            <div class="stage-block">
+                <h3>Principle 1: Design for Arrival</h3>
+                <p>The first moments in a second home set the tone for the entire visit. After a long drive or a connecting flight, you want to walk into a space that says <em>you&rsquo;re here</em> &mdash; not one that needs warming up, setting up, or apologizing for.</p>
+                <p>That means a cohesive visual identity that starts at the front door: consistent materials, a considered palette, intentional lighting. The space communicates its character the moment you walk in, and it feels ready.</p>
+                <span class="meta-label"><strong>The test:</strong> When you open the door after weeks away, do you feel a wave of relief &mdash; or a pang of something not quite right? Does your home greet you, or do you have to warm up to it?</span>
+            </div>
+
+            <div class="stage-block">
+                <h3>Principle 2: Design for Memory</h3>
+                <p>The best second homes become the backdrop for a family&rsquo;s best stories. The Thanksgiving everyone still talks about. The summer the cousins learned to swim. The weekend that became an annual tradition. These don&rsquo;t happen by accident &mdash; they happen because the space draws people together naturally.</p>
+                <p>A dining table that seats everyone without overflow seating in another room. A living room that pulls people in rather than pushing them apart. Spaces generous and comfortable enough that people linger instead of retreating. Function matters here.</p>
+                <p>But so does feel. A space that is beautiful &mdash; that has warmth, texture, visual richness &mdash; affects how people experience time in it. The emotional quality of a physical environment shapes the memories made inside it. A space that moves people a little, that feels genuinely cared for, produces richer, more lasting memories than one that merely functions well.</p>
+                <p>A home that reflects the people who own it &mdash; that carries their taste and sensibility &mdash; deepens the emotional experience of being there. The stories are richer. The pull to come back is stronger.</p>
+                <span class="meta-label"><strong>The test:</strong> When your family talks about this home, do they describe the experiences they had there &mdash; or just the location? The best second homes become characters in the family story, not just settings.</span>
+            </div>
+
+            <div class="stage-block">
+                <h3>Principle 3: Design for Identity</h3>
+                <p>Every home has an identity &mdash; a character that&rsquo;s either discovered and expressed through design, or left generic and indistinct. That character isn&rsquo;t a regional style or a trending aesthetic. It emerges from the intersection of three things, each with its own point of view.</p>
+
+                <div class="aspect-block">
+                    <p class="aspect-label">Your Taste</p>
+                    <p>The starting point is always you. Your aesthetic sensibility &mdash; what you&rsquo;re drawn to, what home actually feels like to you, what you love and what leaves you cold. This isn&rsquo;t a style exercise. It&rsquo;s an honest conversation about how you live, what you respond to, and what you want this specific place to feel like. Everything else gets shaped around that.</p>
+                </div>
+
+                <div class="aspect-block">
+                    <p class="aspect-label">The Architecture</p>
+                    <p>The building already has a point of view. A home with exposed timber ceilings and a stone fireplace is saying something &mdash; and an interior that contradicts it creates friction you feel without being able to name. Good design listens to what the architecture is already doing and continues that conversation through the furniture, materials, and objects inside.</p>
+                </div>
+
+                <div class="aspect-block">
+                    <p class="aspect-label">The Environment</p>
+                    <p>The landscape, the light, the character of the place outside the windows &mdash; these are design partners, not just scenery. The quality of light in the desert is different from the quality of light beside a lake. The materials of the landscape suggest materials for the interior. A home that ignores what&rsquo;s outside feels disconnected from the reason you chose that location in the first place.</p>
+                </div>
+
+                <p>Navigating all three simultaneously &mdash; your taste as the lead, the architecture and environment as forces that shape and refine it &mdash; is the work at the center of what interior designers actually do. That includes the cases where your taste isn&rsquo;t yet fully formed. Part of the work is helping you find language for what you respond to and translating it into a space that feels genuinely yours.</p>
+
+                <span class="meta-label"><strong>The test:</strong> Does your home feel like it could belong to anyone &mdash; or does it feel like it could only belong to you?</span>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- What Kind of Home Are You Designing? -->
+        <section>
+            <h2>What Kind of Home Are You Designing?</h2>
+
+            <p>The Intentional Home Framework tells you what good second home design accomplishes. The next question is how your household actually uses the space. Most second homes serve one primary purpose &mdash; knowing yours sharpens every decision that follows. Purposes can coexist, and a home can serve two profiles well. But one should lead.</p>
+
+            <!-- The Family Gathering Place -->
+            <div class="lens-card">
+                <h3>The Family Gathering Place</h3>
+                <p class="lens-label"><strong>Who it&rsquo;s for:</strong> Multi-generational families, parents with kids of all ages, siblings who share the home.</p>
+                <p class="lens-label"><strong>What shapes the design:</strong></p>
+                <ul>
+                    <li>Full-capacity dining &mdash; when the table can&rsquo;t seat everyone together, every meal is a reminder</li>
+                    <li>Durable, forgiving materials &mdash; performance fabrics, surfaces that clean easily, furniture built for real use</li>
+                    <li>Bunk rooms and dedicated kid spaces &mdash; room for children to be children, and for adults to breathe</li>
+                    <li>Flexible sleeping configurations that handle different family compositions without scrambling</li>
+                </ul>
+            </div>
+
+            <!-- The Entertaining Home -->
+            <div class="lens-card">
+                <h3>The Entertaining Home</h3>
+                <p class="lens-label"><strong>Who it&rsquo;s for:</strong> Hosts who use the second home as a social destination &mdash; friend groups, holiday hosting, gatherings and celebrations.</p>
+                <p class="lens-label"><strong>What shapes the design:</strong></p>
+                <ul>
+                    <li>Multiple conversation zones &mdash; generous seating arranged to draw people into groups rather than scatter them, so different conversations can happen at the same time without the whole group collapsing into one undifferentiated pile</li>
+                    <li>Full-capacity dining &mdash; the shared meal is the center of a social weekend; when the group can&rsquo;t sit together, something essential is lost</li>
+                    <li>Guest accommodations that feel genuinely considered &mdash; quality bedding, lighting that works for winding down, enough storage to actually settle in; guests should feel expected, not accommodated</li>
+                </ul>
+            </div>
+
+            <!-- The Personal Retreat -->
+            <div class="lens-card">
+                <h3>The Personal Retreat</h3>
+                <p class="lens-label"><strong>Who it&rsquo;s for:</strong> Couples or individuals using the home as genuine sanctuary &mdash; restoration and solitude over socializing and activity.</p>
+                <p class="lens-label"><strong>What shapes the design:</strong></p>
+                <ul>
+                    <li>The primary suite is the priority &mdash; it receives the investment and attention that in another home type might be distributed elsewhere</li>
+                    <li>Spaces oriented toward quiet and solitude rather than gathering and activity</li>
+                    <li>Dedicated places for stillness &mdash; a reading corner with considered lighting, textiles that prioritize comfort over display, surfaces styled to feel curated rather than accumulated; the design asks nothing of you</li>
+                </ul>
+            </div>
+
+            <p>Family Gathering Place and Entertaining Home is a natural combination. Whatever the blend, lead with one profile. A home designed to be everything equally is distinctive in none of it.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- The Designer's Toolkit -->
+        <section>
+            <h2>The Designer&rsquo;s Toolkit</h2>
+
+            <p>Understanding what kind of home you&rsquo;re designing gives you direction. Bringing that vision to life is where the craft lives.</p>
+
+            <p>A designer works with a specific set of elements and applies a set of principles that govern how those elements work together. What separates a designed space from a furnished one almost always comes down to these &mdash; and understanding them changes how you see every room.</p>
+
+            <div class="toolkit-section-header">The Elements</div>
+
+            <div class="toolkit-item">
+                <h4>Rugs</h4>
+                <p>A rug does more than add warmth. It defines a zone, anchors the furniture above it, and often establishes the color and textural foundation from which the rest of a room is built. In open-plan spaces, rugs are what give each area a sense of identity &mdash; what makes a seating group feel like a room within a room rather than furniture floating in a larger space.</p>
+            </div>
+
+            <div class="toolkit-item">
+                <h4>Window Treatments</h4>
+                <p>Curtains, drapery, and shades are doing several things at once: controlling light, introducing fabric and texture, and determining how much of what&rsquo;s outside becomes part of the interior experience. They frame or connect the design inside to the landscape outside &mdash; bringing the setting in while keeping the interior cohesive. In a second home, where the environment is part of what you&rsquo;re there for, getting this right matters more than most people realize.</p>
+            </div>
+
+            <div class="toolkit-item">
+                <h4>Seating and Furniture</h4>
+                <p>The scale, silhouette, and arrangement of major furniture pieces shape how a room feels to inhabit. A piece that&rsquo;s properly scaled to the room and to what&rsquo;s around it feels intentional; one that isn&rsquo;t creates a friction that&rsquo;s hard to articulate but easy to feel. How furniture is arranged determines not just how a room looks, but how people move through it, settle into it, and relate to each other inside it.</p>
+            </div>
+
+            <div class="toolkit-item">
+                <h4>Bedding and Soft Goods</h4>
+                <p>Textiles &mdash; bedding, throw pillows, blankets, upholstery fabrics &mdash; have an outsized effect on warmth, comfort, and visual richness. They&rsquo;re often the difference between a room that feels finished and one that feels merely furnished. Soft goods also carry some of the most direct expressions of personal taste &mdash; color, texture, pattern &mdash; in the most intimate spaces of the home.</p>
+            </div>
+
+            <div class="toolkit-item">
+                <h4>Art and Wall Treatments</h4>
+                <p>Art is both a focal point and a design reference. A well-chosen piece provides a palette that other selections can respond to &mdash; pulling out a color for textiles, informing a tone for the walls. Wall treatments &mdash; paint, wallpaper, paneling, texture &mdash; set the character of a room before anything else arrives. They&rsquo;re the background against which everything is seen, and getting them right changes everything that follows.</p>
+            </div>
+
+            <div class="toolkit-item">
+                <h4>Accessories and Surface Styling</h4>
+                <p>This is where design becomes personal, and where most non-designers fall shortest. The objects on a surface &mdash; vessels, collected things, objects that carry meaning and reflect who lives here &mdash; are what give a space life and character. Done well, accessories reinforce the aesthetic thread running through the home, respond to the architecture, and connect to the setting outside. They make a space unmistakably occupied by specific people with a specific sensibility. Done carelessly, or not at all, a space feels unfinished in a way that&rsquo;s hard to name but immediately felt.</p>
+            </div>
+
+            <div class="toolkit-section-header">The Principles</div>
+
+            <div class="toolkit-item">
+                <h4>Layering</h4>
+                <p>A space that feels designed has depth &mdash; materials, textures, and objects that build on each other rather than existing independently. Layering is what creates richness: a rug under a sofa, a throw on a chair, a grouping of objects on a shelf. Each element contributes to a whole that feels considered rather than assembled. Without it, even well-chosen individual pieces can feel flat.</p>
+            </div>
+
+            <div class="toolkit-item">
+                <h4>Scale and Proportion</h4>
+                <p>The relationship between a piece of furniture and the room it&rsquo;s in. Between objects on a surface. Between a rug and the seating above it. Getting these relationships right is often the difference between a room that feels right and one that feels off without anyone being able to say why.</p>
+            </div>
+
+            <div class="toolkit-item">
+                <h4>Color</h4>
+                <p>How colors relate to each other across a space, how they respond to natural light, how they interact with what the architecture and setting are already bringing. Color selection isn&rsquo;t just a matter of preference &mdash; it&rsquo;s a technical question about relationships and interactions that requires understanding how choices play out in specific conditions, not just how they look in a sample or on a screen.</p>
+            </div>
+
+            <div class="toolkit-item">
+                <h4>Balance</h4>
+                <p>Balance is distinct from scale &mdash; it&rsquo;s not about size, it&rsquo;s about visual weight. Dark colors, dense materials, and large masses carry more visual weight than light colors, open structures, and small pieces. A room can be balanced symmetrically (mirror-image arrangements on either side of an axis) or asymmetrically (different elements that feel equally weighted). A room that tips too heavily to one side &mdash; all the mass in one corner, a dark wall with nothing to answer it &mdash; creates a subtle tension that&rsquo;s easy to feel and impossible to name. Getting it right is one of the reasons a well-designed room feels settled in a way that&rsquo;s hard to attribute to any single decision.</p>
+            </div>
+
+            <div class="toolkit-item">
+                <h4>Flow</h4>
+                <p>How the arrangement of furniture shapes the way people move through a space and relate to each other inside it. Seating too far apart discourages conversation. Furniture pushed against walls leaves a barren center. A well-arranged room pulls people in &mdash; it makes gathering feel effortless, gives conversation a natural shape, and lets the space do the work that would otherwise require effort. In a second home built around being together, a room that works against people rather than with them is one of the most consequential failures a design can have.</p>
+            </div>
+
+            <div class="toolkit-item">
+                <h4>Contrast</h4>
+                <p>Contrast is what creates visual interest &mdash; light against dark, rough against smooth, heavy against light. Without it, a space can feel flat even when every individual choice is good. Contrast draws the eye, defines focal points, and keeps a room from disappearing into itself. The best designed spaces manage it carefully: enough to create interest, not so much that the space becomes restless.</p>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Your Next Step -->
+        <section>
+            <h2>Your Next Step</h2>
+
+            <p>If you&rsquo;ve read this far, you&rsquo;re thinking about your second home differently than most owners. Here&rsquo;s what to do with that.</p>
+
+            <div class="next-steps">
+                <ol>
+                    <li><strong>Name what it&rsquo;s supposed to be.</strong> Not the furniture style &mdash; the feeling. What does it mean to arrive there? What does it feel like when the home is working? Getting specific about that vision is the starting point for every design decision that follows.</li>
+                    <li><strong>Identify your primary profile.</strong> Family Gathering Place, Entertaining Home, or Personal Retreat &mdash; one of these should feel like the core purpose. You can blend in elements of a second, but lead with one.</li>
+                    <li><strong>Talk to us.</strong> We design second homes that feel like the escape they were supposed to be &mdash; and like they could only belong to the people who own them. We work with a limited number of homeowners in St. George and beyond, and a conversation is the fastest way to get clear on what your home is missing and what it could be. No obligation &mdash; just an honest assessment.</li>
+                </ol>
+            </div>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+
+            <div class="cta-section">
+                <p><strong>Ready to make your second home feel like it was always meant to?</strong></p>
+                <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            </div>
+        </section>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

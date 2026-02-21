@@ -289,35 +289,43 @@ function generateNavigation() {
     // Define navigation structure for each page
     const navStructures = {
         'index.html': [
-            { text: 'PORTFOLIO', href: 'portfolio.html' },
+            { text: 'FREE RESOURCES', href: '#resources' },
             { text: 'REVIEWS', href: '#reviews' },
+            { text: 'PORTFOLIO', href: 'portfolio.html' },
             { text: 'PROCESS', href: '#process' },
             { text: 'ABOUT', href: 'about.html' },
-            { text: 'INVESTOR PLAYBOOK', href: 'playbook-optin.html' },
             { text: 'CONTACT', href: '#contact' }
         ],
         'about.html': [
-            { text: 'PORTFOLIO', href: 'portfolio.html' },
+            { text: 'FREE RESOURCES', href: makeRootFragment('resources') },
             { text: 'REVIEWS', href: makeRootFragment('reviews') },
+            { text: 'PORTFOLIO', href: 'portfolio.html' },
             { text: 'PROCESS', href: makeRootFragment('process') },
             { text: 'ABOUT', href: 'about.html', current: true },
-            { text: 'INVESTOR PLAYBOOK', href: 'playbook-optin.html' },
             { text: 'CONTACT', href: makeRootFragment('contact') }
         ],
         'portfolio.html': [
-            { text: 'PORTFOLIO', href: 'portfolio.html', current: true },
+            { text: 'FREE RESOURCES', href: makeRootFragment('resources') },
             { text: 'REVIEWS', href: makeRootFragment('reviews') },
+            { text: 'PORTFOLIO', href: 'portfolio.html', current: true },
             { text: 'PROCESS', href: makeRootFragment('process') },
             { text: 'ABOUT', href: 'about.html' },
-            { text: 'INVESTOR PLAYBOOK', href: 'playbook-optin.html' },
             { text: 'CONTACT', href: makeRootFragment('contact') }
         ],
         'playbook-optin.html': [
-            { text: 'PORTFOLIO', href: 'portfolio.html' },
+            { text: 'FREE RESOURCES', href: makeRootFragment('resources') },
             { text: 'REVIEWS', href: makeRootFragment('reviews') },
+            { text: 'PORTFOLIO', href: 'portfolio.html' },
             { text: 'PROCESS', href: makeRootFragment('process') },
             { text: 'ABOUT', href: 'about.html' },
-            { text: 'INVESTOR PLAYBOOK', href: 'playbook-optin.html', current: true },
+            { text: 'CONTACT', href: makeRootFragment('contact') }
+        ],
+        'guide-optin.html': [
+            { text: 'FREE RESOURCES', href: makeRootFragment('resources') },
+            { text: 'REVIEWS', href: makeRootFragment('reviews') },
+            { text: 'PORTFOLIO', href: 'portfolio.html' },
+            { text: 'PROCESS', href: makeRootFragment('process') },
+            { text: 'ABOUT', href: 'about.html' },
             { text: 'CONTACT', href: makeRootFragment('contact') }
         ]
     };
@@ -395,6 +403,11 @@ function loadFormEmbed() {
 function openSurveyPopup() {
     const popup = document.getElementById('surveyPopup');
     if (popup) {
+        // Activate the iframe src if it hasn't been loaded yet (deferred via data-src)
+        const iframe = popup.querySelector('iframe[data-src]');
+        if (iframe && !iframe.getAttribute('src')) {
+            iframe.src = iframe.getAttribute('data-src');
+        }
         loadFormEmbed();
         popup.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
@@ -424,6 +437,13 @@ function closeSurveyPopup() {
     if (popup) {
         popup.classList.remove('active');
         document.body.style.overflow = ''; // Restore background scrolling
+
+        // Remove GoHighLevel overlays that form_embed.js creates at z-index 10000
+        document.querySelectorAll('[style*="z-index"][style*="10000"]').forEach(function(el) {
+            if (el.style.position === 'fixed' && !popup.contains(el)) {
+                el.remove();
+            }
+        });
 
         // Return focus to the button that opened the popup
         const focusReturnId = popup.getAttribute('data-focus-return') || 'survey-trigger';

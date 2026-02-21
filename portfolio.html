@@ -62,6 +62,7 @@
             background: rgba(26, 26, 26, 1);
             z-index: 1000;
             padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .nav-container {
@@ -629,6 +630,236 @@
         body {
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: rgba(26, 26, 26, 1);
+            color: #FAFAF7;
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-content {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 80px 60px 80px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .footer-brand {
+            max-width: 500px;
+        }
+
+        .footer-logo {
+            margin-bottom: 24px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(250, 250, 247, 0.8);
+            margin-bottom: 32px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(250, 250, 247, 0.1);
+            border-radius: 50%;
+            color: #FAFAF7;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #9a7d55;
+            transform: translateY(-2px);
+        }
+
+        .footer-section h3 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #FAFAF7;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(250, 250, 247, 0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #D4C5B3;
+        }
+
+        .footer-contact {
+            list-style: none;
+        }
+
+        .footer-contact li {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .footer-contact a {
+            color: rgba(250, 250, 247, 0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #D4C5B3;
+        }
+
+        .contact-icon {
+            width: 16px;
+            color: #9a7d55;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-bottom {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 32px 24px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+            text-align: center;
+            color: rgba(250, 250, 247, 0.6);
+            font-size: 14px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 16px 40px 16px;
+                text-align: center;
+            }
+
+            .footer-brand {
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 40px 0 20px;
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                margin-right: calc(-50vw + 50%);
+                overflow-x: hidden;
+            }
+
+            .footer-content {
+                display: grid;
+                grid-template-columns: 1fr !important;
+                gap: 20px;
+                padding: 0 16px;
+                margin: 0;
+                max-width: none;
+                width: 100%;
+            }
+
+            .footer-bottom {
+                padding: 20px 16px 0;
+                margin: 0;
+                max-width: none;
+                width: 100%;
+            }
+
+            .footer-section {
+                margin-bottom: 0;
+                width: 100%;
+                max-width: none;
+            }
+
+            .footer-brand {
+                width: 100%;
+                max-width: none;
+            }
+
+            .footer-logo img {
+                height: 40px;
+            }
+
+            .footer-description {
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+
+            .footer-section h3 {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+
+            .footer-links a,
+            .footer-contact a {
+                font-size: 13px;
+            }
+
+            .footer-contact li {
+                margin-bottom: 12px;
+            }
+
+            .footer-social {
+                gap: 12px;
+                justify-content: center;
+            }
+
+            .social-link {
+                width: 36px;
+                height: 36px;
+            }
+
+            .footer-contact {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-contact li {
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 12px;
+            }
         }
     </style>
 </head>
@@ -1257,6 +1488,72 @@
     </script>
 
     <!-- Shared Navigation JavaScript -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/1584_logo_white_thick.png" alt="1584 Interior Design">
+                </div>
+                <p class="footer-description">
+                    We specialize in creating beautiful, functional spaces through full-service interior design. Based in St. George, Utah, serving homeowners nationwide.
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/lisa.s.fisher.92/" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/1584_design/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>St. George, Utah</span>
+                    </li>
+                    <li>
+                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                        <a href="tel:4358623631">(435) 862-3631</a>
+                    </li>
+                    <li>
+                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        <a href="mailto:team@1584design.com">team@1584design.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#resources">Free Resources</a></li>
+                    <li><a href="index.html#reviews">Reviews</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html#process">Process</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="js/navigation.js"></script>
 </body>
 </html>

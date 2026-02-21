@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The STR Design Playbook | 1584 Design</title>
+    <title>The Second Home Design Guide | 1584 Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -150,9 +150,9 @@
             left: 0;
             right: 0;
             background: rgba(26, 26, 26, 1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             z-index: 1000;
             padding: 0 24px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .nav-container {
@@ -430,8 +430,8 @@
             right: 0;
             z-index: 1500;
             text-align: center;
-            padding: 72px 24px 20px;
-            background: linear-gradient(to top, rgba(26, 26, 26, 0.95) 0%, rgba(26, 26, 26, 0.85) 40%, transparent);
+            padding: 16px 24px;
+            background: linear-gradient(to top, rgba(26, 26, 26, 0.95) 60%, transparent);
             pointer-events: none;
             opacity: 0;
             transform: translateY(100%);
@@ -451,9 +451,9 @@
         /* Footer */
         .footer {
             background-color: rgba(26, 26, 26, 1);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             color: #FAFAF7;
             padding: 80px 0 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .footer-content {
@@ -1015,38 +1015,23 @@
         <section class="lead-magnet section">
             <div class="container">
                 <div class="lead-magnet-content">
-                    <h1>The STR Design Playbook</h1>
-                    <p class="subtitle">The free guide to designing short-term rental properties that cash flow and outperform their comps.</p>
+                    <h1>The Second Home Design Guide</h1>
+                    <p class="subtitle">The free interior design guide for second homes that feel like an escape &mdash; and unmistakably yours.</p>
 
                     <div class="playbook-preview">
-                        <p class="preview-intro">Inside the Playbook, you'll learn:</p>
+                        <p class="preview-intro">Inside the Guide, you'll learn:</p>
                         <ul class="preview-list">
-                            <li><strong>The 3 Performance Stages</strong> — what every design dollar should accomplish, from first click to five-star review</li>
-                            <li><strong>3 Design Lenses</strong> — how to design for your ideal guest, whether that's groups, families, or couples</li>
-                            <li><strong>Spending Strategically</strong> — the three mistakes investors make with their design budget, and how to avoid them</li>
+                            <li><strong>The Second Home Problem</strong> — why most second homes never feel right, and what actually closes the gap</li>
+                            <li><strong>The Intentional Home Framework</strong> — the 3 principles that determine whether your second home feels like the escape it was supposed to be</li>
+                            <li><strong>3 Design Profiles</strong> — how to design for how you use the space, whether it's a family gathering place, a personal retreat, or an entertaining home</li>
+                            <li><strong>The Designer's Toolkit</strong> — the elements and principles designers actually use, from rugs and window treatments to layering, scale, and flow — explained so you can see every room differently</li>
                         </ul>
                     </div>
 
                     <div class="cta-container">
-                        <button class="cta-btn" onclick="openSurveyPopup()">Get the Free Playbook</button>
+                        <button class="cta-btn" onclick="openSurveyPopup()">Get the Free Guide</button>
                     </div>
 
-                    <!-- Reviews mosaic (screenshots only) -->
-                    <section id="reviews-mosaic" class="reviews-mosaic-section container" aria-labelledby="reviews-mosaic-heading">
-                        <h2 id="reviews-mosaic-heading" class="reviews-mosaic-title">See what our clients' guests are saying.</h2>
-
-                        <div id="reviewsMasonry" class="reviews-masonry is-initializing" role="list" aria-live="polite" aria-busy="true">
-                            <!-- Images will be populated here via JavaScript (screenshots only, no captions) -->
-                        </div>
-
-                        <div class="cta-container">
-                            <button id="reviewsLoadMore" class="reviews-load-more" type="button" aria-controls="reviewsMasonry" hidden aria-hidden="true">Load more reviews</button>
-                        </div>
-
-                        <div class="cta-container">
-                            <button class="cta-btn" onclick="openSurveyPopup()">Get the Free Playbook</button>
-                        </div>
-                    </section>
                 </div>
             </div>
         </section>
@@ -1054,7 +1039,7 @@
 
     <!-- Sticky bottom CTA -->
     <div class="sticky-cta-bar" id="stickyCta" aria-hidden="true">
-        <button class="cta-btn" onclick="openSurveyPopup()">Get the Free Playbook</button>
+        <button class="cta-btn" onclick="openSurveyPopup()">Get the Free Guide</button>
     </div>
 
     <!-- Footer -->
@@ -1122,35 +1107,26 @@
         </div>
     </footer>
 
-    <!-- Review Lightbox Modal -->
-    <div class="review-lightbox" id="reviewLightbox" role="dialog" aria-modal="true" aria-labelledby="reviewLightboxTitle" aria-hidden="true" hidden>
-        <div class="review-lightbox__container">
-            <h2 id="reviewLightboxTitle" class="visually-hidden">Guest review</h2>
-            <button type="button" class="review-lightbox__close" id="reviewLightboxClose" aria-label="Close review">&times;</button>
-            <img src="" alt="" class="review-lightbox__image" id="reviewLightboxImage">
-        </div>
-    </div>
-
     <!-- Survey Popup Modal -->
     <div class="popup-overlay" id="surveyPopup" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-description">
         <div class="popup-container" tabindex="-1">
             <div class="popup-header">
-                <h2 id="popup-title">Get the Free Playbook</h2>
+                <h2 id="popup-title">Get the Free Guide</h2>
                 <button class="popup-close" onclick="closeSurveyPopup()" aria-label="Close form">&times;</button>
             </div>
             <div class="popup-content">
                 <div class="survey-container">
-                    <iframe data-src="https://links.1584design.com/widget/survey/AEz98qXVN3DPSWLS40Fg"
+                    <iframe data-src="https://links.1584design.com/widget/survey/nQvYeaz9olqqa7HOamkZ"
                             style="border:none;width:100%;"
                             scrolling="no"
-                            id="AEz98qXVN3DPSWLS40Fg"
-                            title="Property Profit Playbook"
+                            id="nQvYeaz9olqqa7HOamkZ"
+                            title="Second Home Design Guide"
                             aria-describedby="popup-description">
                     </iframe>
                 </div>
             </div>
             <div class="popup-footer">
-                <p id="popup-description">Enter your details to get instant access to the Playbook.</p>
+                <p id="popup-description">Enter your details to get instant access to the Guide.</p>
             </div>
         </div>
     </div>
@@ -1158,35 +1134,21 @@
     <!-- Shared Navigation JavaScript -->
     <script src="js/navigation.js"></script>
     <!-- form_embed.js is lazy-loaded by openSurveyPopup() in navigation.js -->
-    <script src="https://unpkg.com/imagesloaded@5/dist/imagesloaded.pkgd.min.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" crossorigin="anonymous"></script>
-    <script src="js/reviews-masonry.js"></script>
     <script>
     (function() {
         var bar = document.getElementById('stickyCta');
         var heroCta = document.querySelector('.lead-magnet-content > .cta-container .cta-btn');
-        var bottomCta = document.querySelector('#reviews-mosaic > .cta-container:last-child .cta-btn');
-        var heroVisible = true;
-        var bottomVisible = false;
 
-        function update() {
-            var show = !heroVisible && !bottomVisible;
-            bar.classList.toggle('is-visible', show);
-            bar.setAttribute('aria-hidden', String(!show));
+        function update(visible) {
+            bar.classList.toggle('is-visible', !visible);
+            bar.setAttribute('aria-hidden', String(visible));
         }
 
-        var heroObs = new IntersectionObserver(function(entries) {
-            heroVisible = entries[0].isIntersecting;
-            update();
+        var obs = new IntersectionObserver(function(entries) {
+            update(entries[0].isIntersecting);
         }, { threshold: 0 });
 
-        var bottomObs = new IntersectionObserver(function(entries) {
-            bottomVisible = entries[0].isIntersecting;
-            update();
-        }, { threshold: 0 });
-
-        if (heroCta) heroObs.observe(heroCta);
-        if (bottomCta) bottomObs.observe(bottomCta);
+        if (heroCta) obs.observe(heroCta);
     })();
     </script>
 </body>
