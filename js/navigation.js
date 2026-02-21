@@ -388,8 +388,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Lazy-load GoHighLevel form_embed.js (only when popup opens)
-// Loading this script at page level creates z-index:10000 overlays that block clicks.
+// Lazy-load GoHighLevel form_embed.js (only when popup opens).
+// This script creates z-index:10000 fixed overlays that block all pointer events.
+// It MUST NOT run until the popup is active. The iframe content, however, is safe
+// to preload — it's cross-origin and can't touch the parent DOM.
 let formEmbedLoaded = false;
 function loadFormEmbed() {
     if (formEmbedLoaded) return;
@@ -399,11 +401,30 @@ function loadFormEmbed() {
     document.body.appendChild(script);
 }
 
+// Preload just the iframe content during idle time (the heavy/slow part).
+// form_embed.js stays lazy — only the small script loads on click.
+(function preloadIframeContent() {
+    function doPreload() {
+        var popup = document.getElementById('surveyPopup');
+        if (popup) {
+            var iframe = popup.querySelector('iframe[data-src]');
+            if (iframe && !iframe.getAttribute('src')) {
+                iframe.src = iframe.getAttribute('data-src');
+            }
+        }
+    }
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(doPreload);
+    } else {
+        window.addEventListener('load', function() { setTimeout(doPreload, 2000); });
+    }
+})();
+
 // Survey Popup Functions
 function openSurveyPopup() {
     const popup = document.getElementById('surveyPopup');
     if (popup) {
-        // Activate the iframe src if it hasn't been loaded yet (deferred via data-src)
+        // Activate the iframe src if it hasn't been loaded yet
         const iframe = popup.querySelector('iframe[data-src]');
         if (iframe && !iframe.getAttribute('src')) {
             iframe.src = iframe.getAttribute('data-src');
@@ -438,9 +459,14 @@ function closeSurveyPopup() {
         popup.classList.remove('active');
         document.body.style.overflow = ''; // Restore background scrolling
 
-        // Remove GoHighLevel overlays that form_embed.js creates at z-index 10000
-        document.querySelectorAll('[style*="z-index"][style*="10000"]').forEach(function(el) {
-            if (el.style.position === 'fixed' && !popup.contains(el)) {
+        // Remove GoHighLevel overlays that form_embed.js creates.
+        // Uses computed styles (not inline style strings) to catch all overlays
+        // regardless of how GHL applies them. Page z-index ceiling is 2000,
+        // so anything fixed at 5000+ outside the popup is GHL garbage.
+        document.querySelectorAll('body > *').forEach(function(el) {
+            if (el === popup || el.classList.contains('popup-overlay')) return;
+            var cs = window.getComputedStyle(el);
+            if (cs.position === 'fixed' && parseInt(cs.zIndex, 10) >= 5000) {
                 el.remove();
             }
         });

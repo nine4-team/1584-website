@@ -606,6 +606,11 @@
             pointer-events: auto;
         }
 
+        .popup-overlay:not(.active) iframe {
+            pointer-events: none !important;
+            visibility: hidden !important;
+        }
+
         .popup-container {
             background: #FAFAF7;
             border: 4px solid #9a7d55;
