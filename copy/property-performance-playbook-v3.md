@@ -32,30 +32,36 @@ Two investors buy comparable properties in St. George, Utah. Same neighborhood, 
 
 **Property A** has an overall design budget of **$50,000**. Functional but unremarkable — basic furniture, minimal accessories, no cohesive theme. It looks like a furnished house, not a destination.
 
-- ~55% occupancy at $325/night
-- ~$65,000/year gross revenue
-- **-$11,500/year net cash flow**
+- ~55% occupancy at $300/night
+- $60,225/year gross revenue
+- $73,279/year operating expenses
+- **-$13,054/year net cash flow**
 
-Property A "saved" $40,000 on design. It loses money every month.
+Property A "saved" $50,000 on design. It loses money every month.
 
-**Property B** invests **$90,000** in a strategically designed interior. The property photographs beautifully, converts browsers into bookers, and delivers experiences that generate five-star reviews and repeat bookings.
+**Property B** invests **$100,000** in a strategically designed interior. The property photographs beautifully, converts browsers into bookers, and delivers experiences that generate five-star reviews, repeat bookings, and referrals.
 
-- ~70% occupancy at $375/night
-- ~$96,000/year gross revenue
-- **+$8,700/year net cash flow**
+- ~75% occupancy at $395/night
+- $108,113/year gross revenue
+- $82,857/year operating expenses
+- **+$25,256/year net cash flow**
 
-That's $20,200 more per year — on an extra $40,000 in design investment.
+That's $38,310 more per year — on an extra $50,000 in design investment.
 
 **Over five years:**
 
 | | Property A | Property B |
 |---|---|---|
-| Design investment | $50,000 | $90,000 |
-| Year 1 cash flow | -$11,500 | +$8,700 |
-| 5-year cumulative | -$57,500 | +$43,500 |
-| **Difference** | | **$101,000** |
+| Design investment | $50,000 | $100,000 |
+| Year 0 (design cost) | -$50,000 | -$100,000 |
+| Year 1 | -$63,054 | -$74,744 |
+| Year 2 | -$76,108 | -$49,488 |
+| Year 3 | -$89,162 | -$24,232 |
+| Year 4 | -$102,216 | +$1,024 |
+| Year 5 | -$115,270 | +$26,280 |
+| **5-Year Swing** | | **$141,550** |
 
-A $101,000 swing. The $40,000 "savings" cost the investor six figures in lost cash flow.
+A $141,550 swing. The $50,000 "savings" cost the investor six figures in lost cash flow — while the designed property fully recoups its investment by year 4.
 
 So what actually separates these two properties? It's not just spending more. It's spending on the things that drive revenue.
 
@@ -156,7 +162,7 @@ Knowing your guest and understanding the stages gives you the foundation. Execut
 
 **Mistake 2: Spending on the wrong things.** Even with the right budget, many investors allocate it poorly. They put the whole budget into furniture and skip the curtains, rugs, and accessories that actually create the magazine effect in photos. They buy cheap mattresses — invisible in photos, devastating in reviews. The fix: invest where it impacts the Performance Stages. Prioritize what stops the scroll, converts bookings, and creates experiences.
 
-**Mistake 3: Ignoring placement.** You can buy all the right items and still end up with a property that photographs poorly and feels awkward in person. How you arrange, style, and layer a space matters as much as what's in it. This is the hardest part to get right without professional help — and often the difference between a property that looks "decorated" and one that looks "designed."
+**Mistake 3: Misallocating the Space Budget.** Every room has a finite amount of space to spend. How you allocate it — what you prioritize, how you arrange and layer — matters as much as what you buy. This is the hardest part to get right without professional help, and often the difference between a property that looks "decorated" and one that looks "designed."
 
 ---
 

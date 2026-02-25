@@ -292,6 +292,7 @@ function generateNavigation() {
     var secondaryNav = [
         { text: 'STR DESIGN', href: 'vacation-rental-design.html' },
         { text: 'SECOND HOME DESIGN', href: 'second-home-design.html' },
+        { text: 'COMMUNITIES', href: 'st-george-utah.html' },
         { text: 'PORTFOLIO', href: 'portfolio.html' },
         { text: 'REVIEWS', href: makeRootFragment('reviews') },
         { text: 'ABOUT', href: 'about.html' },
@@ -303,6 +304,7 @@ function generateNavigation() {
         'index.html': [
             { text: 'STR DESIGN', href: 'vacation-rental-design.html' },
             { text: 'SECOND HOME DESIGN', href: 'second-home-design.html' },
+            { text: 'COMMUNITIES', href: 'st-george-utah.html' },
             { text: 'PORTFOLIO', href: 'portfolio.html' },
             { text: 'REVIEWS', href: '#reviews' },
             { text: 'ABOUT', href: 'about.html' },
@@ -319,6 +321,12 @@ function generateNavigation() {
         }),
         'second-home-design.html': secondaryNav.map(function(item) {
             return item.text === 'SECOND HOME DESIGN' ? Object.assign({}, item, { current: true }) : item;
+        }),
+        'st-george-utah.html': secondaryNav.map(function(item) {
+            return item.text === 'COMMUNITIES' ? Object.assign({}, item, { current: true }) : item;
+        }),
+        'las-vegas.html': secondaryNav.map(function(item) {
+            return item.text === 'COMMUNITIES' ? Object.assign({}, item, { current: true }) : item;
         })
     };
 
