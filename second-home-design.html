@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Home Interior Design | Full-Service Design for Your Haven — 1584 Design</title>
+    <meta name="description" content="Your second home should feel like an escape — and unmistakably like you. Full-service interior design: planning, procurement, and installation. 27 years of experience.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #FAFAF7;
+            background-color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 1);
+            z-index: 1000;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Article Layout */
+        .article-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .article-header h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 5.5vw, 56px);
+            font-weight: 400;
+            color: #FAFAF7;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.5;
+            color: rgba(250, 250, 247, 0.7);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto 24px;
+        }
+
+        .article-byline {
+            font-size: 14px;
+            color: #9a7d55;
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #9a7d55;
+            margin: 56px auto;
+        }
+
+        /* Section Headers */
+        .article-wrapper h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 400;
+            color: #FAFAF7;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        /* Body Text */
+        .article-wrapper p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .article-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lead / Callout Text */
+        .callout, .stat-highlight {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            line-height: 1.6;
+            color: #E8DED0;
+            text-align: center;
+            padding: 36px 24px;
+            margin: 40px 0;
+            border-top: 1px solid #9a7d55;
+            border-bottom: 1px solid #9a7d55;
+            font-style: italic;
+        }
+
+        /* Bold Key Phrase */
+        .article-wrapper strong {
+            color: #FAFAF7;
+            font-weight: 600;
+        }
+
+        /* Inline Links */
+        .article-wrapper a:not(.cta-button) {
+            color: #9a7d55;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s ease;
+        }
+
+        .article-wrapper a:not(.cta-button):hover {
+            color: #b8976b;
+        }
+
+        /* Stage Blocks */
+        .stage-block {
+            margin-bottom: 48px;
+        }
+
+        .stage-block h3 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            font-weight: 400;
+            color: #D4C5B3;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        /* Meta Labels */
+        .meta-label {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .meta-label strong {
+            color: #9a7d55;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* Identity Aspect Blocks */
+        .aspect-block {
+            margin-bottom: 28px;
+            padding-left: 20px;
+            border-left: 2px solid rgba(154, 125, 85, 0.3);
+        }
+
+        .article-wrapper .aspect-label {
+            font-family: 'Avenir', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #9a7d55;
+            margin-bottom: 8px;
+        }
+
+        /* Design Lens Cards */
+        .lens-card {
+            background: rgba(250, 250, 247, 0.03);
+            border: 1px solid rgba(250, 250, 247, 0.08);
+            border-radius: 4px;
+            padding: 40px 36px;
+            margin-bottom: 32px;
+        }
+
+        .lens-card h3 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(22px, 3vw, 28px);
+            font-weight: 400;
+            color: #FAFAF7;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .lens-label {
+            display: block;
+            margin-bottom: 16px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .lens-label strong {
+            color: #9a7d55;
+            font-weight: 600;
+        }
+
+        /* Bullet Lists */
+        .article-wrapper ul {
+            list-style: none;
+            margin: 0 0 24px 0;
+            padding: 0;
+        }
+
+        .article-wrapper ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .article-wrapper ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #9a7d55;
+            border-radius: 50%;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin: 56px 0 0;
+            padding: 48px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .cta-section p {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            color: #FAFAF7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
+            background: #9a7d55;
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+            color: rgba(250, 250, 247, 0.6);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            color: #9a7d55;
+            border-bottom-color: #9a7d55;
+        }
+
+        /* Founder Signature */
+        .founder-signature {
+            margin: 40px 0 0;
+        }
+
+        .founder-name {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 64px;
+            }
+
+            .article-wrapper {
+                padding: 110px 20px 60px;
+            }
+
+            .article-header {
+                margin-bottom: 48px;
+                padding-bottom: 36px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .callout, .stat-highlight {
+                font-size: clamp(22px, 6vw, 30px);
+                padding: 28px 16px;
+                margin: 32px 0;
+            }
+
+            .lens-card {
+                padding: 28px 24px;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-wrapper {
+                padding: 100px 16px 48px;
+            }
+
+            .article-wrapper p,
+            .article-wrapper ul li,
+            .meta-label,
+            .lens-label {
+                font-size: 16px;
+            }
+
+            .lens-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "InteriorDesigner",
+          "name": "1584 Design",
+          "url": "https://1584design.com",
+          "telephone": "+14358623631",
+          "email": "team@1584design.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "St. George",
+            "addressRegion": "UT",
+            "addressCountry": "US"
+          },
+          "areaServed": [
+            {"@type": "City", "name": "St. George", "addressRegion": "UT"},
+            {"@type": "City", "name": "Las Vegas", "addressRegion": "NV"}
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "Lisa Fisher"
+          },
+          "foundingDate": "2021",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "54",
+            "bestRating": "5"
+          },
+          "sameAs": [
+            "https://www.instagram.com/1584_design/",
+            "https://www.facebook.com/lisa.s.fisher.92/"
+          ],
+          "priceRange": "$$$"
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Second Home Interior Design",
+          "provider": {"@type": "InteriorDesigner", "name": "1584 Design"},
+          "areaServed": ["St. George, UT", "Las Vegas, NV", "United States"],
+          "description": "Full-service interior design for second homes including design planning, procurement, and installation."
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Second Home Design That Finally Feels Like Yours</h1>
+            <p class="article-subtitle">Full-service interior design for second homes that feel like an escape &mdash; and unmistakably like you.</p>
+            <p class="article-byline">By Lisa Fisher &middot; 1584 Design</p>
+        </header>
+
+        <!-- Section 1: The Second Home Gap -->
+        <section>
+            <h2>The Second Home Gap</h2>
+
+            <p>Most second homes don&rsquo;t deliver what they promised. You arrive and something feels off &mdash; temporary, assembled rather than chosen. Instead of exhaling, you start noticing what&rsquo;s wrong. The furniture that looked fine online feels generic in person. The rooms feel like they belong to a rental, not to you. The escape you imagined starts with a mental list of everything that still isn&rsquo;t right.</p>
+
+            <div class="stat-highlight">A second home should feel like an escape &mdash; and like it could only belong to you.</div>
+
+            <p>A home can be well-executed &mdash; coherent, considered, well-furnished &mdash; and still feel like it belongs to someone else. That happens when the design reflects a generic version of the place, or nothing in particular, instead of the specific people who own it. The gap between a home that looks right and one that actually <em>feels</em> right is where most second home design falls short.</p>
+
+            <p>The difference is design, not decoration. Decoration fills rooms. Design shapes how a space makes you feel when you walk through the door. It determines whether you exhale &mdash; or start making an inventory of everything that still doesn&rsquo;t match the place you had in mind when you bought it.</p>
+
+            <p>With 27 years of experience designing homes that people genuinely love returning to, we&rsquo;ve built a framework for closing that gap. <a href="guide-optin.html">Download the free Second Home Design Guide</a> to explore the full thinking behind it.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: The Intentional Home Framework -->
+        <section>
+            <h2>The Intentional Home Framework</h2>
+
+            <p>The second homes people love coming back to share three principles. Not about style or trends &mdash; about how a home feels, how it functions, and what it says about the people who own it. We call it the Intentional Home Framework: <strong>Design for Arrival</strong>, <strong>Design for Memory</strong>, and <strong>Design for Identity</strong>.</p>
+
+            <div class="stage-block">
+                <h3>Principle 3: Design for Identity</h3>
+                <p>Every home has a character. It&rsquo;s either discovered and expressed through design, or left generic and indistinct. That character isn&rsquo;t a regional style or a trending aesthetic. It emerges from the intersection of three things: <strong>your taste</strong> (what home actually feels like to you), <strong>the architecture</strong> (what the building is already saying), and <strong>the environment</strong> (the landscape, the light, the character of the place outside the windows).</p>
+                <p>Navigating all three simultaneously &mdash; your taste as the lead, the architecture and environment as forces that shape and refine it &mdash; is the work at the center of what we do.</p>
+            </div>
+
+            <p>The full framework &mdash; including the first two principles, the reflective tests we use to evaluate each one, and how all three work together to close the gap between a home that looks right and one that actually feels right &mdash; is in the free <a href="guide-optin.html">Second Home Design Guide</a>.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: What Kind of Home Are You Designing? -->
+        <section>
+            <h2>What Kind of Home Are You Designing?</h2>
+
+            <p>The Intentional Home Framework tells you what good second home design accomplishes. The next question is how your household actually uses the space. Most second homes serve one primary purpose &mdash; knowing yours sharpens every decision that follows.</p>
+
+            <!-- The Family Gathering Place -->
+            <div class="lens-card">
+                <h3>The Family Gathering Place</h3>
+                <p class="lens-label"><strong>Who it&rsquo;s for:</strong> Multi-generational families, parents with kids of all ages, siblings who share the home.</p>
+                <p>A home built for the whole family to be together &mdash; dining that seats everyone, durable materials that handle real life, dedicated kids&rsquo; spaces that give adults room to breathe.</p>
+            </div>
+
+            <!-- The Entertaining Home -->
+            <div class="lens-card">
+                <h3>The Entertaining Home</h3>
+                <p class="lens-label"><strong>Who it&rsquo;s for:</strong> Hosts who use the second home as a social destination &mdash; friend groups, holiday hosting, gatherings and celebrations.</p>
+                <p>Multiple conversation zones, full-capacity dining at the center, and guest accommodations that feel genuinely considered &mdash; not afterthoughts. Guests should feel expected, not merely accommodated.</p>
+            </div>
+
+            <!-- The Personal Retreat -->
+            <div class="lens-card">
+                <h3>The Personal Retreat</h3>
+                <p class="lens-label"><strong>Who it&rsquo;s for:</strong> Couples or individuals using the home as genuine sanctuary &mdash; restoration and solitude over socializing and activity.</p>
+                <p>The primary suite receives the investment. Spaces oriented toward quiet and stillness. Every surface styled to feel curated rather than accumulated &mdash; the design asks nothing of you.</p>
+            </div>
+
+            <p>Purposes can coexist, and a home can serve two profiles well. But one should lead. A home designed to be everything equally is distinctive in none of it. The <a href="guide-optin.html">Second Home Design Guide</a> explores each home type in depth, along with the Designer&rsquo;s Toolkit &mdash; the specific elements and principles that bring any of these visions to life.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: Full-Service from Plan to Installation -->
+        <section>
+            <h2>Full-Service from Plan to Installation</h2>
+
+            <p>Designing a second home that truly reflects you requires more than selecting furniture. It requires a process that handles every detail from concept through move-in day. That&rsquo;s what we provide.</p>
+
+            <div class="stage-block">
+                <h3>Design Planning</h3>
+                <p>We start with you &mdash; your taste, how you use the home, what you want it to feel like. From there we develop a complete design plan: space planning, color and material palettes, furniture selections, lighting, art direction, and every surface detail. You see the full vision before a single item is ordered.</p>
+            </div>
+
+            <div class="stage-block">
+                <h3>Procurement</h3>
+                <p>We source, order, and manage every item in the plan &mdash; furniture, rugs, lighting, window treatments, bedding, accessories, art. We work with trade-only vendors and artisans you won&rsquo;t find in retail, and we manage the entire purchasing process so nothing falls through the cracks.</p>
+            </div>
+
+            <div class="stage-block">
+                <h3>Installation</h3>
+                <p>We receive, inspect, and install everything. Furniture is placed, art is hung, beds are made, surfaces are styled. You walk into a finished home &mdash; not a home full of boxes.</p>
+            </div>
+
+            <p><strong>We handle everything.</strong> You don&rsquo;t manage vendors, track shipments, or coordinate deliveries. You don&rsquo;t make dozens of individual decisions in isolation and hope they add up. You get a home that feels whole, considered, and unmistakably yours &mdash; without the project management burden that usually comes with it.</p>
+
+            <p>We work with a limited number of homeowners at any given time. This is intentional &mdash; obsessive care doesn&rsquo;t scale. Each project gets the attention it deserves, and we&rsquo;d rather do fewer projects exceptionally than more projects adequately. <a href="about.html">Learn more about our story</a> and why we work this way.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: Our Markets -->
+        <section>
+            <h2>Our Markets</h2>
+
+            <p>1584 Design is based in St. George, Utah &mdash; a premier second home destination at the gateway to Zion National Park. The landscape here is extraordinary: red rock, dramatic light, desert warmth. It&rsquo;s the kind of setting that should shape the design of every home in it. <a href="st-george-utah.html">See our St. George work</a>.</p>
+
+            <p>We also serve homeowners in Las Vegas and take on select projects nationwide for clients who value design that reflects both who they are and where they are. <a href="las-vegas.html">Explore our Las Vegas services</a>.</p>
+
+            <p>Wherever the home, the approach is the same: understand the owner, listen to the architecture, respond to the environment, and create something that could only exist at the intersection of all three. <a href="portfolio.html">See our portfolio</a> for a sense of what that looks like in practice.</p>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <p><strong>Ready to make your second home feel like it was always meant to?</strong></p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="guide-optin.html" class="cta-secondary">Or get the free Second Home Design Guide first</a>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+
+</body>
+</html>

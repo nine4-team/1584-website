@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Ridge Interior Design &mdash; Resort &amp; Adventure Homes | 1584 Design</title>
+    <meta name="description" content="Interior design for Stone Ridge at Pecan Valley Resort in Hurricane, Utah. STR townhomes with Rec-Resort zoning, adventure lifestyle single-family homes with 50-foot RV garages, and resort-scale amenities including a 2-acre water park.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #FAFAF7;
+            background-color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 1);
+            z-index: 1000;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Article Layout */
+        .article-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .article-header h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 5.5vw, 56px);
+            font-weight: 400;
+            color: #FAFAF7;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.5;
+            color: rgba(250, 250, 247, 0.7);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #9a7d55;
+            margin: 56px auto;
+        }
+
+        /* Section Headers */
+        .article-wrapper h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 400;
+            color: #FAFAF7;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        /* Body Text */
+        .article-wrapper p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .article-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lead / Callout Text */
+        .callout {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            line-height: 1.6;
+            color: #E8DED0;
+            text-align: center;
+            padding: 36px 24px;
+            margin: 40px 0;
+            border-top: 1px solid #9a7d55;
+            border-bottom: 1px solid #9a7d55;
+            font-style: italic;
+        }
+
+        /* Bold Key Phrase */
+        .article-wrapper strong {
+            color: #FAFAF7;
+            font-weight: 600;
+        }
+
+        /* Bullet Lists */
+        .article-wrapper ul {
+            list-style: none;
+            margin: 0 0 24px 0;
+            padding: 0;
+        }
+
+        .article-wrapper ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .article-wrapper ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #9a7d55;
+            border-radius: 50%;
+        }
+
+        /* Inline Links */
+        .article-wrapper a:not(.cta-button) {
+            color: #9a7d55;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(154, 125, 85, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .article-wrapper a:not(.cta-button):hover {
+            border-bottom-color: #9a7d55;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin: 56px 0 0;
+            padding: 48px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .cta-section p {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            color: #FAFAF7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
+            background: #9a7d55;
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+            color: rgba(250, 250, 247, 0.6);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            color: #9a7d55;
+            border-bottom-color: #9a7d55;
+        }
+
+        /* Founder Signature */
+        .founder-signature {
+            margin: 40px 0 0;
+        }
+
+        .founder-name {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 64px;
+            }
+
+            .article-wrapper {
+                padding: 110px 20px 60px;
+            }
+
+            .article-header {
+                margin-bottom: 48px;
+                padding-bottom: 36px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .callout {
+                padding: 28px 16px;
+                margin: 32px 0;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-wrapper {
+                padding: 100px 16px 48px;
+            }
+
+            .article-wrapper p,
+            .article-wrapper ul li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Interior Design for Stone Ridge at Pecan Valley Resort</h1>
+            <p class="article-subtitle">Hurricane&rsquo;s newest resort community pairs STR-approved townhomes with adventure-lifestyle single-family homes &mdash; all anchored by a 2-acre water park and 47,000 square feet of recreation. Two product types, two design briefs, one team that understands both.</p>
+        </header>
+
+        <!-- Section 1: Resort-Scale Amenities in Hurricane -->
+        <section>
+            <h2>Resort-Scale Amenities in Hurricane</h2>
+
+            <p>Stone Ridge is part of the broader Pecan Valley Resort, a master-planned community in Hurricane, Utah that is redefining what a resort community looks like in the <a href="../st-george-utah.html">St. George corridor</a>. This is not a golf-centered development in the mold of <a href="copper-rock.html">Copper Rock</a> or <a href="sand-hollow.html">Sand Hollow Resort</a>. Pecan Valley Resort is built around active recreation &mdash; a fundamentally different proposition that attracts a fundamentally different buyer and guest.</p>
+
+            <p>The amenity complex is the anchor. A <strong>2-acre water park</strong> features a wave pool, lazy river, 14 waterslides, an action river, and multiple pool areas. A <strong>10,000-square-foot clubhouse</strong> includes an arcade, golf simulators, and a bar and grill. A <strong>47,000-square-foot recreation facility</strong> offers rock climbing walls, ninja warrior obstacle courses, a full gym, and indoor activity space that keeps guests and residents occupied regardless of weather or season. A rooftop patio with hot tubs and cabanas sits above it all. Pickleball courts, UTV and ATV rental services, and direct access to desert trail systems round out the offering.</p>
+
+            <p>The location compounds the appeal. Stone Ridge sits five minutes from Sand Hollow Reservoir and the Sand Hollow dunes &mdash; the premier off-road and water recreation destination in Southern Utah. Zion National Park is 30 minutes northeast. Snow Canyon State Park is 20 minutes west. The outdoor recreation density within a 30-minute drive of this community is unmatched anywhere else in the corridor.</p>
+
+            <p>For STR investors, the amenity package changes the competitive math. A guest booking a townhome at Stone Ridge is not just booking a place to sleep &mdash; they are booking access to a water park, a recreation center, and a desert adventure basecamp. For second home owners, the same amenities create a lifestyle infrastructure that makes the property worth visiting every month, not just twice a year.</p>
+
+            <div class="callout">A 2-acre water park. 47,000 square feet of recreation. Five minutes from Sand Hollow. Pecan Valley Resort is not a golf community with a clubhouse &mdash; it is an adventure resort with homes attached.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: Two Product Types, Two Design Briefs -->
+        <section>
+            <h2>Two Product Types, Two Design Briefs</h2>
+
+            <p>Stone Ridge at Pecan Valley Resort is unusual in the corridor because it serves two distinct buyer profiles with two distinct product types &mdash; and the design requirements for each are fundamentally different.</p>
+
+            <p><strong>The townhomes</strong> sit in Rec-Resort zoning, which means nightly rental is legally permitted from day one. These are STR investment properties, purpose-built for the short-term rental market. Artisan Homes (Chris Wyler) develops the broader Pecan Valley Resort, with Trevor Andersen Densley Development handling the townhome construction. The product line ranges from compact three-bedroom units at 1,630 square feet to luxury configurations up to seven bedrooms and 7.5 bathrooms. Pricing spans from approximately $765,000 for a three-bedroom to $1.45 million or more for the largest units. HOA is $350 per month, which covers access to the full resort amenity package.</p>
+
+            <p><strong>The single-family homes</strong> occupy residential-zoned lots where Hurricane&rsquo;s STR restrictions apply &mdash; a cap of three licenses per 1,000 residents and a 300-foot spacing requirement between licensed properties. Madera Development builds these homes, with four to six bedrooms, options for private pools, and a defining feature that sets them apart from anything else in the market: <strong>50-foot RV garages</strong>. Pricing runs from $785,000 to $1.69 million, with ownership lots starting around $190,000. Some single-family lots carry no HOA at all.</p>
+
+            <p>The design implications of these two product types diverge at every level. The townhomes demand an STR-optimized approach: guest-centric layout, performance fabrics, photography-ready styling, and spaces calibrated to convert scrolling travelers into confirmed bookings. The single-family homes demand something entirely different: a personal residence designed around the specific lifestyle of an owner who chose Hurricane because of what they can do here &mdash; not what they can rent here.</p>
+
+            <p>A design firm that treats both product types the same way will underserve both. The townhome owner needs a space designed to convert bookings and earn five-star reviews. The single-family homeowner needs a space designed for the way they actually live — one that feels like theirs, not like a rental someone else forgot to check out of. We design for each on its own terms. <a href="black-desert.html">Black Desert</a> in Ivins operates under a similar dual-structure &mdash; managed resort condos alongside private Silver Reef estates &mdash; though with a golf and spa identity rather than adventure recreation.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: Townhome STR Design -->
+        <section>
+            <h2>Townhome STR Design: Performance in a Compact Format</h2>
+
+            <p>The STR townhomes at Stone Ridge present a design challenge similar to what we see at <a href="the-isles.html">The Isles at Coral Canyon</a> and other townhome-format communities across the corridor: a uniform product type where every unit shares the same bones, the same exterior, and the same amenity access. When the architecture is identical, <strong>design is the only differentiator a guest evaluates</strong>. The listing photos are where the competition plays out, and the interior is the only variable you control.</p>
+
+            <p>Our <a href="../vacation-rental-design.html">vacation rental design process</a> applies the three Performance Stages to every STR project, and each one matters differently in the Stone Ridge context.</p>
+
+            <p><strong>Stop the Scroll.</strong> A guest searching Hurricane or Sand Hollow on Airbnb or VRBO will see dozens of properties with access to the same water park and the same recreation center. The amenity package is the draw &mdash; but it is shared. Your listing thumbnail is the only thing that separates your property from the identical townhome two doors down. That means your hero image needs to carry a visual identity strong enough to stop a thumb mid-scroll: a distinctive color palette, a statement piece that anchors the living room, lighting that creates warmth and dimension. The photography cannot look like a builder model. It needs to look like a place someone chose with intention.</p>
+
+            <p><strong>Convert Browsers to Bookers.</strong> Once a guest clicks into your listing, they are comparing your interior against every other three-bedroom, four-bedroom, or seven-bedroom unit in the same complex. The floor plans are similar. The square footage is known. What converts a browser into a booker is the sense that this particular unit has been considered &mdash; that someone thought about how a family of six actually lives in 1,630 square feet for a week, where the bags go, how the kitchen works when three people are making breakfast simultaneously, whether the living room is comfortable for an evening in after a day at the water park.</p>
+
+            <p><strong>Create Memorable Experiences.</strong> At Stone Ridge, the in-property experience operates in concert with the resort amenities. Guests will spend hours at the water park, the recreation center, and Sand Hollow. They come back to the townhome tired, wet, and ready to decompress. The post-waterpark transition is a design moment: easy-clean entryways, towel management that does not create chaos, a living space that feels like a genuine reward after an active day. The properties that earn five-star reviews and repeat bookings are the ones where coming home feels as good as going out.</p>
+
+            <p>The townhome format adds a constraint that larger single-family STR properties do not face: <strong>every square foot must justify itself</strong>. There is no room for furniture that looks good but wastes space. No room for a dining configuration that seats four in a unit that sleeps eight. No room for storage solutions that work in a showroom but fail under the pressure of actual guest use. The Basin at 1,630 square feet and The Sonoran at 1,950 square feet are tight formats &mdash; and the design has to be ruthlessly functional while still creating the visual warmth that drives bookings.</p>
+
+            <div class="callout">When every townhome in the complex has the same water park, the same recreation center, and the same floor plan &mdash; design is the only competitive advantage you own.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: Adventure Lifestyle Homes -->
+        <section>
+            <h2>Adventure Lifestyle Homes: Designing for How You Actually Live</h2>
+
+            <p>The single-family homes at Stone Ridge with 50-foot RV garages are built for a buyer who does not exist in most interior design conversations. This is not the second home owner who wants a quiet retreat with a view. This is someone who tows a UTV, trailers a boat, or drives an RV to the desert &mdash; and wants a home that is built around that reality rather than pretending it does not exist.</p>
+
+            <p>Our <a href="../second-home-design.html">Intentional Home Framework</a> designs second homes through three layers of alignment &mdash; environment, architecture, and owner identity. At Stone Ridge, each of those layers points in a specific direction.</p>
+
+            <p><strong>Environment: adventure territory.</strong> The setting is not a manicured resort landscape. It is Sand Hollow dunes, red rock desert, and open reservoir &mdash; terrain that people come to ride, climb, paddle, and explore. The environment surrounding these homes is raw, physical, and active. The interior should acknowledge that context. Earth tones and natural materials are not a style choice here &mdash; they are environmental coherence. The views from these properties are of desert and sandstone, not fairways and lagoons. Design that ignores what is outside the window is design that missed the point.</p>
+
+            <p><strong>Architecture: the garage is the architecture.</strong> A 50-foot RV garage is not an afterthought or an accessory. It is the single most defining architectural feature of these homes &mdash; and it tells you everything about who the buyer is. The architecture already signals the lifestyle: oversized garages, outdoor living areas, and floor plans designed to accommodate the transition between outdoor adventure and indoor comfort. Interior design should flow from that signal, not fight it. The garage-to-home transition is a design moment most firms ignore entirely.</p>
+
+            <p><strong>Owner identity: the adventure-oriented homeowner.</strong> A generic luxury interior &mdash; the kind you could transplant into any high-end development in any market &mdash; would be a mismatch in these homes. The owner who chose a property with a 50-foot RV garage in Hurricane, Utah, five minutes from the dunes, did so because of a specific identity. They are an outdoor person. They value experience over exhibition. They want a home that reflects how they spend their time, not a home that looks like it belongs to someone else. The interiors should celebrate that identity: gear-friendly entryways, durable materials that welcome boots and wet suits, display and storage that treats outdoor equipment as part of the home&rsquo;s character rather than something to hide.</p>
+
+            <p><strong>Designing for gear and transition.</strong> The practical requirements of an adventure lifestyle home go beyond aesthetics. The transition from garage to living space needs to be managed deliberately:</p>
+
+            <ul>
+                <li><strong>Entryways that handle the load</strong> &mdash; mudroom-style zones with durable flooring, bench seating, boot storage, and hooks for helmets, packs, and outerwear. This is not a foyer with a console table. It is a decompression zone between the desert and the living room.</li>
+                <li><strong>Outdoor shower areas</strong> &mdash; for rinsing off sand, lake water, and trail dust before entering the main living space. The design should integrate these functionally, not treat them as an afterthought plumbed into the side of the house.</li>
+                <li><strong>Easy-clean material transitions</strong> &mdash; from the garage through the entry corridor to the main living areas, the flooring and wall materials should graduate from fully durable and washable to comfortable and residential. The transition should feel natural, not abrupt.</li>
+                <li><strong>Storage that accommodates the lifestyle</strong> &mdash; dedicated space for coolers, camping gear, fishing equipment, wetsuits, and the miscellaneous gear that accumulates when your primary recreation involves vehicles and water. Built-in solutions that keep gear organized and accessible are worth more than a walk-in closet in this buyer profile.</li>
+            </ul>
+
+            <p>The homes with private pools add another layer. The pool area is not a luxury amenity here &mdash; it is the post-adventure recovery zone. After a day on the dunes or the reservoir, the pool and outdoor living area is where the owner decompresses. Outdoor furniture, shade structures, and the pool-to-interior transition should all be designed with that specific use in mind: durable, comfortable, and ready for someone who just spent eight hours in the sun.</p>
+
+            <div class="callout">A home with a 50-foot RV garage five minutes from Sand Hollow is not a generic luxury property. It is a basecamp &mdash; and the interior should be designed with the same intention as the architecture.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: What Buyers Should Know -->
+        <section>
+            <h2>What Buyers Should Know</h2>
+
+            <p>Stone Ridge at Pecan Valley Resort operates under a specific regulatory and financial framework that buyers need to understand before committing. The details differ significantly between the two product types.</p>
+
+            <ul>
+                <li><strong>Townhome zoning: Rec-Resort, STR approved.</strong> The townhomes at Stone Ridge sit in Rec-Resort zoning, which permits nightly rental as of right. There is no STR license lottery, no cap, and no spacing requirement. If you buy a townhome, you can operate it as a short-term rental from the day you close. This is a meaningful advantage in a market where residential STR licensing is increasingly constrained.</li>
+                <li><strong>Single-family zoning: Hurricane residential STR restrictions apply.</strong> The single-family homes are in residential zones governed by Hurricane&rsquo;s municipal regulations. The city caps STR licenses at three per 1,000 residents and requires a minimum of 300 feet between licensed properties. For most buyers in this product type, the homes are personal-use residences &mdash; not investment properties. If you are considering STR operation on a single-family lot, verify license availability before purchasing.</li>
+                <li><strong>Townhome HOA: $350 per month.</strong> This covers access to the full Pecan Valley Resort amenity package &mdash; the water park, recreation center, clubhouse, and common areas. For an STR property, this is a real operating cost that must be factored into your revenue model.</li>
+                <li><strong>Single-family HOA: varies, with no-HOA options.</strong> Some single-family lots at Stone Ridge carry no HOA obligation at all. Others may have modest association fees. Confirm the HOA status for your specific lot before purchasing.</li>
+                <li><strong>Townhome pricing: $765K to $1.45M+.</strong> The range spans from The Basin (3-bed/2-bath, 1,630 sqft) at the entry point to large luxury units with up to 7 bedrooms and 7.5 bathrooms at the top. Revenue potential scales with bedroom count and design quality.</li>
+                <li><strong>Single-family pricing: $785K to $1.69M.</strong> Four to six bedrooms, with options for private pools and 50-foot RV garages. Ownership lots start around $190,000 for buyers who want to build custom.</li>
+                <li><strong>Developers and builders.</strong> Artisan Homes (Chris Wyler) is the master developer for Pecan Valley Resort. Trevor Andersen Densley Development builds the townhomes. Madera Development handles single-family homes. Each builder has its own construction standards, timeline, and specification options.</li>
+                <li><strong>Construction timeline.</strong> New phases are under development through 2026, which means early buyers have the advantage of establishing STR listings and review history before the community reaches full buildout. Design investment made now compounds as inventory grows and competition increases.</li>
+            </ul>
+
+            <p>The regulatory split between the townhomes and single-family homes is the most important detail for any buyer evaluating Stone Ridge. The townhome product is a clean STR play &mdash; zoning is confirmed, amenities are the draw, and design is the differentiator. The single-family product is primarily a personal-use opportunity &mdash; an adventure lifestyle home in a resort setting, with STR operation as a conditional possibility rather than a guaranteed right.</p>
+
+            <p>For a broader view of how Hurricane fits within the <a href="../st-george-utah.html">St. George corridor STR market</a>, including how Stone Ridge compares to nearby communities like <a href="sand-hollow.html">Sand Hollow Resort</a> and <a href="copper-rock.html">Copper Rock</a>, read our market overview. For the framework we use to evaluate and design STR properties, the <a href="../playbook-optin.html">STR Design Playbook</a> covers the full methodology.</p>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <p>Ready to design your Stone Ridge property?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="../playbook-optin.html" class="cta-secondary">Get the free STR Design Playbook</a>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="../guide-optin.html" class="cta-secondary">Get the free Second Home Design Guide</a>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+
+</body>
+</html>

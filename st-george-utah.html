@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Designer in St. George, Utah | STR & Second Home Design — 1584 Design</title>
+    <meta name="description" content="Full-service interior design for vacation rentals and second homes in St. George, Utah. 50+ five-star reviews. 27 years of expertise serving the Zion corridor.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #FAFAF7;
+            background-color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 1);
+            z-index: 1000;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Article Layout */
+        .article-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .article-header h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 5.5vw, 56px);
+            font-weight: 400;
+            color: #FAFAF7;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.5;
+            color: rgba(250, 250, 247, 0.7);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto 24px;
+        }
+
+        .article-byline {
+            font-size: 14px;
+            color: #9a7d55;
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #9a7d55;
+            margin: 56px auto;
+        }
+
+        /* Section Headers */
+        .article-wrapper h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 400;
+            color: #FAFAF7;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        /* Body Text */
+        .article-wrapper p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .article-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lead / Callout Text */
+        .callout, .stat-highlight {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            line-height: 1.6;
+            color: #E8DED0;
+            text-align: center;
+            padding: 36px 24px;
+            margin: 40px 0;
+            border-top: 1px solid #9a7d55;
+            border-bottom: 1px solid #9a7d55;
+            font-style: italic;
+        }
+
+        /* Bold Key Phrase */
+        .article-wrapper strong {
+            color: #FAFAF7;
+            font-weight: 600;
+        }
+
+        /* Stage Blocks */
+        .stage-block {
+            margin-bottom: 40px;
+        }
+
+        .stage-block h3 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            font-weight: 400;
+            color: #D4C5B3;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        /* Meta Labels */
+        .meta-label {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .meta-label strong {
+            color: #9a7d55;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* Community Cards */
+        .community-card {
+            background: rgba(250, 250, 247, 0.03);
+            border: 1px solid rgba(250, 250, 247, 0.08);
+            border-radius: 4px;
+            padding: 40px 36px;
+            margin-bottom: 32px;
+        }
+
+        .community-card h3 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(22px, 3vw, 28px);
+            font-weight: 400;
+            color: #FAFAF7;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .community-card h3 a {
+            color: #FAFAF7;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+            transition: border-color 0.3s ease, color 0.3s ease;
+        }
+
+        .community-card h3 a:hover {
+            color: #9a7d55;
+            border-bottom-color: #9a7d55;
+        }
+
+        .community-card .community-tagline {
+            font-size: 15px;
+            color: #9a7d55;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .community-card p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 0;
+        }
+
+        /* Bullet Lists */
+        .article-wrapper ul {
+            list-style: none;
+            margin: 0 0 24px 0;
+            padding: 0;
+        }
+
+        .article-wrapper ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .article-wrapper ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #9a7d55;
+            border-radius: 50%;
+        }
+
+        /* Inline Links */
+        .article-wrapper a:not(.cta-button) {
+            color: #9a7d55;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(154, 125, 85, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .article-wrapper a:not(.cta-button):hover {
+            border-bottom-color: #9a7d55;
+        }
+
+        /* Process Steps */
+        .process-steps ol {
+            list-style: none;
+            counter-reset: steps;
+            margin: 0;
+            padding: 0;
+        }
+
+        .process-steps ol li {
+            counter-increment: steps;
+            position: relative;
+            padding-left: 48px;
+            margin-bottom: 24px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .process-steps ol li::before {
+            content: counter(steps) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: 24px;
+            color: #9a7d55;
+            font-weight: 400;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin: 56px 0 0;
+            padding: 48px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .cta-section p {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            color: #FAFAF7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
+            background: #9a7d55;
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+            color: rgba(250, 250, 247, 0.6);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            color: #9a7d55;
+            border-bottom-color: #9a7d55;
+        }
+
+        /* Founder Signature */
+        .founder-signature {
+            margin: 40px 0 0;
+        }
+
+        .founder-name {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 64px;
+            }
+
+            .article-wrapper {
+                padding: 110px 20px 60px;
+            }
+
+            .article-header {
+                margin-bottom: 48px;
+                padding-bottom: 36px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .callout, .stat-highlight {
+                font-size: clamp(22px, 6vw, 30px);
+                padding: 28px 16px;
+                margin: 32px 0;
+            }
+
+            .community-card {
+                padding: 28px 24px;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-wrapper {
+                padding: 100px 16px 48px;
+            }
+
+            .article-wrapper p,
+            .article-wrapper ul li,
+            .meta-label,
+            .process-steps ol li {
+                font-size: 16px;
+            }
+
+            .community-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "InteriorDesigner",
+      "name": "1584 Design",
+      "url": "https://1584design.com",
+      "telephone": "+14358623631",
+      "email": "team@1584design.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "St. George",
+        "addressRegion": "UT",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "St. George", "addressRegion": "UT"},
+        {"@type": "City", "name": "Las Vegas", "addressRegion": "NV"}
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Lisa Fisher"
+      },
+      "foundingDate": "2021",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "54",
+        "bestRating": "5"
+      },
+      "sameAs": [
+        "https://www.instagram.com/1584_design/",
+        "https://www.facebook.com/lisa.s.fisher.92/"
+      ],
+      "priceRange": "$$$"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Full-Service Interior Design in St. George, Utah</h1>
+            <p class="article-subtitle">Interior design in St. George demands local knowledge &mdash; the communities, the builders, the climate, and the guests. 27 years of expertise, applied to the Zion corridor.</p>
+        </header>
+
+        <!-- Section 1: Opening -->
+        <section>
+            <h2>This Is Our Home Market</h2>
+
+            <p>1584 Design is based in St. George, Utah. This is where we live, where we work, and where we&rsquo;ve built our reputation as the interior design firm Southern Utah turns to when the stakes are high.</p>
+
+            <p>We know the vacation rental landscape here &mdash; which communities allow nightly rentals, which builders are active, what guests expect, and what separates properties that outperform from those that blend in. We know the second home market just as well &mdash; the owners drawn to the Zion corridor for the climate, the landscape, and the quality of life, who want their property to feel like something worth coming back to.</p>
+
+            <p>For STR investors and second home owners in St. George and the surrounding corridor, we bring 27 years of interior design expertise and full-service execution: <strong>Design Planning, Procurement, and Installation</strong>. You don&rsquo;t manage vendors, track shipments, or coordinate deliveries. We handle every detail from concept through the moment you walk into a finished, photograph-ready space.</p>
+
+            <div class="callout">We don&rsquo;t just work in St. George. We know St. George &mdash; the market, the communities, the builders, the climate, and what it takes for a property to outperform here.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: Why St. George -->
+        <section>
+            <h2>Why St. George</h2>
+
+            <p>St. George sits at the intersection of everything that drives a strong real estate and vacation rental market. It is one of the fastest-growing metro areas in the West, and the reasons are not hard to see.</p>
+
+            <p><strong>300+ days of sunshine.</strong> The climate is the foundation. Warm winters, long shoulder seasons, and a desert landscape that draws outdoor enthusiasts year-round. The weather alone makes St. George a destination &mdash; and it makes indoor-outdoor living a genuine design advantage rather than a marketing clich&eacute;.</p>
+
+            <p><strong>Gateway to Zion National Park.</strong> Over 4.5 million visitors pass through the Zion corridor every year. That traffic fuels the vacation rental economy and creates sustained demand for quality accommodations. But Zion is only the beginning. Snow Canyon State Park, Sand Hollow Reservoir, and a growing network of trails, golf courses, and recreation areas give guests reasons to stay longer and come back.</p>
+
+            <p><strong>A growing permanent community.</strong> St. George is not just a tourist town. It has attracted a substantial population of permanent residents and retirees drawn by the quality of life, lower cost of living relative to other Western metros, and the natural beauty of the high desert. Second home ownership is significant here &mdash; families from Salt Lake City, Las Vegas, and beyond who want a retreat within driving distance.</p>
+
+            <p>The STR corridor stretches from St. George proper through Hurricane, La Verkin, and up to Springdale at the gates of Zion. Each town has its own character and guest profile, but the underlying dynamic is the same: demand is strong, the market is maturing, and the properties that stand out are the ones designed with intention.</p>
+
+            <div class="stat-highlight">4.5 million+ annual visitors to Zion National Park &mdash; and a growing community of permanent residents and second home owners drawn by 300+ days of sunshine and the high desert landscape.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: The STR Landscape -->
+        <section>
+            <h2>The STR Landscape in St. George</h2>
+
+            <p>Not every neighborhood in St. George allows short-term rentals. The city has designated STR-zoned communities, and understanding which ones exist &mdash; and what each offers guests &mdash; is foundational to making a smart investment and designing a property that performs.</p>
+
+            <p>As an interior designer in St. George, Utah, we have designed properties across these communities. We know what works in each one, what guests in each community expect, and how design needs to respond to the specific character of the neighborhood.</p>
+
+            <div class="community-card">
+                <h3><a href="communities/desert-color.html">Desert Color</a></h3>
+                <p class="community-tagline">3,300 acres. Beach lagoon. The largest master-planned STR community in the region.</p>
+                <p>Desert Color is the marquee development &mdash; a resort-scale community with a Crystal Lagoon, waterpark, and expanding amenity set. Properties here compete on a national stage. The design bar is high, and the properties that command premium rates are the ones that feel like a destination, not just a house near a pool.</p>
+            </div>
+
+            <div class="community-card">
+                <h3><a href="communities/paradise-village.html">Paradise Village at Zion</a></h3>
+                <p class="community-tagline">The first purpose-built STR community in the St. George area.</p>
+                <p>Paradise Village pioneered the dedicated vacation rental community model here. The properties are designed for nightly rental from the ground up, which shapes the floor plans, the amenity expectations, and the competitive dynamics. Design quality is the primary differentiator between properties that book consistently and those that sit.</p>
+            </div>
+
+            <div class="community-card">
+                <h3><a href="communities/copper-rock.html">Copper Rock</a></h3>
+                <p class="community-tagline">Championship golf. Luxury homes. Dramatic desert views.</p>
+                <p>Copper Rock attracts a more affluent guest profile &mdash; golfers, couples, and groups looking for an elevated experience. The interiors need to match the setting and the price point. This is not a community where builder-grade finishes and generic furnishings will compete.</p>
+            </div>
+
+            <div class="community-card">
+                <h3><a href="communities/sand-hollow.html">Sand Hollow Resort</a></h3>
+                <p class="community-tagline">Golf, reservoir recreation, and red rock proximity.</p>
+                <p>Sand Hollow combines golf with proximity to Sand Hollow Reservoir and the surrounding trail systems. Properties here serve a range of guests &mdash; from active families to golf groups. The design needs to be durable enough for heavy use while still feeling elevated.</p>
+            </div>
+
+            <div class="community-card">
+                <h3><a href="communities/ocotillo-springs.html">Ocotillo Springs</a></h3>
+                <p class="community-tagline">Tropical pool complex. Family-friendly.</p>
+                <p>Ocotillo Springs is built around a resort-style pool amenity and attracts a family-heavy guest mix. The design priorities here are durability, color, and spaces that feel fun and inviting for groups with children &mdash; without looking like they were designed for children.</p>
+            </div>
+
+            <p>Other notable STR communities in the corridor include <a href="https://www.arcadiaresortutah.com/" target="_blank" rel="noopener"><strong>Arcadia</strong></a>, <a href="https://www.isleatcoralcanyon.com/" target="_blank" rel="noopener"><strong>Isle</strong></a>, <a href="https://terrabycolewest.com/" target="_blank" rel="noopener"><strong>Terra</strong></a>, <a href="https://www.theledges.com/" target="_blank" rel="noopener"><strong>The Ledges</strong></a>, <a href="https://www.entradautah.com/" target="_blank" rel="noopener"><strong>Entrada</strong></a>, and <a href="https://laspalmasresort.com/" target="_blank" rel="noopener"><strong>Las Palmas</strong></a>. Each has its own character, guest profile, and design requirements. We have worked across this landscape and can advise on what design approach serves each community best.</p>
+
+            <p><strong>Active builders in the St. George STR market</strong> include <a href="https://colewest.com/" target="_blank" rel="noopener">Cole West</a>, <a href="https://carefreehomes.com/" target="_blank" rel="noopener">CareFree Homes</a>, <a href="https://sullivan-homes.com/" target="_blank" rel="noopener">Sullivan</a>, <a href="https://www.encehomes.com/" target="_blank" rel="noopener">Ence</a>, <a href="https://dennismillerhomes.com/" target="_blank" rel="noopener">Dennis Miller</a>, <a href="https://splitrockcustomhomes.com/" target="_blank" rel="noopener">Split Rock</a>, and <a href="https://cedarpointehomes.com/" target="_blank" rel="noopener">Cedar Pointe</a>. We have worked with properties from these builders and understand their standard specifications &mdash; what comes standard, what needs upgrading, and where the design opportunities are to differentiate a property within a community where many homes share the same floor plan.</p>
+
+            <p>For a deeper look at the St. George vacation rental market &mdash; communities, builders, zoning, and what separates profitable properties from average ones &mdash; read our <a href="st-george-vacation-rental-guide.html">St. George Vacation Rental Investment Guide</a>.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: Design Challenges in the High Desert -->
+        <section>
+            <h2>Design Challenges in the High Desert</h2>
+
+            <p>The desert environment in Southern Utah is not a neutral backdrop. It is an active design partner &mdash; and an unforgiving one if you ignore it.</p>
+
+            <p><strong>Intense natural light.</strong> St. George receives some of the most intense sunlight in the country. South- and west-facing windows can flood a space with light that washes out cool tones and makes poorly chosen fabrics look flat. Color palettes need to work with the warm desert light, not against it. We design with this in mind from the first selection &mdash; warm neutrals, earthy tones, and strategic color that holds up under direct sun rather than fading into the glare.</p>
+
+            <p><strong>Extreme heat and temperature swings.</strong> Summer temperatures regularly exceed 110&deg;F, and the swing between daytime highs and nighttime lows can be dramatic. Materials and fabrics need to perform under these conditions. Cheap upholstery fades and degrades. Low-quality wood finishes warp and crack. We specify materials that are built for this climate &mdash; performance fabrics, UV-resistant finishes, and furnishings that maintain their integrity through years of desert exposure.</p>
+
+            <p><strong>Indoor-outdoor connection.</strong> The climate is a selling point for eight months of the year. Guests come here to be outside, and the best-performing properties blur the line between interior and exterior living. Patios, covered porches, outdoor dining areas, and pool decks are not afterthoughts &mdash; they are primary living spaces that deserve the same design attention as the great room. An interior designer in St. George, Utah who does not think about the outdoor spaces is leaving performance on the table.</p>
+
+            <p><strong>Dust, sand, and desert maintenance.</strong> Fine red sand finds its way into everything. Furnishings, textiles, and flooring need to be chosen with this reality in mind. Performance fabrics, easy-clean surfaces, and design choices that embrace the desert rather than fighting it are essential for properties that need to look immaculate for every guest arrival.</p>
+
+            <div class="callout">The desert is beautiful and demanding. Designing for this environment is not optional &mdash; it is the foundation every other decision is built on.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: Our Services in St. George -->
+        <section>
+            <h2>Our Services in St. George</h2>
+
+            <p>We offer full-service interior design for two types of clients in the St. George market: <strong>vacation rental investors</strong> and <strong>luxury second home owners</strong>. The design objectives are different, but the process and the commitment to execution are the same.</p>
+
+            <div class="stage-block">
+                <h3>Vacation Rental Design</h3>
+                <p>We specialize in large-group vacation rentals &mdash; properties that accommodate 8 or more guests. Our <a href="vacation-rental-design.html">STR design process</a> is built around a simple premise: design is a revenue lever, not a cost line item. The properties we design consistently outperform their market comps in occupancy, average daily rate, and guest review scores.</p>
+                <p>We handle everything: design concept, furniture and decor selection, procurement of every item down to the last kitchen utensil, and on-site installation and styling. You receive a guest-ready, photograph-ready property.</p>
+            </div>
+
+            <div class="stage-block">
+                <h3>Second Home Design</h3>
+                <p>For homeowners who want their St. George property to feel like a genuine escape &mdash; not a well-furnished generic space &mdash; our <a href="second-home-design.html">second home design service</a> is built around the Intentional Home Framework. We design for arrival, memory, and identity, so your home feels unmistakably yours from the moment you walk through the door.</p>
+                <p>The same full-service process applies: Design Planning, Procurement, and Installation. You tell us what the home should feel like. We make it happen.</p>
+            </div>
+
+            <p>Both services follow our three-phase process:</p>
+
+            <div class="process-steps">
+                <ol>
+                    <li><strong>Design Planning.</strong> We assess your property, understand your goals, and develop a complete design concept &mdash; floor plans, furniture selections, color palettes, art direction, and a detailed budget.</li>
+                    <li><strong>Procurement.</strong> We source and order every item. Furniture, decor, bedding, kitchenware, accessories, window treatments, rugs, art &mdash; everything. We manage vendors, track shipments, and coordinate timelines.</li>
+                    <li><strong>Installation.</strong> Our team installs and styles everything on site. Furniture placement, art hanging, accessory layering, bed making, kitchen stocking &mdash; we hand you a finished space.</li>
+                </ol>
+            </div>
+
+            <p>Want to see the work? <a href="portfolio.html">Browse our portfolio</a> to get a sense of what full-service design looks like in practice.</p>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <p>Ready to talk about your St. George property?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="playbook-optin.html" class="cta-secondary">Get the free STR Design Playbook</a>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="guide-optin.html" class="cta-secondary">Get the free Second Home Design Guide</a>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+
+</body>
+</html>

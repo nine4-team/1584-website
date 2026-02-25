@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solente Interior Design &mdash; Gated Luxury Homes | 1584 Design</title>
+    <meta name="description" content="Interior design for Solente properties in Washington City, Utah. Gated luxury estate homes, townhomes, and resort villas across 570 acres. Second home design for Southern Utah's most private new community.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #FAFAF7;
+            background-color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 1);
+            z-index: 1000;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Article Layout */
+        .article-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .article-header h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 5.5vw, 56px);
+            font-weight: 400;
+            color: #FAFAF7;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.5;
+            color: rgba(250, 250, 247, 0.7);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #9a7d55;
+            margin: 56px auto;
+        }
+
+        /* Section Headers */
+        .article-wrapper h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 400;
+            color: #FAFAF7;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        /* Body Text */
+        .article-wrapper p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .article-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lead / Callout Text */
+        .callout {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            line-height: 1.6;
+            color: #E8DED0;
+            text-align: center;
+            padding: 36px 24px;
+            margin: 40px 0;
+            border-top: 1px solid #9a7d55;
+            border-bottom: 1px solid #9a7d55;
+            font-style: italic;
+        }
+
+        /* Bold Key Phrase */
+        .article-wrapper strong {
+            color: #FAFAF7;
+            font-weight: 600;
+        }
+
+        /* Bullet Lists */
+        .article-wrapper ul {
+            list-style: none;
+            margin: 0 0 24px 0;
+            padding: 0;
+        }
+
+        .article-wrapper ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .article-wrapper ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #9a7d55;
+            border-radius: 50%;
+        }
+
+        /* Inline Links */
+        .article-wrapper a:not(.cta-button) {
+            color: #9a7d55;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(154, 125, 85, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .article-wrapper a:not(.cta-button):hover {
+            border-bottom-color: #9a7d55;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin: 56px 0 0;
+            padding: 48px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .cta-section p {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            color: #FAFAF7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
+            background: #9a7d55;
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+            color: rgba(250, 250, 247, 0.6);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            color: #9a7d55;
+            border-bottom-color: #9a7d55;
+        }
+
+        /* Founder Signature */
+        .founder-signature {
+            margin: 40px 0 0;
+        }
+
+        .founder-name {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 64px;
+            }
+
+            .article-wrapper {
+                padding: 110px 20px 60px;
+            }
+
+            .article-header {
+                margin-bottom: 48px;
+                padding-bottom: 36px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .callout {
+                padding: 28px 16px;
+                margin: 32px 0;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-wrapper {
+                padding: 100px 16px 48px;
+            }
+
+            .article-wrapper p,
+            .article-wrapper ul li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Interior Design for Solente Properties</h1>
+            <p class="article-subtitle">570 acres of gated luxury in Washington City, Utah &mdash; a private residential retreat with resort-level amenities, 2,200 homes planned, and estate lots starting at half a million dollars for land alone. Solente is built for owners who want solitude, not guests. The design should reflect that.</p>
+        </header>
+
+        <!-- Section 1: The Vision -->
+        <section>
+            <h2>The Vision Behind Solente</h2>
+
+            <p>Solente is a 570-acre gated community in Washington City, Utah, developed by GWC Capital and Blue Diamond Capital &mdash; the same partnership behind <a href="desert-color.html">Desert Color</a>, the largest resort community in the <a href="../st-george-utah.html">St. George corridor</a>. But the resemblance ends at the developer name. Where Desert Color is a resort town engineered for vacation rental economics and guest volume, Solente is a private enclave designed for personal use. The product is entirely different, and so is the design brief.</p>
+
+            <p>At full buildout, Solente will include approximately 2,200 units across a range of housing types: estate homes on premium lots, townhomes, condominiums, resort villas, and casitas. The community is gated, and the marketing language centers on two words that rarely describe a 2,200-unit development: <strong>solitude and privacy</strong>. That positioning is deliberate. Solente is not trying to be a destination. It is trying to be a retreat &mdash; a place where the gates close behind you and the noise of the outside world stays on the other side.</p>
+
+            <p>The developer pedigree matters. GWC Capital and Blue Diamond Capital know how to build large-scale communities in this corridor. They understand infrastructure, phasing, amenity timing, and how to deliver on long-horizon promises. Desert Color is proof of execution at scale. But the lesson of Solente is that the same developers looked at the market and made a fundamentally different bet: that there is demand in Washington City not just for resort-style living, but for gated residential privacy at a luxury price point. They are building two communities on opposite sides of the same thesis.</p>
+
+            <p>For interior design, that distinction shapes everything. A Desert Color property is designed around guest experience, listing photography, and revenue optimization. A Solente property is designed around the owner &mdash; who they are, how they live, and what this home means to them. The materials, the layout priorities, the furniture selections, the relationship between indoor and outdoor space &mdash; all of it changes when the person walking through the door every day is the person who owns it.</p>
+
+            <div class="callout">Same developers. Same corridor. Entirely different product. Where Desert Color is a resort town built for guests, Solente is a residential retreat built for owners. The design must honor that distinction.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: La Parea Club and the Lifestyle -->
+        <section>
+            <h2>La Parea Club and the Lifestyle It Creates</h2>
+
+            <p>The centerpiece of Solente&rsquo;s amenity program is La Parea Club &mdash; a concierge-level lifestyle club that goes beyond the standard community amenity package. This is not a clubhouse with a pool and a fitness room. La Parea is designed as a social and service hub: concierge services, curated social programming, and a level of property-owner support that blurs the line between residential community and private resort.</p>
+
+            <p>Beyond the club, the community is threaded with hiking, biking, and equestrian trails across the 570-acre property. A luxury resort hotel is planned within the development &mdash; a hospitality anchor that will serve both residents and visitors, and that signals the caliber of experience Solente is being built to deliver. The trail network and the hotel are not afterthoughts. They are load-bearing elements of the community&rsquo;s identity.</p>
+
+            <p><strong>The amenity package shapes the design brief in specific ways.</strong> A home designed for an owner who has concierge-level services, organized social programming, trail access from the front door, and a luxury hotel within walking distance is a fundamentally different home than one designed for self-sufficient living. The owner is not managing every aspect of daily life inside their four walls. They are participating in a curated lifestyle that extends well beyond the property line.</p>
+
+            <p>That changes how you think about the interior. The home becomes a base of operations and a private sanctuary &mdash; a place to return to after a day on the trails, a place to host intimate gatherings that complement (rather than replicate) the social programming at La Parea, a place where the transition from community activity to personal solitude is seamless and intentional. The design should make that transition feel effortless: a mudroom that handles gear from the equestrian trails, an outdoor living space calibrated for small-group entertaining, a master suite that feels genuinely removed from the rest of the house.</p>
+
+            <div class="callout">When the community provides concierge services, social programming, and resort-level amenities, the home does not need to be everything. It needs to be the one thing the community cannot provide &mdash; a private retreat that feels unmistakably yours.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: Estate Home Design at Solente -->
+        <section>
+            <h2>Estate Home Design at Solente</h2>
+
+            <p>At 1584 Design, we approach every <a href="../second-home-design.html">second home project</a> through the Intentional Home Framework &mdash; a design methodology built around three layers of alignment: Environment, Architecture, and Owner Identity. At Solente, each layer carries specific weight.</p>
+
+            <p><strong>Environment.</strong> Solente sits within 570 acres of high desert landscape in Washington City, with mountain views and the visual composition of a gated community where every sightline is controlled and intentional. Unlike an open subdivision where the view out one window might be a neighbor&rsquo;s garage, Solente&rsquo;s planning and density controls mean the landscape is a design asset from every angle. The red rock formations, the desert flora, the way light moves across the valley floor at different hours &mdash; these are not background. They are the primary material palette. Interior design that ignores what is happening outside the glass is ignoring the reason the owner chose this location.</p>
+
+            <p><strong>Architecture.</strong> Ten approved builders are active within Solente, including Carefree, Holmes, Cedar Pointe, Dennis Miller, and others &mdash; each with a different structural vocabulary, different floor plan logic, and different approaches to volume, fenestration, and material. That builder diversity is an asset, but only if the interior design responds to it. A Carefree floor plan has a different rhythm than a Cedar Pointe custom build. The ceiling heights, the way natural light enters, the relationship between the kitchen and the primary living space, the proportions of the master suite &mdash; all of these vary by builder. 1584&rsquo;s builder-specific knowledge allows us to design interiors that feel native to the architecture rather than layered on top of it.</p>
+
+            <p><strong>Owner Identity.</strong> Estate lots at Solente start at approximately $500,000 for land alone. With construction, the total home cost will likely exceed $1 million. At this price point, in a gated community with this level of amenity programming, the home is a statement &mdash; not in a performative sense, but in the deepest design sense. It reflects the owner&rsquo;s relationship to this landscape, this lifestyle, and the kind of retreat they are building for themselves and their family. The design should make that relationship visible. Not through showy choices, but through ones that are specifically yours: materials chosen for how they feel, furniture scaled to how the owner actually lives, art and objects that carry meaning, and a spatial flow that matches the owner&rsquo;s daily rhythms rather than a generic luxury template.</p>
+
+            <p><strong>Custom builds demand design involvement from the start.</strong> When estate lots are purchased as raw land and built to spec, the interior design should be planned alongside the architecture &mdash; not after construction is complete. Decisions about electrical placement, plumbing rough-ins, built-in millwork, lighting control zones, and material transitions between interior and exterior spaces are all made during the construction phase. A designer brought in after the drywall is up is inheriting constraints that could have been opportunities. For Solente estate homes, we work with the owner and builder from the earliest feasible stage to ensure the interior vision and the architectural vision are developed as a single, coherent plan.</p>
+
+            <div class="callout">At $1M+ in a gated community, this home is not a purchase. It is a declaration of how you want to live. The design should be as intentional and specific as the decision to build here.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: The Builder Landscape -->
+        <section>
+            <h2>The Builder Landscape at Solente</h2>
+
+            <p>Solente has approved ten builders to construct within its gates &mdash; a deliberate decision that creates design diversity while maintaining quality control. Each builder brings a different architectural language, and for interior design, that variation is where the opportunity lives.</p>
+
+            <p><strong>Carefree Homes</strong> is a known quantity in the St. George corridor, active in both Solente and <a href="desert-color.html">Desert Color</a>. Their floor plans tend toward efficient, well-proportioned layouts that reward thoughtful furniture planning. Familiarity with Carefree&rsquo;s structural tendencies &mdash; where the load-bearing walls fall, how the kitchen relates to the living space, which elevations get the best light &mdash; translates directly into better design outcomes.</p>
+
+            <p><strong>Holmes Homes</strong> builds across multiple price points, and their presence at Solente introduces options for townhome and smaller-footprint buyers. The design challenge in these units is making a more compact space feel as considered and luxurious as the estate homes. Every square foot must work harder, and the material selections need to punch above their weight.</p>
+
+            <p><strong>Cedar Pointe</strong> operates in the custom and semi-custom segment, where floor plans are tailored to the lot and the owner&rsquo;s specifications. These are the projects where early design involvement matters most &mdash; where working with the builder during the architectural phase allows us to influence spatial decisions that will define the home for decades.</p>
+
+            <p><strong>Dennis Miller Homes</strong> and the remaining approved builders round out a roster that covers the full spectrum from production townhomes to fully custom estate builds. That range means Solente will not have the architectural monotony of a single-builder community. Walk down any street and you will see different rooflines, different material palettes, different approaches to how a home meets its lot.</p>
+
+            <p>For an interior designer, builder diversity is an advantage &mdash; but only if the designer has the knowledge to exploit it. Understanding how each builder thinks about structure, proportion, and materials allows us to design interiors that feel like they grew from the architecture rather than being dropped into it. A furniture plan that works beautifully in a Cedar Pointe custom may be completely wrong for a Holmes townhome, even if the square footage is similar. The architecture dictates different solutions, and we design accordingly.</p>
+
+            <p>This is the same principle that applies at Desert Color, where <a href="desert-color.html">builder variation creates design opportunities</a> for STR investors. At Solente, the principle holds, but the objective shifts: instead of optimizing for guest experience and listing photography, we are optimizing for the owner&rsquo;s daily experience of living in the space. The builder knowledge is the same. The application is personal rather than commercial. Buyers considering the private-residential experience that Solente offers may also want to look at <a href="divario.html">Divario</a> in St. George &mdash; another non-STR master plan with a different lifestyle emphasis, built for active outdoor living rather than gated privacy.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: Resort Villas — A Possible STR Opportunity -->
+        <section>
+            <h2>Resort Villas: A Possible Short-Term Rental Opportunity</h2>
+
+            <p>Solente is not currently on Washington City&rsquo;s RRST (Recreational Resort Short-Term) approved list for its estate home sections. The community is designed and marketed as a residential retreat, and the regulatory framework reflects that positioning. This is not a community where you should assume nightly rental rights exist.</p>
+
+            <p>However, Solente&rsquo;s plan includes resort villa segments that may eventually receive short-term rental approval. This is a possibility, not a certainty &mdash; and any investment decision premised on STR revenue in these segments should be made with that caveat clearly understood. Regulatory approval processes in Washington City are ongoing, and the outcome is not guaranteed.</p>
+
+            <p><strong>If resort villa segments do receive STR approval</strong>, the design calculus changes for those specific units. The same principles that drive high-performance vacation rental design in the St. George corridor &mdash; our <a href="../vacation-rental-design.html">3 Performance Stages framework</a> covering durability, guest flow, and listing photography &mdash; would apply. These are not estate homes designed for personal use; they are hospitality assets that need to compete in the Southern Utah STR market, and the design must reflect that operational reality. For comparison, <a href="the-isles.html">The Isles at Coral Canyon</a> &mdash; also in Washington City &mdash; offers a purpose-built STR townhome product that illustrates what a dedicated short-term rental design brief looks like in this same market.</p>
+
+            <p>For investors watching the resort villa segments, the <a href="../playbook-optin.html">STR Design Playbook</a> covers the framework we use on every vacation rental project. And our <a href="../st-george-utah.html">St. George market overview</a> provides broader context on STR regulations and opportunities across the corridor. But for now, Solente&rsquo;s primary story is residential &mdash; and the design work we do here reflects that.</p>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <p>Ready to design your Solente home?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="../playbook-optin.html" class="cta-secondary">Get the free STR Design Playbook</a>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="../guide-optin.html" class="cta-secondary">Get the free Second Home Design Guide</a>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+
+</body>
+</html>

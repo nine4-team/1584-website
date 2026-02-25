@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - 1584 Design - Interior Design for Vacation Rentals</title>
+    <meta name="description" content="Interior design portfolio — vacation rentals and second homes in St. George, Utah and beyond. Living spaces, bedrooms, outdoor areas, and more by 1584 Design.">
+    <title>Portfolio | Vacation Rental & Second Home Interior Design — 1584 Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -862,6 +863,42 @@
             }
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "InteriorDesigner",
+      "name": "1584 Design",
+      "url": "https://1584design.com",
+      "telephone": "+14358623631",
+      "email": "team@1584design.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "St. George",
+        "addressRegion": "UT",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "St. George", "addressRegion": "UT"},
+        {"@type": "City", "name": "Las Vegas", "addressRegion": "NV"}
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Lisa Fisher"
+      },
+      "foundingDate": "2021",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "54",
+        "bestRating": "5"
+      },
+      "sameAs": [
+        "https://www.instagram.com/1584_design/",
+        "https://www.facebook.com/lisa.s.fisher.92/"
+      ],
+      "priceRange": "$$$"
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -1150,7 +1187,7 @@
                 const thumbnail = document.createElement('img');
                 thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
                 thumbnail.src = imageSrc;
-                thumbnail.alt = `${portfolioData[category].title} Thumbnail ${index + 1}`;
+                thumbnail.alt = `${portfolioData[category].title} interior design by 1584 Design — St. George Utah — thumbnail ${index + 1}`;
                 thumbnail.onclick = () => showImage(index);
                 thumbnailContainer.appendChild(thumbnail);
             });
@@ -1334,7 +1371,7 @@
 
             const img = document.createElement('img');
             img.src = imageSrc; // Fallback to original
-            img.alt = `${portfolioData[category].title} Image ${index + 1}`;
+            img.alt = `${portfolioData[category].title} interior design by 1584 Design — St. George Utah — photo ${index + 1}`;
             img.loading = 'lazy';
             img.decoding = 'async';
             img.onload = function() {
@@ -1387,7 +1424,7 @@
                 const thumbnail = document.createElement('img');
                 thumbnail.className = `thumbnail ${index === imageIndex ? 'active' : ''}`;
                 thumbnail.src = imageSrc;
-                thumbnail.alt = `${portfolioData[category].title} Thumbnail ${index + 1}`;
+                thumbnail.alt = `${portfolioData[category].title} interior design by 1584 Design — St. George Utah — thumbnail ${index + 1}`;
                 thumbnail.onclick = () => showImage(index);
                 thumbnailContainer.appendChild(thumbnail);
             });

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divario Interior Design &mdash; Outdoor Luxury Homes | 1584 Design</title>
+    <meta name="description" content="Interior design for Divario properties in St. George, Utah. St. George's first mixed-use master plan — 730 acres of outdoor recreation, luxury homes in Cascada, and second home design for an active lifestyle.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #FAFAF7;
+            background-color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 1);
+            z-index: 1000;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Article Layout */
+        .article-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .article-header h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 5.5vw, 56px);
+            font-weight: 400;
+            color: #FAFAF7;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.5;
+            color: rgba(250, 250, 247, 0.7);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #9a7d55;
+            margin: 56px auto;
+        }
+
+        /* Section Headers */
+        .article-wrapper h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 400;
+            color: #FAFAF7;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        /* Body Text */
+        .article-wrapper p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .article-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lead / Callout Text */
+        .callout {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            line-height: 1.6;
+            color: #E8DED0;
+            text-align: center;
+            padding: 36px 24px;
+            margin: 40px 0;
+            border-top: 1px solid #9a7d55;
+            border-bottom: 1px solid #9a7d55;
+            font-style: italic;
+        }
+
+        /* Bold Key Phrase */
+        .article-wrapper strong {
+            color: #FAFAF7;
+            font-weight: 600;
+        }
+
+        /* Bullet Lists */
+        .article-wrapper ul {
+            list-style: none;
+            margin: 0 0 24px 0;
+            padding: 0;
+        }
+
+        .article-wrapper ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .article-wrapper ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #9a7d55;
+            border-radius: 50%;
+        }
+
+        /* Inline Links */
+        .article-wrapper a:not(.cta-button) {
+            color: #9a7d55;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(154, 125, 85, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .article-wrapper a:not(.cta-button):hover {
+            border-bottom-color: #9a7d55;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin: 56px 0 0;
+            padding: 48px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .cta-section p {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            color: #FAFAF7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
+            background: #9a7d55;
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+            color: rgba(250, 250, 247, 0.6);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            color: #9a7d55;
+            border-bottom-color: #9a7d55;
+        }
+
+        /* Founder Signature */
+        .founder-signature {
+            margin: 40px 0 0;
+        }
+
+        .founder-name {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 64px;
+            }
+
+            .article-wrapper {
+                padding: 110px 20px 60px;
+            }
+
+            .article-header {
+                margin-bottom: 48px;
+                padding-bottom: 36px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .callout {
+                padding: 28px 16px;
+                margin: 32px 0;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-wrapper {
+                padding: 100px 16px 48px;
+            }
+
+            .article-wrapper p,
+            .article-wrapper ul li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Interior Design for Divario Properties</h1>
+            <p class="article-subtitle">St. George&rsquo;s first mixed-use master plan is built for people who live actively &mdash; 730 acres of trails, open space, and recreation woven into daily life. Divario is not zoned for short-term rentals. Divario does not allow short-term rentals. Every home is designed for the people who live there — not for guests.</p>
+        </header>
+
+        <!-- Section 1: St. George's First Mixed-Use Master Plan -->
+        <section>
+            <h2>St. George&rsquo;s First Mixed-Use Master Plan</h2>
+
+            <p>Divario is not another residential subdivision. It is the first mixed-use master-planned community in <a href="../st-george-utah.html">St. George</a> &mdash; 730 acres approved for 3,186 homes, with 26 acres of commercial development, an event center, and more than 200 acres of preserved open space. The scale and ambition put it in a different category from anything else being built in the corridor.</p>
+
+            <p>The community is organized into multiple distinct neighborhoods, each with its own character and price point. <strong>Solaro Hills</strong> and <strong>Verana Vista</strong> serve the broader residential market, while <strong>Cascada</strong> occupies the luxury segment at $770K to $900K and above &mdash; the price range where interior design becomes a decisive factor in how a home feels and functions. Six builders are active across these neighborhoods, creating the kind of architectural variety that gives each property its own identity rather than the uniformity of a single-builder tract.</p>
+
+            <p>The mixed-use designation matters. This is not a community where you drive somewhere else for dinner, groceries, or a weekend event. The 26 acres of commercial space and the event center are designed to serve residents within the community itself. Combined with the trail network and open space, the result is a place where the things you do every day &mdash; exercise, eat, gather, unwind &mdash; happen within walking or biking distance of your front door. That proximity changes how people use their homes, and it changes how homes should be designed.</p>
+
+            <p>The developer&rsquo;s own positioning says it plainly: Divario is built for a &ldquo;primary residence or home away from home.&rdquo; Not an investment property. Not a rental asset. A place to live &mdash; either full-time or as a second home &mdash; in a community designed to support an active, integrated daily life.</p>
+
+            <div class="callout">730 acres. 3,186 homes. 200+ acres of open space, 26 acres of commercial, and a trail network threaded through all of it. Divario is not a neighborhood &mdash; it is a new model for how St. George grows.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: The Outdoor Recreation Lifestyle -->
+        <section>
+            <h2>The Outdoor Recreation Lifestyle</h2>
+
+            <p>The people buying in Divario chose it for a specific reason: the outdoor life is not something they drive to on weekends. It is built into the daily rhythm of the community. Mountain biking trails thread through the 200+ acres of open space. Parks are distributed across the neighborhoods. The broader St. George trail network &mdash; one of the deepest outdoor recreation portfolios in the intermountain West &mdash; is immediately accessible from the community&rsquo;s borders.</p>
+
+            <p>This is an owner profile that is fundamentally active. They ride before work. They hike after dinner. They come home with red dust on their shoes and mud on their bikes. They host friends for trail days and want the house to absorb that energy without friction. Understanding how these owners actually live is the starting point for every design decision in a Divario property.</p>
+
+            <p><strong>Gear storage is not optional &mdash; it is primary infrastructure.</strong> Mountain bikes, trail running shoes, hydration packs, climbing gear, ski equipment in winter. A Divario home without dedicated, ventilated, organized gear storage is fighting its own owner every day. We design mudrooms and garage-adjacent storage systems that accommodate the volume and variety of equipment an active household accumulates &mdash; not as an afterthought closet, but as a planned transition zone between the trail and the interior.</p>
+
+            <p><strong>Entryways need to handle the desert.</strong> Red rock dust, trail debris, sweat, sunscreen. The materials at the threshold of a Divario home should be chosen for how they clean, not how they look in a catalog. Durable tile or sealed concrete in the entry. Performance runners that trap particulate. Benches with storage underneath for shoes. The goal is a seamless transition from outside to inside that does not punish an active lifestyle.</p>
+
+            <p><strong>Indoor-outdoor flow follows the terrain.</strong> Divario&rsquo;s open desert landscape and mountain views are not backdrop &mdash; they are the reason the community exists. Covered patios, retractable glass walls where the architecture supports them, outdoor living areas that feel as furnished and intentional as the interior rooms. The connection between inside and outside should feel continuous, not interrupted by a sliding door and a concrete slab.</p>
+
+            <p><strong>Post-activity comfort drives the interior program.</strong> After a long ride or a full day on the trails, the home should deliver recovery. Deep soaking tubs. Oversized showers with bench seating. Living room furniture scaled for sprawling, not perching. Blackout capability in bedrooms for afternoon naps after morning summits. These are not luxury additions &mdash; they are functional requirements for the way Divario owners use their homes.</p>
+
+            <div class="callout">The owner who chooses Divario does not separate &ldquo;recreation&rdquo; from &ldquo;daily life.&rdquo; The home should be designed the same way &mdash; where the trail ends and the interior begins, the transition should be effortless.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: Cascada — The Luxury Segment -->
+        <section>
+            <h2>Cascada &mdash; The Luxury Segment</h2>
+
+            <p>Within Divario&rsquo;s multiple neighborhoods, Cascada occupies the luxury tier &mdash; homes priced from $770K into the $900K range and above. This is where the intersection of architecture, landscape, and owner ambition creates the conditions for interior design that goes beyond furnishing a house. It is also where 1584 Design&rsquo;s typical second home client lives within the Divario community.</p>
+
+            <p>We approach every Cascada project through the <a href="../second-home-design.html">Intentional Home Framework</a> &mdash; three layers of alignment that ensure the interior feels native to the property, not imported from a catalog.</p>
+
+            <ul>
+                <li><strong>Environment</strong> &mdash; Cascada sits within Divario&rsquo;s open desert landscape, with mountain views and trail-adjacent lots that connect directly to the community&rsquo;s recreation network. The design must work with that setting: desert light pouring through west-facing windows, the red and ochre tones of the surrounding terrain, the expansive sky that frames every exterior sightline. Materials and palettes that fight the landscape create a home at odds with itself. Materials that extend the landscape inward create a home that feels inevitable.</li>
+                <li><strong>Architecture</strong> &mdash; Multiple builders are active in Cascada, each bringing different floor plan logic, ceiling volumes, and structural vocabulary. We work with the specific architecture of each property &mdash; where light enters, how rooms relate to each other, which walls can support visual weight, where the structure invites openness and where it creates intimacy. Interior design that flows from the architecture feels coherent. Design imposed on top of it never does.</li>
+                <li><strong>Owner identity</strong> &mdash; A Cascada home is not a generic luxury interior. It belongs to a specific person &mdash; someone who chose this community because the outdoor life is central to who they are, not peripheral. The design should reflect that identity: a home built for someone who comes back from the trail and wants a space that feels like a genuine retreat — not just a place to sleep. Not a showpiece. Not a staging package. A home that makes the owner exhale the moment they walk in, because it is unmistakably theirs.</li>
+            </ul>
+
+            <p>The luxury segment demands specificity. At the Cascada price point, owners are not looking for a &ldquo;nice house&rdquo; &mdash; they are looking for a home that reflects the life they are building in this place. That requires a designer who understands the landscape, knows the builders, and treats the owner&rsquo;s identity as the primary design input. Our <a href="../guide-optin.html">Second Home Design Guide</a> walks through this framework in detail.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: The Builder Landscape -->
+        <section>
+            <h2>The Builder Landscape</h2>
+
+            <p>Six builders are active across Divario&rsquo;s neighborhoods, each contributing a different architectural approach and product type. That diversity is one of Divario&rsquo;s strengths &mdash; it prevents the visual monotony of a single-builder community and gives buyers a genuine range of options. For interior design, it means every project starts with a different structural context.</p>
+
+            <p><strong>Carefree Homes</strong> is building in Divario and is also active in <a href="desert-color.html">Desert Color</a> and other St. George communities. Their floor plans tend toward efficient layouts with clean lines &mdash; a vocabulary we know well from working across multiple Carefree properties. That familiarity means we understand where the design opportunities are: which walls can anchor a statement, how the kitchen relates to the living area, where the natural light is strongest.</p>
+
+            <p><strong>Visionary Homes</strong> brings a different approach, with product types that range across Divario&rsquo;s neighborhoods. Like Carefree, Visionary operates across the <a href="../st-george-utah.html">St. George corridor</a>, and our experience with their construction informs how we approach furniture scale, material selection, and spatial planning in their floor plans.</p>
+
+            <p><strong>Ence Homes</strong> is a long-established Southern Utah builder with deep roots in the St. George market. Their homes tend toward traditional layouts with solid construction quality &mdash; a foundation that supports interior design ranging from contemporary to transitional, depending on the owner&rsquo;s identity.</p>
+
+            <p><strong>S&amp;S Homes</strong> builds across the value and mid-market segments, offering floor plans that require thoughtful space planning to reach their full potential. The design challenge with S&amp;S properties is making the interior feel elevated beyond the price point &mdash; achievable through strategic material choices, lighting, and furniture placement.</p>
+
+            <p><strong>Henry Walker Homes</strong> operates in the upper tier of the market, with architecture that tends toward contemporary mountain modern &mdash; larger volumes, intentional material contrasts, and floor plans that reward bold design choices. These homes have the structural bones to support the kind of interior work that defines a space.</p>
+
+            <p><strong>Fieldstone Homes</strong> rounds out the builder roster with a focus on quality construction across a range of price points. Their homes provide a solid canvas for interior design that can be tailored to the owner&rsquo;s preferences and lifestyle.</p>
+
+            <p>The advantage of working with a designer who has operated across these builders is compounding knowledge. We understand how Carefree&rsquo;s floor plans differ from Henry Walker&rsquo;s. We know which builders use standard ceiling heights and which offer volume that changes the scale of everything in the room. We know where load-bearing walls constrain furniture placement and where open spans create opportunity. That builder-specific knowledge is not something a generalist designer brings to the table &mdash; it is earned through project experience in this market.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: A Home, Not a Rental -->
+        <section>
+            <h2>A Home, Not a Rental</h2>
+
+            <p>Divario is not on St. George&rsquo;s approved short-term rental list. There are no nightly rentals in this community. And that is not a limitation &mdash; it is a defining characteristic that shapes everything about the neighborhood and everything about how a home here should be designed.</p>
+
+            <p><strong>The community character is different.</strong> In STR-zoned communities, the rhythm of the neighborhood is dictated by guest turnover &mdash; new faces every weekend, rolling suitcases on the sidewalk, the ambient noise of a hospitality operation running inside residential structures. Divario does not have that. The people on your street are your neighbors. They walk their dogs on the same trails. They show up at the same community events. The pace is set by residents, not guests, and that creates a different kind of place to live.</p>
+
+            <p><strong>The design brief is different.</strong> When a home will never be rented, the entire optimization framework changes. There is no guest persona to design for. No listing photography strategy. No revenue-per-square-foot calculation. No performance fabrics chosen for abuse resistance. No bunk rooms engineered to maximize headcount. Instead, every decision serves a single question: <strong>does this home work for the person who owns it?</strong></p>
+
+            <p>That question unlocks design choices that are impossible in a rental context:</p>
+
+            <ul>
+                <li><strong>Materials chosen for how they age, not how they survive strangers.</strong> Natural wood that develops patina. Linen upholstery that softens over years of use. Stone countertops selected for their character rather than their indestructibility. A home that gets better with time, not one armored against it.</li>
+                <li><strong>Layouts that serve the owner&rsquo;s actual life.</strong> A reading nook by the window because the owner reads every morning. A dedicated yoga space because that is part of the daily routine. A kitchen organized for how this specific person cooks, not how a hypothetical guest might fumble through a rental kitchen looking for a spatula.</li>
+                <li><strong>Collections, art, and personal objects.</strong> A rental property cannot display the owner&rsquo;s art collection. A personal home should. The things you love &mdash; the pieces you have gathered, the objects that carry meaning &mdash; are the difference between a furnished house and a home. We design around them, not in spite of them.</li>
+                <li><strong>Acoustic privacy and quiet.</strong> Without the turnover noise and group energy of a rental operation, a Divario home can be designed for silence where silence is wanted &mdash; bedrooms that are genuinely restful, studies that support deep focus, outdoor spaces that feel private rather than performance-ready.</li>
+            </ul>
+
+            <p>The absence of rental zoning is what makes Divario a genuine second home community. The design should honor that distinction fully. Our <a href="../second-home-design.html">second home design process</a> is built specifically for owners who want a home that reflects who they are &mdash; not a property optimized for someone else&rsquo;s experience. Buyers who value this same residential focus may also want to compare <a href="desert-canyons.html">Desert Canyons</a> or <a href="long-valley.html">Long Valley</a> &mdash; two other St. George corridor communities without STR zoning, each offering a different price point and neighborhood character. Or, for gated privacy over outdoor trail access, <a href="solente.html">Solente</a> in Washington City takes a different approach to the personal-residence mission.</p>
+
+            <div class="callout">Without rental optimization, the design serves the owner entirely. Every material, every layout decision, every object in the home exists because it makes the owner&rsquo;s life in this space better. That is the design freedom Divario offers.</div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <p>Ready to design your Divario home?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="../playbook-optin.html" class="cta-secondary">Get the free STR Design Playbook</a>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="../guide-optin.html" class="cta-secondary">Get the free Second Home Design Guide</a>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+
+</body>
+</html>

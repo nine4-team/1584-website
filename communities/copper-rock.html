@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copper Rock Interior Design &mdash; Luxury Home Design | 1584 Design</title>
+    <meta name="description" content="Luxury interior design for Copper Rock properties in Hurricane, Utah — vacation rentals and personal residences. Championship golf community where design must match the setting. Full-service design.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #FAFAF7; background-color: #1A1A1A; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .navigation { position: fixed; top: 0; left: 0; right: 0; background: rgba(26, 26, 26, 1); z-index: 1000; padding: 0 24px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .nav-container { max-width: 1440px; margin: 0 auto; display: flex; align-items: center; height: 80px; }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 40px; width: auto; display: block; }
+        .article-wrapper { max-width: 860px; margin: 0 auto; padding: 140px 24px 80px; }
+        .article-header { text-align: center; margin-bottom: 64px; padding-bottom: 48px; border-bottom: 1px solid rgba(250, 250, 247, 0.1); }
+        .article-header h1 { font-family: 'Baskerville', Palatino, Garamond, serif; font-size: clamp(36px, 5.5vw, 56px); font-weight: 400; color: #FAFAF7; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
+        .article-subtitle { font-size: clamp(16px, 2.2vw, 20px); line-height: 1.5; color: rgba(250, 250, 247, 0.7); font-weight: 400; max-width: 720px; margin: 0 auto; }
+        .section-divider { width: 60px; height: 1px; background: #9a7d55; margin: 56px auto; }
+        .article-wrapper h2 { font-family: 'Baskerville', Palatino, Garamond, serif; font-size: clamp(26px, 3.5vw, 36px); font-weight: 400; color: #FAFAF7; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 28px; }
+        .article-wrapper p { font-size: 17px; line-height: 1.8; color: rgba(250, 250, 247, 0.85); margin-bottom: 24px; }
+        .article-wrapper p:last-child { margin-bottom: 0; }
+        .callout { font-family: 'Baskerville', Palatino, Garamond, serif; font-size: clamp(20px, 2.8vw, 26px); line-height: 1.6; color: #E8DED0; text-align: center; padding: 36px 24px; margin: 40px 0; border-top: 1px solid #9a7d55; border-bottom: 1px solid #9a7d55; font-style: italic; }
+        .article-wrapper strong { color: #FAFAF7; font-weight: 600; }
+        .article-wrapper ul { list-style: none; margin: 0 0 24px 0; padding: 0; }
+        .article-wrapper ul li { position: relative; padding-left: 24px; margin-bottom: 12px; font-size: 17px; line-height: 1.7; color: rgba(250, 250, 247, 0.85); }
+        .article-wrapper ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; background: #9a7d55; border-radius: 50%; }
+        .article-wrapper a:not(.cta-button) { color: #9a7d55; text-decoration: none; border-bottom: 1px solid rgba(154, 125, 85, 0.3); transition: border-color 0.3s ease; }
+        .article-wrapper a:not(.cta-button):hover { border-bottom-color: #9a7d55; }
+        .cta-section { text-align: center; margin: 56px 0 0; padding: 48px 0; border-top: 1px solid rgba(250, 250, 247, 0.1); }
+        .cta-section p { font-family: 'Baskerville', Palatino, Garamond, serif; font-size: clamp(20px, 2.8vw, 26px); color: #FAFAF7; margin-bottom: 28px; font-weight: 400; }
+        .cta-button { display: inline-flex; align-items: center; gap: 12px; padding: 16px 34px; background: #9a7d55; color: #FAFAF7; text-decoration: none; font-family: 'Avenir', sans-serif; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; border-radius: 25pt; border: 2px solid #9a7d55; transition: all 0.3s ease; box-shadow: none; }
+        .cta-button::after { content: "\2192"; font-size: 16px; transition: transform 0.3s ease; }
+        .cta-button:hover { background: #1A1A1A; color: #FAFAF7; border-color: #1A1A1A; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3); }
+        .cta-button:hover::after { transform: translateX(4px); }
+        .cta-secondary { display: inline-block; margin-top: 20px; font-size: 15px; color: rgba(250, 250, 247, 0.6); text-decoration: none; border-bottom: 1px solid rgba(250, 250, 247, 0.2); transition: all 0.3s ease; }
+        .cta-secondary:hover { color: #9a7d55; border-bottom-color: #9a7d55; }
+        .founder-signature { margin: 40px 0 0; }
+        .founder-name { font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 17px; font-weight: 400; color: rgba(250, 250, 247, 0.85); margin-bottom: 4px; }
+        .founder-title { font-size: 12px; color: rgba(250, 250, 247, 0.45); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+        .footer { background-color: #1A1A1A; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 40px 24px; text-align: center; }
+        .footer p { font-size: 14px; color: rgba(250, 250, 247, 0.4); margin: 0; }
+        @media (max-width: 768px) { .nav-container { height: 64px; } .article-wrapper { padding: 110px 20px 60px; } .article-header { margin-bottom: 48px; padding-bottom: 36px; } .section-divider { margin: 40px auto; } .callout { padding: 28px 16px; margin: 32px 0; } .cta-button { padding: 14px 28px; font-size: 14px; } }
+        @media (max-width: 480px) { .article-wrapper { padding: 100px 16px 48px; } .article-wrapper p, .article-wrapper ul li { font-size: 16px; } }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Luxury Interior Design at Copper Rock</h1>
+            <p class="article-subtitle">Championship golf. Copper cliffs. LPGA-level exclusivity. Whether you own a high-performing vacation rental or a personal retreat, the setting sets the bar &mdash; and the interiors have to meet it.</p>
+        </header>
+
+        <!-- Section 1: Championship Golf Defines the Community -->
+        <section>
+            <h2>Championship Golf Defines the Community</h2>
+
+            <p><a href="https://copperrock.com/" target="_blank" rel="noopener">Copper Rock</a> is not a neighborhood that happens to have a golf course. Golf is the community. Everything &mdash; the architecture, the lot positioning, the price points, the guest profile &mdash; radiates outward from an 18-hole championship course that has put Hurricane, Utah on a national stage.</p>
+
+            <p>The course itself is a par-72, 7,227-yard design by Dale Beddo of G3 Golf Group, opened in February 2020. It threads through roughly 900&ndash;950 acres of copper-colored cliff formations, creating dramatic elevation changes and signature desert vistas that have no equivalent anywhere else in the St. George corridor. This is not a flat, irrigated fairway dropped into a subdivision. The landscape is the course, and the course is the landscape.</p>
+
+            <p>Since 2020, Copper Rock has hosted the <a href="https://www.epsontour.com/tournaments/copper-rock-championship/overview" target="_blank" rel="noopener">LPGA Epson Tour Copper Rock Championship</a> &mdash; the only professional tour stop in the region. That distinction matters beyond the tournament itself. It signals a level of course quality and community ambition that attracts a specific caliber of visitor and homeowner. People who buy at Copper Rock, and people who rent at Copper Rock, expect a standard that reflects the setting.</p>
+
+            <p>The amenity package reinforces that standard. A practice facility with putting green, chipping area, and driving range. A clubhouse with a full-service restaurant operating from breakfast through dinner, a pro shop, and a conference hall that seats 200. A community pool and spa. These are not aspirational additions on a master plan &mdash; they exist now, and they shape the guest experience from the moment of arrival.</p>
+
+            <div class="callout">Copper Rock is not a neighborhood with a golf amenity. Golf is the identity &mdash; and everything else, including the interiors, is measured against that standard.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: The Luxury Standard -->
+        <section>
+            <h2>The Luxury Standard</h2>
+
+            <p>Copper Rock is organized into three distinct subdivisions, each positioned at a different tier of the luxury market. Understanding the price context matters for design &mdash; because the homes surrounding your vacation rental set the visual and qualitative expectations for every guest who walks through the door.</p>
+
+            <ul>
+                <li><strong>Cliff View Estates:</strong> 20 homesites, luxury custom builds by Richardson Brothers Custom Homes, averaging approximately $3.5M. These are the crown jewels of the community &mdash; dramatic cliff-edge lots with unobstructed views.</li>
+                <li><strong>Golf View Estates:</strong> Custom homes positioned along the tournament hole 18 fairway, with views stretching across the copper cliffs to the Pine Valley Mountains. Average sale price around $1.8M.</li>
+                <li><strong>North Slope:</strong> Phases 1 and 2, oriented toward the Pine Valley Mountains, with an average around $3.4M. Lot sizes reach up to 2.5 acres across the community.</li>
+            </ul>
+
+            <p>Vacation rental homes at Copper Rock range from 3-bedroom properties accommodating 8&ndash;10 guests to expansive 10-bedroom estates hosting up to 54 guests. The development pace is deliberate &mdash; approximately 25 homes per year &mdash; which maintains the exclusivity that underpins both property values and guest expectations.</p>
+
+            <p>This is not a volume community. There are no phases of 200 identical floor plans, no rows of townhomes optimized for density. Every property at Copper Rock exists within a context of million-dollar-plus custom homes, championship golf, and desert architecture that takes itself seriously. When a guest arrives at a vacation rental here, the drive through the community has already told them what to expect. The interior needs to deliver on that promise.</p>
+
+            <p>At the top of Hurricane&rsquo;s luxury market, <a href="southern-shores.html">Southern Shores</a> is building custom lakefront estates at an even higher price point &mdash; a different kind of property that requires a different kind of design conversation.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: Designing for the Copper Rock Guest -->
+        <section>
+            <h2>Designing for the Copper Rock Guest</h2>
+
+            <p>The guest at Copper Rock is not the family-waterpark crowd. This is a self-selecting audience &mdash; golfers, couples seeking a luxury retreat, small corporate groups booking around the 200-seat conference hall, and discerning travelers who chose this community precisely because it is not a mass-market resort.</p>
+
+            <p>These guests have higher expectations for interiors because they are paying premium nightly rates at a property surrounded by multi-million-dollar homes. The $800&ndash;$2,000/night guest at Copper Rock is comparing your property not just to other vacation rentals, but to the boutique hotels, private clubs, and luxury resorts they frequent.</p>
+
+            <p>Generic furnishings and builder-grade finishes are immediately obvious in a community where the architecture and landscape have already set the bar.</p>
+
+            <p>Designing for this guest means thinking beyond the basics. Wine storage &mdash; not a rack on the kitchen counter, but proper temperature-controlled accommodation for guests who arrive with cases from their collection. Golf equipment storage that accommodates multiple sets without cluttering the entry or garage. Premium outdoor entertaining spaces designed for post-round cocktails with views of the course. Spa-quality bathrooms with finishes and fixtures that feel considered, not spec&rsquo;d from a builder&rsquo;s standard package.</p>
+
+            <p>The dining experience matters here as well. Full-capacity seating is a baseline, not a differentiator. At Copper Rock, it&rsquo;s the quality of the table, the weight of the flatware, the stemware in the cabinet. These details register with guests who notice them everywhere they go. Our <a href="../vacation-rental-design.html">vacation rental design process</a> is built to address exactly this kind of nuance &mdash; designing not just for function, but for the specific expectations of the guest your property attracts.</p>
+
+            <div class="callout">The guest paying $1,500 a night at Copper Rock expects a different standard than the guest at a family resort. The interior is either proof that your property belongs here &mdash; or evidence that it doesn&rsquo;t.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: The Scarcity Factor -->
+        <section>
+            <h2>The Scarcity Factor</h2>
+
+            <p>Hurricane, Utah maintains a citywide cap of 48 short-term rental licenses. The waiting list can stretch beyond a year. Each property requires a short-term vacation rental business license from the City of Hurricane, and the municipality enforces the cap with no indication of expanding it.</p>
+
+            <p>This creates genuine scarcity &mdash; not the marketing kind, but the structural kind. There are a limited number of properties in all of Hurricane that can legally operate as vacation rentals, and only a fraction of those are within Copper Rock. That means legally permitted STR properties at Copper Rock hold strong resale value precisely because the supply side is capped by regulation, not just by demand.</p>
+
+            <p>For the investor, this changes the calculus around design investment. When your competition is structurally limited &mdash; when there may only be a handful of legal vacation rentals in the entire community &mdash; the question is not whether you can afford to invest in exceptional design. The question is whether you can afford not to. Every property that earns one of those 48 licenses needs to maximize its revenue potential, because the license itself represents a scarce and valuable asset. A well-designed property at Copper Rock is not just a vacation rental; it is a revenue-producing asset protected by a barrier to entry that no amount of new construction can erode.</p>
+
+            <p>For the designer, scarcity sharpens the imperative. We are not furnishing one of hundreds of interchangeable units. We are designing a property that occupies a rare position in a constrained market, surrounded by luxury homes, on a championship golf course. The design investment is protected by the same structural forces that protect the property&rsquo;s value.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: Interiors That Match the Views -->
+        <section>
+            <h2>Interiors That Match the Views</h2>
+
+            <p>The copper cliffs, the Pine Valley Mountains, and the dramatic elevation changes at Copper Rock set a visual standard that the interior has to meet. This is not an abstract design principle. It is the lived experience of every guest who arrives at the property.</p>
+
+            <p>The priming begins before the front door opens. The drive through Hurricane, the approach along the canyon, the first glimpse of the golf course carved into the red rock terrain, the architectural ambition of the homes themselves &mdash; by the time a guest steps inside, they have already absorbed a visual language of natural drama and intentional beauty. An interior that feels flat, generic, or disconnected from that context is not just a missed opportunity. It is a disruption. The guest notices, even if they cannot articulate exactly why the space feels wrong.</p>
+
+            <p>Designing at Copper Rock means working with the desert palette, not against it. Earth tones that complement the copper-colored cliffs rather than competing with them. Warm terracotta, muted sage, oxidized bronze, sun-bleached linen &mdash; colors drawn from the landscape visible through every window. The dramatic high-desert light, which shifts from golden dawn to sharp midday to amber sunset, becomes a design element in itself when the interior is calibrated to receive it.</p>
+
+            <p>Window treatments frame the views rather than obscure them. Materials feel substantial and intentional &mdash; natural stone, solid wood, hand-forged metal, woven textiles with visible texture &mdash; because everything around them is. Outdoor living spaces are designed not as afterthoughts but as primary rooms: sunset cocktail terraces after a round of golf, morning coffee with the Pine Valley Mountains filling the horizon, dining under a sky that goes from copper to violet as the evening settles.</p>
+
+            <p>We understand this landscape because we work in it. As <a href="../st-george-utah.html">interior designers in the St. George corridor</a>, we have designed properties across these desert communities. We know how the light behaves, which materials hold up, and what happens when an interior ignores the environment it sits in. At Copper Rock, the setting does half the work &mdash; but only if the design meets it halfway.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 6: What Full-Service Means at This Level -->
+        <section>
+            <h2>What Full-Service Means at This Level</h2>
+
+            <p>At Copper Rock, the gap between furnished and designed is the gap between a property that competes and one that commands. We offer the same <a href="../vacation-rental-design.html">full-service process</a> we bring to every project &mdash; Design Planning, Procurement, and Installation &mdash; calibrated to the specific demands of a luxury golf community where the margin for generic is zero.</p>
+
+            <p><strong>Design Planning</strong> begins with the property, the community context, and the guest profile. At Copper Rock, that means understanding the competitive set (which is small, by regulation), the nightly rate ceiling (which is high, by market positioning), and the expectations of guests who chose this community over every other option in the corridor. We develop a complete design concept &mdash; floor plans, furniture selections, color palettes, art direction, and a detailed budget &mdash; that positions the property to perform at the top of its market.</p>
+
+            <p><strong>Procurement</strong> at the Copper Rock level involves sourcing furnishings, materials, and finishes that reflect the luxury standard of the community. We order every item &mdash; from oversized sectionals and custom dining tables to stemware, linens, and outdoor furniture built for the desert climate. We manage every vendor, track every shipment, and coordinate every timeline. You do not manage a single delivery.</p>
+
+            <p><strong>Installation</strong> is where the design becomes real. Our team installs and styles everything on site &mdash; furniture placement, art hanging, accessory layering, bed making, kitchen stocking, outdoor space staging. We hand you a property that is guest-ready and photograph-ready. For a different take on golf-community design in Hurricane, <a href="sand-hollow.html">Sand Hollow Resort</a> offers an interesting comparison &mdash; same town, same desert environment, but a different guest profile and a different design challenge. And for a different take on Hurricane resort living altogether, <a href="stone-ridge.html">Stone Ridge at Pecan Valley Resort</a> anchors its identity around adventure recreation rather than golf &mdash; which illustrates how much community context shapes the design brief.</p>
+
+            <p>For a broader look at what drives STR revenue through design &mdash; and the common mistakes that leave money on the table &mdash; download our <a href="../playbook-optin.html">free STR Design Playbook</a>.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 7: Copper Rock as a Personal Retreat -->
+        <section>
+            <h2>Copper Rock as a Personal Retreat</h2>
+
+            <p>Hurricane&rsquo;s citywide cap of 48 short-term rental licenses means that the vast majority of homes at Copper Rock are not vacation rentals. Most are primary residences or second homes — not vacation rentals. The waiting list for an STR license can stretch beyond a year, and many owners never pursue one. This is, by design and by regulation, a neighborhood &mdash; not a resort. For the buyer seeking a personal retreat rather than a revenue asset, that distinction is the point.</p>
+
+            <p>The profile of the Copper Rock second home buyer is specific. These are owners from northern Utah, California, and beyond who are drawn to the LPGA-level golf lifestyle, the deliberate exclusivity of a community adding roughly 25 homes per year, and the proximity to Zion and Snow Canyon without the noise of a tourist corridor. Custom homes by Richardson Brothers and other select builders in Cliff View Estates, Golf View Estates, and North Slope represent a level of architectural intention that demands interiors of equal caliber. A $3.5M custom home on a cliff-edge lot does not accept a generic interior. The architecture will not allow it.</p>
+
+            <p>When the home is yours &mdash; not a rental &mdash; the design conversation changes entirely. There are no guest-durability compromises, no photography-first staging decisions, no furnishing plans scaled for how 54 strangers might use the space. Instead, the design serves the owner. Your art collection on the walls. Your preferred materials underfoot. Furniture arranged for the way you and your family actually gather, not for a listing thumbnail. The home becomes a reflection of the person who chose it, not a product optimized for someone else&rsquo;s five-star review.</p>
+
+            <p>This is where our <a href="../second-home-design.html">Intentional Home Framework</a> becomes essential. At Copper Rock, each layer of the framework has something specific to work with. <strong>Environment:</strong> the copper cliffs, Pine Valley Mountains, and championship course views are not backdrop &mdash; they are design elements, drawn into the visual composition through every window and sight line. <strong>Architecture:</strong> these are bespoke structures, and the interiors must flow from their specific geometry, materials, and proportions rather than imposing a disconnected aesthetic. <strong>Owner identity:</strong> this is a home that says something about who lives here. The desert palette, the scale of the great room, the texture of the stone &mdash; all of it should feel as if no one else could have made these choices.</p>
+
+            <p>The lifestyle at Copper Rock lends itself to a kind of home that most second home owners imagine but rarely achieve. Post-round cocktails on the terrace with the course stretching out below. Holiday gatherings where extended family fills the dining room and spills onto the patio. A personal retreat that feels like a destination &mdash; because the setting, the architecture, and the interior are all telling the same story. Our <a href="../guide-optin.html">Second Home Design Guide</a> outlines the full framework and what to expect from the process.</p>
+
+            <div class="callout">Most homes at Copper Rock are not vacation rentals. They are personal retreats &mdash; and the design should be as intentional as the decision to buy here.</div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <p>Ready to design your Copper Rock property?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="../playbook-optin.html" class="cta-secondary">Get the free STR Design Playbook</a>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="../guide-optin.html" class="cta-secondary">Get the free Second Home Design Guide</a>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+
+</body>
+</html>

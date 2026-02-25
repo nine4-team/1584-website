@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Vacation Rental Design Playbook — Outperform Your Market | 1584 Design</title>
-    <meta name="description" content="The free interior design playbook for vacation rental investors. Learn the 3 Performance Stages that separate top-performing Airbnbs from the rest. By Lisa Fisher, 1584 Design.">
+    <title>Vacation Rental Interior Design | Full-Service STR Design — 1584 Design</title>
+    <meta name="description" content="Full-service interior design for vacation rental properties. We handle design, procurement, and installation — so your property outperforms its market. From St. George to nationwide.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -352,24 +352,15 @@
             font-weight: 600;
         }
 
-        /* Mistake Blocks */
-        .mistake-block {
-            margin-bottom: 28px;
-        }
-
-        .mistake-block p {
-            margin-bottom: 0;
-        }
-
-        /* Next Steps / Numbered */
-        .next-steps ol {
+        /* Process Steps */
+        .process-steps ol {
             list-style: none;
             counter-reset: steps;
             margin: 0;
             padding: 0;
         }
 
-        .next-steps ol li {
+        .process-steps ol li {
             counter-increment: steps;
             position: relative;
             padding-left: 48px;
@@ -379,7 +370,7 @@
             color: rgba(250, 250, 247, 0.85);
         }
 
-        .next-steps ol li::before {
+        .process-steps ol li::before {
             content: counter(steps) ".";
             position: absolute;
             left: 0;
@@ -388,6 +379,18 @@
             font-size: 24px;
             color: #9a7d55;
             font-weight: 400;
+        }
+
+        /* Inline Links */
+        .article-wrapper a:not(.cta-button) {
+            color: #9a7d55;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(154, 125, 85, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .article-wrapper a:not(.cta-button):hover {
+            border-bottom-color: #9a7d55;
         }
 
         /* CTA */
@@ -552,7 +555,7 @@
             .article-wrapper ul li,
             .meta-label,
             .lens-label,
-            .next-steps ol li {
+            .process-steps ol li {
                 font-size: 16px;
             }
 
@@ -579,6 +582,53 @@
             }
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "InteriorDesigner",
+          "name": "1584 Design",
+          "url": "https://1584design.com",
+          "telephone": "+14358623631",
+          "email": "team@1584design.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "St. George",
+            "addressRegion": "UT",
+            "addressCountry": "US"
+          },
+          "areaServed": [
+            {"@type": "City", "name": "St. George", "addressRegion": "UT"},
+            {"@type": "City", "name": "Las Vegas", "addressRegion": "NV"}
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "Lisa Fisher"
+          },
+          "foundingDate": "2021",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "54",
+            "bestRating": "5"
+          },
+          "sameAs": [
+            "https://www.instagram.com/1584_design/",
+            "https://www.facebook.com/lisa.s.fisher.92/"
+          ],
+          "priceRange": "$$$"
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Vacation Rental Interior Design",
+          "provider": {"@type": "InteriorDesigner", "name": "1584 Design"},
+          "areaServed": ["St. George, UT", "Las Vegas, NV", "United States"],
+          "description": "Full-service interior design for vacation rental properties including design planning, procurement, and installation."
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -596,274 +646,144 @@
 
         <!-- Header -->
         <header class="article-header">
-            <h1>The STR Design Playbook</h1>
-            <p class="article-subtitle">The Interior Design Playbook for Vacation Rentals That Outperform Their Market</p>
+            <h1>Interior Design That Makes Your Vacation Rental Outperform</h1>
+            <p class="article-subtitle">Full-service interior design for vacation rental investors. We handle design, procurement, and installation &mdash; so your property outperforms its market.</p>
         </header>
 
-        <!-- The Uncomfortable Truth -->
+        <!-- Section 1: The Revenue Case for Design -->
         <section>
-            <h2>The Uncomfortable Truth</h2>
-
-            <p>The middle market for vacation rentals is getting squeezed.</p>
-
-            <p>Since 2020, active U.S. short-term rental listings have grown over 60%. That surge has slowed &mdash; but the inventory it created isn't going anywhere. Guests have more options than ever.</p>
-
-            <p>When supply outpaces demand, the properties that stand out take a disproportionate share of the bookings. The data bears this out: top-performing Airbnb hosts earn 29&ndash;64% more than average ones and fill roughly 20 more nights per year.</p>
-
-            <div class="stat-highlight">One in four STR owners reported making no profit &mdash; or losing money &mdash; in 2024.</div>
-
-            <p>The properties in the middle &mdash; decent but unremarkable &mdash; are feeling it most. They're not bad enough to fail spectacularly. They're just not distinctive enough to stand out.</p>
-
-            <div class="stat-highlight">In a market where guests scroll past dozens of listings in seconds, unremarkable = risky.</div>
-
-            <p>And the bar is going up. The AI boom is accelerating a K-shaped economy &mdash; the people who have money will have more of it, and their expectations will rise accordingly. The guests who can afford vacation rentals in the coming years will be wealthier, more discerning, and less willing to settle for mediocre spaces.</p>
-
-            <p>At the same time, booking platforms are using AI-driven algorithms that track the entire guest journey and reward properties with strong quality signals. The pressure is coming from both directions.</p>
+            <h2>The Revenue Case for Design</h2>
 
             <p>Interior design is not a line item on your budget. It is a revenue lever.</p>
 
-            <div class="callout">How you design your property determines whether it sits in the profitable top tier or gets squeezed in the middle.</div>
-
-            <p>This playbook will show you how to design a rental that stands out &mdash; and cash flows accordingly.</p>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- What's Actually at Stake -->
-        <section>
-            <h2>What's Actually at Stake</h2>
-
-            <p>Before the how, the numbers.</p>
-
-            <p>Two investors buy comparable properties in St. George, Utah. Same neighborhood, same size, same purchase price. The only difference is how they approach interior design.</p>
+            <p>Consider two comparable properties in St. George, Utah. Same neighborhood, same size, same purchase price. The only difference is how the interiors were approached.</p>
 
             <div class="property-comparison">
                 <div class="property-card">
                     <h4>Property A</h4>
                     <p class="budget">Design budget: $50,000</p>
-                    <p style="font-size: 15px; color: rgba(250,250,247,0.6); margin-bottom: 16px;">Functional but unremarkable &mdash; basic furniture, minimal accessories, no cohesive theme. It looks like a furnished house, not a destination.</p>
                     <ul>
                         <li>~55% occupancy at $325/night</li>
                         <li>~$65,000/year gross revenue</li>
-                        <li class="cash-flow-negative">-$11,500/year net cash flow</li>
+                        <li class="cash-flow-negative">Losing money annually</li>
                     </ul>
                 </div>
                 <div class="property-card">
                     <h4>Property B</h4>
                     <p class="budget">Design budget: $90,000</p>
-                    <p style="font-size: 15px; color: rgba(250,250,247,0.6); margin-bottom: 16px;">Strategically designed interior. Photographs beautifully, converts browsers into bookers, delivers experiences that generate five-star reviews.</p>
                     <ul>
                         <li>~70% occupancy at $375/night</li>
                         <li>~$96,000/year gross revenue</li>
-                        <li class="cash-flow-positive">+$8,700/year net cash flow</li>
+                        <li class="cash-flow-positive">Positive cash flow from year one</li>
                     </ul>
                 </div>
             </div>
 
-            <p>That's <strong>$20,200 more per year</strong> &mdash; on an extra $40,000 in design investment.</p>
+            <p>The $40,000 design difference compounds into a <strong>$101,000 five-year cash flow advantage</strong>. The &ldquo;savings&rdquo; on Property A cost its owner six figures in lost revenue.</p>
 
-            <p><strong>Over five years:</strong></p>
+            <div class="stat-highlight">$101,000 &mdash; the five-year cash flow swing between a property that was furnished and one that was designed.</div>
 
-            <div class="comparison-table-wrapper">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Property A</th>
-                            <th>Property B</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Design investment</td>
-                            <td>$50,000</td>
-                            <td>$90,000</td>
-                        </tr>
-                        <tr>
-                            <td>Year 1 cash flow</td>
-                            <td>-$11,500</td>
-                            <td>+$8,700</td>
-                        </tr>
-                        <tr>
-                            <td>5-year cumulative</td>
-                            <td>-$57,500</td>
-                            <td>+$43,500</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Difference</strong></td>
-                            <td></td>
-                            <td class="highlight-cell">$101,000</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <p>A <strong>$101,000 swing.</strong> The $40,000 &ldquo;savings&rdquo; cost the investor six figures in lost cash flow.</p>
-
-            <p>So what actually separates these two properties? It's not just spending more. It's spending on the things that drive revenue.</p>
+            <p>The bar is going up. Guests are becoming more discerning, and booking platforms increasingly reward properties with strong quality signals. For a deeper look at the data &mdash; including the three most common spending mistakes that cost investors revenue &mdash; <a href="playbook-optin.html">download the free STR Design Playbook</a>.</p>
         </section>
 
         <div class="section-divider"></div>
 
-        <!-- The 3 Performance Stages -->
+        <!-- Section 2: The 3 Performance Stages -->
         <section>
             <h2>The 3 Performance Stages</h2>
 
-            <p>Every design dollar should serve one of three jobs. They mirror the guest journey from first click to five-star review.</p>
+            <p>Every design decision we make serves one of three jobs. They mirror the guest journey from first click to five-star review: <strong>Stop the Scroll</strong> (your listing photos are your storefront), <strong>Convert Browsers to Bookers</strong> (justify the premium once they click), and <strong>Create Memorable Experiences</strong> (deliver what earns five-star reviews and repeat bookings).</p>
 
             <div class="stage-block">
                 <h3>Stage 1: Stop the Scroll</h3>
-                <p>Your listing photos are your storefront. Guests scroll through dozens of thumbnails before clicking on one. The properties that get clicks are the ones with visually distinctive, magazine-quality photos.</p>
-                <span class="meta-label"><strong>What drives it:</strong> Strategic color, cohesive styling, layered accessories, proper lighting, and a clear visual identity.</span>
-                <span class="meta-label"><strong>The test:</strong> Would someone pause mid-scroll and tap your listing? Or does it blend into the sea of gray-couch-white-wall interiors?</span>
+                <p>Your listing photos are your storefront. Guests scroll through dozens of thumbnails before clicking on one. The properties that get clicks are the ones with visually distinctive, magazine-quality images. Strategic color, cohesive styling, layered accessories, proper lighting &mdash; these are the design decisions that determine whether someone pauses mid-scroll or keeps moving past another gray-couch-white-wall interior.</p>
             </div>
 
-            <div class="stage-block">
-                <h3>Stage 2: Convert Browsers to Bookers</h3>
-                <p>Once a guest clicks, they're evaluating whether your property is worth the rate. Spaces that look intentional and well-appointed justify higher ADR. Spaces that look sparse or generic push guests to keep shopping.</p>
-                <span class="meta-label"><strong>What drives it:</strong> The layering &mdash; color, texture, art, theming, finishing details &mdash; along with the functional basics guests evaluate immediately: full-capacity dining, complete kitchen, quality mattresses and bedding.</span>
-                <span class="meta-label"><strong>The test:</strong> Does your listing justify a $50&ndash;75/night premium over comparable properties? Or are you competing on price?</span>
-            </div>
-
-            <div class="stage-block">
-                <h3>Stage 3: Create Memorable Experiences</h3>
-                <p>This is what happens after the guest arrives. Properties that deliver great in-person experiences generate five-star reviews, repeat bookings, and referrals. All of which compound over time.</p>
-                <span class="meta-label"><strong>What drives it:</strong> Thoughtful flow, real comfort, a sense of place that feels special rather than transactional.</span>
-                <span class="meta-label"><strong>The test:</strong> Do guests mention the property itself in their reviews? Or just the location?</span>
-            </div>
+            <p>The full framework &mdash; including what drives each stage, the diagnostic tests we use to evaluate properties, and the design signals that separate the top tier from the rest &mdash; is in the free <a href="playbook-optin.html">STR Design Playbook</a>.</p>
         </section>
 
         <div class="section-divider"></div>
 
-        <!-- Who Are You Designing For? -->
+        <!-- Section 3: Designing for Your Guest -->
         <section>
-            <h2>Who Are You Designing For?</h2>
+            <h2>Designing for Your Guest</h2>
 
-            <p>The Performance Stages tell you what design should do. The next question is who it's for.</p>
-
-            <p>Not every guest wants the same thing. The most effective design starts with knowing your primary guest &mdash; what we think of as your <strong>design lens</strong>. Three profiles dominate vacation rentals.</p>
+            <p>The Performance Stages tell you what design should do. The next question is who it&rsquo;s for. The most effective design starts with knowing your primary guest. Three profiles dominate vacation rentals.</p>
 
             <!-- The Group Retreat -->
             <div class="lens-card">
                 <h3>The Group Retreat</h3>
                 <p class="lens-label"><strong>The guest:</strong> Friend groups, bachelor/bachelorette parties, reunions, adult families.</p>
-
-                <p class="lens-label"><strong>Design priorities:</strong></p>
-                <ul>
-                    <li>Dining for full capacity &mdash; nothing signals &ldquo;this place wasn't designed for us&rdquo; faster than a six-person table in a property that sleeps twelve</li>
-                    <li>Oversized sectionals and generous seating</li>
-                    <li>Entertainment-forward furnishings (game tables, media setups, ample outdoor seating)</li>
-                    <li>Multiple gathering zones so the group can split and recombine naturally</li>
-                    <li>Durable, high-quality furnishings that handle heavy use without showing wear</li>
-                </ul>
-
-                <div class="insight-block">
-                    <p><strong>Revenue lever:</strong> Occupancy and group size &mdash; larger groups split the cost, driving higher total revenue per booking. The key is making every guest feel the space was designed for a group their size.</p>
-                </div>
-
-                <div class="insight-block">
-                    <p><strong>Design signal that separates the top tier:</strong> Flow. The best group properties move people naturally between gathering spaces. Poor flow fragments the group and undermines the experience.</p>
-                </div>
+                <p>Design that handles a full house &mdash; dining for everyone, multiple gathering zones, durable furnishings that take heavy use without showing wear. The key is making every guest feel the space was built for a group their size.</p>
             </div>
 
             <!-- The Family Memory House -->
             <div class="lens-card">
                 <h3>The Family Memory House</h3>
                 <p class="lens-label"><strong>The guest:</strong> Multi-generational families, parents with kids, annual trip groups.</p>
-
-                <p class="lens-label"><strong>Design priorities:</strong></p>
-                <ul>
-                    <li>Kid-friendly without being childish &mdash; durable materials, thoughtful furniture choices, playful touches in kids' spaces</li>
-                    <li>Bunk rooms or themed kids' rooms that children get excited about</li>
-                    <li>A kitchen and dining setup that handles real meals at full capacity</li>
-                    <li>Storage and organization systems that keep chaos manageable</li>
-                    <li>Comfortable, forgiving materials throughout (performance fabrics, wipeable surfaces)</li>
-                </ul>
-
-                <div class="insight-block">
-                    <p><strong>Revenue lever:</strong> Repeat bookings. Families are among the most loyal guest segments &mdash; when kids love a property, families come back year after year. Annual rebookings are one of the most valuable revenue streams in vacation rentals.</p>
-                </div>
-
-                <div class="insight-block">
-                    <p><strong>Design signal that separates the top tier:</strong> The kids' experience. A well-designed bunk room or play area doesn't just satisfy parents &mdash; it creates the emotional hook that makes children ask to come back.</p>
-                </div>
+                <p>Kid-friendly without being childish. Bunk rooms children get excited about, a kitchen and dining setup that handles real meals, and materials that forgive the chaos of a family vacation. Families are among the most loyal guest segments &mdash; when kids love a property, families come back year after year.</p>
             </div>
 
             <!-- The Couples Getaway -->
             <div class="lens-card">
                 <h3>The Couples Getaway</h3>
                 <p class="lens-label"><strong>The guest:</strong> Couples paying for intimacy, not square footage.</p>
-
-                <p class="lens-label"><strong>Design priorities:</strong></p>
-                <ul>
-                    <li>Luxurious master suite as the centerpiece (premium mattress, high-end bedding, mood lighting)</li>
-                    <li>Spa-quality bathroom details &mdash; quality toiletries, plush towels, soft lighting</li>
-                    <li>Warm, moody color palette &mdash; deep tones, rich textures, soft ambient lighting</li>
-                    <li>Intimate furniture arrangements &mdash; seating for two, not six</li>
-                    <li>Minimal &ldquo;family&rdquo; cues (no bunk beds in hero photos, no plastic dinnerware)</li>
-                </ul>
-
-                <div class="insight-block">
-                    <p><strong>Revenue lever:</strong> ADR premium. Couples tend to pay more per night and are less price-sensitive. They book based on how a space makes them feel.</p>
-                </div>
-
-                <div class="insight-block">
-                    <p><strong>Design signal that separates the top tier:</strong> A sense of curated intimacy &mdash; every detail feels intentional, not assembled.</p>
-                </div>
+                <p>A luxurious master suite as the centerpiece, spa-quality details, warm and moody palette. Couples pay more per night and book based on how a space makes them feel &mdash; every detail needs to feel intentional, not assembled.</p>
             </div>
 
-            <p>You don't need to pick just one. Many successful properties blend two &mdash; Family + Group is a natural combination. But you do need to be intentional. A property designed for everyone is distinctive to no one.</p>
+            <p>You don&rsquo;t need to pick just one. Many successful properties blend two. But you do need to be intentional. A property designed for everyone is distinctive to no one. The <a href="playbook-optin.html">STR Design Playbook</a> breaks down the specific design priorities and revenue levers for each guest profile &mdash; plus the design signals that separate top-performing properties from the rest.</p>
         </section>
 
         <div class="section-divider"></div>
 
-        <!-- Spending Strategically -->
+        <!-- Section 4: Full-Service from Plan to Installation -->
         <section>
-            <h2>Spending Strategically</h2>
+            <h2>Full-Service from Plan to Installation</h2>
 
-            <p>Knowing your guest and understanding the stages gives you the foundation. Execution is where most investors get it wrong. We see the same three mistakes.</p>
+            <p>We handle everything from design concept through final styling. Our process has three phases:</p>
 
-            <div class="mistake-block">
-                <p><strong>Mistake 1: Spending the wrong amount.</strong> Most investors either underspend &mdash; trying to hit an arbitrary low number &mdash; or overspend on pieces that don't move the needle. Your budget should be calibrated to your competitive set, the properties you're actually up against for bookings. It should cover everything &mdash; furnishings, delivery, kitchen, installation, design services &mdash; not just furniture. And it should position you in the top tier of your market.</p>
-            </div>
-
-            <div class="mistake-block">
-                <p><strong>Mistake 2: Spending on the wrong things.</strong> Even with the right budget, many investors allocate it poorly. They put the whole budget into furniture and skip the curtains, rugs, and accessories that actually create the magazine effect in photos. They buy cheap mattresses &mdash; invisible in photos, devastating in reviews. The fix: invest where it impacts the Performance Stages. Prioritize what stops the scroll, converts bookings, and creates experiences.</p>
-            </div>
-
-            <div class="mistake-block">
-                <p><strong>Mistake 3: Ignoring placement.</strong> You can buy all the right items and still end up with a property that photographs poorly and feels awkward in person. How you arrange, style, and layer a space matters as much as what's in it. This is the hardest part to get right without professional help &mdash; and often the difference between a property that looks &ldquo;decorated&rdquo; and one that looks &ldquo;designed.&rdquo;</p>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- Your Next Move -->
-        <section>
-            <h2>Your Next Move</h2>
-
-            <p>If you've read this far, you're thinking about your property differently than most investors. The bar is going up. Here's what we recommend.</p>
-
-            <div class="next-steps">
+            <div class="process-steps">
                 <ol>
-                    <li><strong>Choose your lens.</strong> Who is your ideal guest? What are they paying for? Let that guide every decision.</li>
-                    <li><strong>Audit against the 3 stages.</strong> Where is your property weakest &mdash; stopping the scroll, converting bookings, or creating experiences? Start there.</li>
-                    <li><strong>Talk to us.</strong> We design spaces that outperform their comps. We work with a limited number of investors in the St. George market and beyond, and a conversation will give you a clear picture of what strategic design could do for your property. No obligation, just an honest assessment.</li>
+                    <li><strong>Design Planning.</strong> We assess your property, your market, and your guest profile. From there we develop a complete design concept &mdash; floor plans, furniture selections, color palettes, art direction, and a detailed budget &mdash; all calibrated to maximize your property&rsquo;s performance across the 3 Performance Stages.</li>
+                    <li><strong>Procurement.</strong> We source and order every item &mdash; furnishings, decor, bedding, kitchenware, accessories, down to the last throw pillow. We manage vendors, track shipments, coordinate timelines. You don&rsquo;t manage a single delivery.</li>
+                    <li><strong>Installation.</strong> Our team installs and styles everything on site. Furniture placement, art hanging, accessory layering, bed making, kitchen stocking &mdash; we hand you a guest-ready, photograph-ready property.</li>
                 </ol>
             </div>
+
+            <p>You don&rsquo;t manage vendors, track shipments, or coordinate deliveries. We do. As short-term rental interior designers, that&rsquo;s what full-service means &mdash; and it&rsquo;s why our clients keep coming back.</p>
+
+            <div class="callout">We work with a limited number of investors at any given time. This is intentional &mdash; obsessive care doesn&rsquo;t scale, and we&rsquo;d rather do fewer projects exceptionally.</div>
+
+            <p>Want to understand <a href="about.html">our story</a> and how we got here? Or <a href="portfolio.html">see our portfolio</a> to get a sense of the work.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: Our Markets -->
+        <section>
+            <h2>Our Markets</h2>
+
+            <p>We&rsquo;re based in St. George, Utah &mdash; the heart of the Zion corridor, one of the fastest-growing STR markets in the West. It&rsquo;s where we do most of our work, and where we know the competitive landscape inside out.</p>
+
+            <p><a href="st-george-utah.html">See our St. George work</a></p>
+
+            <p>We also serve Las Vegas and take select projects nationwide. If your property is in a market where design quality directly impacts revenue &mdash; and you&rsquo;re serious about outperforming your comps &mdash; we&rsquo;re interested in the conversation regardless of location.</p>
+
+            <p><a href="las-vegas.html">Explore our Las Vegas services</a></p>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <p>Ready to outperform your market?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="playbook-optin.html" class="cta-secondary">Or get the free STR Design Playbook first</a>
 
             <div class="founder-signature">
                 <div class="founder-name">Lisa Fisher</div>
                 <div class="founder-title">Founder, 1584 Design</div>
             </div>
-
-            <div class="cta-section">
-                <p><strong>If that's what you're looking for, let's talk.</strong></p>
-                <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
-                <br>
-                <a href="guide-optin.html" class="cta-secondary">Own a second home? Get the free Second Home Design Guide</a>
-            </div>
-        </section>
+        </div>
 
     </article>
 
@@ -871,6 +791,8 @@
     <footer class="footer">
         <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
     </footer>
+
+    <script src="js/navigation.js"></script>
 
 </body>
 </html>

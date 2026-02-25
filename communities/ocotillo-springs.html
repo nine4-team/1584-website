@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocotillo Springs Interior Design — STR Design | 1584 Design</title>
+    <meta name="description" content="Interior design for Ocotillo Springs vacation rentals in Santa Clara, Utah. Intimate family resort where design creates outsized returns. Full-service STR design.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #FAFAF7; background-color: #1A1A1A; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .navigation { position: fixed; top: 0; left: 0; right: 0; background: rgba(26, 26, 26, 1); z-index: 1000; padding: 0 24px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .nav-container { max-width: 1440px; margin: 0 auto; display: flex; align-items: center; height: 80px; }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 40px; width: auto; display: block; }
+        .article-wrapper { max-width: 860px; margin: 0 auto; padding: 140px 24px 80px; }
+        .article-header { text-align: center; margin-bottom: 64px; padding-bottom: 48px; border-bottom: 1px solid rgba(250, 250, 247, 0.1); }
+        .article-header h1 { font-family: 'Baskerville', Palatino, Garamond, serif; font-size: clamp(36px, 5.5vw, 56px); font-weight: 400; color: #FAFAF7; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
+        .article-subtitle { font-size: clamp(16px, 2.2vw, 20px); line-height: 1.5; color: rgba(250, 250, 247, 0.7); font-weight: 400; max-width: 720px; margin: 0 auto; }
+        .section-divider { width: 60px; height: 1px; background: #9a7d55; margin: 56px auto; }
+        .article-wrapper h2 { font-family: 'Baskerville', Palatino, Garamond, serif; font-size: clamp(26px, 3.5vw, 36px); font-weight: 400; color: #FAFAF7; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 28px; }
+        .article-wrapper p { font-size: 17px; line-height: 1.8; color: rgba(250, 250, 247, 0.85); margin-bottom: 24px; }
+        .article-wrapper p:last-child { margin-bottom: 0; }
+        .callout { font-family: 'Baskerville', Palatino, Garamond, serif; font-size: clamp(20px, 2.8vw, 26px); line-height: 1.6; color: #E8DED0; text-align: center; padding: 36px 24px; margin: 40px 0; border-top: 1px solid #9a7d55; border-bottom: 1px solid #9a7d55; font-style: italic; }
+        .article-wrapper strong { color: #FAFAF7; font-weight: 600; }
+        .article-wrapper ul { list-style: none; margin: 0 0 24px 0; padding: 0; }
+        .article-wrapper ul li { position: relative; padding-left: 24px; margin-bottom: 12px; font-size: 17px; line-height: 1.7; color: rgba(250, 250, 247, 0.85); }
+        .article-wrapper ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; background: #9a7d55; border-radius: 50%; }
+        .article-wrapper a:not(.cta-button) { color: #9a7d55; text-decoration: none; border-bottom: 1px solid rgba(154, 125, 85, 0.3); transition: border-color 0.3s ease; }
+        .article-wrapper a:not(.cta-button):hover { border-bottom-color: #9a7d55; }
+        .cta-section { text-align: center; margin: 56px 0 0; padding: 48px 0; border-top: 1px solid rgba(250, 250, 247, 0.1); }
+        .cta-section p { font-family: 'Baskerville', Palatino, Garamond, serif; font-size: clamp(20px, 2.8vw, 26px); color: #FAFAF7; margin-bottom: 28px; font-weight: 400; }
+        .cta-button { display: inline-flex; align-items: center; gap: 12px; padding: 16px 34px; background: #9a7d55; color: #FAFAF7; text-decoration: none; font-family: 'Avenir', sans-serif; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; border-radius: 25pt; border: 2px solid #9a7d55; transition: all 0.3s ease; box-shadow: none; }
+        .cta-button::after { content: "\2192"; font-size: 16px; transition: transform 0.3s ease; }
+        .cta-button:hover { background: #1A1A1A; color: #FAFAF7; border-color: #1A1A1A; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3); }
+        .cta-button:hover::after { transform: translateX(4px); }
+        .cta-secondary { display: inline-block; margin-top: 20px; font-size: 15px; color: rgba(250, 250, 247, 0.6); text-decoration: none; border-bottom: 1px solid rgba(250, 250, 247, 0.2); transition: all 0.3s ease; }
+        .cta-secondary:hover { color: #9a7d55; border-bottom-color: #9a7d55; }
+        .founder-signature { margin: 40px 0 0; }
+        .founder-name { font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 17px; font-weight: 400; color: rgba(250, 250, 247, 0.85); margin-bottom: 4px; }
+        .founder-title { font-size: 12px; color: rgba(250, 250, 247, 0.45); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+        .footer { background-color: #1A1A1A; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 40px 24px; text-align: center; }
+        .footer p { font-size: 14px; color: rgba(250, 250, 247, 0.4); margin: 0; }
+        @media (max-width: 768px) { .nav-container { height: 64px; } .article-wrapper { padding: 110px 20px 60px; } .article-header { margin-bottom: 48px; padding-bottom: 36px; } .section-divider { margin: 40px auto; } .callout { padding: 28px 16px; margin: 32px 0; } .cta-button { padding: 14px 28px; font-size: 14px; } }
+        @media (max-width: 480px) { .article-wrapper { padding: 100px 16px 48px; } .article-wrapper p, .article-wrapper ul li { font-size: 16px; } }
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <article class="article-wrapper">
+        <header class="article-header">
+            <h1>Interior Design for Ocotillo Springs Vacation Rentals</h1>
+            <p class="article-subtitle">The corridor&rsquo;s most intimate STR resort. Approximately 70 homes, tropical-themed amenities, and a price point where professional design has the biggest impact on returns.</p>
+        </header>
+
+        <!-- Section 1: The Intimate Resort -->
+        <h2>The Intimate Resort</h2>
+
+        <p>Ocotillo Springs is a vacation rental resort community in Santa Clara, Utah&mdash;approximately 70 homes, purpose-built for nightly rental. That number matters. Compare it to <a href="desert-color.html">Desert Color&rsquo;s</a> 10,000-plus homes at buildout, or Sand Hollow&rsquo;s sprawling 900 acres, and the distinction is clear: Ocotillo Springs is deliberately intimate. This is not a master-planned city with a vacation rental component. It is a small, focused resort community where every home exists to serve guests.</p>
+
+        <p>The community is organized around a central tropical-themed pool complex and clubhouse&mdash;a layout that keeps everything walkable and creates a resort atmosphere that larger communities struggle to replicate. Four floor plan options range from 3-bedroom to 6-bedroom homes, spanning approximately 2,000 to 3,000-plus square feet. Many homes include private pools and hot tubs in addition to full community pool access. The scale is human. Guests feel it the moment they arrive, and they mention it in reviews: this place feels like a resort, not a subdivision.</p>
+
+        <p>For property owners, the smaller scale has a direct competitive implication. Fewer homes means fewer competing listings on any given search. When a guest types &ldquo;Ocotillo Springs&rdquo; into Airbnb or VRBO, the scroll is short. Your property appears alongside dozens of alternatives, not hundreds. That tighter competitive set rewards differentiation&mdash;and punishes mediocrity&mdash;in ways that larger communities do not.</p>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: Tropical in the Desert -->
+        <h2>Tropical in the Desert</h2>
+
+        <p>The pool complex at <a href="https://www.ocotillospringsresort.com/" target="_blank" rel="noopener">Ocotillo Springs</a> has a visual identity unlike any other community in the corridor. A custom-built red rock waterslide. A splash pad. An oversized hot tub with cascading waterfalls. Poolside cabanas and a terraced seating area. It reads as tropical&mdash;lush, playful, resort-scale&mdash;which is unusual and intentional against the desert landscape of southern Utah. Where most STR communities lean into the red rock aesthetic, Ocotillo Springs built something that deliberately contrasts with it.</p>
+
+        <p>The amenity list extends well beyond the pool complex. The clubhouse includes a full kitchen, gym, and game room with pool table and ping pong. Outside, there are two pickleball courts, tennis courts, a playground, a BBQ pit, and outdoor firepits for evening gatherings. The community also offers RV parking&mdash;a feature unique among STR communities in the area&mdash;and extra guest parking that accommodates the multi-vehicle reality of family travel.</p>
+
+        <p>That tropical theming creates a distinctive identity, and it presents a genuine design question for every property in the community. Do you extend the tropical vibe into the home&mdash;rattan textures, botanical prints, warm greens, and natural woods that make the interior feel like a continuation of the pool complex? Or do you complement it with desert-modern interiors&mdash;clean lines, earthy tones, muted palettes&mdash;that create a deliberate contrast between the resort atmosphere outside and the calm sophistication inside? Both approaches work. What does not work is ignoring the community&rsquo;s identity entirely and filling the home with generic furniture that has no relationship to the experience guests are already having at the pool.</p>
+
+        <div class="callout">The community built a tropical resort in the desert. Your interior should have an opinion about that&mdash;agreement or contrast, but not indifference.</div>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: Designing for Families Without Designing for Children -->
+        <h2>Designing for Families Without Designing for Children</h2>
+
+        <p>The guest profile at Ocotillo Springs skews heavily toward families with children. The splash pad, waterslide, playground, and game room are built for that market. Families are the primary booking demographic, and the design of every property in the community should acknowledge that reality. But acknowledging it and capitulating to it are two different things.</p>
+
+        <p>The design challenge is real: create spaces that feel fun, colorful, and inviting for groups with kids&mdash;without looking like they were designed for children. This is a distinction that separates properties charging $300 per night from properties charging $600 per night. Both serve families. One looks like it was furnished by a parent who gave up. The other looks like it was designed by someone who understands that parents are the ones booking, and parents want to feel like they&rsquo;re on vacation too.</p>
+
+        <p>In practice, this means <strong>durable materials that can take a beating</strong> without broadcasting that fact. Stain-resistant performance fabrics that still have texture and visual interest. Wipeable surfaces in kitchens and dining areas that don&rsquo;t read as institutional. Resilient flooring&mdash;luxury vinyl plank, polished concrete, tile&mdash;that handles sandy feet and spilled drinks without showing wear after a single season. The goal is materials that perform under heavy family use while maintaining the look and feel of a thoughtfully designed home.</p>
+
+        <p>The same principle applies to color and art. <strong>Bold color accents rather than pastels.</strong> A saturated teal accent wall reads as intentional design; a powder-blue nursery wall reads as leftover from a builder decision. Playful art that adults also enjoy&mdash;oversized botanical prints, graphic desert photography, abstract color studies&mdash;rather than cartoon characters or motivational quotes. The art should make a parent smile, not remind them of their pediatrician&rsquo;s waiting room.</p>
+
+        <p>Bunk rooms deserve particular attention. Kids actually want to sleep in a well-designed bunk room&mdash;one with built-in reading lights, individual charging stations, personality, and enough design attention that the space photographs well for listings. A bunk room that looks like an afterthought drags down the entire listing. A bunk room that looks intentional becomes a selling point that families specifically seek out. The families booking at Ocotillo Springs are spending $300&ndash;$600 per night. They expect quality, not a daycare aesthetic.</p>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: The Builder Standard and Where to Upgrade -->
+        <h2>The Builder Standard and Where to Upgrade</h2>
+
+        <p>Ocotillo Springs homes come with a solid baseline of finishes: quartz countertops, custom knotty alder cabinets, stainless steel appliances, recessed can lighting, two-tone interior paint, tile surrounds, walk-in master showers, stain-resistant carpet, 2x6 framing, and finished two-car garages. That baseline is better than many STR communities in the corridor&mdash;which means the design investment here is not about fixing deficiencies. It is about transformation.</p>
+
+        <p>The builder gives you a clean, functional home. Professional design turns that home into a property that outperforms its neighbors. The gap between builder-standard and professionally designed is where the revenue difference lives, and at Ocotillo Springs, that gap shows up in specific areas:</p>
+
+        <ul>
+            <li><strong>Furniture selection and layout</strong>&mdash;turning builder floor plans into spaces that flow naturally for groups and photograph well from multiple angles</li>
+            <li><strong>Lighting upgrades</strong> beyond builder-grade can lights&mdash;layered lighting with pendants, sconces, table lamps, and dimmers that create warmth and atmosphere in listing photos and in person</li>
+            <li><strong>Art and accessories</strong> that create personality and a sense of place&mdash;the elements that give a listing an identity guests remember and reference in reviews</li>
+            <li><strong>Outdoor living spaces</strong> that extend the home&rsquo;s usable square footage&mdash;patio furniture, shade structures, outdoor dining, and lounge areas that add functional rooms to the property</li>
+            <li><strong>Bedding and textile upgrades</strong> that elevate the in-person guest experience&mdash;the tactile details that don&rsquo;t always show in photos but drive five-star comfort ratings</li>
+        </ul>
+
+        <p>The standard finishes give you a clean canvas. Design is what makes it a destination. We approach every Ocotillo Springs project with that distinction in mind&mdash;preserving and working with the quality that&rsquo;s already there, while adding the layers that turn a good home into a property that <a href="../vacation-rental-design.html">performs at the top of the community</a>.</p>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: Location Advantages -->
+        <h2>Location Advantages</h2>
+
+        <p>Ocotillo Springs sits in Santa Clara, one of the closest STR communities to both Snow Canyon State Park and Tuacahn Amphitheater. Snow Canyon is within three miles&mdash;guests can be on a trailhead in minutes, not hours. Tuacahn, the outdoor Broadway venue set into the red rock canyon walls, is approximately ten minutes away and draws tens of thousands of visitors each season for shows that run spring through fall.</p>
+
+        <p>Downtown <a href="../st-george-utah.html">St. George</a> is roughly ten minutes south, offering restaurants, shopping, and the growing downtown scene that has expanded significantly in recent years. Zion National Park is approximately 40&ndash;45 minutes northeast&mdash;close enough for a full day trip, far enough to avoid the premium pricing and parking headaches of Springdale lodging. The community is also adjacent to Gubler Park and near the Jacob Hamblin House historic site, adding walkable points of interest beyond the resort itself.</p>
+
+        <p>The Santa Clara location offers something that communities along the Hurricane corridor cannot: a quieter, more residential feel. Ocotillo Springs is nestled into a neighborhood context rather than sitting along a commercial highway. Guests notice the difference. The drive in feels like arriving at a private resort, not pulling off an interstate. That sense of arrival is part of the guest experience, and smart interior design reinforces it&mdash;the moment the front door opens should feel like the continuation of a transition from everyday life to vacation, not a jarring shift from resort exterior to generic interior.</p>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 6: The Investment Case -->
+        <h2>The Investment Case</h2>
+
+        <p>Entry price at Ocotillo Springs starts around $675,000&mdash;the most accessible price point among dedicated STR resort communities in the corridor. Homes range up to approximately $1.1 million for larger floor plans. For investors comparing communities, the math is straightforward: lower acquisition cost means the design investment represents a larger percentage of the total outlay, and therefore has an <strong>outsized impact on returns</strong>.</p>
+
+        <p>Consider the contrast. A $50,000 design package on a $700,000 Ocotillo Springs property represents roughly seven percent of total investment. That same $50,000 on a $3 million property at <a href="copper-rock.html">Copper Rock</a> is less than two percent. The proportional impact on listing quality, nightly rate, and occupancy is dramatically different. At Ocotillo Springs, the design investment doesn&rsquo;t just improve the property&mdash;it fundamentally changes its competitive position within the community. A professionally designed 4-bedroom at $700,000 all-in can compete for the same booking dollars as a larger, more expensive property that relied on builder-standard interiors.</p>
+
+        <p>Multiple property management companies operate in the community&mdash;Red Rock Vacation Rentals, Red Sands, Utah&rsquo;s Best Vacation Rentals&mdash;giving investors options for professional management and the ability to evaluate performance across different operators. That flexibility matters. We work with owners regardless of which management company they choose, and we design with operational realities in mind: turnover efficiency, linen programs, supply storage, and maintenance access are all part of our planning process.</p>
+
+        <p>Ocotillo Springs is the entry point to STR resort ownership in the <a href="../st-george-utah.html">St. George corridor</a>. For investors who understand that the property is only half the equation&mdash;and that what goes inside it determines whether it performs at the top or the middle of the community&mdash;the design investment here delivers the strongest percentage return of any community we serve.</p>
+
+        <p>If you are considering an Ocotillo Springs purchase, or if you already own and want your property to outperform, <a href="../playbook-optin.html">start with the numbers and the strategy</a>. Then talk to us about making the interior match the opportunity.</p>
+
+        <div class="cta-section">
+            <p>Ready to design your Ocotillo Springs property?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="../playbook-optin.html" class="cta-secondary">Get the free STR Design Playbook</a>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="../guide-optin.html" class="cta-secondary">Get the free Second Home Design Guide</a>
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+</body>
+</html>

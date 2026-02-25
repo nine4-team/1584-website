@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Desert Interior Design &mdash; Resort &amp; Estate Design | 1584 Design</title>
+    <meta name="description" content="Interior design for Black Desert resort condos and Silver Reef custom estates in Ivins, Utah. Full-service design for STR rental program investors and second home owners near Snow Canyon State Park.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #FAFAF7;
+            background-color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 1);
+            z-index: 1000;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Article Layout */
+        .article-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .article-header h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 5.5vw, 56px);
+            font-weight: 400;
+            color: #FAFAF7;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.5;
+            color: rgba(250, 250, 247, 0.7);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #9a7d55;
+            margin: 56px auto;
+        }
+
+        /* Section Headers */
+        .article-wrapper h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 400;
+            color: #FAFAF7;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        /* Body Text */
+        .article-wrapper p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .article-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lead / Callout Text */
+        .callout {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            line-height: 1.6;
+            color: #E8DED0;
+            text-align: center;
+            padding: 36px 24px;
+            margin: 40px 0;
+            border-top: 1px solid #9a7d55;
+            border-bottom: 1px solid #9a7d55;
+            font-style: italic;
+        }
+
+        /* Bold Key Phrase */
+        .article-wrapper strong {
+            color: #FAFAF7;
+            font-weight: 600;
+        }
+
+        /* Bullet Lists */
+        .article-wrapper ul {
+            list-style: none;
+            margin: 0 0 24px 0;
+            padding: 0;
+        }
+
+        .article-wrapper ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .article-wrapper ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #9a7d55;
+            border-radius: 50%;
+        }
+
+        /* Inline Links */
+        .article-wrapper a:not(.cta-button) {
+            color: #9a7d55;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(154, 125, 85, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .article-wrapper a:not(.cta-button):hover {
+            border-bottom-color: #9a7d55;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin: 56px 0 0;
+            padding: 48px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .cta-section p {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            color: #FAFAF7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
+            background: #9a7d55;
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+            color: rgba(250, 250, 247, 0.6);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            color: #9a7d55;
+            border-bottom-color: #9a7d55;
+        }
+
+        /* Founder Signature */
+        .founder-signature {
+            margin: 40px 0 0;
+        }
+
+        .founder-name {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 64px;
+            }
+
+            .article-wrapper {
+                padding: 110px 20px 60px;
+            }
+
+            .article-header {
+                margin-bottom: 48px;
+                padding-bottom: 36px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .callout {
+                padding: 28px 16px;
+                margin: 32px 0;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-wrapper {
+                padding: 100px 16px 48px;
+            }
+
+            .article-wrapper p,
+            .article-wrapper ul li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Interior Design for Black Desert Properties</h1>
+            <p class="article-subtitle">Black Desert is two communities sharing one extraordinary address. Resort condos entering a managed rental program need design that competes within a curated pool. Custom estates on Silver Reef need design that reflects the owner&rsquo;s life, not a guest&rsquo;s expectations. We serve both &mdash; with different frameworks, different priorities, and the same full-service process.</p>
+        </header>
+
+        <!-- Section 1: The Resort -->
+        <section>
+            <h2>The Most Ambitious Resort Community in the Corridor</h2>
+
+            <p><a href="https://www.blackdesertresort.com/" target="_blank" rel="noopener">Black Desert</a> is a 600-acre resort community in Ivins, Utah, developed by Reef Capital Partners and managed by CoralTree Hospitality. It sits at the western edge of the <a href="../st-george-utah.html">St. George corridor</a>, directly adjacent to Snow Canyon State Park &mdash; one of the most dramatic landscapes in the American Southwest. Where most communities in the region are subdivisions with amenity pools, Black Desert is being built as a destination resort with residential components woven into the fabric.</p>
+
+            <p>The ambition is visible in the infrastructure. A Tom Weiskopf-designed golf course &mdash; 18 championship holes plus a signature 19th &mdash; that has hosted both PGA Tour and LPGA Tour events. A 15,000-square-foot spa. Seven-plus dining venues. A planned 21-court pickleball facility. A planned 5-acre water park. A planned boardwalk with more than 80,000 square feet of retail. This is not a gated community with a clubhouse &mdash; it is a full-service resort ecosystem, and CoralTree&rsquo;s hospitality management means the operational standards match the physical investment.</p>
+
+            <p>What makes Black Desert singular in this market is that it serves two entirely different owner profiles under one roof. Resort condos can enter a managed rental program, competing for guest bookings within a curated hospitality operation. Custom estate lots offer something that does not exist elsewhere in the corridor: large-parcel personal residences backed by resort-grade amenities. Those are two fundamentally different design briefs, and conflating them is the fastest way to get the design wrong.</p>
+
+            <div class="callout">600 acres. CoralTree hospitality management. PGA-caliber golf. A 15,000-square-foot spa. Black Desert is not a residential community with resort pretensions &mdash; it is a resort with residential opportunities.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: Four Neighborhoods, Two Design Briefs -->
+        <section>
+            <h2>Four Neighborhoods, Two Design Briefs</h2>
+
+            <p>Black Desert is organized into four distinct neighborhoods. Three are built for the resort rental program. One is built for personal ownership. Understanding which is which &mdash; and what the design implications are for each &mdash; is the starting point for any project here.</p>
+
+            <p><strong>Resort Center</strong> offers studios and one-bedroom condos priced from $589K to $675K. These are the entry point into Black Desert&rsquo;s rental program &mdash; compact units designed for couples and small groups visiting the resort for golf, spa, and outdoor recreation. The design challenge is density: every square foot must perform, and the finishes need to hold up under resort-level turnover while still feeling elevated enough to justify the nightly rate.</p>
+
+            <p><strong>The Terrace</strong> steps up to two- and three-bedroom units in the $700K to $1.4M range. These serve a broader guest profile &mdash; small families, friend groups, golf foursomes extending a trip. The additional square footage creates room for design differentiation that the studios cannot support. Living areas, dining configurations, and outdoor transitions become meaningful variables.</p>
+
+            <p><strong>The Cove</strong> represents the top tier of the rental inventory: two-bedroom waterfront units starting at $1.38M. The waterfront positioning and premium price point mean these units are competing for the highest-value bookings in the resort pool. Design is not optional here &mdash; it is the primary lever for commanding premium rates within the managed program.</p>
+
+            <p><strong>Silver Reef</strong> is a different proposition entirely. Seventy-two custom estate lots, priced from $800K to $4.9M for the land alone, with the largest parcels in the community. There is no rental program for Silver Reef. These are personal-use properties &mdash; legacy homes for owners who want the resort&rsquo;s amenity infrastructure without the transient energy of a rental operation. The design brief here has nothing to do with guest conversion or listing photography. It has everything to do with the owner.</p>
+
+            <p>The first three neighborhoods share a design objective: maximize performance within CoralTree&rsquo;s managed rental pool. Silver Reef has a different objective entirely: create a home that reflects who the owner is and how they want to live in this landscape. We approach each with a dedicated framework, not a generic process applied the same way to both.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: Designing for Resort Rental Performance -->
+        <section>
+            <h2>Designing for Resort Rental Performance</h2>
+
+            <p>Black Desert&rsquo;s rental program operates differently from the self-managed STR model common in communities like <a href="desert-color.html">Desert Color</a> or <a href="sand-hollow.html">Sand Hollow</a>. CoralTree Hospitality manages the booking, guest services, and operations. Your unit enters a pool alongside other properties in the same neighborhood, at the same price tier, with the same resort access. The question guests are answering is not &ldquo;which community?&rdquo; &mdash; it is &ldquo;which unit within this resort?&rdquo; For a comparison with another Ivins-adjacent community that serves both STR and personal-use buyers, <a href="stone-ridge.html">Stone Ridge at Pecan Valley Resort</a> in nearby Hurricane offers an interesting counterpoint &mdash; adventure-recreation rather than resort hospitality, but a similar dual-avatar structure.</p>
+
+            <p>That changes the design calculus. When every competing unit shares the same location, the same amenities, and the same management team, <strong>the interiors become the single most important differentiator.</strong> Design is not a nice-to-have. It is the variable that determines whether your unit books first or last within the pool.</p>
+
+            <p>We approach every <a href="../vacation-rental-design.html">vacation rental design</a> project through three performance stages:</p>
+
+            <p><strong>Stop the Scroll.</strong> In a managed pool, the listing photography is often standardized in format &mdash; but the content of those photos is entirely determined by the design. A unit with a cohesive color story, deliberate lighting layers, and a statement piece that anchors the primary living space will arrest attention in a way that builder-grade finishes and catalog furniture never will. The scroll stops when something looks different. In a pool of similar units, &ldquo;different&rdquo; means &ldquo;designed.&rdquo;</p>
+
+            <p><strong>Convert Browsers to Bookers.</strong> Once a potential guest clicks through, the design needs to communicate quality, comfort, and a specific experience they cannot get in the unit next door. In a studio or one-bedroom, this means every visible surface carries weight. The headboard treatment, the bathroom fixture package, the kitchen styling, the window covering detail &mdash; in a small unit, there is nowhere to hide.</p>
+
+            <p>A guest comparing two 600-square-foot studios at the Resort Center is making a decision based on whether the space feels considered or feels like a hotel room. The booking goes to the unit that feels considered.</p>
+
+            <p><strong>Create Memorable Experiences.</strong> Five-star reviews within a managed resort program are the compound interest of rental performance. Guests who return to a unit &mdash; or specifically request it &mdash; become recurring revenue that the generic unit next door cannot capture. The experience is built from tactile details: the weight of the towels, the quality of the bedding, the way the lighting transitions from functional to atmospheric in the evening. These details are what separate a five-star stay from a forgettable one — and they are decided before the guest ever arrives.</p>
+
+            <p>The compact-format challenge at Black Desert deserves emphasis. Resort Center studios, Terrace two-bedrooms, and even Cove units are meaningfully smaller than the large-group STR homes common elsewhere in the corridor. You are not designing for 30 guests and a commercial kitchen. You are designing for two to six guests and 600 to 1,400 square feet. That requires a different skill set: precision space planning, furniture scaled to the room rather than the ambition, storage solutions that keep compact spaces from feeling cluttered, and material selections that create a sense of quality without overwhelming a small footprint. Getting this right is the difference between a unit that feels cramped and one that feels intimate.</p>
+
+            <div class="callout">In a managed rental pool, every competing unit shares the same location, the same amenities, and the same management. The interiors are the only variable you control &mdash; and the only variable the guest evaluates.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: Silver Reef — A Different Design Brief -->
+        <section>
+            <h2>Silver Reef &mdash; A Different Design Brief</h2>
+
+            <p>Silver Reef is not a neighborhood within a resort. It is a collection of 72 custom estate lots that happen to share an address with one. The lots are the largest parcels in Black Desert. The price range &mdash; $800K to $4.9M for land alone, before a single wall is framed &mdash; signals the kind of property these are meant to become. There is no rental program, no guest persona, no listing optimization. These are second homes, and the design brief reflects that.</p>
+
+            <p>We design <a href="../second-home-design.html">second homes</a> through the Intentional Home Framework, which aligns three layers to create spaces that feel genuinely like an escape rather than a furnished house in a scenic location.</p>
+
+            <p><strong>Environment.</strong> Silver Reef sits at the base of some of the most striking red rock formations in southern Utah, with Snow Canyon State Park as a literal backdrop. The desert landscape here is not a neutral setting &mdash; it is an active design element. The color of the rock shifts through the day, from warm sandstone at midday to deep ochre and violet at dusk. The light is hard and directional, entering rooms at angles that change seasonally. A home designed without reference to that environment wastes its most powerful asset. We work with the landscape &mdash; framing views, calibrating material palettes to complement the natural color story, and designing outdoor living spaces that pull the desert into the daily experience of the home.</p>
+
+            <p><strong>Architecture.</strong> Silver Reef lots are custom builds. There are no builder floor plans to work within or against &mdash; the architecture is designed from scratch for each owner. That creates an opportunity most second home projects do not have: the interior design can be developed in concert with the architectural design, not retrofitted after the fact. When the floor plan, the ceiling volumes, the window placement, and the interior material palette are all developed as a unified composition, the result is a home that feels cohesive — like every decision was part of a single vision. We collaborate with architects and builders from the earliest stages to ensure the interior and exterior speak the same language.</p>
+
+            <p><strong>Owner Identity.</strong> A Silver Reef estate is not a speculative investment. It is a property that a specific person or family will own for years &mdash; potentially for generations. The design must reflect who they are: how they cook, how they entertain, what they collect, where they retreat to when they want quiet, how they transition between the resort&rsquo;s social infrastructure and the privacy of their own home. The difference between a beautifully furnished house and a home that belongs to its owner is the difference between decoration and design. We close that gap by learning who the owner is and what this place means to them — before we make a single design decision.</p>
+
+            <p>Silver Reef owners are not optimizing for revenue. They are building legacy properties in one of the most extraordinary natural settings in the American West. The design stakes are different from a rental &mdash; not lower, but different. A rental property that underperforms costs you bookings. A second home that misses the mark costs you something you can&rsquo;t put a number on: the feeling that you are home.</p>
+
+            <div class="callout">Silver Reef is not an investment. It is a legacy property in one of the most extraordinary landscapes in the American West. The design should honor both &mdash; the setting and the owner.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: Amenities as Design Context -->
+        <section>
+            <h2>Amenities as Design Context</h2>
+
+            <p>Black Desert&rsquo;s amenity portfolio is not just a selling point for buyers and guests. It is a design input. The way residents and visitors actually use these properties &mdash; how the day unfolds, what activities shape the rhythm of a stay &mdash; directly informs how the interiors should be designed.</p>
+
+            <p><strong>The golf course shapes the morning.</strong> A Tom Weiskopf design &mdash; 18 championship holes and a signature 19th &mdash; that has drawn PGA Tour and LPGA Tour events is not a casual amenity. For resort guests and estate owners alike, it is the organizing activity of the day. That means early mornings, gear staging, and a return to the property by mid-afternoon with a specific physical state: fatigued, sun-exposed, ready to transition. The entryway needs to accommodate golf bags and shoes. The primary bathroom needs to feel restorative, not just functional. The living spaces need to support the decompression that follows four hours on a championship course.</p>
+
+            <p><strong>The spa shapes the afternoon.</strong> A 15,000-square-foot spa creates an expectation of quality that carries back to the property. Guests and owners who spend two hours in a world-class spa facility return to their unit or estate with a calibrated sense of what luxury feels like. If the property&rsquo;s finishes, textiles, and atmosphere cannot sustain that feeling, the gap is noticed. The design of bedrooms, bathrooms, and lounging spaces in a Black Desert property should hold the same standard &mdash; not replicate a spa, but match its level of intention.</p>
+
+            <p><strong>The dining venues shape the evening &mdash; or create an alternative.</strong> With seven-plus restaurants on property, many guests and owners will eat out. But for those who cook in &mdash; especially estate owners entertaining at home &mdash; the kitchen and dining spaces compete with resort dining. A Silver Reef estate kitchen that cannot host a dinner party for twelve is failing its owner. A Cove unit kitchen that makes morning coffee feel like a chore is failing its guest. The design of food preparation and dining spaces at Black Desert must account for the fact that the alternative is a professional restaurant three minutes away.</p>
+
+            <p><strong>Pickleball, the water park, and the boardwalk shape transitions.</strong> The planned 21-court pickleball facility, 5-acre water park, and 80,000-square-foot retail boardwalk mean residents and guests will move between the property and the resort throughout the day.</p>
+
+            <p>That creates a design emphasis on transitions: entries that handle gear and traffic, indoor-outdoor connections that do not bottleneck, mudroom-level functionality in spaces that still photograph beautifully.</p>
+
+            <p>The property is not a self-contained destination &mdash; it is a home base within a resort ecosystem, and the design should support that rhythm of departure and return.</p>
+
+            <p><strong>Snow Canyon shapes everything.</strong> The proximity to Snow Canyon State Park is Black Desert&rsquo;s most powerful environmental asset. The lava fields, red rock formations, and Navajo sandstone cliffs are visible from many properties in the community. Hiking, trail running, and canyoneering are part of the daily fabric for both guests and residents. Outdoor living spaces &mdash; patios, terraces, view corridors &mdash; should be designed as primary living areas, not afterthoughts. The desert evening, when the rock walls cool and the light goes amber, is the single best moment a Black Desert property can offer. Design for it.</p>
+
+            <div class="callout">The property is not the destination. The resort is. Design the property as the home base &mdash; the place owners and guests return to after a day on the course, at the spa, on the trails. Every room should reward that return.</div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <p>Ready to design your Black Desert property?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="../playbook-optin.html" class="cta-secondary">Get the free STR Design Playbook</a>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="../guide-optin.html" class="cta-secondary">Get the free Second Home Design Guide</a>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+
+</body>
+</html>

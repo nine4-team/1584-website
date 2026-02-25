@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southern Shores Interior Design &mdash; Custom Lakefront Homes | 1584 Design</title>
+    <meta name="description" content="Interior design for Southern Shores custom lakefront homes in Hurricane, Utah. Engineered lakes, UNIT Surf Pool wave technology, and legacy properties reaching $8M or more, designed through the Intentional Home Framework.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #FAFAF7;
+            background-color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 1);
+            z-index: 1000;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Article Layout */
+        .article-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .article-header h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 5.5vw, 56px);
+            font-weight: 400;
+            color: #FAFAF7;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.5;
+            color: rgba(250, 250, 247, 0.7);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #9a7d55;
+            margin: 56px auto;
+        }
+
+        /* Section Headers */
+        .article-wrapper h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 400;
+            color: #FAFAF7;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        /* Body Text */
+        .article-wrapper p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .article-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lead / Callout Text */
+        .callout {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            line-height: 1.6;
+            color: #E8DED0;
+            text-align: center;
+            padding: 36px 24px;
+            margin: 40px 0;
+            border-top: 1px solid #9a7d55;
+            border-bottom: 1px solid #9a7d55;
+            font-style: italic;
+        }
+
+        /* Bold Key Phrase */
+        .article-wrapper strong {
+            color: #FAFAF7;
+            font-weight: 600;
+        }
+
+        /* Bullet Lists */
+        .article-wrapper ul {
+            list-style: none;
+            margin: 0 0 24px 0;
+            padding: 0;
+        }
+
+        .article-wrapper ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .article-wrapper ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #9a7d55;
+            border-radius: 50%;
+        }
+
+        /* Inline Links */
+        .article-wrapper a:not(.cta-button) {
+            color: #9a7d55;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(154, 125, 85, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .article-wrapper a:not(.cta-button):hover {
+            border-bottom-color: #9a7d55;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin: 56px 0 0;
+            padding: 48px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .cta-section p {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            color: #FAFAF7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
+            background: #9a7d55;
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+            color: rgba(250, 250, 247, 0.6);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            color: #9a7d55;
+            border-bottom-color: #9a7d55;
+        }
+
+        /* Founder Signature */
+        .founder-signature {
+            margin: 40px 0 0;
+        }
+
+        .founder-name {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 64px;
+            }
+
+            .article-wrapper {
+                padding: 110px 20px 60px;
+            }
+
+            .article-header {
+                margin-bottom: 48px;
+                padding-bottom: 36px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .callout {
+                padding: 28px 16px;
+                margin: 32px 0;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-wrapper {
+                padding: 100px 16px 48px;
+            }
+
+            .article-wrapper p,
+            .article-wrapper ul li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Interior Design for Southern Shores Properties</h1>
+            <p class="article-subtitle">Engineered lakes, UNIT Surf Pool wave technology, and custom homes reaching $8M or more &mdash; Southern Shores is building a waterfront lifestyle that does not exist anywhere else in the American West. These legacy properties deserve design that matches the ambition of the community itself.</p>
+        </header>
+
+        <!-- Section 1: A New Kind of Waterfront -->
+        <section>
+            <h2>A New Kind of Waterfront</h2>
+
+            <p>Southern Shores is not a lakeside subdivision. It is an engineered waterfront community in Hurricane, Utah &mdash; 56 lots built around three purpose-designed lakes in the middle of the red rock desert. Thirty-four of those lots sit directly on the water. The remaining twenty-two are wave-adjacent, with lots ranging from roughly a third of an acre to nearly an acre. This is not infill development or speculative density. It is a finite, gated community of custom homes built around a water feature that required serious engineering to create.</p>
+
+            <p>Unlike the golf-centered communities that define much of Hurricane&rsquo;s luxury market &mdash; <a href="copper-rock.html">Copper Rock</a> with its LPGA-caliber course, <a href="sand-hollow.html">Sand Hollow Resort</a> with its 27 championship holes &mdash; Southern Shores builds its identity entirely around water. There is no golf course here. The amenity is the lake itself, and the lifestyle it generates is fundamentally different from anything else in the corridor.</p>
+
+            <p>The centerpiece is the wave technology. Southern Shores uses <strong>UNIT Surf Pool systems</strong> to generate surfable waves in a landlocked desert &mdash; not a wave pool bolted onto a resort, but an integrated lake system designed for actual surfing, wakeboarding, and cable wake. Add private boathouses, open-water boating across three connected lakes, tennis courts, and pickleball courts, and the amenity portfolio reads like a coastal resort. Except there is no coast. There is red sandstone, volcanic basalt, and 300 days of desert sun.</p>
+
+            <p>That contrast is the point. Southern Shores exists because its developer, <strong>Immaculate Homes</strong>, led by Jason Christensen, saw an opportunity to build something that does not have a direct comparison. Waterfront living in Utah has historically meant reservoirs with fluctuating water levels and limited infrastructure. Southern Shores replaces that with engineered consistency &mdash; water levels that do not change with drought cycles, wave quality that does not depend on weather, and a lake system purpose-built for recreation rather than irrigation or flood control.</p>
+
+            <p>Lot prices range from <strong>$622K to $2.5M</strong>, and finished custom homes can reach <strong>$8M or more</strong> at the top of the market. At that price point, these are not vacation homes that happen to have lake access. They are legacy-level custom properties where the waterfront is inseparable from the home&rsquo;s identity. The design of the interior must be equally deliberate.</p>
+
+            <div class="callout">56 lots. Three engineered lakes. Surfable waves in the desert. Southern Shores is not adapting to a natural setting &mdash; it is building one from scratch. The homes should be designed with the same level of intention.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: The Owner Profile -->
+        <section>
+            <h2>The Owner Profile</h2>
+
+            <p>The buyers at Southern Shores are not tourists, and they are not investors running a rental arbitrage strategy. The primary market is <strong>northern Utah second home purchasers</strong> &mdash; families from the Wasatch Front who want a waterfront property within driving distance of home, in a climate that delivers nine months of usable outdoor weather instead of four.</p>
+
+            <p>At the top of the market, these are owners building legacy properties. The purchase is generational, not transactional. They are thinking about where their children and grandchildren will spend summers, where extended family will gather for holidays, where they will eventually spend more of their own time as professional obligations shift. The home is not a line item on a portfolio spreadsheet. It is the physical expression of how a family wants to live when they have the resources to build exactly what they want.</p>
+
+            <p>This profile has specific design implications. These owners want bespoke quality, not luxury staging. They want spaces that reflect their identity, not a designer&rsquo;s signature aesthetic. They want materials chosen for how they age over decades, not how they photograph for a listing. And they want a home that functions for multi-generational use &mdash; grandparents, adult children, young kids, extended family &mdash; without sacrificing the sophistication that a legacy-level property demands.</p>
+
+            <p><strong>The emotional register is different from an investment property.</strong> An STR owner asks: will this design generate revenue? A Southern Shores owner asks: will this home make me feel the way I want to feel when I arrive? Will my family want to come back? Will this place become the center of gravity for the people I love? Those are the questions that shape every design decision &mdash; from the entry sequence to the master suite, from the lakefront terrace to the mudroom where kids dump wet gear after a day on the water.</p>
+
+            <p>Understanding this owner profile is not a soft skill. It is the foundation of the design brief. A home designed for an investor looks and functions differently from a home designed for a family building a legacy. At Southern Shores, the design must serve the latter &mdash; and it must do so at a level of craft and specificity that matches the investment.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: Beach Chic Meets Desert Architecture -->
+        <section>
+            <h2>Beach Chic Meets Desert Architecture</h2>
+
+            <p>The core design tension at Southern Shores is unlike anything else in the <a href="../st-george-utah.html">Southern Utah market</a>. These are waterfront homes &mdash; with boathouses, lake views, and surf culture woven into daily life &mdash; sitting in a landscape of red rock, juniper, and desert sky. The aesthetic that emerges from that collision cannot be imported from a Malibu mood board or borrowed from a mountain lodge catalog. It has to come from what is actually here.</p>
+
+            <p>This is where the <a href="../second-home-design.html">Intentional Home Framework</a> becomes essential. We design second homes through three layers of alignment, and at Southern Shores, each layer carries unusual weight:</p>
+
+            <ul>
+                <li><strong>Environment</strong> &mdash; The visual composition at Southern Shores does not exist anywhere else. Engineered turquoise water against red sandstone cliffs. White sand beaches under a desert sky. The light is not coastal light &mdash; it is high-desert light, hard and clear, with warm golden hours that turn the rock formations amber. The design must bridge water and desert simultaneously. That means a palette drawn from both worlds: warm stone and sand tones grounded in the desert, with deliberate water-inspired accents &mdash; weathered blues, driftwood grays, sea glass greens &mdash; that acknowledge the lake without pretending you are on the ocean.</li>
+                <li><strong>Architecture</strong> &mdash; Immaculate Homes is building custom residences with an architectural language shaped by lakefront and wave-adjacent positioning. Floor plans orient toward the water. Outdoor living spaces face the lakes. Window walls frame views that blend engineered shoreline with desert horizon. The interior design must flow from these architectural decisions, not fight them. Where the architecture opens to the lake, the interiors should draw the eye outward. Where the architecture creates privacy from neighboring lots, the interiors should reward the intimacy of those enclosed spaces.</li>
+                <li><strong>Owner identity</strong> &mdash; Every decision is custom. There is no package, no preset, no version of this that works off a template. Every material selection, every furniture specification, every lighting decision is bespoke. The home should say something specific about who lives here &mdash; not &ldquo;a wealthy person with good taste,&rdquo; but this particular family, with their particular way of living, their particular relationship to the water, their particular vision of what home means. That level of specificity is what separates decoration from design.</li>
+            </ul>
+
+            <p><strong>The &ldquo;beach chic&rdquo; question deserves a direct answer.</strong> Coastal-inspired design in a desert context fails when it is literal &mdash; when it imports seashell motifs, nautical rope details, and whitewashed shiplap into a landscape that has never seen a tide. It succeeds when it captures the feeling of waterfront living through honest materials and spatial decisions: natural linen and raw wood that could belong to either coast or desert. Stone surfaces that echo the sandstone outside the window. Indoor-outdoor flow that treats the lake terrace as a primary living space, not a decorative afterthought. The goal is a home that feels like it belongs exactly where it is &mdash; at the intersection of water and desert &mdash; because that intersection is what makes Southern Shores unlike anything else.</p>
+
+            <div class="callout">Turquoise water against red rock. Surf culture in the high desert. The design cannot be borrowed from either world &mdash; it must be built from the collision of both.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: Designing for the Water Lifestyle -->
+        <section>
+            <h2>Designing for the Water Lifestyle</h2>
+
+            <p>A home at Southern Shores is not a house that happens to be near water. It is a home organized around water. The owners will spend days surfing engineered waves, wakeboarding behind boats, paddling across the lake, and swimming with their families. The home must function as the base camp for that lifestyle &mdash; not just aesthetically, but operationally.</p>
+
+            <p><strong>Boathouses and gear storage.</strong> Private boathouses are part of the Southern Shores offering, which means the transition from lake to home is a daily workflow, not an occasional event. The design needs to accommodate that workflow: a clear path from the boathouse to the home&rsquo;s storage areas, with space for surfboards, wakeboards, life vests, paddles, wetsuits, and the accumulated equipment of a family that treats the lake as an extension of their living space. This is not a closet with a few hooks. It is a purpose-designed gear room with ventilation, drainage, and organizational systems that keep expensive equipment in condition.</p>
+
+            <p><strong>Wet entry zones.</strong> When four or five family members come in from the lake simultaneously &mdash; dripping, sandy, carrying gear &mdash; the home needs to handle it without compromising the primary living spaces. That means a dedicated wet entry with durable flooring (stone or sealed concrete, never hardwood), built-in seating for removing wet shoes and gear, towel storage, and ideally an outdoor shower or rinse station before the entry point. The materials in this zone are chosen for abuse tolerance, not aesthetics alone, though at this price point they must deliver both.</p>
+
+            <p><strong>Sand and water management.</strong> Three engineered lakes with sandy shorelines mean sand is a constant presence. The design strategy accounts for this at every transition point: entry mats rated for heavy particulate, flooring materials in high-traffic zones that do not trap sand in grout lines or wood grain, and a cleaning workflow that does not require the owner to vacuum three times a day during peak use. These are practical considerations that most residential designers overlook because most residential projects do not sit on a beach.</p>
+
+            <p><strong>Post-surf comfort.</strong> After three hours on the water, the body wants specific things: warmth, soft surfaces, food, and rest. The design should anticipate that sequence. A transition from the wet zone to a comfortable family room or great room that feels like a reward after physical exertion. A kitchen positioned and equipped for the kind of casual, high-volume meal preparation that follows a morning on the lake &mdash; smoothies, sandwiches, snacks for eight people, not a formal dinner service. Master bath design that treats the post-water shower as a spa experience, not a utility function.</p>
+
+            <p><strong>Entertaining by the water.</strong> The lakefront terrace is where the Southern Shores lifestyle reaches its peak expression. Sunset over the desert with the lake in the foreground, family and guests gathered around an outdoor dining table, the day&rsquo;s surf session settling into evening conversation. The outdoor living spaces at these properties need to function at the same level as the interiors: proper dining for large groups, comfortable lounge seating, shade structures for daytime use, lighting designed for evening ambiance, and a material palette that survives desert sun, wind, and water exposure without degrading. This is not patio furniture. It is an outdoor room designed with the same rigor as every room inside the house.</p>
+
+            <div class="callout">The lake is not an amenity. It is the organizing principle of daily life. The home must function as beautifully after six hours on the water as it does in a photograph.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: Timing and Opportunity -->
+        <section>
+            <h2>Timing and Opportunity</h2>
+
+            <p>Southern Shores is in its earliest phase of construction. Homes are just beginning to be built. For owners who have purchased lots or are in the process of selecting one, this is the single most valuable moment to engage a designer &mdash; and the moment most owners miss.</p>
+
+            <p><strong>Before finishes are locked, everything is possible.</strong> Tile selections, cabinetry specifications, lighting placement, outlet positioning, built-in storage, plumbing fixture locations &mdash; these decisions are made during the construction phase and become permanent once the walls close. A designer involved at this stage can influence the bones of the home, not just the surface. That is the difference between a home where the design feels inevitable and one where the furnishings are fighting the architecture.</p>
+
+            <p><strong>Working with Immaculate Homes from the start.</strong> Jason Christensen&rsquo;s team at Immaculate Homes is building custom residences, which means there is genuine flexibility in the construction process for owners who bring a designer to the table early. Coordinating with the builder on finish selections, custom millwork, and spatial modifications is orders of magnitude easier during framing than after drywall. A designer who understands the builder&rsquo;s process and can communicate in the builder&rsquo;s language saves the owner money, reduces change orders, and produces a more coherent result.</p>
+
+            <p><strong>Furniture lead times are real.</strong> Custom furniture, imported materials, and bespoke fabrication do not arrive in weeks. They arrive in months. For an $8M home where every piece is specified to the architecture and the owner&rsquo;s preferences, the procurement timeline can easily extend to six months or more. Starting the design process during construction means the home is furnished when construction ends &mdash; not six months after, while the owner stares at empty rooms and wonders why they did not start sooner.</p>
+
+            <p>The owners buying into Southern Shores are investing at a level where the design should be considered part of the home, not an afterthought applied once the keys are handed over. Engaging a designer now &mdash; while the concrete is being poured and the framing is going up &mdash; means the interior and the architecture develop together. That is how you get a home where every room feels like it was always meant to be exactly what it is.</p>
+
+            <p>1584 Design operates as a full-service partner: <strong>Design Planning, Procurement, and Installation</strong>, handled end to end. For Southern Shores owners, that means a single team managing the design vision from initial concept through builder coordination, material specification, furniture procurement, and final installation day. No gaps between phases. No handoffs to secondary vendors. One team, one vision, one outcome.</p>
+
+            <div class="callout">Homes are just starting construction. Finishes are not yet locked. Lead times have not yet started. This is the moment where design has the most leverage &mdash; and where the difference between early engagement and late engagement is measured in years of living with the result.</div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <p>Ready to design your Southern Shores home?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="../playbook-optin.html" class="cta-secondary">Get the free STR Design Playbook</a>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="../guide-optin.html" class="cta-secondary">Get the free Second Home Design Guide</a>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desert Color Interior Design &mdash; Vacation Rentals &amp; Second Homes | 1584 Design</title>
+    <meta name="description" content="Interior design for Desert Color properties in St. George, Utah. Full-service design for vacation rental investors and second home owners across Southern Utah's largest resort community.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #FAFAF7;
+            background-color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 1);
+            z-index: 1000;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Article Layout */
+        .article-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .article-header h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 5.5vw, 56px);
+            font-weight: 400;
+            color: #FAFAF7;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.5;
+            color: rgba(250, 250, 247, 0.7);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #9a7d55;
+            margin: 56px auto;
+        }
+
+        /* Section Headers */
+        .article-wrapper h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 400;
+            color: #FAFAF7;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        /* Body Text */
+        .article-wrapper p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .article-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lead / Callout Text */
+        .callout {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            line-height: 1.6;
+            color: #E8DED0;
+            text-align: center;
+            padding: 36px 24px;
+            margin: 40px 0;
+            border-top: 1px solid #9a7d55;
+            border-bottom: 1px solid #9a7d55;
+            font-style: italic;
+        }
+
+        /* Bold Key Phrase */
+        .article-wrapper strong {
+            color: #FAFAF7;
+            font-weight: 600;
+        }
+
+        /* Bullet Lists */
+        .article-wrapper ul {
+            list-style: none;
+            margin: 0 0 24px 0;
+            padding: 0;
+        }
+
+        .article-wrapper ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .article-wrapper ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #9a7d55;
+            border-radius: 50%;
+        }
+
+        /* Inline Links */
+        .article-wrapper a:not(.cta-button) {
+            color: #9a7d55;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(154, 125, 85, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .article-wrapper a:not(.cta-button):hover {
+            border-bottom-color: #9a7d55;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin: 56px 0 0;
+            padding: 48px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .cta-section p {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            color: #FAFAF7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
+            background: #9a7d55;
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+            color: rgba(250, 250, 247, 0.6);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            color: #9a7d55;
+            border-bottom-color: #9a7d55;
+        }
+
+        /* Founder Signature */
+        .founder-signature {
+            margin: 40px 0 0;
+        }
+
+        .founder-name {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 64px;
+            }
+
+            .article-wrapper {
+                padding: 110px 20px 60px;
+            }
+
+            .article-header {
+                margin-bottom: 48px;
+                padding-bottom: 36px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .callout {
+                padding: 28px 16px;
+                margin: 32px 0;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-wrapper {
+                padding: 100px 16px 48px;
+            }
+
+            .article-wrapper p,
+            .article-wrapper ul li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Interior Design for Desert Color Properties</h1>
+            <p class="article-subtitle">Southern Utah&rsquo;s largest resort community serves two distinct owners: investors building high-performance vacation rentals, and individuals creating a personal escape they&rsquo;ll never rent out. Both deserve design built for the specific way they&rsquo;ll use the property &mdash; and for the extraordinary setting Desert Color provides.</p>
+        </header>
+
+        <!-- Section 1: The Scale of the Opportunity -->
+        <section>
+            <h2>The Scale of the Opportunity</h2>
+
+            <p><a href="https://desertcolor.com/">Desert Color</a> is not a neighborhood. It is a town being built from scratch &mdash; 3,300 acres of master-planned development in southern St. George, the largest new community in the region, with more than 10,000 homes planned at full buildout. To put that in perspective, most STR communities in the <a href="../st-george-utah.html">St. George market</a> are measured in hundreds of lots. Desert Color is measured in thousands.</p>
+
+            <p>The anchor is a 2.5-acre Crystal Lagoon with a half-mile of white sand beaches &mdash; the kind of amenity that turns a development into a destination. Paddleboarding, kayaking, beach volleyball, open water swimming, all in the middle of the high desert. It is the single most photographed feature in Southern Utah vacation rental listings, and it is the reason guests choose Desert Color over every other option within driving distance.</p>
+
+            <p>The community is organized into six distinct neighborhoods: <strong>The Shores</strong>, <strong>Ironwood Flats</strong>, <strong>Auburn Hills</strong>, <strong>Sage Haven</strong>, <strong>Regency</strong> (a 55+ community), and <strong>Atara</strong> (luxury condominiums). Each has its own character, price point, and design context. The community is legally zoned for nightly rentals in designated areas &mdash; a critical distinction in a market where STR permitting is increasingly restricted.</p>
+
+            <p>What sets Desert Color apart from other STR-zoned communities is the commercial infrastructure being built alongside the residential. Costco, restaurants, entertainment venues, and a hospital are either under construction or planned. This is not a subdivision with an amenity pool. It is being built as a self-contained town &mdash; and for STR investors, that changes the competitive calculus entirely. Guests are not just booking a house near a lagoon. They are booking into a resort ecosystem.</p>
+
+            <div class="callout">3,300 acres. 10,000+ homes at buildout. A Crystal Lagoon, commercial core, and six distinct neighborhoods &mdash; Desert Color is not competing with other subdivisions. It is creating a new category.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: The Guest Experience at Desert Color -->
+        <section>
+            <h2>The Guest Experience at Desert Color</h2>
+
+            <p>The guest profile at Desert Color is distinct from most vacation rental markets. The properties here tend to be large &mdash; built for groups, not couples. And the guests booking them reflect that scale: multi-family reunions, corporate retreats, wedding groups, church and youth organizations, and friend groups looking for a shared experience they cannot get at a hotel.</p>
+
+            <p>The Crystal Lagoon is the primary draw. It offers an experience that does not exist anywhere else in the intermountain West &mdash; open water recreation in a desert climate with 300+ days of sunshine. But the lagoon is the hook, not the whole story. Desert Color&rsquo;s location places guests 45 minutes from Zion National Park, minutes from Snow Canyon State Park, and a short drive from Sand Hollow Reservoir. The outdoor recreation portfolio is deep enough to fill a week without repeating an experience.</p>
+
+            <p>The drive-to market is substantial. Las Vegas is 1.5 hours. Salt Lake City is 2.5 hours. Phoenix is 4 hours. Los Angeles is 5. These are not flight markets &mdash; they are road trip markets, which means guests arrive with vehicles full of gear, groceries, and extended family. That has direct design implications we will address.</p>
+
+            <p><strong>Seasonality works in your favor.</strong> Peak demand arrives in the spring and fall shoulder seasons when the weather is ideal for outdoor activity. Summer remains strong because of the lagoon and family travel schedules. Even winter holds up better than most desert markets thanks to the mild St. George climate and proximity to ski resorts in Brian Head and Cedar City. The result is a more balanced revenue curve than many STR markets can offer.</p>
+
+            <p>Understanding who your guests are &mdash; and what they are doing for five to seven days in this community &mdash; is the starting point for every design decision. A property that sleeps 30 but does not have a functional outdoor dining space for 30 is missing the point. A kitchen designed for a family of four cannot serve a reunion of twenty. The guest experience at Desert Color starts with the lagoon and the landscape, but it lives or dies inside the property itself.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: Designing for Large Groups -->
+        <section>
+            <h2>Designing for Large Groups</h2>
+
+            <p>When a property sleeps 20 to 60 guests, the design stakes are categorically different from a four-bedroom house that hosts a family of six. The margin for error shrinks. The consequences of getting it wrong &mdash; in durability, in flow, in guest satisfaction &mdash; multiply with every additional bed. The principles are the same, but the scale changes everything &mdash; a property that sleeps 30 is not a big house, it is a small venue, and it needs to function like one.</p>
+
+            <p><strong>Layout and flow for large groups.</strong> A property hosting 30 people needs to function like a well-designed small venue, not an oversized house. That means dining configurations for 20 or more, with seating that feels intentional rather than cobbled together from mismatched tables. It means kitchens that operate at something approaching restaurant scale &mdash; counter space, storage, appliance placement, and traffic flow that allows multiple people to cook simultaneously without collision. It means bunk rooms that kids actually want to sleep in, not afterthought spaces with mattresses stacked in a corner. And it means master suites with genuine privacy &mdash; acoustic separation, quality doors, a layout that gives the primary guests a retreat from the communal energy of the rest of the house.</p>
+
+            <p><strong>Indoor-outdoor connection.</strong> At Desert Color, the outdoor living spaces are not secondary. They are where guests spend the majority of their waking hours. Covered patios, pool decks, kitchen-to-patio transitions, outdoor dining areas &mdash; these are the spaces where the best memories happen and where the best listing photography is captured. Designing a Desert Color property without obsessing over the indoor-outdoor connection is leaving both revenue and guest experience on the table. The transition should feel seamless: materials that flow, sightlines that extend, and furniture that makes the outdoor space feel as considered as the living room.</p>
+
+            <p><strong>Durability at resort scale.</strong> A property that hosts 200+ guest nights per year with groups of 20 or more is not a home. It is a hospitality asset operating under residential conditions. Performance fabrics are not a luxury &mdash; they are baseline. Commercial-grade hardware on every door, drawer, and cabinet. Solid-surface countertops that survive the abuse of a group cooking breakfast for thirty. Outdoor furniture engineered to handle desert sun, wind, and the wear of constant use. We specify every material in a Desert Color property with the assumption that it will be used harder than the manufacturer intended, because it will be.</p>
+
+            <p><strong>Photography-ready in a crowded market.</strong> Desert Color is growing fast, and the number of STR listings is growing with it. That means your property is not competing against a handful of alternatives &mdash; it is competing against dozens of properties in the same community, many with the same floor plan and the same lagoon access. Design is the differentiator. Layered lighting that creates depth and warmth in photos. Color palettes calibrated to the desert light that floods through south-facing windows. Statement pieces that anchor rooms visually and give guests &mdash; and photographers &mdash; a focal point. This is what our <a href="../vacation-rental-design.html">vacation rental design process</a> is built to deliver: spaces that stop the scroll, convert browsers to bookers, and create the in-person experience that generates five-star reviews.</p>
+
+            <div class="callout">When a property sleeps 30, every design decision is amplified. The dining table is not furniture &mdash; it is infrastructure. The patio is not an amenity &mdash; it is the primary living space. The fabrics are not a style choice &mdash; they are a durability decision.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: Builder Variation Creates Design Opportunities -->
+        <section>
+            <h2>Builder Variation Creates Design Opportunities</h2>
+
+            <p>Desert Color is not a single-builder community. Multiple builders are active across its neighborhoods, each with a different architectural language, different floor plan logic, and different strengths. That variation is both a challenge and an opportunity for interior design.</p>
+
+            <p><strong>Holmes Homes</strong> builds townhomes in the 2&ndash;3 bedroom range &mdash; compact properties that require a fundamentally different approach to space planning than the large custom homes elsewhere in the community. Every square foot must work harder. Furniture scale, storage solutions, and multi-functional pieces become critical.</p>
+
+            <p><strong>CareFree Homes</strong> offers eight floor plans starting at 2,300+ square feet with 3&ndash;5 bedrooms. These are the mid-market workhorses of Desert Color&rsquo;s STR inventory. The design challenge is differentiation: when your neighbor has the same floor plan, identical curb appeal, and the same lagoon view, the interiors become the only meaningful variable a guest evaluates. A designer who understands how these buildings are laid out &mdash; where light enters, how the kitchen relates to the living space, which walls can anchor a statement piece &mdash; is working from knowledge a generalist does not have.</p>
+
+            <p><strong>Sullivan Homes</strong> builds seven luxury designs ranging from 1,440 to 3,700+ square feet. The volume and ceiling heights in Sullivan&rsquo;s larger plans create design opportunities that smaller homes cannot support: oversized art, dramatic light fixtures, furniture groupings that would overwhelm a standard room but feel proportional in these spaces.</p>
+
+            <p><strong>Visionary Homes</strong> focuses on condos and townhomes &mdash; a different product type that attracts a different investor profile and a different guest. The design priorities shift toward efficiency, durability in high-turnover units, and creating a sense of quality in a smaller footprint.</p>
+
+            <p><strong>Cedar Pointe</strong> and <strong>Split Rock</strong> operate in the luxury custom segment, where the design brief is essentially unlimited. Custom homes demand a bespoke approach &mdash; no templated solutions, no catalog pulls. Every room is designed to the specific architecture of that property.</p>
+
+            <p>Unlike smaller communities like <a href="paradise-village.html">Paradise Village</a>, where a single builder dominates and the design challenges are relatively consistent, Desert Color&rsquo;s builder diversity means no two projects are the same. A designer who has worked across these builders understands the structural vocabulary &mdash; where the load-bearing walls are, how volume relates to furniture scale, which floor plans photograph well and which need to be compensated for. That knowledge compounds into better outcomes for every property we touch.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: What STR Investors Should Know -->
+        <section>
+            <h2>What STR Investors Should Know</h2>
+
+            <p>Desert Color is one of the most attractive STR investment opportunities in Southern Utah, but it operates under a specific regulatory framework that investors need to understand before committing capital. The details matter.</p>
+
+            <ul>
+                <li><strong>Nightly rentals are legally permitted in designated areas only.</strong> Not every neighborhood within Desert Color allows short-term rentals. Confirm STR zoning before purchasing. The approved areas are well-defined, but buying in the wrong section means your investment thesis collapses on day one.</li>
+                <li><strong>A mandatory management company is required.</strong> Desert Color does not permit self-management of STR properties. Owners must use one of three approved management companies. This is non-negotiable, and it affects your operating costs and your control over the guest experience. Factor management fees into your pro forma.</li>
+                <li><strong>HOA dues range from $220 to $400+ per month.</strong> Vacation rental properties tend toward the higher end of this range due to increased amenity use and community impact. These are real carrying costs that reduce your net operating income.</li>
+                <li><strong>Nightly-rental-approved builders include Holmes Homes, CareFree, Toll Brothers, and Visionary.</strong> If you are purchasing with the intent to operate as an STR, confirm your builder is on the approved list. Building with a non-approved builder in a non-approved zone is a costly mistake.</li>
+                <li><strong>Property price range is broad.</strong> Townhomes start around $319K. Luxury custom homes extend into the millions. Your design budget needs to be proportional to the property tier and the revenue you expect to generate. As a general benchmark, our STR clients typically invest between $80K and $200K in total project budget for furnishings, decor, and installation.</li>
+            </ul>
+
+            <p>The regulatory structure at Desert Color is more restrictive than some investors expect. But those restrictions also function as a quality filter &mdash; they keep the community from becoming oversaturated with poorly managed properties, which protects the value of well-designed, well-operated listings. For investors who do the work and invest in design that matches the community&rsquo;s ambition, the fundamentals are strong.</p>
+
+            <p>Not every buyer in the St. George corridor wants the STR dynamic at all &mdash; even as a neighbor. Communities like <a href="desert-canyons.html">Desert Canyons</a> offer a purely residential alternative nearby, with no nightly rental activity and a quieter ownership experience. Knowing those options exist helps investors and residents alike find the right fit.</p>
+
+            <p>For a broader view of the St. George STR market &mdash; how Desert Color compares to other communities, what the regulatory environment looks like across the corridor, and how to evaluate properties as investments &mdash; read our <a href="../st-george-utah.html">St. George market overview</a>. For a deep dive into how design drives STR revenue, the <a href="../playbook-optin.html">STR Design Playbook</a> breaks down the framework we use on every project.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 6: Desert Color as a Second Home -->
+        <section>
+            <h2>Beyond the Rental: Desert Color as a Second Home</h2>
+
+            <p>Not every property in Desert Color is an investment vehicle. Regency &mdash; the community&rsquo;s 55+ neighborhood &mdash; does not permit short-term rentals at all. Other neighborhoods within Desert Color are similarly zoned for residential use only, creating quieter enclaves within the larger resort ecosystem. For owners buying into these areas, the Crystal Lagoon, the commercial infrastructure, the restaurants and recreation &mdash; all of it serves personal residents just as well as it serves guests. The amenity portfolio that makes Desert Color a compelling STR market also makes it an extraordinary place to own a home you will never rent out.</p>
+
+            <p>The design challenge for a second home is fundamentally different from a vacation rental. There is no guest persona to optimize for. No listing photography strategy. No revenue-per-square-foot calculation. Instead, the question is: <strong>does this home feel like the haven you bought it to be &mdash; and does it feel unmistakably like yours?</strong></p>
+
+            <p>That is the question our <a href="../second-home-design.html">Intentional Home Framework</a> is built to answer. We design second homes through three layers of alignment:</p>
+
+            <ul>
+                <li><strong>Environment</strong> &mdash; Desert Color sits in the red rock landscape of southern Utah, with the Crystal Lagoon as a centerpiece visible from many properties. The design should work with that setting, not against it. What you see out the window becomes part of the visual composition &mdash; the desert light, the water, the mountain silhouettes at dusk. A home that ignores that context is missing its most powerful design asset.</li>
+                <li><strong>Architecture</strong> &mdash; The builders active in Desert Color&rsquo;s residential neighborhoods &mdash; Sullivan, CareFree, Cedar Pointe, Split Rock &mdash; each bring a different structural vocabulary. Interior design that flows from the architecture of the specific property feels coherent in a way that catalog-sourced furnishing never can. We work with the floor plan, the ceiling volumes, the way light enters each room &mdash; not against them.</li>
+                <li><strong>Owner identity</strong> &mdash; A second home should reflect who you are and what you love, not a designer&rsquo;s portfolio aesthetic and not a neutral staging package. A well-furnished house and a home that actually feels like yours are not the same thing. We close that gap deliberately.</li>
+            </ul>
+
+            <p><strong>Regency deserves specific attention.</strong> The 55+ community is designed for active adults who want the Desert Color lifestyle without the transient energy of a vacation rental neighborhood. The homes tend toward single-level living, open floor plans, and direct outdoor access &mdash; all of which create design opportunities around comfort, accessibility, and long-term livability that a rental-focused project would never prioritize. A Regency home designed well becomes a space where the owner spends more time, not less &mdash; which is the entire point of buying a second home.</p>
+
+            <p>For owners in non-rental zones beyond Regency, the advantage is similar: the full amenity portfolio of a resort community, without the guest traffic and turnover noise of the STR neighborhoods. These are residential streets within a destination setting &mdash; and the design should honor that distinction. The materials can be chosen for how they age, not how they survive a weekend of thirty strangers. The layout can serve the owner&rsquo;s actual life &mdash; how they cook, how they entertain, where they read, where they retreat &mdash; rather than a hypothetical guest&rsquo;s expectations. For buyers specifically drawn to the outdoor recreation lifestyle, <a href="divario.html">Divario</a> offers a similar personal-use community in St. George with trail-integrated living &mdash; another option worth exploring if the resort-scale amenity model of Desert Color is not quite what you are after.</p>
+
+            <div class="callout">Your second home should be a haven &mdash; a place apart from the pressures of everyday life, somewhere to exhale, feel rejuvenated, and form memories with the people you love. We design that feeling into the space.</div>
+
+            <p>We bring the same full-service process to second home projects that we bring to vacation rentals: design planning, procurement, and installation, handled end to end. The difference is in the objective. For STR properties, design is a revenue lever. For second homes, design is the reason you bought the place. Both require the same level of care, specificity, and craft &mdash; and both are core to what 1584 Design does.</p>
+
+            <p>If you are purchasing in Regency or another residential neighborhood at Desert Color, the <a href="../guide-optin.html">Second Home Design Guide</a> walks through our framework in detail. And our <a href="../second-home-design.html">second home design page</a> explains the full scope of how we work with second home owners.</p>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <p>Ready to design your Desert Color property?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="../playbook-optin.html" class="cta-secondary">Get the free STR Design Playbook</a>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="../guide-optin.html" class="cta-secondary">Get the free Second Home Design Guide</a>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+
+</body>
+</html>

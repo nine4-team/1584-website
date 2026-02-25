@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sand Hollow Resort Interior Design | 1584 Design</title>
+    <meta name="description" content="Interior design for Sand Hollow Resort properties in Hurricane, Utah. STR performance design for vacation rentals and Intentional Home design for Tava Resort second homes. Five neighborhoods, championship golf, reservoir recreation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #FAFAF7;
+            background-color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 1);
+            z-index: 1000;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Article Layout */
+        .article-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .article-header h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 5.5vw, 56px);
+            font-weight: 400;
+            color: #FAFAF7;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.5;
+            color: rgba(250, 250, 247, 0.7);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #9a7d55;
+            margin: 56px auto;
+        }
+
+        /* Section Headers */
+        .article-wrapper h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 400;
+            color: #FAFAF7;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        /* Body Text */
+        .article-wrapper p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .article-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lead / Callout Text */
+        .callout {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            line-height: 1.6;
+            color: #E8DED0;
+            text-align: center;
+            padding: 36px 24px;
+            margin: 40px 0;
+            border-top: 1px solid #9a7d55;
+            border-bottom: 1px solid #9a7d55;
+            font-style: italic;
+        }
+
+        /* Bold Key Phrase */
+        .article-wrapper strong {
+            color: #FAFAF7;
+            font-weight: 600;
+        }
+
+        /* Bullet Lists */
+        .article-wrapper ul {
+            list-style: none;
+            margin: 0 0 24px 0;
+            padding: 0;
+        }
+
+        .article-wrapper ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .article-wrapper ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #9a7d55;
+            border-radius: 50%;
+        }
+
+        /* Inline Links */
+        .article-wrapper a:not(.cta-button) {
+            color: #9a7d55;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(154, 125, 85, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .article-wrapper a:not(.cta-button):hover {
+            border-bottom-color: #9a7d55;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin: 56px 0 0;
+            padding: 48px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .cta-section p {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            color: #FAFAF7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
+            background: #9a7d55;
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+            color: rgba(250, 250, 247, 0.6);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            color: #9a7d55;
+            border-bottom-color: #9a7d55;
+        }
+
+        /* Founder Signature */
+        .founder-signature {
+            margin: 40px 0 0;
+        }
+
+        .founder-name {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 64px;
+            }
+
+            .article-wrapper {
+                padding: 110px 20px 60px;
+            }
+
+            .article-header {
+                margin-bottom: 48px;
+                padding-bottom: 36px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .callout {
+                padding: 28px 16px;
+                margin: 32px 0;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-wrapper {
+                padding: 100px 16px 48px;
+            }
+
+            .article-wrapper p,
+            .article-wrapper ul li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Interior Design for Sand Hollow Resort Properties</h1>
+            <p class="article-subtitle">Championship golf and reservoir adventure in the same community &mdash; with five distinct neighborhoods that each demand a different design approach. Performance-driven STR design for vacation rentals. Intentional Home design for Tava Resort second homes. Sand Hollow is not one project. It is five.</p>
+        </header>
+
+        <!-- Section 1: Golf and Water in the Same Community -->
+        <section>
+            <h2>Golf and Water in the Same Community</h2>
+
+            <p><a href="https://sandhollowresort.com/">Sand Hollow Resort</a> is a roughly 900-acre community in Hurricane, Utah, and it carries a dual identity that no other STR community in the corridor can claim. It is a championship golf destination and a reservoir adventure base &mdash; simultaneously &mdash; and that combination shapes the guest profile in ways that directly affect how we design every property here.</p>
+
+            <p>The golf credentials are substantial. Twenty-seven holes designed by John Fought, the 1977 U.S. Amateur Champion, and Andy Staples, opened in 2008. The Championship Course runs 18 holes, par 72, stretching beyond 7,300 yards &mdash; a links-meets-desert-Southwest design perched on rolling red rock ridges with views that make concentration difficult. The Links Course adds 9 holes, par 36, at 3,600 yards in a St. Andrews style featuring Utah&rsquo;s largest greens. There is also an 18-hole putting course for guests who want to play without committing to a full round. The accolades reflect the quality: No. 54 Best Public Course in America (Golf Magazine, 2024), No. 170 Best Modern Course (Golfweek, 2025), Utah&rsquo;s &ldquo;Best Public Course,&rdquo; and Hole No. 15 featured on the Golfweek cover.</p>
+
+            <p>Then there is the water. Sand Hollow Reservoir and State Park sit directly adjacent to the resort &mdash; boating, fishing, ATV riding, cliff jumping, sand dune hiking, and swimming, all within minutes of the front door. The resort also operates an all-suite hotel on property, which adds a hospitality baseline that guests compare your vacation rental against.</p>
+
+            <p>This dual identity is not just a marketing angle. It shapes who books, what they bring, how they use the property, and what they expect when they walk through the door. A guest who plays 18 holes in the morning, takes the boat out after lunch, and rides ATVs on the dunes before dinner has different needs than a guest who spends the day at a pool. Designing for Sand Hollow means designing for both &mdash; and doing it within a single property.</p>
+
+            <div class="callout">Championship golf on red rock ridges. A reservoir five minutes away. Five neighborhoods at five price points. Sand Hollow is the most design-complex community in the corridor &mdash; and the most rewarding to get right.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: Five Neighborhoods, Five Design Briefs -->
+        <section>
+            <h2>Five Neighborhoods, Five Design Briefs</h2>
+
+            <p>This is what makes Sand Hollow unique from a design perspective. It is not one community with one design language. It is five distinct neighborhoods, each with its own architecture, price point, guest profile, and set of constraints. A designer who approaches Sand Hollow with a single template is going to produce mediocre results across the board. Each neighborhood demands its own brief.</p>
+
+            <ul>
+                <li><strong>The Estates.</strong> Luxury course-front homes on lots ranging from 0.3 to 1.5 acres, priced in the multi-millions. These are the flagship properties of Sand Hollow &mdash; the ones that set the tone for the entire resort. The design brief is high-end and views-forward: expansive windows oriented toward the championship course, materials that signal permanence and craft, and a golfer-lifestyle aesthetic that feels sophisticated without tipping into stuffy. These homes have the square footage and the ceiling volume to support dramatic design moves &mdash; oversized art, statement lighting, furniture groupings that breathe. The challenge is restraint: letting the landscape do the work rather than competing with it.</li>
+                <li><strong>Villas.</strong> Condo-style units, one to three bedrooms, approximately 1,566 square feet, with golf course views and steps from the resort pools. The design brief is efficient luxury &mdash; maximizing every square foot of a smaller footprint without making the space feel cramped or budget-constrained. Furniture scale is critical here. A sofa that works in an Estates living room will overwhelm a Villa. Multi-functional pieces, built-in storage, and a disciplined approach to accessories become essential. The Villas compete directly against the resort hotel for bookings, which means the interior needs to deliver a hospitality-grade experience in a residential format.</li>
+                <li><strong>The Dunes.</strong> A community of 267 single-family homes established in 2019, designed with views as a priority. This is the middle market of Sand Hollow &mdash; the price point where most STR investors are entering. The design brief is elevated but not extravagant: warm, cohesive interiors that photograph well and deliver genuine comfort without the budget requirements of the Estates. The Dunes is also where differentiation matters most, because the inventory is large enough that your listing is competing against neighbors with similar floor plans. Design is the variable that separates a fully booked property from one that discounts to fill gaps.</li>
+                <li><strong>The Retreat.</strong> One of the original neighborhoods at Sand Hollow, nearly fully developed, with many unique floor plans and an active base of rental condos. The design brief here is about refresh and competition. Many properties in The Retreat were furnished years ago and are now competing against newer inventory in The Dunes and Villas. A strategic redesign &mdash; updated furnishings, refreshed color palette, improved photography &mdash; can reposition a Retreat property from &ldquo;dated but affordable&rdquo; to &ldquo;established and well-appointed.&rdquo; The bones are often excellent. The interiors just need to catch up.</li>
+                <li><strong>Tava Resort.</strong> A collection of 104 exclusive home sites with three to six bedrooms, anchored by more than $10 million in private amenities: two luxury pools, a lazy river, splash pad, clubhouse, four pickleball courts, tennis, racquetball, a fitness center, and an art center. The critical distinction: Tava does not permit nightly rentals. This is a <a href="../second-home-design.html">second-home and permanent-residence community</a>, and the design brief reflects that entirely different purpose. Without the revenue-optimization constraints of an STR, the design can be purely personal &mdash; tailored to how the homeowner actually lives, entertains, and uses the space across seasons. Tava is where we apply our Intentional Home Framework rather than our STR performance methodology.</li>
+            </ul>
+
+            <p>Each of these neighborhoods requires a fundamentally different design approach. The materials differ. The budgets differ. The guest profiles differ. The competitive dynamics differ. A property in The Estates and a condo in The Retreat share a zip code and a resort name, but they share almost nothing in terms of what the design needs to accomplish. This is not a one-size-fits-all community, and treating it like one is the fastest way to underperform.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: The Active Guest Profile -->
+        <section>
+            <h2>The Active Guest Profile</h2>
+
+            <p>Sand Hollow guests are active. They are golfers in the morning, boaters in the afternoon, and ATV riders on the dunes after that. They fish. They paddleboard. They cliff jump at the reservoir and hike the red rock trails before dinner. This is not a community where guests lounge by the pool for a week. They use the property as a base camp for a full itinerary of outdoor recreation &mdash; and that reality shapes every design decision we make.</p>
+
+            <p><strong>Gear storage is a design problem, not an afterthought.</strong> Where does a family of eight put wetsuits, golf bags, ATV helmets, fishing rods, and paddleboards? Most vacation rental interiors ignore this question entirely, which means gear ends up piled in entryways, draped over dining chairs, and stacked in corners. A well-designed Sand Hollow property anticipates the gear and gives it a home: mudroom-style entry zones, dedicated storage for golf equipment, hooks and racks that keep outdoor gear organized and off the floor. The property should feel clean and composed even when the guests are living an active lifestyle.</p>
+
+            <p><strong>Easy-clean surfaces and entryways that handle the elements.</strong> Sand from the reservoir. Red desert dust from the dunes. Water tracked in from the boat ramp. A Sand Hollow property takes more environmental abuse than a typical vacation rental, and the material specification needs to account for it. Tile or luxury vinyl in high-traffic zones. Performance upholstery on every seating surface. Countertops and tabletops that survive sunscreen, insect repellent, and the general wear of guests who have been outdoors all day. We specify materials at Sand Hollow with the assumption that they will encounter sand, water, and red dirt on a daily basis &mdash; because they will.</p>
+
+            <p><strong>Post-adventure comfort is what earns five-star reviews.</strong> After a day of golf, boating, and dune riding, guests want to collapse into deep sofas, sleep in rooms with blackout curtains, and recover in spa-quality showers. The contrast matters. The property needs to work as hard as the guests do during the day and then reward them with genuine comfort in the evening. Outdoor entertaining spaces that transition from afternoon golf-course views to evening firepits extend the usable hours of the property and create the kind of communal moments that drive repeat bookings and referrals.</p>
+
+            <p>A property at Sand Hollow that looks beautiful in photographs but cannot accommodate the active lifestyle will earn complaints, not five-star reviews. The aesthetic has to deliver, but the functionality has to come first. This is what separates <a href="../vacation-rental-design.html">performance-driven STR design</a> from decorating: understanding how the property will actually be used and designing for that reality rather than for a photo that gets taken once.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: STR Considerations at Sand Hollow -->
+        <section>
+            <h2>STR Considerations at Sand Hollow</h2>
+
+            <p>Not every neighborhood at Sand Hollow Resort permits vacation rentals, and understanding the distinction before you invest &mdash; and before you design &mdash; is step one. The Retreat, Villas, and select properties in The Dunes and Estates allow nightly rental. Tava Resort explicitly does not. It is a private homeowner community with a no-rental covenant, and no amount of design optimization will change that. Nightly rental approval in the permitted neighborhoods requires an application; it is not automatic with purchase.</p>
+
+            <p>Vacation homes across the resort range from one-bedroom condos to six-bedroom estates, and the design budget needs to scale accordingly. A one-bedroom Villa competing against the resort hotel requires a different investment than an Estates property positioned as the premier golf vacation rental in the corridor. Pricing context for investors evaluating <a href="https://sandhollowresortliving.com/">Sand Hollow real estate</a>: lots start from approximately $70,000, homes from roughly $400,000, with a median sale price around $795,000 and an average sale price of $919,000. Properties in The Estates extend into the multi-millions.</p>
+
+            <p>For investors comparing Sand Hollow against other Hurricane-area communities, <a href="copper-rock.html">Copper Rock</a> is the nearest comparable &mdash; another golf community in Hurricane with its own design dynamics. The two share a geographic market and a golfer guest profile, but they differ in scale, amenity mix, and neighborhood structure. Sand Hollow&rsquo;s reservoir adjacency and five-neighborhood complexity give it a broader appeal but also a more demanding design challenge. The newest entrant is <a href="stone-ridge.html">Stone Ridge at Pecan Valley Resort</a>, which takes a different approach entirely &mdash; anchoring its appeal around a water park and adventure recreation rather than golf.</p>
+
+            <p>The broader <a href="../st-george-utah.html">St. George corridor market</a> continues to attract STR investment, and Sand Hollow&rsquo;s combination of golf, water recreation, and resort infrastructure positions it well within that landscape. But positioning alone does not fill calendars. The properties that consistently outperform at Sand Hollow are the ones where the interior design matches the quality of the setting &mdash; where guests walk in and feel that the property was designed with intention, not assembled from a catalog. That gap between &ldquo;furnished&rdquo; and &ldquo;designed&rdquo; is where we operate, and it is where the revenue differential lives.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: Tava Resort — A Different Kind of Design Brief -->
+        <section>
+            <h2>Tava Resort: A Different Kind of Design Brief</h2>
+
+            <p>Within Sand Hollow Resort sits a community that operates under an entirely different set of rules. <strong>Tava Resort is 104 exclusive home sites</strong> &mdash; three to six bedrooms each &mdash; anchored by more than $10 million in private amenities: two luxury pools, a lazy river, splash pad, clubhouse, four pickleball courts, tennis, racquetball, a fitness center, and an art center. It shares Sand Hollow&rsquo;s championship golf and reservoir access. It shares the red rock landscape and the Hurricane sun. But it does not share the STR business model. Tava carries a no-rental covenant. Nightly rentals are explicitly prohibited. Tava is a no-rental community &mdash; second homes and permanent residences &mdash; and that single distinction changes the design brief in every meaningful way. For buyers drawn to waterfront living at even higher price points, <a href="southern-shores.html">Southern Shores</a> is building engineered-lake custom estates in Hurricane &mdash; a different product type, but a similar design philosophy centered on the owner rather than the guest.</p>
+
+            <p>When we design a vacation rental at Sand Hollow, every decision filters through performance: Will this photograph well enough to stop the scroll? Will this material survive 200+ guest-nights per year? Does this layout maximize the sleeping capacity that drives revenue? Those are the right questions for an STR. They are the wrong questions for Tava. <strong>Without revenue optimization as the governing constraint, the design serves the owner, not a guest persona.</strong> There is no listing photography to optimize. No durability-for-volume specification. No anonymous-guest compromise on aesthetic risk. The home can be designed around how the owner actually lives, entertains, and uses the space across seasons &mdash; and that is a fundamentally different kind of project.</p>
+
+            <p>This is where we apply our <a href="../second-home-design.html">Intentional Home Framework</a> rather than our STR performance methodology. The framework aligns the design across three layers.</p>
+
+            <p><strong>Environment:</strong> the same championship golf course and red rock landscape that makes Sand Hollow extraordinary for STR guests also makes it extraordinary for owners &mdash; and in a Tava home, the views from every window become an active design element, not just a backdrop for listing photos.</p>
+
+            <p><strong>Architecture:</strong> working with the specific builders and floor plans available in Tava, we create interiors that flow from the structure of the property itself &mdash; materials, proportions, and ceiling volumes that feel like they belong to the building rather than being placed on top of it.</p>
+
+            <p><strong>Owner identity:</strong> this is a home that reflects who the owner is and what they love &mdash; their taste, their lifestyle, their relationship to this landscape &mdash; not a property calibrated for the preferences of anonymous guests.</p>
+
+            <p>The profiles that fit Tava well are distinct from the STR investor profile. Multi-generational families who gather here across holidays and long weekends find that Tava&rsquo;s amenity package &mdash; the pools, the lazy river, the pickleball courts, the clubhouse &mdash; eliminates the need to plan activities or leave the community. The home becomes the anchor for a family tradition, and the design should support that: flexible gathering spaces, bedrooms that accommodate different generations with dignity, kitchens built for cooking together rather than reheating. Personal retreats are another natural fit &mdash; owners who want a quiet desert escape designed around their own rhythms, not a rental calendar. Entertaining homes round out the picture: properties designed for hosting friends and extended family in a setting that feels genuinely personal rather than commercially neutral. Tava home sites sit within the Sand Hollow luxury tier, and the design investment should reflect that positioning.</p>
+
+            <p>If you are considering a property at Tava Resort &mdash; or if you already own one and the interior does not yet feel like yours &mdash; the starting point is different from an STR conversation. We begin with you: how you use the home, who joins you, what this place means in your life. Download our <a href="../guide-optin.html">Second Home Design Guide</a> to see the full Intentional Home Framework, or <a href="../second-home-design.html">explore our second home design approach</a> to understand how we work with owners whose properties are personal, not commercial.</p>
+
+            <div class="callout">Tava is not an STR with the rentals turned off. It is a personal residence in an extraordinary setting. The design brief starts with the owner, not the market &mdash; and that changes everything.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 6: Red Rock as a Design Partner -->
+        <section>
+            <h2>Red Rock as a Design Partner</h2>
+
+            <p>Sand Hollow sits in some of the most visually dramatic landscape in the entire corridor. The red rock ridges that frame the golf course, the reservoir shimmering against desert hills, the sky that shifts from deep blue to amber to violet across an evening &mdash; this is not a neutral backdrop. It is the most powerful design element available to you, and the best properties here lean into it rather than ignoring it.</p>
+
+            <p><strong>Earth tones and natural materials that echo the landscape.</strong> Warm woods, textured stone, linen and leather in desert-palette tones &mdash; these are not aesthetic choices made in a vacuum. They are responses to the environment visible through every window. A property at Sand Hollow that uses cool grays and coastal blues is fighting its context. A property that draws its palette from the red rock, the sage brush, and the warm desert light is amplifying what the setting already provides. The interior should feel like it belongs here &mdash; like it could not exist anywhere else.</p>
+
+            <p><strong>Windows and sightlines that treat the view as the primary artwork.</strong> At Sand Hollow, the view does the heavy lifting. The design should frame it, not compete with it. That means being strategic about where large-scale art goes (away from the best windows), how furniture is oriented (toward the view, not toward a television), and how window treatments are specified (functional for light control and privacy, invisible when not in use). In the Estates and Dunes properties with course-front positioning, the championship course itself becomes a living landscape painting that changes with the light and the seasons. The interior design should honor that.</p>
+
+            <p><strong>Outdoor spaces designed as primary living areas.</strong> For eight months of the year, the outdoor spaces at Sand Hollow are where life happens. Covered patios, firepits, outdoor dining areas, and lounge zones are not amenities &mdash; they are the primary living room for the majority of the calendar. The furniture, lighting, and layout of these spaces deserve the same design attention as any interior room. A Sand Hollow property with a beautifully designed living room and a neglected patio with plastic furniture is leaving both guest satisfaction and listing performance on the table.</p>
+
+            <p>The worst mistake at Sand Hollow is designing a generic interior that could exist anywhere. A property that looks like it belongs in Scottsdale or Hilton Head or coastal California has missed the point entirely. The setting here is extraordinary. The red rock is not a backdrop &mdash; it is a design partner. The properties that earn the highest reviews and the strongest booking rates are the ones where you walk inside and feel the landscape continue. That integration of interior and environment is what we pursue on every Sand Hollow project, and it is what transforms a furnished house into a destination property. Download our <a href="../playbook-optin.html">STR Design Playbook</a> to see the full framework we use to achieve it.</p>
+
+            <div class="callout">Five neighborhoods. Two world-class recreation anchors. One of the most dramatic landscapes in the American Southwest. Sand Hollow does not need generic design. It needs design that belongs here.</div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <p>Ready to design your Sand Hollow property?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="../playbook-optin.html" class="cta-secondary">Get the free STR Design Playbook</a>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="../guide-optin.html" class="cta-secondary">Get the free Second Home Design Guide</a>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Isles at Coral Canyon Interior Design &mdash; STR Townhome Design | 1584 Design</title>
+    <meta name="description" content="Interior design for purpose-built STR townhomes and duplexes at The Isles at Coral Canyon in Washington City, Utah. Performance design for nightly rental properties within a championship golf master plan.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #FAFAF7;
+            background-color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 1);
+            z-index: 1000;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Article Layout */
+        .article-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .article-header h1 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(36px, 5.5vw, 56px);
+            font-weight: 400;
+            color: #FAFAF7;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.5;
+            color: rgba(250, 250, 247, 0.7);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #9a7d55;
+            margin: 56px auto;
+        }
+
+        /* Section Headers */
+        .article-wrapper h2 {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 400;
+            color: #FAFAF7;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        /* Body Text */
+        .article-wrapper p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .article-wrapper p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lead / Callout Text */
+        .callout {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            line-height: 1.6;
+            color: #E8DED0;
+            text-align: center;
+            padding: 36px 24px;
+            margin: 40px 0;
+            border-top: 1px solid #9a7d55;
+            border-bottom: 1px solid #9a7d55;
+            font-style: italic;
+        }
+
+        /* Bold Key Phrase */
+        .article-wrapper strong {
+            color: #FAFAF7;
+            font-weight: 600;
+        }
+
+        /* Bullet Lists */
+        .article-wrapper ul {
+            list-style: none;
+            margin: 0 0 24px 0;
+            padding: 0;
+        }
+
+        .article-wrapper ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(250, 250, 247, 0.85);
+        }
+
+        .article-wrapper ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: #9a7d55;
+            border-radius: 50%;
+        }
+
+        /* Inline Links */
+        .article-wrapper a:not(.cta-button) {
+            color: #9a7d55;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(154, 125, 85, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .article-wrapper a:not(.cta-button):hover {
+            border-bottom-color: #9a7d55;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin: 56px 0 0;
+            padding: 48px 0;
+            border-top: 1px solid rgba(250, 250, 247, 0.1);
+        }
+
+        .cta-section p {
+            font-family: 'Baskerville', Palatino, Garamond, serif;
+            font-size: clamp(20px, 2.8vw, 26px);
+            color: #FAFAF7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 34px;
+            background: #9a7d55;
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 25pt;
+            border: 2px solid #9a7d55;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .cta-button::after {
+            content: "\2192";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1A1A1A;
+            color: #FAFAF7;
+            border-color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+            color: rgba(250, 250, 247, 0.6);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            color: #9a7d55;
+            border-bottom-color: #9a7d55;
+        }
+
+        /* Founder Signature */
+        .founder-signature {
+            margin: 40px 0 0;
+        }
+
+        .founder-name {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(250, 250, 247, 0.85);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 64px;
+            }
+
+            .article-wrapper {
+                padding: 110px 20px 60px;
+            }
+
+            .article-header {
+                margin-bottom: 48px;
+                padding-bottom: 36px;
+            }
+
+            .section-divider {
+                margin: 40px auto;
+            }
+
+            .callout {
+                padding: 28px 16px;
+                margin: 32px 0;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-wrapper {
+                padding: 100px 16px 48px;
+            }
+
+            .article-wrapper p,
+            .article-wrapper ul li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-wrapper">
+
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Interior Design for The Isles at Coral Canyon</h1>
+            <p class="article-subtitle">Purpose-built nightly rental townhomes and duplexes within a championship golf master plan. When every unit in the community shares the same format and the same amenities, the interior design becomes the only lever that separates a top performer from average.</p>
+        </header>
+
+        <!-- Section 1: Purpose-Built for Nightly Rental -->
+        <section>
+            <h2>Purpose-Built for Nightly Rental</h2>
+
+            <p>The Isles at Coral Canyon is not a residential neighborhood with a short-term rental overlay. It is a community conceived, zoned, and built specifically for nightly rental operation. That distinction matters more than most investors realize.</p>
+
+            <p>Developed by <strong>Cole West (CW Group)</strong>, The Isles sits within the broader <a href="https://coralcanyonutah.com/">Coral Canyon</a> master plan in Washington City, Utah &mdash; a golf and recreation community anchored by a championship course and a resort-grade amenity package. Washington City is also home to <a href="solente.html">Solente</a>, a gated residential community on 570 acres designed for personal ownership rather than nightly rental &mdash; a different product that answers a different buyer need in the same geographic market. But while Coral Canyon includes traditional residential neighborhoods, The Isles was carved out as a dedicated STR enclave: townhomes and duplexes designed from the ground up for guest occupancy, not owner residency.</p>
+
+            <p>Washington City&rsquo;s <strong>RRST (Recreational Resort Short-Term) overlay</strong> governs the zoning. Properties within The Isles are legally approved for nightly rental &mdash; not conditionally permitted, not grandfathered in, not subject to the kind of regulatory uncertainty that hangs over STR operations in many <a href="../st-george-utah.html">St. George corridor</a> communities. The RRST designation was the premise of the development, not an afterthought added to it.</p>
+
+            <p>This has a direct consequence for design. In communities where STR is an overlay on residential neighborhoods, the investor is always working against a property that was designed for someone else &mdash; a family, a retiree, a full-time resident. The floor plans, the storage, the kitchen layouts, the bedroom configurations all reflect residential assumptions that do not align with guest behavior. At The Isles, the product type was built for the use case. The design challenge is not to retrofit a home for rental performance. It is to maximize a format that was already built with rental in mind.</p>
+
+            <div class="callout">The Isles was not converted to short-term rental. It was built for it. The zoning, the product type, the developer&rsquo;s intent &mdash; all of it points in one direction: nightly rental performance.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: The Townhome Design Challenge -->
+        <section>
+            <h2>The Townhome Design Challenge</h2>
+
+            <p>Most of 1584 Design&rsquo;s <a href="../vacation-rental-design.html">vacation rental projects</a> are large-format properties &mdash; homes that sleep 16 to 60 guests, with dedicated zones for dining, entertainment, gathering, and retreat. Properties like those at <a href="desert-color.html">Desert Color</a> give us the square footage to create distinct experiences within a single home: a bunk room that feels like an adventure for kids, a master suite that feels like a private hotel, a great room that can host a reunion dinner for thirty.</p>
+
+            <p>A townhome or duplex at The Isles is a fundamentally different design problem. In a 2&ndash;3 bedroom format, there are no separate zones. The living room, dining area, and kitchen occupy a single open footprint. The bedrooms serve double duty as both sleeping quarters and personal retreat. There is no excess space to absorb poor furniture choices or awkward layouts &mdash; every piece must earn its place.</p>
+
+            <p><strong>Furniture scale becomes critical.</strong> An oversized sectional that anchors a 600-square-foot great room will suffocate a townhome living area. A dining table scaled for eight will block circulation in a space designed for four to six. The selections need to be right-sized &mdash; not just aesthetically, but dimensionally. We measure to the inch, because in a compact format, three inches of excess depth on a sofa changes the entire flow of a room.</p>
+
+            <p><strong>Multi-functional design is not optional.</strong> A console that serves as both an entryway drop zone and a media cabinet. A dining table that works for both meals and laptop work. A bedroom layout that accommodates luggage storage without sacrificing floor space. In a large home, you solve these problems with square footage. In a townhome, you solve them with design intelligence.</p>
+
+            <p><strong>Vertical space is an asset.</strong> Townhomes typically offer two stories, which creates ceiling height and stairwell opportunities that single-story properties lack. A well-placed pendant over a stairwell, a gallery wall that draws the eye upward, shelving that uses vertical real estate &mdash; these are the moves that make a compact space feel intentional rather than cramped.</p>
+
+            <p><strong>Storage determines the guest experience.</strong> In a large STR property, clutter can disperse across rooms. In a townhome, there is nowhere for it to hide. If guests cannot stow their luggage, hang their coats, or organize their groceries without cluttering the living space, the property will feel smaller than it is &mdash; and that perception shows up in reviews. We design storage into every room: built-in solutions, furniture with hidden capacity, closet systems that work harder than the standard builder shelf-and-rod.</p>
+
+            <div class="callout">In a townhome, there is no room for a design mistake to hide. Every square foot is visible, every piece of furniture is load-bearing in the composition, and every decision either elevates the space or diminishes it.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: Coral Canyon's Amenity Advantage -->
+        <section>
+            <h2>Coral Canyon&rsquo;s Amenity Advantage</h2>
+
+            <p>The Isles does not exist in isolation. It sits within Coral Canyon&rsquo;s broader master plan, which means guests booking a townhome at The Isles are not just booking a property &mdash; they are booking into an amenity ecosystem that extends well beyond the front door.</p>
+
+            <p><strong>The Coral Canyon Clubhouse</strong> anchors the community amenity package: resort-style pools, a fitness center, pickleball courts, and tennis courts. These are not token amenities built to check a box on a listing. They are the kind of facilities that structure a guest&rsquo;s day &mdash; morning workouts, afternoon pool sessions, evening pickleball matches. For a significant portion of each day, guests are outside the unit and inside the community infrastructure.</p>
+
+            <p><strong>The Coral Canyon Golf Course</strong> adds another layer. A championship-caliber course within walking distance of the property gives The Isles a guest appeal that extends beyond the family vacation market. Golf groups, couples weekends, corporate outings &mdash; these are booking demographics that most townhome-format STR properties cannot attract. The golf course changes the competitive set.</p>
+
+            <p>This amenity density has a direct design implication: <strong>the property functions as a home base, not a destination unto itself.</strong> Guests leave in the morning for the pool or the course, return in the afternoon to decompress, head out again for dinner or evening recreation, and come back to the property for the final hours of the day. The design must serve that rhythm.</p>
+
+            <p>That means the transition between active and rest matters. An entryway that handles golf bags, pool towels, and athletic shoes without turning the living room into a gear closet. A bathroom that feels like a genuine reset after a day of physical activity &mdash; good water pressure, quality towels, lighting that shifts the mood from active to relaxed. A bedroom that signals the end of the day with considered lighting, quality bedding, and blackout capability for guests who spent the day in the Utah sun.</p>
+
+            <p>It also means the property does not need to be everything. A large-format STR at Desert Color needs a game room, a theater, an outdoor kitchen &mdash; because guests never need to leave. At The Isles, the pool, the course, and the resort amenities take care of that. The property provides the comfort, the quality, and the sense of arrival that makes a guest want to come back. Designing for that distinction &mdash; rather than trying to pack amenities into a footprint that cannot support them &mdash; is how a townhome at The Isles outperforms. For investors considering how STR townhome design compares across communities, <a href="stone-ridge.html">Stone Ridge at Pecan Valley Resort</a> in Hurricane offers a useful comparison &mdash; a similar compact format, purpose-built STR zoning, but anchored by adventure recreation rather than golf.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 4: Performance Design in a Uniform Market -->
+        <section>
+            <h2>Performance Design in a Uniform Market</h2>
+
+            <p>Here is the competitive reality at The Isles: every unit in the community is a townhome or duplex built by the same developer, with similar floor plans, similar finishes, and identical access to the same amenities. When a guest searches for a rental in this community, they are not comparing a townhome against a luxury estate. They are comparing your townhome against the one next door.</p>
+
+            <p>In that context, the interior is the only variable. The exterior architecture is uniform. The location within the community is roughly equivalent. The amenity access is identical. What separates a property that commands a premium from one that competes on price is what happens inside the front door. This is where the <a href="../vacation-rental-design.html">3 Performance Stages</a> framework applies with particular force.</p>
+
+            <p><strong>Stage 1: Stop the Scroll.</strong> When a guest browses Airbnb or VRBO listings for The Isles, they will see a series of nearly identical thumbnails &mdash; similar exterior shots, similar floor plans, similar room configurations. The listing that stops the scroll is the one with an interior that breaks the pattern. That requires design intentionality: a bold color moment in an otherwise neutral market, a textured accent wall that photographs with depth, a statement light fixture that gives the eye something to land on. In a compact space, a single well-chosen piece can carry the entire listing thumbnail. We design for that moment.</p>
+
+            <p><strong>Stage 2: Convert Browsers to Bookers.</strong> Once a guest clicks into the listing, they are comparing. And because the competing properties are in the same community with the same format, the comparison is granular. Guests are not weighing a mountain cabin against a beach house &mdash; they are looking at two townhomes with the same number of bedrooms and asking which one justifies its nightly rate. The design must answer that question in every photo.</p>
+
+            <p>A kitchen that looks like it actually works. A living room that feels curated rather than catalog-sourced. Bedrooms that communicate quality through bedding, lighting, and spatial arrangement. The price premium lives in the details that guests can see in the listing gallery.</p>
+
+            <p><strong>Stage 3: Create Memorable Experiences.</strong> In a smaller format, the details a guest encounters in person matter even more than they do in a large property. There is less visual noise to distract from a mediocre mattress, a poorly lit bathroom, or a kitchen with dull knives and mismatched cookware. Conversely, there is more opportunity for every thoughtful detail to register: quality bedding that a guest notices the moment they sit down, a bathroom with considered lighting and substantial fixtures, a kitchen stocked with equipment that actually works. These are the details that generate five-star reviews and repeat bookings &mdash; and in a community where every competing unit is a few doors away, reviews are the long-term differentiator.</p>
+
+            <div class="callout">When the floor plans are the same, the amenities are the same, and the location is the same, the interior design is the entire competitive strategy. It is not a finishing touch. It is the product.</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 5: What STR Investors Should Know -->
+        <section>
+            <h2>What STR Investors Should Know</h2>
+
+            <p>The Isles at Coral Canyon offers a compelling entry point into the Southern Utah STR market, but the investment operates within a specific regulatory and competitive framework. Understanding the details before committing capital is essential.</p>
+
+            <ul>
+                <li><strong>RRST zoning is the legal foundation.</strong> Washington City&rsquo;s Recreational Resort Short-Term overlay permits nightly rental at The Isles. This is not a conditional use permit subject to annual review or neighborhood vote. It is baked into the zoning designation. That said, RRST carries its own requirements &mdash; investors should confirm current Washington City regulations regarding licensing, transient room tax, and any operational standards that apply to properties within the overlay.</li>
+                <li><strong>The product type is townhomes and duplexes.</strong> These are attached or semi-attached units, not detached single-family homes. That means shared walls, HOA governance over exteriors and common areas, and design constraints that come with the format. Noise management between units, for instance, becomes a design consideration &mdash; not just a management one.</li>
+                <li><strong>Management considerations matter.</strong> Whether self-managed or professionally managed, a townhome STR in a dense community requires operational discipline. Turnover efficiency, guest communication about community rules, noise policies, parking management &mdash; these are not afterthoughts. They are part of the investment. Design decisions that reduce management friction (durable materials, intuitive layouts, adequate storage for cleaning supplies and linens) pay dividends over the life of the property.</li>
+                <li><strong>Competitive positioning is the central challenge.</strong> The Isles is a community of similar units. Your revenue ceiling is determined by how effectively your property distinguishes itself from the competition &mdash; and in this format, that distinction is almost entirely a function of interior design and operational quality. Investors who treat design as an afterthought will compete on price. Investors who treat design as a strategic investment will command a premium.</li>
+                <li><strong>Price context and design investment.</strong> The Isles townhomes and duplexes represent a lower acquisition cost than the large single-family homes in communities like Desert Color. The design budget should be proportional &mdash; but proportional does not mean minimal. In a competitive, uniform market, underinvesting in design is the most expensive mistake an investor can make, because it caps revenue for the entire hold period.</li>
+            </ul>
+
+            <p>For a broader view of the Southern Utah STR landscape &mdash; how The Isles compares to other communities, where the regulatory environment is heading, and how to evaluate properties across the <a href="../st-george-utah.html">St. George corridor</a> &mdash; read our market overview. For a detailed breakdown of how design drives STR revenue at every stage of the guest journey, the <a href="../playbook-optin.html">STR Design Playbook</a> walks through the framework we apply to every project.</p>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <p>Ready to design your property at The Isles?</p>
+            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
+            <br>
+            <a href="../playbook-optin.html" class="cta-secondary">Get the free STR Design Playbook</a>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="../guide-optin.html" class="cta-secondary">Get the free Second Home Design Guide</a>
+
+            <div class="founder-signature">
+                <div class="founder-name">Lisa Fisher</div>
+                <div class="founder-title">Founder, 1584 Design</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+
+</body>
+</html>
