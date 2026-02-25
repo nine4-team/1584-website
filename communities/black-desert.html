@@ -58,6 +58,43 @@
             display: block;
         }
 
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 48px;
+            margin-left: auto;
+        }
+
+        .nav-menu a {
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #D4C5B3;
+        }
+
+        .nav-menu a.active {
+            color: #D4C5B3;
+            font-weight: 600;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #FAFAF7;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
         /* Article Layout */
         .article-wrapper {
             max-width: 860px;
@@ -291,6 +328,26 @@
                 height: 64px;
             }
 
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 26, 0.98);
+                flex-direction: column;
+                padding: 24px;
+                gap: 24px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
             .article-wrapper {
                 padding: 110px 20px 60px;
             }
@@ -335,6 +392,10 @@
             <a href="../index.html" class="logo">
                 <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
             </a>
+            <ul class="nav-menu">
+                <!-- Navigation menu generated dynamically by JavaScript -->
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
         </div>
     </nav>
 
@@ -344,7 +405,7 @@
         <!-- Header -->
         <header class="article-header">
             <h1>Interior Design for Black Desert Properties</h1>
-            <p class="article-subtitle">Black Desert is two communities sharing one extraordinary address. Resort condos entering a managed rental program need design that competes within a curated pool. Custom estates on Silver Reef need design that reflects the owner&rsquo;s life, not a guest&rsquo;s expectations. We serve both &mdash; with different frameworks, different priorities, and the same full-service process.</p>
+            <p class="article-subtitle">Black Desert is two communities sharing one extraordinary address. Resort condos entering a managed rental program need design that stands out in a managed rental pool. Custom estates on Silver Reef need design that reflects the owner&rsquo;s life, not a guest&rsquo;s expectations. We serve both &mdash; with different frameworks, different priorities, and the same full-service process.</p>
         </header>
 
         <!-- Section 1: The Resort -->
@@ -355,7 +416,7 @@
 
             <p>The ambition is visible in the infrastructure. A Tom Weiskopf-designed golf course &mdash; 18 championship holes plus a signature 19th &mdash; that has hosted both PGA Tour and LPGA Tour events. A 15,000-square-foot spa. Seven-plus dining venues. A planned 21-court pickleball facility. A planned 5-acre water park. A planned boardwalk with more than 80,000 square feet of retail. This is not a gated community with a clubhouse &mdash; it is a full-service resort ecosystem, and CoralTree&rsquo;s hospitality management means the operational standards match the physical investment.</p>
 
-            <p>What makes Black Desert singular in this market is that it serves two entirely different owner profiles under one roof. Resort condos can enter a managed rental program, competing for guest bookings within a curated hospitality operation. Custom estate lots offer something that does not exist elsewhere in the corridor: large-parcel personal residences backed by resort-grade amenities. Those are two fundamentally different design briefs, and conflating them is the fastest way to get the design wrong.</p>
+            <p>What makes Black Desert singular in this market is that it serves two entirely different owner profiles under one roof. Resort condos can enter a managed rental program, competing for guest bookings within a professionally managed hospitality operation. Custom estate lots offer something that does not exist elsewhere in the corridor: large-parcel personal residences backed by resort-grade amenities. Those are two fundamentally different design briefs, and conflating them is the fastest way to get the design wrong.</p>
 
             <div class="callout">600 acres. CoralTree hospitality management. PGA-caliber golf. A 15,000-square-foot spa. Black Desert is not a residential community with resort pretensions &mdash; it is a resort with residential opportunities.</div>
         </section>

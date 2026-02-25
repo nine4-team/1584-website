@@ -58,6 +58,43 @@
             display: block;
         }
 
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 48px;
+            margin-left: auto;
+        }
+
+        .nav-menu a {
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #D4C5B3;
+        }
+
+        .nav-menu a.active {
+            color: #D4C5B3;
+            font-weight: 600;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #FAFAF7;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
         /* Article Layout */
         .article-wrapper {
             max-width: 860px;
@@ -291,6 +328,26 @@
                 height: 64px;
             }
 
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 26, 0.98);
+                flex-direction: column;
+                padding: 24px;
+                gap: 24px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
             .article-wrapper {
                 padding: 110px 20px 60px;
             }
@@ -335,6 +392,10 @@
             <a href="../index.html" class="logo">
                 <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
             </a>
+            <ul class="nav-menu">
+                <!-- Navigation menu generated dynamically by JavaScript -->
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
         </div>
     </nav>
 
@@ -396,7 +457,7 @@
             <ul>
                 <li><strong>Environment</strong> &mdash; Cascada sits within Divario&rsquo;s open desert landscape, with mountain views and trail-adjacent lots that connect directly to the community&rsquo;s recreation network. The design must work with that setting: desert light pouring through west-facing windows, the red and ochre tones of the surrounding terrain, the expansive sky that frames every exterior sightline. Materials and palettes that fight the landscape create a home at odds with itself. Materials that extend the landscape inward create a home that feels inevitable.</li>
                 <li><strong>Architecture</strong> &mdash; Multiple builders are active in Cascada, each bringing different floor plan logic, ceiling volumes, and structural vocabulary. We work with the specific architecture of each property &mdash; where light enters, how rooms relate to each other, which walls can support visual weight, where the structure invites openness and where it creates intimacy. Interior design that flows from the architecture feels coherent. Design imposed on top of it never does.</li>
-                <li><strong>Owner identity</strong> &mdash; A Cascada home is not a generic luxury interior. It belongs to a specific person &mdash; someone who chose this community because the outdoor life is central to who they are, not peripheral. The design should reflect that identity: a home built for someone who comes back from the trail and wants a space that feels like a genuine retreat — not just a place to sleep. Not a showpiece. Not a staging package. A home that makes the owner exhale the moment they walk in, because it is unmistakably theirs.</li>
+                <li><strong>Owner identity</strong> &mdash; A Cascada home is not a generic luxury interior. It belongs to a specific person &mdash; someone who chose this community because the outdoor life is central to who they are, not peripheral. The design should reflect that identity: a home built for someone who comes back from the trail and wants a space that feels like a genuine retreat — not just a place to sleep. Not a showpiece. Not a staging package. A home that feels like a haven the moment the owner walks in &mdash; because it is unmistakably theirs.</li>
             </ul>
 
             <p>The luxury segment demands specificity. At the Cascada price point, owners are not looking for a &ldquo;nice house&rdquo; &mdash; they are looking for a home that reflects the life they are building in this place. That requires a designer who understands the landscape, knows the builders, and treats the owner&rsquo;s identity as the primary design input. Our <a href="../guide-optin.html">Second Home Design Guide</a> walks through this framework in detail.</p>

@@ -16,6 +16,43 @@
         .nav-container { max-width: 1440px; margin: 0 auto; display: flex; align-items: center; height: 80px; }
         .logo { display: flex; align-items: center; text-decoration: none; }
         .logo img { height: 40px; width: auto; display: block; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 48px;
+            margin-left: auto;
+        }
+
+        .nav-menu a {
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #D4C5B3;
+        }
+
+        .nav-menu a.active {
+            color: #D4C5B3;
+            font-weight: 600;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #FAFAF7;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: auto;
+        }
         .article-wrapper { max-width: 860px; margin: 0 auto; padding: 140px 24px 80px; }
         .article-header { text-align: center; margin-bottom: 64px; padding-bottom: 48px; border-bottom: 1px solid rgba(250, 250, 247, 0.1); }
         .article-header h1 { font-family: 'Baskerville', Palatino, Garamond, serif; font-size: clamp(36px, 5.5vw, 56px); font-weight: 400; color: #FAFAF7; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
@@ -44,7 +81,7 @@
         .founder-title { font-size: 12px; color: rgba(250, 250, 247, 0.45); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
         .footer { background-color: #1A1A1A; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 40px 24px; text-align: center; }
         .footer p { font-size: 14px; color: rgba(250, 250, 247, 0.4); margin: 0; }
-        @media (max-width: 768px) { .nav-container { height: 64px; } .article-wrapper { padding: 110px 20px 60px; } .article-header { margin-bottom: 48px; padding-bottom: 36px; } .section-divider { margin: 40px auto; } .callout { padding: 28px 16px; margin: 32px 0; } .cta-button { padding: 14px 28px; font-size: 14px; } }
+        @media (max-width: 768px) { .nav-container { height: 64px; } .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(26, 26, 26, 0.98); flex-direction: column; padding: 24px; gap: 24px; } .nav-menu.active { display: flex; } .mobile-menu-toggle { display: block; } .article-wrapper { padding: 110px 20px 60px; } .article-header { margin-bottom: 48px; padding-bottom: 36px; } .section-divider { margin: 40px auto; } .callout { padding: 28px 16px; margin: 32px 0; } .cta-button { padding: 14px 28px; font-size: 14px; } }
         @media (max-width: 480px) { .article-wrapper { padding: 100px 16px 48px; } .article-wrapper p, .article-wrapper ul li { font-size: 16px; } }
     </style>
 </head>
@@ -54,6 +91,10 @@
             <a href="../index.html" class="logo">
                 <img src="../images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
             </a>
+            <ul class="nav-menu">
+                <!-- Navigation menu generated dynamically by JavaScript -->
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
         </div>
     </nav>
 

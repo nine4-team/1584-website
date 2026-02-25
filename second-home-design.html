@@ -58,6 +58,43 @@
             display: block;
         }
 
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 48px;
+            margin-left: auto;
+        }
+
+        .nav-menu a {
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #D4C5B3;
+        }
+
+        .nav-menu a.active {
+            color: #D4C5B3;
+            font-weight: 600;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #FAFAF7;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
         /* Article Layout */
         .article-wrapper {
             max-width: 860px;
@@ -377,6 +414,26 @@
                 height: 64px;
             }
 
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 26, 0.98);
+                flex-direction: column;
+                padding: 24px;
+                gap: 24px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
             .article-wrapper {
                 padding: 110px 20px 60px;
             }
@@ -479,6 +536,10 @@
             <a href="index.html" class="logo">
                 <img src="images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
             </a>
+            <ul class="nav-menu">
+                <!-- Navigation menu generated dynamically by JavaScript -->
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
         </div>
     </nav>
 
@@ -496,13 +557,13 @@
         <section>
             <h2>The Second Home Gap</h2>
 
-            <p>Most second homes don&rsquo;t deliver what they promised. You arrive and something feels off &mdash; temporary, assembled rather than chosen. Instead of exhaling, you start noticing what&rsquo;s wrong. The furniture that looked fine online feels generic in person. The rooms feel like they belong to a rental, not to you. The escape you imagined starts with a mental list of everything that still isn&rsquo;t right.</p>
+            <p>Most second homes don&rsquo;t deliver what they promised. You walk in and something&rsquo;s off. You can&rsquo;t name it right away &mdash; but you start noticing instead of settling in. The furniture is fine. The rooms are fine. That&rsquo;s exactly the problem.</p>
 
             <div class="stat-highlight">A second home should feel like an escape &mdash; and like it could only belong to you.</div>
 
             <p>A home can be well-executed &mdash; coherent, considered, well-furnished &mdash; and still feel like it belongs to someone else. That happens when the design reflects a generic version of the place, or nothing in particular, instead of the specific people who own it. The gap between a home that looks right and one that actually <em>feels</em> right is where most second home design falls short.</p>
 
-            <p>The difference is design, not decoration. Decoration fills rooms. Design shapes how a space makes you feel when you walk through the door. It determines whether you exhale &mdash; or start making an inventory of everything that still doesn&rsquo;t match the place you had in mind when you bought it.</p>
+            <p>The difference is design, not decoration. Decoration fills rooms. Design shapes how a space makes you feel when you walk through the door. It determines whether you feel the tension drop the moment you walk in &mdash; or start making an inventory of everything that still doesn&rsquo;t match the place you had in mind when you bought it.</p>
 
             <p>With 27 years of experience designing homes that people genuinely love returning to, we&rsquo;ve built a framework for closing that gap. <a href="guide-optin.html">Download the free Second Home Design Guide</a> to explore the full thinking behind it.</p>
         </section>
@@ -543,7 +604,7 @@
             <div class="lens-card">
                 <h3>The Entertaining Home</h3>
                 <p class="lens-label"><strong>Who it&rsquo;s for:</strong> Hosts who use the second home as a social destination &mdash; friend groups, holiday hosting, gatherings and celebrations.</p>
-                <p>Multiple conversation zones, full-capacity dining at the center, and guest accommodations that feel genuinely considered &mdash; not afterthoughts. Guests should feel expected, not merely accommodated.</p>
+                <p>Multiple conversation zones, full-capacity dining at the center, and guest accommodations with real furniture, good lighting, and space that feels designed for them &mdash; not leftover pieces in a spare room.</p>
             </div>
 
             <!-- The Personal Retreat -->
@@ -579,9 +640,9 @@
                 <p>We receive, inspect, and install everything. Furniture is placed, art is hung, beds are made, surfaces are styled. You walk into a finished home &mdash; not a home full of boxes.</p>
             </div>
 
-            <p><strong>We handle everything.</strong> You don&rsquo;t manage vendors, track shipments, or coordinate deliveries. You don&rsquo;t make dozens of individual decisions in isolation and hope they add up. You get a home that feels whole, considered, and unmistakably yours &mdash; without the project management burden that usually comes with it.</p>
+            <p><strong>We handle everything.</strong> You don&rsquo;t manage vendors, track shipments, or coordinate deliveries. You don&rsquo;t make dozens of individual decisions in isolation and hope they add up. You get a home where every room reflects your taste and works the way you live &mdash; unmistakably yours &mdash; without the project management burden that usually comes with it.</p>
 
-            <p>We work with a limited number of homeowners at any given time. This is intentional &mdash; obsessive care doesn&rsquo;t scale. Each project gets the attention it deserves, and we&rsquo;d rather do fewer projects exceptionally than more projects adequately. <a href="about.html">Learn more about our story</a> and why we work this way.</p>
+            <p>We work with a limited number of homeowners at any given time. This is intentional &mdash; obsessive care doesn&rsquo;t scale, and we&rsquo;d rather do fewer projects exceptionally. <a href="about.html">Learn more about our story</a> and why we work this way.</p>
         </section>
 
         <div class="section-divider"></div>

@@ -58,6 +58,43 @@
             display: block;
         }
 
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 48px;
+            margin-left: auto;
+        }
+
+        .nav-menu a {
+            color: #FAFAF7;
+            text-decoration: none;
+            font-family: 'Avenir', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #D4C5B3;
+        }
+
+        .nav-menu a.active {
+            color: #D4C5B3;
+            font-weight: 600;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #FAFAF7;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
         /* Article Layout */
         .article-wrapper {
             max-width: 860px;
@@ -402,6 +439,26 @@
                 height: 64px;
             }
 
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 26, 0.98);
+                flex-direction: column;
+                padding: 24px;
+                gap: 24px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
             .article-wrapper {
                 padding: 110px 20px 60px;
             }
@@ -493,6 +550,10 @@
             <a href="index.html" class="logo">
                 <img src="images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
             </a>
+            <ul class="nav-menu">
+                <!-- Navigation menu generated dynamically by JavaScript -->
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
         </div>
     </nav>
 
@@ -562,13 +623,13 @@
             <div class="community-card">
                 <h3><a href="communities/copper-rock.html">Copper Rock</a></h3>
                 <p class="community-tagline">Championship golf. Luxury homes. Dramatic desert views.</p>
-                <p>Copper Rock attracts a more affluent guest profile &mdash; golfers, couples, and groups looking for an elevated experience. The interiors need to match the setting and the price point. This is not a community where builder-grade finishes and generic furnishings will compete.</p>
+                <p>Copper Rock attracts a more affluent guest profile &mdash; golfers, couples, and groups who are paying a premium and expect the interiors to justify it. This is not a community where builder-grade finishes and generic furnishings will compete.</p>
             </div>
 
             <div class="community-card">
                 <h3><a href="communities/sand-hollow.html">Sand Hollow Resort</a></h3>
                 <p class="community-tagline">Golf, reservoir recreation, and red rock proximity.</p>
-                <p>Sand Hollow combines golf with proximity to Sand Hollow Reservoir and the surrounding trail systems. Properties here serve a range of guests &mdash; from active families to golf groups. The design needs to be durable enough for heavy use while still feeling elevated.</p>
+                <p>Sand Hollow combines golf with proximity to Sand Hollow Reservoir and the surrounding trail systems. Properties here serve a range of guests &mdash; from active families to golf groups. The design needs to be durable enough for heavy use without looking like it was built to take a beating.</p>
             </div>
 
             <div class="community-card">
