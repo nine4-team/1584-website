@@ -612,9 +612,11 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "InteriorDesigner",
+          "@type": "HomeAndConstructionBusiness",
+      "@id": "https://1584design.com/#business",
           "name": "1584 Design",
           "url": "https://1584design.com",
+      "image": "https://1584design.com/images/1584_logo_white_thick.png",
           "telephone": "+14358623631",
           "email": "team@1584design.com",
           "address": {
@@ -624,31 +626,39 @@
             "addressCountry": "US"
           },
           "areaServed": [
-            {"@type": "City", "name": "St. George", "addressRegion": "UT"},
-            {"@type": "City", "name": "Las Vegas", "addressRegion": "NV"}
+            {"@type": "City", "name": "St. George, Utah"},
+            {"@type": "City", "name": "Las Vegas, Nevada"}
           ],
           "founder": {
             "@type": "Person",
             "name": "Lisa Fisher"
           },
-          "foundingDate": "2021",
+          "foundingDate": "2021-01-01",
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
-            "reviewCount": "54",
+            "reviewCount": 54,
             "bestRating": "5"
           },
           "sameAs": [
             "https://www.instagram.com/1584_design/",
             "https://www.facebook.com/lisa.s.fisher.92/"
-          ],
-          "priceRange": "$$$"
+          ]
         },
         {
           "@type": "Article",
           "headline": "Vacation Rental Investment in St. George, Utah — A Designer's Guide",
-          "author": {"@type": "Person", "name": "Lisa Fisher"},
-          "publisher": {"@type": "InteriorDesigner", "name": "1584 Design"},
+          "url": "https://1584design.com/st-george-vacation-rental-guide",
+          "mainEntityOfPage": "https://1584design.com/st-george-vacation-rental-guide",
+          "datePublished": "2025-06-01",
+          "dateModified": "2026-03-01",
+          "author": {
+            "@type": "Person",
+            "name": "Lisa Fisher",
+            "url": "https://1584design.com/about"
+          },
+          "publisher": {"@id": "https://1584design.com/#business"},
+          "image": "https://1584design.com/images/1584_logo_white_thick.png",
           "description": "The complete guide to vacation rental investment in St. George, Utah — from a designer who knows this market."
         }
       ]
@@ -660,7 +670,7 @@
     <!-- Navigation -->
     <nav class="navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="index" class="logo">
                 <img src="images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
             </a>
             <ul class="nav-menu">
@@ -826,7 +836,7 @@
                 <p><strong>Additional STR-zoned communities</strong> in the broader Southern Utah corridor include Arcadia, Isle, Terra, The Ledges, Entrada, and Las Palmas &mdash; among others. The STR landscape in this region continues to evolve as new developments come online and zoning designations shift. Any investor evaluating a specific community should verify current STR eligibility directly, as the details change faster than any guide can track.</p>
             </div>
 
-            <p>For a deeper look at the <a href="st-george-utah.html">St. George market from a design perspective</a>, including how we approach properties in these communities, see our St. George location page.</p>
+            <p>For a deeper look at the <a href="st-george-utah">St. George market from a design perspective</a>, including how we approach properties in these communities, see our St. George location page.</p>
         </section>
 
         <div class="section-divider"></div>
@@ -897,7 +907,7 @@
 
             <p>This dynamic scales with property size. When your nightly rate is $800 to $1,700 per night &mdash; which top-performing large-group properties in St. George&rsquo;s STR communities <a href="https://www.airroi.com/report/world/united-states/utah/saint-george" target="_blank" rel="noopener">regularly achieve</a> &mdash; a 15-point occupancy improvement is measured in tens of thousands of dollars per year. The stakes are higher than most investors realize, and the design decisions that drive those numbers are made in the first few months of the project.</p>
 
-            <p>For the complete data behind these numbers and the common design mistakes that cost investors revenue, <a href="playbook-optin.html">read the free STR Design Playbook</a>.</p>
+            <p>For the complete data behind these numbers and the common design mistakes that cost investors revenue, <a href="playbook-optin">read the free STR Design Playbook</a>.</p>
 
             <h3 style="font-family: 'Baskerville', Palatino, Garamond, serif; font-size: clamp(22px, 3vw, 28px); font-weight: 400; color: #D4C5B3; margin-bottom: 20px; margin-top: 40px; line-height: 1.3;">The 3 Performance Stages</h3>
 
@@ -921,7 +931,7 @@
                 <span class="meta-label"><strong>The test:</strong> Do guests mention the property itself in their reviews? Or just the location?</span>
             </div>
 
-            <p>For more on how these stages work in practice, including property examples and the specific design moves that drive each one, visit our <a href="vacation-rental-design.html">vacation rental interior design</a> page.</p>
+            <p>For more on how these stages work in practice, including property examples and the specific design moves that drive each one, visit our <a href="vacation-rental-design">vacation rental interior design</a> page.</p>
 
             <h3 style="font-family: 'Baskerville', Palatino, Garamond, serif; font-size: clamp(22px, 3vw, 28px); font-weight: 400; color: #D4C5B3; margin-bottom: 20px; margin-top: 40px; line-height: 1.3;">The Market Is Moving &mdash; And Design Is the Differentiator</h3>
 
@@ -956,7 +966,7 @@
 
             <p>We work with a limited number of investors at any given time. This is intentional &mdash; the level of attention we give each project doesn&rsquo;t scale infinitely, and we&rsquo;d rather do fewer projects at the highest level than more projects at a compromised one.</p>
 
-            <p>Want to see what the finished result looks like? <a href="portfolio.html">Browse our portfolio</a> to see recent projects across multiple communities and property types in St. George and beyond.</p>
+            <p>Want to see what the finished result looks like? <a href="portfolio">Browse our portfolio</a> to see recent projects across multiple communities and property types in St. George and beyond.</p>
         </section>
 
         <div class="section-divider"></div>
@@ -968,10 +978,10 @@
             <p>If you&rsquo;re actively researching vacation rental investment in St. George &mdash; whether you&rsquo;re under contract, evaluating communities, or still in the early research phase &mdash; here are the next steps that will give you the most clarity:</p>
 
             <ul>
-                <li><strong><a href="playbook-optin.html">Download the free Vacation Rental Design Playbook.</a></strong> This is the deeper dive on STR design strategy &mdash; the data behind the $141K case study, the most common design mistakes we see investors make, and the framework we use to approach every project. It&rsquo;s the resource we wish every investor read before their first design decision.</li>
-                <li><strong><a href="vacation-rental-design.html">Learn about our vacation rental design services.</a></strong> The full breakdown of our approach to STR interiors, including the 3 Performance Stages, guest persona design, and how our full-service model works.</li>
-                <li><strong><a href="second-home-design.html">If your property is a second home, not a pure STR</a></strong> &mdash; we serve that market too. Our Intentional Home Framework is designed for owners who want a home that feels like a genuine escape &mdash; a place to exhale, recharge, and make memories with the people you love.</li>
-                <li><strong><a href="st-george-utah.html">Explore our St. George work.</a></strong> See how we approach interior design specifically for the Southern Utah market, including community-specific insights and project examples.</li>
+                <li><strong><a href="playbook-optin">Download the free Vacation Rental Design Playbook.</a></strong> This is the deeper dive on STR design strategy &mdash; the data behind the $141K case study, the most common design mistakes we see investors make, and the framework we use to approach every project. It&rsquo;s the resource we wish every investor read before their first design decision.</li>
+                <li><strong><a href="vacation-rental-design">Learn about our vacation rental design services.</a></strong> The full breakdown of our approach to STR interiors, including the 3 Performance Stages, guest persona design, and how our full-service model works.</li>
+                <li><strong><a href="second-home-design">If your property is a second home, not a pure STR</a></strong> &mdash; we serve that market too. Our Intentional Home Framework is designed for owners who want a home that feels like a genuine escape &mdash; a place to exhale, recharge, and make memories with the people you love.</li>
+                <li><strong><a href="st-george-utah">Explore our St. George work.</a></strong> See how we approach interior design specifically for the Southern Utah market, including community-specific insights and project examples.</li>
             </ul>
 
             <p>Or, if you know enough to know you want to talk &mdash; request a call with the 1584 team. We&rsquo;ll discuss your property, your timeline, your goals, and whether working together makes sense. No pressure, no pitch deck. Just a real conversation with a team that knows this market.</p>
@@ -982,7 +992,7 @@
             <p>Ready to talk about your property?</p>
             <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
             <br>
-            <a href="playbook-optin.html" class="cta-secondary">Or download the free STR Design Playbook first</a>
+            <a href="playbook-optin" class="cta-secondary">Or download the free STR Design Playbook first</a>
 
             <div class="founder-signature">
                 <div class="founder-name">Lisa Fisher</div>

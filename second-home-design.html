@@ -485,9 +485,11 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "InteriorDesigner",
+          "@type": "HomeAndConstructionBusiness",
+      "@id": "https://1584design.com/#business",
           "name": "1584 Design",
           "url": "https://1584design.com",
+      "image": "https://1584design.com/images/1584_logo_white_thick.png",
           "telephone": "+14358623631",
           "email": "team@1584design.com",
           "address": {
@@ -497,30 +499,31 @@
             "addressCountry": "US"
           },
           "areaServed": [
-            {"@type": "City", "name": "St. George", "addressRegion": "UT"},
-            {"@type": "City", "name": "Las Vegas", "addressRegion": "NV"}
+            {"@type": "City", "name": "St. George, Utah"},
+            {"@type": "City", "name": "Las Vegas, Nevada"}
           ],
           "founder": {
             "@type": "Person",
             "name": "Lisa Fisher"
           },
-          "foundingDate": "2021",
+          "foundingDate": "2021-01-01",
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
-            "reviewCount": "54",
+            "reviewCount": 54,
             "bestRating": "5"
           },
           "sameAs": [
             "https://www.instagram.com/1584_design/",
             "https://www.facebook.com/lisa.s.fisher.92/"
-          ],
-          "priceRange": "$$$"
+          ]
         },
         {
           "@type": "Service",
+          "name": "Second Home Interior Design",
           "serviceType": "Second Home Interior Design",
-          "provider": {"@type": "InteriorDesigner", "name": "1584 Design"},
+          "url": "https://1584design.com/second-home-design",
+          "provider": {"@id": "https://1584design.com/#business"},
           "areaServed": ["St. George, UT", "Las Vegas, NV", "United States"],
           "description": "Full-service interior design for second homes including design planning, procurement, and installation."
         }
@@ -533,7 +536,7 @@
     <!-- Navigation -->
     <nav class="navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="index" class="logo">
                 <img src="images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
             </a>
             <ul class="nav-menu">
@@ -565,7 +568,7 @@
 
             <p>The difference is design, not decoration. Decoration fills rooms. Design shapes how a space makes you feel when you walk through the door. It determines whether you feel the tension drop the moment you walk in &mdash; or start making an inventory of everything that still doesn&rsquo;t match the place you had in mind when you bought it.</p>
 
-            <p>With 27 years of experience designing homes that people genuinely love returning to, we&rsquo;ve built a framework for closing that gap. <a href="guide-optin.html">Download the free Second Home Design Guide</a> to explore the full thinking behind it.</p>
+            <p>With 27 years of experience designing homes that people genuinely love returning to, we&rsquo;ve built a framework for closing that gap. <a href="guide-optin">Download the free Second Home Design Guide</a> to explore the full thinking behind it.</p>
         </section>
 
         <div class="section-divider"></div>
@@ -582,7 +585,7 @@
                 <p>Navigating all three simultaneously &mdash; your taste as the lead, the architecture and environment as forces that shape and refine it &mdash; is the work at the center of what we do.</p>
             </div>
 
-            <p>The full framework &mdash; including the first two principles, the reflective tests we use to evaluate each one, and how all three work together to close the gap between a home that looks right and one that actually feels right &mdash; is in the free <a href="guide-optin.html">Second Home Design Guide</a>.</p>
+            <p>The full framework &mdash; including the first two principles, the reflective tests we use to evaluate each one, and how all three work together to close the gap between a home that looks right and one that actually feels right &mdash; is in the free <a href="guide-optin">Second Home Design Guide</a>.</p>
         </section>
 
         <div class="section-divider"></div>
@@ -614,7 +617,7 @@
                 <p>The primary suite receives the investment. Spaces oriented toward quiet and stillness. Every surface styled to feel curated rather than accumulated &mdash; the design asks nothing of you.</p>
             </div>
 
-            <p>Purposes can coexist, and a home can serve two profiles well. But one should lead. A home designed to be everything equally is distinctive in none of it. The <a href="guide-optin.html">Second Home Design Guide</a> explores each home type in depth, along with the Designer&rsquo;s Toolkit &mdash; the specific elements and principles that bring any of these visions to life.</p>
+            <p>Purposes can coexist, and a home can serve two profiles well. But one should lead. A home designed to be everything equally is distinctive in none of it. The <a href="guide-optin">Second Home Design Guide</a> explores each home type in depth, along with the Designer&rsquo;s Toolkit &mdash; the specific elements and principles that bring any of these visions to life.</p>
         </section>
 
         <div class="section-divider"></div>
@@ -642,7 +645,7 @@
 
             <p><strong>We handle everything.</strong> You don&rsquo;t manage vendors, track shipments, or coordinate deliveries. You don&rsquo;t make dozens of individual decisions in isolation and hope they add up. You get a home where every room reflects your taste and works the way you live &mdash; unmistakably yours &mdash; without the project management burden that usually comes with it.</p>
 
-            <p>We work with a limited number of homeowners at any given time. This is intentional &mdash; obsessive care doesn&rsquo;t scale, and we&rsquo;d rather do fewer projects exceptionally. <a href="about.html">Learn more about our story</a> and why we work this way.</p>
+            <p>We work with a limited number of homeowners at any given time. This is intentional &mdash; obsessive care doesn&rsquo;t scale, and we&rsquo;d rather do fewer projects exceptionally. <a href="about">Learn more about our story</a> and why we work this way.</p>
         </section>
 
         <div class="section-divider"></div>
@@ -651,11 +654,11 @@
         <section>
             <h2>Our Markets</h2>
 
-            <p>1584 Design is based in St. George, Utah &mdash; a premier second home destination at the gateway to Zion National Park. The landscape here is extraordinary: red rock, dramatic light, desert warmth. It&rsquo;s the kind of setting that should shape the design of every home in it. <a href="st-george-utah.html">See our St. George work</a>.</p>
+            <p>1584 Design is based in St. George, Utah &mdash; a premier second home destination at the gateway to Zion National Park. The landscape here is extraordinary: red rock, dramatic light, desert warmth. It&rsquo;s the kind of setting that should shape the design of every home in it. <a href="st-george-utah">See our St. George work</a>.</p>
 
-            <p>We also serve homeowners in Las Vegas and take on select projects nationwide for clients who value design that reflects both who they are and where they are. <a href="las-vegas.html">Explore our Las Vegas services</a>.</p>
+            <p>We also serve homeowners in Las Vegas and take on select projects nationwide for clients who value design that reflects both who they are and where they are. <a href="las-vegas">Explore our Las Vegas services</a>.</p>
 
-            <p>Wherever the home, the approach is the same: understand the owner, listen to the architecture, respond to the environment, and create something that could only exist at the intersection of all three. <a href="portfolio.html">See our portfolio</a> for a sense of what that looks like in practice.</p>
+            <p>Wherever the home, the approach is the same: understand the owner, listen to the architecture, respond to the environment, and create something that could only exist at the intersection of all three. <a href="portfolio">See our portfolio</a> for a sense of what that looks like in practice.</p>
         </section>
 
         <!-- CTA -->
@@ -663,7 +666,7 @@
             <p><strong>Ready to make your second home feel like it was always meant to?</strong></p>
             <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
             <br>
-            <a href="guide-optin.html" class="cta-secondary">Or get the free Second Home Design Guide first</a>
+            <a href="guide-optin" class="cta-secondary">Or get the free Second Home Design Guide first</a>
 
             <div class="founder-signature">
                 <div class="founder-name">Lisa Fisher</div>

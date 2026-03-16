@@ -728,9 +728,11 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "InteriorDesigner",
+          "@type": "HomeAndConstructionBusiness",
+      "@id": "https://1584design.com/#business",
           "name": "1584 Design",
           "url": "https://1584design.com",
+      "image": "https://1584design.com/images/1584_logo_white_thick.png",
           "telephone": "+14358623631",
           "email": "team@1584design.com",
           "address": {
@@ -740,31 +742,31 @@
             "addressCountry": "US"
           },
           "areaServed": [
-            {"@type": "City", "name": "St. George", "addressRegion": "UT"},
-            {"@type": "City", "name": "Las Vegas", "addressRegion": "NV"}
+            {"@type": "City", "name": "St. George, Utah"},
+            {"@type": "City", "name": "Las Vegas, Nevada"}
           ],
           "founder": {
             "@type": "Person",
             "name": "Lisa Fisher"
           },
-          "foundingDate": "2021",
+          "foundingDate": "2021-01-01",
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
-            "reviewCount": "54",
+            "reviewCount": 54,
             "bestRating": "5"
           },
           "sameAs": [
             "https://www.instagram.com/1584_design/",
             "https://www.facebook.com/lisa.s.fisher.92/"
-          ],
-          "priceRange": "$$$"
+          ]
         },
         {
           "@type": "Person",
           "name": "Lisa Fisher",
+          "url": "https://1584design.com/about",
           "jobTitle": "Founder & Interior Designer",
-          "worksFor": {"@type": "InteriorDesigner", "name": "1584 Design"},
+          "worksFor": {"@id": "https://1584design.com/#business"},
           "knowsAbout": ["Interior Design", "Vacation Rental Design", "Second Home Design"]
         }
       ]
@@ -775,7 +777,7 @@
     <!-- Navigation -->
     <nav class="navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="index" class="logo">
                 <img src="images/1584_logo_white_thick.png" alt="1584 Interior Design" width="80" height="40" loading="lazy" decoding="async">
             </a>
             <ul class="nav-menu">
@@ -851,7 +853,7 @@
 
                 <p class="story-paragraph">For me, the name is more than a nod to history—it's a reminder of where I come from and the creative roots that shaped me. Design has always been my passion, just like it was for my family before me, and I'm proud to carry that legacy forward.</p>
 
-                <p class="story-paragraph">Today, 1584 Design is a full-service interior design firm based in St. George, Utah. We specialize in <a href="vacation-rental-design.html">vacation rental design</a> and <a href="second-home-design.html">second home design</a> &mdash; handling everything from concept through installation so our clients receive a finished, professionally styled space. See what that looks like in our <a href="portfolio.html">portfolio</a>, or explore our work across the <a href="st-george-utah.html">St. George / Zion corridor</a> and <a href="las-vegas.html">Las Vegas</a>.</p>
+                <p class="story-paragraph">Today, 1584 Design is a full-service interior design firm based in St. George, Utah. We specialize in <a href="vacation-rental-design">vacation rental design</a> and <a href="second-home-design">second home design</a> &mdash; handling everything from concept through installation so our clients receive a finished, professionally styled space. See what that looks like in our <a href="portfolio">portfolio</a>, or explore our work across the <a href="st-george-utah">St. George / Zion corridor</a> and <a href="las-vegas">Las Vegas</a>.</p>
             </div>
 
             <!-- Lisa Fisher Signature -->
@@ -927,11 +929,11 @@
             <div class="footer-section">
                 <h3>Navigation</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html#resources">Free Resources</a></li>
-                    <li><a href="index.html#reviews">Reviews</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="index.html#process">Process</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="/#resources">Free Resources</a></li>
+                    <li><a href="/#reviews">Reviews</a></li>
+                    <li><a href="portfolio">Portfolio</a></li>
+                    <li><a href="/#process">Process</a></li>
+                    <li><a href="about">About Us</a></li>
                 </ul>
             </div>
         </div>

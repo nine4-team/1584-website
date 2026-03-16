@@ -644,9 +644,11 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "InteriorDesigner",
+          "@type": "HomeAndConstructionBusiness",
+      "@id": "https://1584design.com/#business",
           "name": "1584 Design",
           "url": "https://1584design.com",
+      "image": "https://1584design.com/images/1584_logo_white_thick.png",
           "telephone": "+14358623631",
           "email": "team@1584design.com",
           "address": {
@@ -656,30 +658,31 @@
             "addressCountry": "US"
           },
           "areaServed": [
-            {"@type": "City", "name": "St. George", "addressRegion": "UT"},
-            {"@type": "City", "name": "Las Vegas", "addressRegion": "NV"}
+            {"@type": "City", "name": "St. George, Utah"},
+            {"@type": "City", "name": "Las Vegas, Nevada"}
           ],
           "founder": {
             "@type": "Person",
             "name": "Lisa Fisher"
           },
-          "foundingDate": "2021",
+          "foundingDate": "2021-01-01",
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
-            "reviewCount": "54",
+            "reviewCount": 54,
             "bestRating": "5"
           },
           "sameAs": [
             "https://www.instagram.com/1584_design/",
             "https://www.facebook.com/lisa.s.fisher.92/"
-          ],
-          "priceRange": "$$$"
+          ]
         },
         {
           "@type": "Service",
+          "name": "Vacation Rental Interior Design",
           "serviceType": "Vacation Rental Interior Design",
-          "provider": {"@type": "InteriorDesigner", "name": "1584 Design"},
+          "url": "https://1584design.com/vacation-rental-design",
+          "provider": {"@id": "https://1584design.com/#business"},
           "areaServed": ["St. George, UT", "Las Vegas, NV", "United States"],
           "description": "Full-service interior design for vacation rental properties including design planning, procurement, and installation."
         }
@@ -692,7 +695,7 @@
     <!-- Navigation -->
     <nav class="navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="index" class="logo">
                 <img src="images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
             </a>
             <ul class="nav-menu">
@@ -746,7 +749,7 @@
 
             <div class="stat-highlight">$141,550 &mdash; the five-year cash flow swing between a property that was furnished and one that was designed.</div>
 
-            <p>The bar is going up. Guests are becoming more discerning, and booking platforms increasingly reward properties with strong quality signals. For a deeper look at the data &mdash; including the three most common spending mistakes that cost investors revenue &mdash; <a href="playbook-optin.html">download the free STR Design Playbook</a>.</p>
+            <p>The bar is going up. Guests are becoming more discerning, and booking platforms increasingly reward properties with strong quality signals. For a deeper look at the data &mdash; including the three most common spending mistakes that cost investors revenue &mdash; <a href="playbook-optin">download the free STR Design Playbook</a>.</p>
         </section>
 
         <div class="section-divider"></div>
@@ -762,7 +765,7 @@
                 <p>Your listing photos are your storefront. Guests scroll through dozens of thumbnails before clicking on one. The properties that get clicks are the ones with visually distinctive, magazine-quality images. Strategic color, cohesive styling, layered accessories, proper lighting &mdash; these are the design decisions that determine whether someone pauses mid-scroll or keeps moving past another gray-couch-white-wall interior.</p>
             </div>
 
-            <p>The full framework &mdash; including what drives each stage, the diagnostic tests we use to evaluate properties, and the design signals that separate the top tier from the rest &mdash; is in the free <a href="playbook-optin.html">STR Design Playbook</a>.</p>
+            <p>The full framework &mdash; including what drives each stage, the diagnostic tests we use to evaluate properties, and the design signals that separate the top tier from the rest &mdash; is in the free <a href="playbook-optin">STR Design Playbook</a>.</p>
         </section>
 
         <div class="section-divider"></div>
@@ -794,7 +797,7 @@
                 <p>A luxurious master suite as the centerpiece, spa-quality details, warm and moody palette. Couples pay more per night and book based on how a space makes them feel &mdash; every detail needs to feel intentional, not assembled.</p>
             </div>
 
-            <p>You don&rsquo;t need to pick just one. Many successful properties blend two. But you do need to be intentional. A property designed for everyone is distinctive to no one. The <a href="playbook-optin.html">STR Design Playbook</a> breaks down the specific design priorities and revenue levers for each guest profile &mdash; plus the design signals that separate top-performing properties from the rest.</p>
+            <p>You don&rsquo;t need to pick just one. Many successful properties blend two. But you do need to be intentional. A property designed for everyone is distinctive to no one. The <a href="playbook-optin">STR Design Playbook</a> breaks down the specific design priorities and revenue levers for each guest profile &mdash; plus the design signals that separate top-performing properties from the rest.</p>
         </section>
 
         <div class="section-divider"></div>
@@ -817,7 +820,7 @@
 
             <div class="callout">We work with a limited number of investors at any given time. This is intentional &mdash; obsessive care doesn&rsquo;t scale, and we&rsquo;d rather do fewer projects exceptionally.</div>
 
-            <p>Want to understand <a href="about.html">our story</a> and how we got here? Or <a href="portfolio.html">see our portfolio</a> to get a sense of the work.</p>
+            <p>Want to understand <a href="about">our story</a> and how we got here? Or <a href="portfolio">see our portfolio</a> to get a sense of the work.</p>
         </section>
 
         <div class="section-divider"></div>
@@ -828,11 +831,11 @@
 
             <p>We&rsquo;re based in St. George, Utah &mdash; the heart of the Zion corridor, one of the fastest-growing STR markets in the West. It&rsquo;s where we do most of our work, and where we know the competitive landscape inside out.</p>
 
-            <p><a href="st-george-utah.html">See our St. George work</a></p>
+            <p><a href="st-george-utah">See our St. George work</a></p>
 
             <p>We also serve Las Vegas and take select projects nationwide. If your property is in a market where design quality directly impacts revenue &mdash; and you&rsquo;re serious about outperforming your comps &mdash; we&rsquo;re interested in the conversation regardless of location.</p>
 
-            <p><a href="las-vegas.html">Explore our Las Vegas services</a></p>
+            <p><a href="las-vegas">Explore our Las Vegas services</a></p>
         </section>
 
         <!-- CTA Section -->
@@ -840,7 +843,7 @@
             <p>Ready to outperform your market?</p>
             <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
             <br>
-            <a href="playbook-optin.html" class="cta-secondary">Or get the free STR Design Playbook first</a>
+            <a href="playbook-optin" class="cta-secondary">Or get the free STR Design Playbook first</a>
 
             <div class="founder-signature">
                 <div class="founder-name">Lisa Fisher</div>
