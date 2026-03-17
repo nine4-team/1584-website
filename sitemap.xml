@@ -39,6 +39,10 @@
     <loc>https://1584design.com/about</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://1584design.com/faq</loc>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Opt-in Pages -->
   <url>

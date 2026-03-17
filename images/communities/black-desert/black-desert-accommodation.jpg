@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" />
+<link rel="canonical" href="https://admin.blackdesertresort.com/" />
+<link rel="shortlink" href="https://admin.blackdesertresort.com/" />
+<meta name="Generator" content="Drupal 11 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<noscript><link rel="stylesheet" href="/core/themes/claro/css/components/dropbutton-noscript.css?tbqhzn" />
+</noscript><noscript><link rel="stylesheet" href="/core/themes/claro/css/components/views-ui-noscript.css?tbqhzn" />
+</noscript><script type="application/json" id="gin-setting-darkmode">{ "ginDarkmode": "0" }</script>
+<link rel="icon" href="/core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>Page not found | Black Desert Resort</title>
+    <link rel="stylesheet" media="all" href="/core/assets/vendor/normalize-css/normalize.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/align.module.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/container-inline.module.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/clearfix.module.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/hidden.module.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/item-list.module.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/js.module.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/position-container.module.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/reset-appearance.module.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/base/variables.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/base/elements.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/base/typography.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/base/print.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/layout/system-admin--layout.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/layout/breadcrumb.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/layout/layout.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/system-admin--admin-list.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/system-admin--links.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/system-admin--modules.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/system-admin--panel.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/layout/card-list.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/card.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/container-inline.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/exposed-filters.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/field.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/icons.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/inline-form.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/item-list.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/link.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/links.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/menu.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/more-link.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/textarea.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/classy/components/ui-dialog.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/accordion.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/action-link.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/content-header.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/ckeditor5.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/container-inline.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/container-inline.module.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/breadcrumb.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/button.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/details.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/divider.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/messages.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/entity-meta.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/fieldset.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/form.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/form--checkbox-radio.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/form--field-multiple.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/form--managed-file.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/form--text.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/form--select.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/help.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/image-preview.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/menus-and-lists.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/modules-page.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/node.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/page-title.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/pager.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/skip-link.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/tables.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/table--file-multiple-widget.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/search-admin-settings.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/tableselect.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/core/themes/claro/css/components/tabs.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/themes/contrib/gin/dist/css/components/status.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/themes/contrib/gin/dist/css/theme/font.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/themes/contrib/gin/dist/css/theme/variables.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/themes/contrib/gin/dist/css/components/tooltip.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/themes/contrib/gin/dist/css/components/tabs.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/themes/contrib/gin/dist/css/components/breadcrumb.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/themes/contrib/gin/dist/css/theme/accent.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/themes/contrib/gin/dist/css/theme/dialog.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/themes/contrib/gin/dist/css/components/dialog.css?tbqhzn" />
+<link rel="stylesheet" media="all" href="/themes/contrib/gin/dist/css/base/gin.css?tbqhzn" />
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"gin":{"darkmode":"0","darkmode_class":"gin--dark-mode","preset_accent_color":"orange","accent_color":"","preset_focus_color":"gin","focus_color":"","highcontrastmode":false,"highcontrastmode_class":"gin--high-contrast-mode","toolbar_variant":"classic","show_user_theme_settings":false,"variables_css_path":"\/themes\/contrib\/gin\/dist\/css\/theme\/variables.css","accent_css_path":"\/themes\/contrib\/gin\/dist\/css\/theme\/accent.css","ckeditor_css_path":"\/themes\/contrib\/gin\/dist\/css\/theme\/ckeditor.css"},"user":{"uid":0,"permissionsHash":"617cf04aa1aa6473fa79b8bb54d2cf46c75aeff95d5bdf6b56b8d26674f649cd"}}</script>
+<script src="/themes/contrib/gin/dist/js/init.js?tbqhzn"></script>
+<script src="/core/misc/touchevents-test.js?v=11.2.10"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=11.2.10"></script>
+
+  </head>
+
+  <body data-gin-accent="orange" data-gin-focus="gin" data-gin-layout-density="small" class="path--ignition">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="page-wrapper dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+  <div class="gin-secondary-toolbar layout-container">
+    <div class="gin-breadcrumb-wrapper">
+          <div class="region region-breadcrumb">
+  <div id="block-gin-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+        <nav class="gin-breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol class="gin-breadcrumb__list">
+                <li class="gin-breadcrumb__item">
+                  <a href="/" class="gin-breadcrumb__link" title="Return to site content" data-gin-toolbar-escape-admin>Back to site</a>
+              </li>
+              </ol>
+  </nav>
+
+  </div>
+
+</div>
+
+        </div>
+    
+  </div>
+
+  <div class="region-sticky-watcher"></div>
+
+  <header class="region region-sticky ">
+    <div class="layout-container region-sticky__items">
+      <div class="region-sticky__items__inner">
+        <div id="block-gin-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title">Page not found</h1>
+
+
+  </div>
+
+                  
+                
+      </div>
+    </div>
+  </header>
+
+  <div class="sticky-shadow"></div>
+
+<div class="content-header clearfix">
+  <div class="layout-container">
+    
+  <div class="region region-header">
+    
+  </div>
+
+  </div>
+</div>
+
+<div class="layout-container">
+  
+  <div class="region region-pre-content">
+    
+  </div>
+
+  <main class="page-content clearfix" role="main">
+    <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
+    
+  <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden messages-list"></div>
+
+  </div>
+
+          <div class="help">
+        
+
+      </div>
+        
+  <div class="region region-content">
+    <div id="block-gin-content" class="block block-system block-system-main-block">
+  
+    
+      The requested page could not be found.
+  </div>
+
+  </div>
+
+  </main>
+</div>
+
+  </div>
+
+    
+    <script src="/core/assets/vendor/jquery/jquery.min.js?v=4.0.0-rc.1"></script>
+<script src="/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="/core/misc/drupal.js?v=11.2.10"></script>
+<script src="/core/misc/drupal.init.js?v=11.2.10"></script>
+<script src="/core/misc/debounce.js?v=11.2.10"></script>
+<script src="/core/misc/announce.js?v=11.2.10"></script>
+<script src="/core/misc/message.js?v=11.2.10"></script>
+<script src="/core/themes/claro/js/messages.js?tbqhzn"></script>
+<script src="/themes/contrib/gin/dist/js/messages.js?tbqhzn"></script>
+<script src="/themes/contrib/gin/dist/js/accent.js?tbqhzn"></script>
+<script src="/themes/contrib/gin/js/navigation/vendor/floating-ui/floating-ui.core.umd.js?tbqhzn"></script>
+<script src="/themes/contrib/gin/js/navigation/vendor/floating-ui/floating-ui.dom.umd.js?tbqhzn"></script>
+<script src="/themes/contrib/gin/dist/js/tooltip.js?tbqhzn"></script>
+<script src="/core/misc/displace.js?v=11.2.10"></script>
+<script src="/themes/contrib/gin/dist/js/sticky.js?tbqhzn"></script>
+
+  </body>
+</html>

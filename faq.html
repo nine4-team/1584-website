@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meet Lisa Fisher, founder of 1584 Design. 27 years of interior design experience, a family legacy dating to the 1930s, and a passion for creating spaces that perform and inspire.">
-    <title>About Lisa Fisher & 1584 Design | 27 Years of Interior Design Expertise</title>
+    <meta name="description" content="Answers to common questions about 1584 Design — project costs, timelines, what full-service means, and how we design vacation rentals and second homes in St. George, Utah.">
+    <title>FAQ — Vacation Rental & Second Home Design | 1584 Design</title>
+    <link rel="canonical" href="https://1584design.com/faq">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -25,23 +26,9 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Typography System */
-        .font-primary {
-            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
         .font-secondary {
             font-family: 'Baskerville', Palatino, Garamond, serif;
         }
-
-        /* Color Palette */
-        .color-warm-white { background-color: #FAFAF7; }
-        .color-soft-beige { background-color: #F5F2ED; }
-        .color-warm-gray { background-color: #E8E4DF; }
-        .color-taupe { background-color: #D4C5B3; }
-        .color-rich-brown { background-color: #9a7d55; }
-        .color-charcoal { background-color: #2C2C2C; }
-        .color-warm-black { background-color: #1A1A1A; }
 
         /* Container */
         .container {
@@ -54,9 +41,8 @@
             padding: 80px 0;
         }
 
-        /* Account for fixed navigation */
         .section:first-of-type {
-            padding-top: 120px; /* 80px nav height + 40px buffer */
+            padding-top: 120px;
         }
 
         /* Navigation */
@@ -127,8 +113,8 @@
             cursor: pointer;
         }
 
-        /* Single Column Layout */
-        .single-column-layout {
+        /* Page Layout */
+        .faq-layout {
             max-width: 800px;
             margin: 0 auto;
             padding: 48px;
@@ -137,12 +123,12 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
-        .story-header {
+        .page-header {
             text-align: center;
             margin-bottom: 48px;
         }
 
-        .story-header h1 {
+        .page-header h1 {
             font-family: 'Baskerville', Palatino, Garamond, serif;
             font-size: clamp(42px, 6vw, 64px);
             font-weight: 400;
@@ -152,229 +138,164 @@
             line-height: 1.1;
         }
 
-        .story-header .subtitle {
-            font-size: 18px;
+        .page-header .subtitle {
+            font-size: 16px;
             line-height: 1.6;
             color: #2C2C2C;
             font-weight: 400;
+            margin-top: 16px;
         }
 
-        .story-content {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
+        /* FAQ Category */
+        .faq-category {
             margin-bottom: 48px;
         }
 
-        .story-paragraph {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #2C2C2C;
-            margin-bottom: 6px;
-            margin-top: 6px;
+        .faq-category:last-of-type {
+            margin-bottom: 0;
         }
 
-        .story-paragraph.lead {
+        .faq-category h2 {
             font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 20px;
-            line-height: 1.8;
-            color: #1A1A1A;
-            font-weight: 400;
-        }
-
-        .story-paragraph.lead em {
             font-size: 24px;
-            font-style: italic;
-            color: #9a7d55;
-        }
-
-        .story-paragraph.highlight {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 20px;
-            line-height: 1.8;
-            color: #1A1A1A;
-            font-weight: 400;
-            text-align: center;
-        }
-
-        .story-paragraph.highlight em {
-            font-size: 24px;
-            font-style: italic;
-            color: #9a7d55;
-        }
-
-        /* Magazine Style Heritage Container */
-        .heritage-container {
-            margin: 48px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        .heritage-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #FFFFFF;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.08);
-            margin: 16px 0;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.8);
-            transition: all 0.3s ease;
-        }
-
-        .heritage-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.12);
-        }
-
-        .heritage-item-content {
-            padding: 24px;
-            width: 100%;
-        }
-
-        .heritage-item.featured {
-            order: -1;
-        }
-
-        .heritage-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .heritage-item picture {
-            width: 100%;
-            display: block;
-        }
-
-        .heritage-image.featured-image {
-            height: auto;
-        }
-
-        .heritage-caption {
-            text-align: center;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 0 8px;
-        }
-
-        .heritage-caption.featured-caption {
-            max-width: 600px;
-        }
-
-        .heritage-caption h3 {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 20px;
             font-weight: 400;
             color: #9a7d55;
-            margin-bottom: 8px;
-            line-height: 1.3;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #E8E4DF;
             letter-spacing: 0.02em;
         }
 
-        .heritage-caption.featured-caption h3 {
-            font-size: 24px;
+        /* Accordion */
+        .faq-item {
+            border-bottom: 1px solid #E8E4DF;
         }
 
-        .heritage-caption p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #2C2C2C;
-            font-style: italic;
+        .faq-item summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            cursor: pointer;
+            list-style: none;
+            font-size: 16px;
+            font-weight: 500;
+            color: #1A1A1A;
+            line-height: 1.4;
+            transition: color 0.3s ease;
         }
 
-        .heritage-caption h3 {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
             font-size: 20px;
-            font-weight: 400;
+            font-weight: 300;
             color: #9a7d55;
-            margin-bottom: 12px;
-            line-height: 1.3;
+            flex-shrink: 0;
+            margin-left: 16px;
+            transition: transform 0.3s ease;
         }
 
-        .heritage-caption p {
-            font-size: 14px;
-            line-height: 1.6;
+        .faq-item[open] summary::after {
+            content: "\2212";
+        }
+
+        .faq-item summary:hover {
+            color: #9a7d55;
+        }
+
+        .faq-answer {
+            padding: 0 0 24px;
+            font-size: 15px;
+            line-height: 1.7;
             color: #2C2C2C;
-            font-style: italic;
         }
 
-        /* Founder Signature */
-        .founder-signature-section {
+        .faq-answer p {
+            margin-bottom: 12px;
+        }
+
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-answer a {
+            color: #9a7d55;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-answer a:hover {
+            border-bottom-color: #9a7d55;
+        }
+
+        .faq-answer strong {
+            color: #1A1A1A;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .faq-cta {
             margin-top: 64px;
             padding-top: 48px;
             border-top: 1px solid #E8E4DF;
+            text-align: center;
         }
 
-        .founder-signature {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 48px;
-            align-items: start;
-        }
-
-        .signature-image {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            object-position: center bottom;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-
-        .founder-name {
+        .faq-cta h2 {
             font-family: 'Baskerville', Palatino, Garamond, serif;
             font-size: 28px;
             font-weight: 400;
-            color: #9a7d55;
-            margin-bottom: 8px;
+            color: #1A1A1A;
+            margin-bottom: 12px;
         }
 
-        .founder-title {
-            font-size: 14px;
+        .faq-cta p {
+            font-size: 16px;
             color: #2C2C2C;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 25pt;
+            font-family: 'Avenir', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid transparent;
         }
 
-        .founder-caption {
-            font-size: 12px;
-            color: #666;
-            text-align: center;
-            margin-top: 12px;
-            font-style: italic;
-            line-height: 1.4;
+        .btn-primary {
+            background-color: #9a7d55;
+            color: #FAFAF7;
+            border-color: #9a7d55;
+        }
+
+        .btn-primary:hover {
+            background-color: #735C3A;
+            border-color: #735C3A;
+            transform: translateY(-2px);
         }
 
         /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .single-column-layout {
-                padding: 24px 24px 0 24px; /* keep top spacing on narrow viewports */
-            }
-
-            .story-content {
-                gap: 24px;
-            }
-
-            .heritage-item {
-                margin: 24px 0;
-            }
-
-            .heritage-item-content {
-                padding: 20px;
-            }
-        }
-
         @media (max-width: 768px) {
             .section {
                 padding: 64px 0;
             }
 
             .section:first-of-type {
-                padding-top: 120px; /* Account for fixed navigation (80px) + buffer */
+                padding-top: 120px;
             }
 
             .navigation {
@@ -405,92 +326,34 @@
                 display: block;
             }
 
-            .story-header {
-                text-align: center;
-                margin-bottom: 32px;
+            .faq-layout {
+                padding: 24px;
             }
 
-            .story-header h1 {
+            .page-header h1 {
                 font-size: clamp(38px, 6vw, 52px);
                 margin-top: 24px;
-            }
-
-            .story-paragraph.lead {
-                font-size: 18px;
-            }
-
-            .story-paragraph.lead em {
-                font-size: 20px;
-            }
-
-            .heritage-image {
-                height: auto;
-                object-fit: contain;
-            }
-
-            .founder-signature-section {
-                margin-top: 48px;
-            }
-
-            .founder-signature {
-                display: flex;
-                flex-direction: column;
-                gap: 24px;
-                text-align: center;
-                align-items: center;
-            }
-
-            .founder-signature .signature-image {
-                width: 100%;
-                max-width: 300px;
-                height: auto;
             }
         }
 
         @media (max-width: 480px) {
-            .single-column-layout {
+            .faq-layout {
                 padding: 24px 16px;
                 margin: 0 8px;
             }
 
-            .story-header h1 {
+            .page-header h1 {
                 font-size: clamp(34px, 6vw, 40px);
             }
 
-            .story-paragraph {
+            .faq-item summary {
                 font-size: 15px;
+                padding: 16px 0;
             }
 
-            .story-paragraph.lead {
-                font-size: 16px;
+            .faq-answer {
+                font-size: 14px;
             }
-
-            .heritage-image {
-                height: auto;
-                object-fit: contain;
-            }
-
-            .heritage-item {
-                margin: 16px 0;
-            }
-
-            .heritage-item-content {
-                padding: 16px;
-            }
-
-            .heritage-caption h3 {
-                font-size: 18px;
-            }
-
-            .founder-signature-section {
-                margin-top: 32px;
-            }
-        }
-
-        /* Image and Font Rendering Optimization */
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         /* Footer */
@@ -729,45 +592,113 @@
       "@graph": [
         {
           "@type": "HomeAndConstructionBusiness",
-      "@id": "https://1584design.com/#business",
+          "@id": "https://1584design.com/#business",
           "name": "1584 Design",
           "url": "https://1584design.com",
-      "image": "https://1584design.com/images/1584_logo_white_thick.png",
+          "image": "https://1584design.com/images/1584_logo_white_thick.png",
           "telephone": "+14358623631",
-          "email": "team@1584design.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "St. George",
-            "addressRegion": "UT",
-            "addressCountry": "US"
-          },
-          "areaServed": [
-            {"@type": "City", "name": "St. George, Utah"},
-            {"@type": "City", "name": "Las Vegas, Nevada"}
-          ],
-          "founder": {
-            "@type": "Person",
-            "name": "Lisa Fisher"
-          },
-          "foundingDate": "2021-01-01",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": 54,
-            "bestRating": "5"
-          },
-          "sameAs": [
-            "https://www.instagram.com/1584_design/",
-            "https://www.facebook.com/lisa.s.fisher.92/"
-          ]
+          "email": "team@1584design.com"
         },
         {
-          "@type": "Person",
-          "name": "Lisa Fisher",
-          "url": "https://1584design.com/about",
-          "jobTitle": "Founder & Interior Designer",
-          "worksFor": {"@id": "https://1584design.com/#business"},
-          "knowsAbout": ["Interior Design", "Vacation Rental Design", "Second Home Design"]
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What does full-service interior design mean?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We handle everything from design planning through procurement and installation. You don't source a single item, coordinate a single delivery, or manage a single vendor. We present the plan, you approve it, and we execute it completely."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you do renovations or remodels?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We furnish and accessorize existing spaces — furniture, rugs, curtains, art, lighting fixtures, bedding, and accessories. We do not do construction, demolition, or structural changes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you design primary residences?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We specialize in vacation rentals and second homes exclusively. Primary residences involve different constraints — existing furniture, daily-use compromises, more change requests — that don't align with how we work best."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What areas do you serve?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our home market is St. George and the Zion corridor in Southern Utah. We also serve Las Vegas and take select projects nationally."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does a project take?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most projects take 8–16 weeks from design kickoff to installation, depending on scope and lead times for custom pieces."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How involved do I need to be?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Minimally. We present a complete design plan for your approval. Beyond a few decision points, the process is designed to be hands-off. Most clients prefer it that way."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's the first step?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A quick call — a conversation about your property, goals, and timeline. From there we'll tell you honestly whether we're a good fit and what the project would look like."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What makes STR design different from regular interior design?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "STR design is performance-driven. Every choice — layout, furnishings, photography angles, durability — serves three goals: stop the scroll on listing sites, convert browsers to bookers, and create five-star guest experiences. Regular interior design optimizes for the owner's taste. STR design optimizes for revenue."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What size properties do you work with?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We specialize in large-group properties accommodating 8+ guests. These are the properties where design has the biggest impact on revenue — more bedrooms, more common areas, more opportunity to differentiate."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you help with listing photography?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We design with photography in mind. Our spaces are built to photograph well from specific angles and in specific light. We don't shoot the photos ourselves, but we design knowing that the listing photos are the first thing that matters."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you make a second home feel personal, not generic?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Through our Intentional Home Framework — we align the design with three layers: the environment outside the windows, the architecture of the home, and the identity of the owner. A home designed to be everything equally is distinctive in none of it."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I keep some of my existing furniture?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We start from scratch. Our process works best when we design a complete, cohesive space. Incorporating existing pieces creates compromises that dilute the result. If there are truly meaningful heirloom pieces, we can discuss it — but our default is a clean slate."
+              }
+            }
+          ]
         }
       ]
     }
@@ -777,106 +708,140 @@
     <!-- Navigation -->
     <nav class="navigation">
         <div class="nav-container">
-            <a href="index" class="logo">
+            <a href="/" class="logo">
                 <img src="images/1584_logo_white_thick.png" alt="1584 Interior Design" width="80" height="40" loading="lazy" decoding="async">
             </a>
             <ul class="nav-menu">
                 <!-- Navigation menu generated dynamically by JavaScript -->
             </ul>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
         </div>
     </nav>
 
-    <!-- About Us Section -->
-    <section id="about" class="story-section section">
-        <div class="single-column-layout">
-            <div class="story-header">
-                <h1>The Story Behind the Name</h1>
+    <!-- FAQ Content -->
+    <section class="section">
+        <div class="faq-layout">
+            <div class="page-header">
+                <h1>Frequently Asked Questions</h1>
+                <p class="subtitle">What to know before starting a project with 1584 Design.</p>
             </div>
 
-            <div class="story-content">
-                <p class="story-paragraph lead"><em>My love for design began as a child when I would spend hours decorating and rearranging a wooden dollhouse that my uncle Glenn gave me. I was captivated by how different pieces could come together to create something beautiful, and that passion has stayed with me ever since.</em></p>
+            <!-- About Our Services -->
+            <div class="faq-category" id="services">
+                <h2>About Our Services</h2>
 
-                <p class="story-paragraph">With artists, woodworkers, and designers on my dad's side, it's no surprise that creativity runs in my veins. In high school, my uncle Glenn—who studied architecture and renovated homes in Miami—encouraged me to turn my love for design into a career.</p>
-
-                <p class="story-paragraph">Watching him transform homes motivated me to take my first interior design course and eventually pursue it in college.</p>
-
-                <p class="story-paragraph">After earning my design degree and working for several years in the industry, Glenn gave me a special piece of our family's history: a furniture catalog from the 1930s that belonged to my great-grandmother, Marion Kennedy, who was among the first female interior designers in the United States.</p>
-
-                <!-- Kennedy Design Book Page 1 - Right after Marion Kennedy mention -->
-                <div class="heritage-item">
-                    <picture>
-                        <source type="image/webp" srcset="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/67940facc04d892c762c4a0e.jpeg 1200w">
-                        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/67940facc04d892c762c4a0e.jpeg" alt="Kennedy Design Book Page 1" class="heritage-image" width="400" height="300" loading="lazy" decoding="async">
-                    </picture>
-                    <div class="heritage-item-content">
-                        <div class="heritage-caption">
-                            <h3>Kennedy Design Book - Page 1</h3>
-                            <p>A page from Marion Kennedy's 1930s furniture catalog showcasing her pioneering work as one of America's first female interior designers</p>
-                        </div>
+                <details class="faq-item">
+                    <summary>What does "full-service" interior design mean?</summary>
+                    <div class="faq-answer">
+                        <p>We handle everything from design planning through procurement and installation. You don't source a single item, coordinate a single delivery, or manage a single vendor. We present the plan, you approve it, and we execute it completely.</p>
+                        <p>Learn more about how this works for <a href="vacation-rental-design">vacation rentals</a> or <a href="second-home-design">second homes</a>.</p>
                     </div>
-                </div>
+                </details>
 
-                <p class="story-paragraph highlight"><em>On the catalog cover was her business card, listing her phone number: 1584 W.</em></p>
-
-                <!-- Marion Kennedy Business Card - Right after the paragraph where it's mentioned -->
-                <div class="heritage-item">
-                    <picture>
-                        <source type="image/webp" srcset="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/679410f9252fad62188efea6.jpeg 1200w">
-                        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/679410f9252fad62188efea6.jpeg" alt="Marion Kennedy's Business Card" class="heritage-image" width="400" height="300" loading="lazy" decoding="async">
-                    </picture>
-                    <div class="heritage-item-content">
-                        <div class="heritage-caption">
-                            <h3>Marion Kennedy's Business Card</h3>
-                            <p>The historic business card from the 1930s featuring the phone number 1584 W that inspired our company name</p>
-                        </div>
+                <details class="faq-item">
+                    <summary>Do you do renovations or remodels?</summary>
+                    <div class="faq-answer">
+                        <p>No. We furnish and accessorize existing spaces — furniture, rugs, curtains, art, lighting fixtures, bedding, and accessories. We do not do construction, demolition, or structural changes.</p>
                     </div>
-                </div>
+                </details>
 
-                <p class="story-paragraph">In 2021, after 27 years of experience transforming residential and commercial spaces, I started my own business with my daughter Dakota. We wanted a name that honored our family's creative legacy.</p>
-
-                <!-- Kennedy Design Book Page 2 -->
-                <div class="heritage-item">
-                    <picture>
-                        <source type="image/webp" srcset="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/67940facc04d89e97b2c4a0f.jpeg 1200w">
-                        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/67940facc04d89e97b2c4a0f.jpeg" alt="Kennedy Design Book Page 2" class="heritage-image" width="400" height="300" loading="lazy" decoding="async">
-                    </picture>
-                    <div class="heritage-item-content">
-                        <div class="heritage-caption">
-                            <h3>Kennedy Design Book - Page 2</h3>
-                            <p>Another page from the historic catalog that represents the foundation of our family's design legacy</p>
-                        </div>
+                <details class="faq-item">
+                    <summary>Do you design primary residences?</summary>
+                    <div class="faq-answer">
+                        <p>No. We specialize in <a href="vacation-rental-design">vacation rentals</a> and <a href="second-home-design">second homes</a> exclusively. Primary residences involve different constraints — existing furniture, daily-use compromises, more change requests — that don't align with how we work best.</p>
                     </div>
-                </div>
+                </details>
 
-                <p class="story-paragraph">While looking through the catalog together, she came up with the perfect idea: <strong>1584 Design</strong>.</p>
-
-                <p class="story-paragraph">For me, the name is more than a nod to history—it's a reminder of where I come from and the creative roots that shaped me. Design has always been my passion, just like it was for my family before me, and I'm proud to carry that legacy forward.</p>
-
-                <p class="story-paragraph">Today, 1584 Design is a full-service interior design firm based in St. George, Utah. We specialize in <a href="vacation-rental-design">vacation rental design</a> and <a href="second-home-design">second home design</a> &mdash; handling everything from concept through installation so our clients receive a finished, professionally styled space. See what that looks like in our <a href="portfolio">portfolio</a>, or explore our work across the <a href="st-george-utah">St. George / Zion corridor</a> and <a href="las-vegas">Las Vegas</a>.</p>
+                <details class="faq-item">
+                    <summary>What areas do you serve?</summary>
+                    <div class="faq-answer">
+                        <p>Our home market is <a href="st-george-utah">St. George and the Zion corridor</a> in Southern Utah. We also serve <a href="las-vegas">Las Vegas</a> and take select projects nationally.</p>
+                    </div>
+                </details>
             </div>
 
-            <!-- Lisa Fisher Signature -->
-            <div class="founder-signature-section">
-                <div class="founder-signature">
-                    <div>
-                        <picture>
-                            <source type="image/webp" srcset="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/6794104dc21e372b39b376d3.jpeg 1200w">
-                            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/6794104dc21e372b39b376d3.jpeg" alt="Lisa Fisher and Dakota" class="signature-image" width="400" height="300" loading="lazy" decoding="async">
-                        </picture>
-                        <div class="founder-caption">Lisa and Dakota at the Las Vegas Furnishings Market</div>
+            <!-- Process -->
+            <div class="faq-category" id="process">
+                <h2>Process</h2>
+
+                <details class="faq-item">
+                    <summary>How long does a project take?</summary>
+                    <div class="faq-answer">
+                        <p>Most projects take <strong>8&ndash;16 weeks</strong> from design kickoff to installation, depending on scope and lead times for custom pieces.</p>
                     </div>
-                    <div>
-                        <div class="founder-name">Lisa Fisher</div>
-                        <div class="founder-title">Founder, 1584 Design</div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How involved do I need to be?</summary>
+                    <div class="faq-answer">
+                        <p>Minimally. We present a complete design plan for your approval. Beyond a few decision points, the process is designed to be hands-off. Most clients prefer it that way.</p>
                     </div>
-                </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What's the first step?</summary>
+                    <div class="faq-answer">
+                        <p>A quick call — a conversation about your property, goals, and timeline. From there we'll tell you honestly whether we're a good fit and what the project would look like. <a href="https://1584design.com/#contact">Request a call</a> to get started.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- For STR Investors -->
+            <div class="faq-category" id="str">
+                <h2>For STR Investors</h2>
+
+                <details class="faq-item">
+                    <summary>What makes STR design different from regular interior design?</summary>
+                    <div class="faq-answer">
+                        <p>STR design is performance-driven. Every choice — layout, furnishings, photography angles, durability — serves three goals: stop the scroll on listing sites, convert browsers to bookers, and create five-star guest experiences.</p>
+                        <p>Regular interior design optimizes for the owner's taste. <a href="vacation-rental-design">STR design</a> optimizes for revenue.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What size properties do you work with?</summary>
+                    <div class="faq-answer">
+                        <p>We specialize in large-group properties accommodating <strong>8+ guests</strong>. These are the properties where design has the biggest impact on revenue — more bedrooms, more common areas, more opportunity to differentiate.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can you help with listing photography?</summary>
+                    <div class="faq-answer">
+                        <p>We design with photography in mind. Our spaces are built to photograph well from specific angles and in specific light. We don't shoot the photos ourselves, but we design knowing that the listing photos are the first thing that matters.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- For Second Home Owners -->
+            <div class="faq-category" id="second-home">
+                <h2>For Second Home Owners</h2>
+
+                <details class="faq-item">
+                    <summary>How do you make a second home feel personal, not generic?</summary>
+                    <div class="faq-answer">
+                        <p>Through our <strong>Intentional Home Framework</strong> — we align the design with three layers: the environment outside the windows, the architecture of the home, and the identity of the owner.</p>
+                        <p>A home designed to be everything equally is distinctive in none of it. <a href="second-home-design">Learn more about our approach</a>.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I keep some of my existing furniture?</summary>
+                    <div class="faq-answer">
+                        <p>We start from scratch. Our process works best when we design a complete, cohesive space. Incorporating existing pieces creates compromises that dilute the result. If there are truly meaningful heirloom pieces, we can discuss it — but our default is a clean slate.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- CTA -->
+            <div class="faq-cta">
+                <h2>Still have questions?</h2>
+                <p>The best way to find out if we're a fit is a quick conversation.</p>
+                <a href="https://1584design.com/#contact" class="btn btn-primary">Request a Call</a>
             </div>
         </div>
     </section>
 
-
-    <!-- Shared Navigation JavaScript -->
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">

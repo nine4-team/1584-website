@@ -327,7 +327,8 @@ function generateNavigation() {
         }),
         'las-vegas.html': secondaryNav.map(function(item) {
             return item.text === 'COMMUNITIES' ? Object.assign({}, item, { current: true }) : item;
-        })
+        }),
+        'faq.html': secondaryNav
     };
 
     // Get navigation structure for current page.
