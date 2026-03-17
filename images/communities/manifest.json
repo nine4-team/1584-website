@@ -1,0 +1,204 @@
+[
+  {
+    "slug": "desert-color",
+    "slot": "hero",
+    "filename": "desert-color-hero.jpg",
+    "path": "images/communities/desert-color/desert-color-hero.jpg",
+    "alt": "Desert Color master-planned community in St. George, Utah — aerial view of Southern Utah's largest vacation rental resort development",
+    "status": "downloaded"
+  },
+  {
+    "slug": "desert-color",
+    "slot": "amenity",
+    "filename": "desert-color-amenity.jpg",
+    "path": "images/communities/desert-color/desert-color-amenity.jpg",
+    "alt": "Families enjoying the Crystal Lagoon and resort pool at Desert Color in St. George, Utah — the amenity that drives vacation rental bookings",
+    "status": "downloaded"
+  },
+  {
+    "slug": "desert-color",
+    "slot": "architecture",
+    "filename": "desert-color-architecture.png",
+    "path": "images/communities/desert-color/desert-color-architecture.png",
+    "alt": "Exterior of vacation rental townhomes at Desert Color in St. George, Utah",
+    "status": "downloaded"
+  },
+  {
+    "slug": "desert-color",
+    "slot": "lifestyle",
+    "filename": "desert-color-lifestyle.png",
+    "path": "images/communities/desert-color/desert-color-lifestyle.png",
+    "alt": "Aerial view of parks and walking trails at Desert Color — community amenities for vacation rental guests in Southern Utah",
+    "status": "downloaded"
+  },
+  {
+    "slug": "sand-hollow",
+    "slot": "hero",
+    "filename": "sand-hollow-hero.jpg",
+    "path": "images/communities/sand-hollow/sand-hollow-hero.jpg",
+    "alt": "Sand Hollow Resort championship golf course in Hurricane, Utah — Top 100 resort course set against red sandstone formations",
+    "status": "downloaded"
+  },
+  {
+    "slug": "sand-hollow",
+    "slot": "water",
+    "filename": "sand-hollow-water.jpg",
+    "path": "images/communities/sand-hollow/sand-hollow-water.jpg",
+    "alt": "Paddleboarding on Sand Hollow Reservoir — water recreation minutes from Sand Hollow Resort vacation rentals in Southern Utah",
+    "status": "downloaded"
+  },
+  {
+    "slug": "sand-hollow",
+    "slot": "landscape",
+    "filename": "sand-hollow-landscape.webp",
+    "path": "images/communities/sand-hollow/sand-hollow-landscape.webp",
+    "alt": "Red rock cliffs and desert landscape surrounding Sand Hollow Resort in Hurricane, Utah — the setting that defines vacation rental design here",
+    "status": "downloaded"
+  },
+  {
+    "slug": "copper-rock",
+    "slot": "hero",
+    "filename": "copper-rock-hero.png",
+    "path": "images/communities/copper-rock/copper-rock-hero.png",
+    "alt": "Aerial masterplan of Copper Rock golf community in Hurricane, Utah — luxury vacation rental homes surrounding Utah's #1 ranked course",
+    "status": "downloaded"
+  },
+  {
+    "slug": "copper-rock",
+    "slot": "golf",
+    "filename": "copper-rock-golf.jpg",
+    "path": "images/communities/copper-rock/copper-rock-golf.jpg",
+    "alt": "Copper Rock championship golf course fairway — ranked #1 in Utah by Golfweek, the amenity that defines this luxury vacation rental community",
+    "status": "downloaded"
+  },
+  {
+    "slug": "copper-rock",
+    "slot": "architecture",
+    "filename": "copper-rock-architecture.jpg",
+    "path": "images/communities/copper-rock/copper-rock-architecture.jpg",
+    "alt": "Aerial view of a luxury vacation home at Copper Rock in Hurricane, Utah — multi-million dollar STR properties with mountain views",
+    "status": "downloaded"
+  },
+  {
+    "slug": "the-ledges",
+    "slot": "hero",
+    "filename": "the-ledges-hero.jpg",
+    "path": "images/communities/the-ledges/the-ledges-hero.jpg",
+    "alt": "Snow Canyon sunrise from The Ledges golf community in St. George, Utah — red rock views that define vacation rental design at this address",
+    "status": "downloaded"
+  },
+  {
+    "slug": "the-ledges",
+    "slot": "golf",
+    "filename": "the-ledges-golf.jpg",
+    "path": "images/communities/the-ledges/the-ledges-golf.jpg",
+    "alt": "The Ledges golf course in St. George, Utah — championship course with Snow Canyon backdrop, a draw for vacation rental guests",
+    "status": "downloaded"
+  },
+  {
+    "slug": "the-ledges",
+    "slot": "landscape",
+    "filename": "the-ledges-landscape.jpg",
+    "path": "images/communities/the-ledges/the-ledges-landscape.jpg",
+    "alt": "Canyon views from The Ledges — the red rock setting that guests experience at this St. George vacation rental community",
+    "status": "downloaded"
+  },
+  {
+    "slug": "the-ledges",
+    "slot": "accommodation",
+    "filename": "the-ledges-accommodation.jpg",
+    "path": "images/communities/the-ledges/the-ledges-accommodation.jpg",
+    "alt": "Red Mountain Villa with private pool at The Ledges — luxury vacation rental property in St. George, Utah",
+    "status": "downloaded"
+  },
+  {
+    "slug": "black-desert",
+    "slot": "hero",
+    "filename": "black-desert-hero.jpg",
+    "path": null,
+    "alt": "Black Desert Resort exterior from the championship golf course — luxury resort community in Ivins, Utah near Snow Canyon",
+    "status": "failed",
+    "error": "HTTP 404 for https://admin.blackdesertresort.com/sites/default/files/2025-06/0010%2520BD%2520Golf%2520hole%252018%2520grn%2520hole%252010%2520%25281%2529.jpg"
+  },
+  {
+    "slug": "black-desert",
+    "slot": "accommodation",
+    "filename": "black-desert-accommodation.jpg",
+    "path": null,
+    "alt": "King suite interior at Black Desert Resort in Ivins, Utah — the luxury standard that vacation rental interiors compete against",
+    "status": "failed",
+    "error": "HTTP 404 for https://admin.blackdesertresort.com/sites/default/files/2025-04/BDUB-Stay-Studio-One-Bedroom-Suite-5.jpg"
+  },
+  {
+    "slug": "black-desert",
+    "slot": "amenity",
+    "filename": "black-desert-amenity.jpg",
+    "path": "images/communities/black-desert/black-desert-amenity.jpg",
+    "alt": "Balcony overlooking the golf course at Black Desert Resort — the views and finish quality that set guest expectations in Ivins, Utah",
+    "status": "downloaded"
+  },
+  {
+    "slug": "arcadia",
+    "slot": "hero",
+    "filename": "arcadia-hero.jpg",
+    "path": "images/communities/arcadia/arcadia-hero.jpg",
+    "alt": "Aerial view of Sunbrook golf course near Arcadia Vacation Resort in Ivins, Utah — the recreational setting surrounding this STR community",
+    "status": "downloaded"
+  },
+  {
+    "slug": "arcadia",
+    "slot": "amenity",
+    "filename": "arcadia-amenity.jpg",
+    "path": "images/communities/arcadia/arcadia-amenity.jpg",
+    "alt": "Vacation rental with private pool at Arcadia Resort near Snow Canyon, Utah — resort-style STR properties designed for families",
+    "status": "downloaded"
+  },
+  {
+    "slug": "terra",
+    "slot": "architecture",
+    "filename": "terra-architecture.jpg",
+    "path": "images/communities/terra/terra-architecture.jpg",
+    "alt": "Terra by Cole West condo exteriors in Washington, Utah — vacation rental condos and townhomes near Coral Canyon",
+    "status": "downloaded"
+  },
+  {
+    "slug": "terra",
+    "slot": "lifestyle",
+    "filename": "terra-lifestyle.jpg",
+    "path": "images/communities/terra/terra-lifestyle.jpg",
+    "alt": "Aerial overview of Isle and Terra resort amenities by Cole West — lazy river, sports pool, and clubhouse in Washington, Utah",
+    "status": "downloaded"
+  },
+  {
+    "slug": "the-isles",
+    "slot": "hero",
+    "filename": "the-isles-hero.jpg",
+    "path": "images/communities/the-isles/the-isles-hero.jpg",
+    "alt": "Aerial view of Isle twin homes by Cole West in Washington, Utah — purpose-built vacation rental community near Coral Canyon",
+    "status": "downloaded"
+  },
+  {
+    "slug": "the-isles",
+    "slot": "architecture",
+    "filename": "the-isles-architecture.jpg",
+    "path": "images/communities/the-isles/the-isles-architecture.jpg",
+    "alt": "Isle Parade Home 2025 by Cole West — vacation rental interior design showcase in Washington, Utah",
+    "status": "downloaded"
+  },
+  {
+    "slug": "divario",
+    "slot": "hero",
+    "filename": "divario-hero.jpg",
+    "path": "images/communities/divario/divario-hero.jpg",
+    "alt": "Aerial drone view of Divario master-planned community in St. George, Utah — 730 acres with canyon views and trail access",
+    "status": "downloaded"
+  },
+  {
+    "slug": "divario",
+    "slot": "landscape",
+    "filename": "divario-landscape.png",
+    "path": "images/communities/divario/divario-landscape.png",
+    "alt": "Sentieri Canyon at Divario — natural canyon setting within this St. George residential community",
+    "status": "downloaded"
+  }
+]
