@@ -230,6 +230,34 @@
   }
   .receipt-link:hover { border-bottom-color: #9a7d55; }
 
+  /* Photo gallery */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .gallery a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    aspect-ratio: 1 / 1;
+  }
+  .gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    opacity: 0.92;
+  }
+  .gallery a:hover img {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+
   .footer {
     text-align: center;
     color: rgba(250, 250, 247, 0.3);
@@ -241,6 +269,7 @@
 
   @media (max-width: 900px) {
     .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 700px) {
     .stats-row, .stats-row-3 { grid-template-columns: 1fr; }
@@ -249,6 +278,7 @@
     table.tx-table thead th, table.tx-table tbody td { padding: 8px 12px; }
     .invoice-table td { padding: 14px 16px; }
     .invoice-table .amount-cell { font-size: 16px; }
+    .gallery { grid-template-columns: repeat(2, 1fr); gap: 6px; }
   }
 </style>
 </head>
@@ -258,35 +288,19 @@
   <h1>Client Report</h1>
   <p class="subtitle">Hyer's Martinique Rental</p>
 
-  <h2>Total Project</h2>
+  <h2>Project Summary</h2>
   <div class="stats-row-3">
-    <div class="stat-card">
-      <div class="stat-value">$132,000.00</div>
-      <div class="stat-label">Project Budget</div>
-    </div>
     <div class="stat-card">
       <div class="stat-value">$129,827.62</div>
-      <div class="stat-label">Total Project Investment</div>
-    </div>
-    <div class="stat-card highlight">
-      <div class="stat-value">$2,172.38</div>
-      <div class="stat-label">Came In Under</div>
-    </div>
-  </div>
-
-  <h2>Furnishings</h2>
-  <div class="stats-row-3">
-    <div class="stat-card">
-      <div class="stat-value">$84,542.32</div>
-      <div class="stat-label">Total Spent</div>
+      <div class="stat-label">Total Invested</div>
     </div>
     <div class="stat-card">
-      <div class="stat-value">$100,561.13</div>
+      <div class="stat-value">$147,646.43</div>
       <div class="stat-label">Market Value</div>
     </div>
     <div class="stat-card highlight">
-      <div class="stat-value">$16,018.81</div>
-      <div class="stat-label">Furnishings Savings</div>
+      <div class="stat-value">$17,818.81</div>
+      <div class="stat-label">Saved</div>
     </div>
   </div>
 
@@ -310,7 +324,7 @@
     </tr>
   </table>
   <p style="color:rgba(250,250,247,0.5); font-size:13px; margin-top:12px; text-align:center;">
-    These amounts are already included in the total project investment above.
+    These amounts are already included in the Total Invested above.
   </p>
 
   <h2>Transactions for Accounting</h2>
@@ -972,6 +986,76 @@
         </tbody>
       </table>
     </div>
+  </div>
+
+  <h2>Photo Gallery</h2>
+  <p style="color:rgba(250,250,247,0.5); font-size:13px; margin-top:-8px; margin-bottom:16px;">
+    We had the finished space professionally photographed at no cost to you.
+  </p>
+  <div class="gallery">
+    <a href="/images/hyer-martinique/DSC04927-HDR-Edit.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04927-HDR-Edit.jpg" alt="DSC04927-HDR-Edit.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04930-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04930-HDR.jpg" alt="DSC04930-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04936-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04936-HDR.jpg" alt="DSC04936-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04939-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04939-HDR.jpg" alt="DSC04939-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04942-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04942-HDR.jpg" alt="DSC04942-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04946.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04946.jpg" alt="DSC04946.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04947.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04947.jpg" alt="DSC04947.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04949.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04949.jpg" alt="DSC04949.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04950.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04950.jpg" alt="DSC04950.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04951.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04951.jpg" alt="DSC04951.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04952.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04952.jpg" alt="DSC04952.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04953.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04953.jpg" alt="DSC04953.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04954.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04954.jpg" alt="DSC04954.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04955.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04955.jpg" alt="DSC04955.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04956.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04956.jpg" alt="DSC04956.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04957.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04957.jpg" alt="DSC04957.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04958.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04958.jpg" alt="DSC04958.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04962-HDR-Edit.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04962-HDR-Edit.jpg" alt="DSC04962-HDR-Edit.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04968-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04968-HDR.jpg" alt="DSC04968-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04974-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04974-HDR.jpg" alt="DSC04974-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04977-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04977-HDR.jpg" alt="DSC04977-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04983-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04983-HDR.jpg" alt="DSC04983-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04989-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04989-HDR.jpg" alt="DSC04989-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC04992-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC04992-HDR.jpg" alt="DSC04992-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05001-HDR-Edit.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05001-HDR-Edit.jpg" alt="DSC05001-HDR-Edit.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05007-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05007-HDR.jpg" alt="DSC05007-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05022-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05022-HDR.jpg" alt="DSC05022-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05030-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05030-HDR.jpg" alt="DSC05030-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05031-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05031-HDR.jpg" alt="DSC05031-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05034-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05034-HDR.jpg" alt="DSC05034-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05037-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05037-HDR.jpg" alt="DSC05037-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05040-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05040-HDR.jpg" alt="DSC05040-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05043-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05043-HDR.jpg" alt="DSC05043-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05049-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05049-HDR.jpg" alt="DSC05049-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05052-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05052-HDR.jpg" alt="DSC05052-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05055-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05055-HDR.jpg" alt="DSC05055-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05058-HDR-Edit.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05058-HDR-Edit.jpg" alt="DSC05058-HDR-Edit.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05067-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05067-HDR.jpg" alt="DSC05067-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05070-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05070-HDR.jpg" alt="DSC05070-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05073.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05073.jpg" alt="DSC05073.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05074-Edit.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05074-Edit.jpg" alt="DSC05074-Edit.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05076.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05076.jpg" alt="DSC05076.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05077.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05077.jpg" alt="DSC05077.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05081-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05081-HDR.jpg" alt="DSC05081-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05087.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05087.jpg" alt="DSC05087.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05091-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05091-HDR.jpg" alt="DSC05091-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05094-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05094-HDR.jpg" alt="DSC05094-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05099-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05099-HDR.jpg" alt="DSC05099-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05100-HDR-Edit.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05100-HDR-Edit.jpg" alt="DSC05100-HDR-Edit.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05109-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05109-HDR.jpg" alt="DSC05109-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05112.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05112.jpg" alt="DSC05112.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05113.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05113.jpg" alt="DSC05113.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05114.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05114.jpg" alt="DSC05114.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05121-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05121-HDR.jpg" alt="DSC05121-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05124-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05124-HDR.jpg" alt="DSC05124-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05127-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05127-HDR.jpg" alt="DSC05127-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05130-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05130-HDR.jpg" alt="DSC05130-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05133-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05133-HDR.jpg" alt="DSC05133-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05136.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05136.jpg" alt="DSC05136.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05137.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05137.jpg" alt="DSC05137.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05139-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05139-HDR.jpg" alt="DSC05139-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05142-HDR.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05142-HDR.jpg" alt="DSC05142-HDR.jpg" loading="lazy"></a>
+    <a href="/images/hyer-martinique/DSC05145.jpg" target="_blank"><img src="/images/hyer-martinique/DSC05145.jpg" alt="DSC05145.jpg" loading="lazy"></a>
   </div>
 
   <div class="footer">Generated by 1584 Design</div>
