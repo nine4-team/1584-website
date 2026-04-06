@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Report — Hyer's Martinique Rental</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: #1A1A1A;
+    color: rgba(250, 250, 247, 0.85);
+    font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 40px 24px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+
+  h1 {
+    font-family: 'Baskerville', Palatino, Garamond, serif;
+    color: #FAFAF7;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .subtitle { color: rgba(250, 250, 247, 0.5); font-size: 15px; margin-bottom: 32px; }
+  h2 {
+    font-family: 'Baskerville', Palatino, Garamond, serif;
+    color: #FAFAF7;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin: 48px 0 16px;
+  }
+  h2:first-of-type { margin-top: 8px; }
+
+  /* Stat cards */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .stats-row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .stat-card.highlight {
+    border-color: rgba(74, 222, 128, 0.35);
+    background: rgba(74, 222, 128, 0.06);
+  }
+  .stat-value {
+    font-family: 'Baskerville', Palatino, Garamond, serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: #FAFAF7;
+    letter-spacing: -0.5px;
+  }
+  .stat-card.highlight .stat-value {
+    color: #4ADE80;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: rgba(250, 250, 247, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+  .stat-card.highlight .stat-label {
+    color: rgba(74, 222, 128, 0.7);
+  }
+
+  /* Remaining invoices table */
+  .invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .invoice-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 15px;
+  }
+  .invoice-table tr:last-child td { border-bottom: none; }
+  .invoice-table .label-cell { color: rgba(250, 250, 247, 0.85); }
+  .invoice-table .amount-cell {
+    text-align: right;
+    font-family: 'Baskerville', Palatino, Garamond, serif;
+    font-size: 18px;
+    color: #FAFAF7;
+    white-space: nowrap;
+  }
+  .invoice-table .total-row td {
+    border-top: 1px solid rgba(154, 125, 85, 0.4);
+    background: rgba(154, 125, 85, 0.06);
+    padding: 18px 24px;
+  }
+  .invoice-table .total-row .label-cell {
+    color: #FAFAF7;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .invoice-table .total-row .amount-cell { color: #E8DED0; font-size: 20px; }
+
+  /* Collapsible section (transactions) */
+  .collapsible-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    margin-top: 16px;
+    overflow: hidden;
+  }
+  .collapsible-header {
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: background 0.15s;
+  }
+  .collapsible-header:hover { background: rgba(255, 255, 255, 0.05); }
+  .collapsible-title {
+    font-family: 'Baskerville', Palatino, Garamond, serif;
+    font-size: 18px;
+    color: #FAFAF7;
+    flex: 1;
+  }
+  .collapsible-count {
+    color: rgba(250, 250, 247, 0.4);
+    font-size: 13px;
+    margin-right: 12px;
+  }
+  .chevron {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+  }
+  .collapsible-section.open .chevron { transform: rotate(180deg); }
+  .collapsible-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .collapsible-section.open .collapsible-body {
+    max-height: 100000px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table.tx-table {
+    width: auto;
+    min-width: 100%;
+    border-collapse: collapse;
+  }
+  table.tx-table thead th {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(250, 250, 247, 0.4);
+    font-weight: 500;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+    background: rgba(255, 255, 255, 0.02);
+    white-space: nowrap;
+  }
+  table.tx-table tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 13px;
+    color: rgba(250, 250, 247, 0.75);
+    vertical-align: top;
+    white-space: nowrap;
+  }
+  table.tx-table tbody tr:last-child td { border-bottom: none; }
+  table.tx-table tbody tr:hover { background: rgba(255, 255, 255, 0.02); }
+  .tx-table .date-cell { white-space: nowrap; }
+  .tx-table .vendor-cell {
+    color: rgba(250, 250, 247, 0.6);
+    white-space: nowrap;
+  }
+  .tx-table .desc-cell {
+    max-width: 440px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .tx-table .amount-cell {
+    text-align: right;
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: 13px;
+    color: rgba(250, 250, 247, 0.75);
+  }
+  .tx-table .receipt-cell {
+    text-align: left;
+    white-space: nowrap;
+  }
+  .tx-table .receipt-cell .receipt-link { display: inline-block; margin-left: 6px; }
+  .tx-table .receipt-cell .receipt-link:first-child { margin-left: 0; }
+
+  .receipt-link {
+    color: #9a7d55;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(154, 125, 85, 0.3);
+    transition: border-color 0.3s ease;
+  }
+  .receipt-link:hover { border-bottom-color: #9a7d55; }
+
+  .footer {
+    text-align: center;
+    color: rgba(250, 250, 247, 0.3);
+    font-size: 13px;
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  @media (max-width: 900px) {
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 700px) {
+    .stats-row, .stats-row-3 { grid-template-columns: 1fr; }
+    .stat-value { font-size: 24px; }
+    table.tx-table { font-size: 12px; }
+    table.tx-table thead th, table.tx-table tbody td { padding: 8px 12px; }
+    .invoice-table td { padding: 14px 16px; }
+    .invoice-table .amount-cell { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Client Report</h1>
+  <p class="subtitle">Hyer's Martinique Rental</p>
+
+  <h2>Total Project</h2>
+  <div class="stats-row-3">
+    <div class="stat-card">
+      <div class="stat-value">$132,000.00</div>
+      <div class="stat-label">Project Budget</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">$129,827.62</div>
+      <div class="stat-label">Total Project Investment</div>
+    </div>
+    <div class="stat-card highlight">
+      <div class="stat-value">$2,172.38</div>
+      <div class="stat-label">Came In Under</div>
+    </div>
+  </div>
+
+  <h2>Furnishings</h2>
+  <div class="stats-row-3">
+    <div class="stat-card">
+      <div class="stat-value">$84,542.32</div>
+      <div class="stat-label">Total Spent</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">$100,561.13</div>
+      <div class="stat-label">Market Value</div>
+    </div>
+    <div class="stat-card highlight">
+      <div class="stat-value">$16,018.81</div>
+      <div class="stat-label">Furnishings Savings</div>
+    </div>
+  </div>
+
+  <h2>Remaining Invoices</h2>
+  <table class="invoice-table">
+    <tr>
+      <td class="label-cell">Final Design Fee</td>
+      <td class="amount-cell">$8,162.00</td>
+    </tr>
+    <tr>
+      <td class="label-cell">Reimbursement for Items</td>
+      <td class="amount-cell">$1,996.74</td>
+    </tr>
+    <tr>
+      <td class="label-cell">Install Expenses <span style="color:rgba(250,250,247,0.4);font-size:13px">(see transactions for breakdown)</span></td>
+      <td class="amount-cell">$5,298.00</td>
+    </tr>
+    <tr class="total-row">
+      <td class="label-cell">Total Owed</td>
+      <td class="amount-cell">$15,456.74</td>
+    </tr>
+  </table>
+  <p style="color:rgba(250,250,247,0.5); font-size:13px; margin-top:12px; text-align:center;">
+    These amounts are already included in the total project investment above.
+  </p>
+
+  <h2>Transactions for Accounting</h2>
+  <div class="collapsible-section">
+    <div class="collapsible-header" role="button" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">All Transactions</span>
+      <span class="collapsible-count">91 transactions</span>
+      <span class="chevron"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="transition:transform 0.2s"><path d="M3 4.5L6 7.5L9 4.5" stroke="rgba(250,250,247,0.3)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+    </div>
+    <div class="collapsible-body">
+      <table class="tx-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Vendor</th>
+            <th>Description</th>
+            <th style="text-align:right">Amount</th>
+            <th>Receipt</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="date-cell">Sep 10, 2025</td>
+          <td class="vendor-cell">1584 Design</td>
+          <td class="desc-cell">Initial Design Fee</td>
+          <td class="amount-cell">$16,325.00</td>
+          <td class="receipt-cell"><span style="color:rgba(250,250,247,0.3);font-size:13px">—</span></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Oct 19, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">4 navy/ white plaid lumbar pillows for bunk room; 2-pk navy satiate pillows; 2- X-tall brass candlestick lamps w/ brass shades; (1 of 2) glass lamps w/ brass stem</td>
+          <td class="amount-cell">$390.06</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-30T22-25-04-744%2F1767133504744_Screenshot_2025-12-30_at_12.23.51_PM.png?alt=media&amp;token=bd787578-7278-4c68-ad47-a185e8661227" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Oct 19, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Beige King cotton/linen quilt; 2 black and white plaid lampshade small lamps; 2 short oval alabaster lamps; large tic tac toe wooden game</td>
+          <td class="amount-cell">$514.72</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-30T22-16-52-003%2F1767133012002_Screenshot_2025-12-30_at_12.14.56_PM.png?alt=media&amp;token=44e850b0-c890-464d-81f1-2df09d98b00f" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-30T22-17-59-758%2F1767133079758_Screenshot_2025-12-30_at_12.17.46_PM.png?alt=media&amp;token=f46c0aee-6dda-40e6-9a6a-3c6294f562ad" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Oct 19, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Wood tv console w/ metal legs</td>
+          <td class="amount-cell">$541.86</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-31T03-06-03-092%2F1767150363092_Screenshot_2025-12-30_at_5.05.10_PM.png?alt=media&amp;token=23282508-dc07-48a8-b9f6-9558474df199" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Oct 19, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">King olive layering blanket; 2 brass pencil lamps with gray stone base; (2 of 2) glass lamp with brass stem; decorative accessory for $49.99 (348168)(?)</td>
+          <td class="amount-cell">$346.75</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-31T03-01-31-000%2F1767150090999_Screenshot_2025-12-30_at_5.01.22_PM.png?alt=media&amp;token=a7a2fbc6-ed60-4a84-a067-90c8d8d06e48" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Oct 19, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">4 black wool/ felt pillows with white pinstripes for bunk room</td>
+          <td class="amount-cell">$151.68</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-30T22-47-02-050%2F1767134822050_Screenshot_2025-12-30_at_12.46.46_PM.png?alt=media&amp;token=953908fa-ebeb-4db9-8a7a-5f73a1ce8359" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-30T23-50-08-449%2F1767138608448_Screenshot_2025-12-30_at_1.49.59_PM.png?alt=media&amp;token=c82a5ac3-9005-4063-9efe-75c3cfa2a14e" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Oct 21, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Wood round nightstand; $99.99 decorative accessory</td>
+          <td class="amount-cell">$249.24</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-31T03-08-24-198%2F1767150504197_Screenshot_2025-12-30_at_5.07.31_PM.png?alt=media&amp;token=3477a4e5-4608-4ce0-9642-7a3ace60cc0e" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Oct 29, 2025</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Wayfair import • Invoice # 4357691246 • Order date: 2025-10-29</td>
+          <td class="amount-cell">$12,338.59</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2025-12-31T01-12-03-049%2F1767143523049_Invoice_4357691246.pdf?alt=media&amp;token=c9d19667-6b40-462b-830b-4756dc9879d9" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Oct 29, 2025</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Wayfair import • Invoice # 4358568936 • Order date: 2025-10-29</td>
+          <td class="amount-cell">$7,597.06</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2025-12-31T00-49-48-380%2F1767142188380_Invoice_4358568936.pdf?alt=media&amp;token=d7e3a05a-8a4f-466a-adb0-6d630a6144c7" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Oct 31, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">2 cowhide ottomans (USED AT KEN &amp; DANITA’S HOUSE - swapping sku w/ tbd item - Camel Leather Pouf Ottoman); glazed pottery for family room floating shelves; wall art</td>
+          <td class="amount-cell">$567.81</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-31T03-12-09-293%2F1767150729293_Screenshot_2025-12-30_at_5.10.51_PM.png?alt=media&amp;token=8aeeb113-3774-4370-8193-5e4cfdd0e94b" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-31T03-13-48-866%2F1767150828866_Screenshot_2025-12-30_at_5.13.04_PM.png?alt=media&amp;token=96481cbc-8942-41a9-b499-deed4d5217b5" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Nov 1, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Found in email during audit, unsure items.</td>
+          <td class="amount-cell">$521.14</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T07-04-11-465%2F1768979051465_Screen_Shot_2026-01-21_at_12.02.15_AM.png?alt=media&amp;token=2427e12f-2183-47e7-88be-509c251c8931" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Nov 13, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Accent seating</td>
+          <td class="amount-cell">$266.86</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T01-39-35-208%2F1768959575208_image.jpg?alt=media&amp;token=61e6c7ea-b582-4028-b1e8-d103910d51a2" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Nov 19, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Returned Accent Seating 044766 (Maybe a Bench?)</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $140.88</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T05-46-09-416%2F1768974369416_image.jpg?alt=media&amp;token=193c4f4e-1e77-4f45-b4e2-cc3e1ed326e0" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 1, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Brown Leather oval bench w/ round fluted legs; gold arm cylinder floor lamp; marble rectangle box w/ agate on top</td>
+          <td class="amount-cell">$379.29</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-31T04-03-59-605%2F1767153839604_Screenshot_2025-12-30_at_6.03.51_PM.png?alt=media&amp;token=3c74f04f-3208-4158-a8de-4129feba46f9" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 1, 2025</td>
+          <td class="vendor-cell">Terrible’s</td>
+          <td class="desc-cell">Gas for Vegas shopping trip at Terrible’s - Stephanie St, Henderson, NV</td>
+          <td class="amount-cell">$123.32</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T05-30-40-324%2F1768973440324_image.jpg?alt=media&amp;token=467dbd83-7308-42e1-b01d-7b6d79b58b81" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 1, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Large Wall art; 2- packs of 4-pc agate small wall art; camel fur throw; succulents in black pot</td>
+          <td class="amount-cell">$476.77</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-31T03-18-16-101%2F1767151096101_Screenshot_2025-12-30_at_5.17.33_PM.png?alt=media&amp;token=dcd793aa-01b3-4a6f-9be4-c948ddd32dc6" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 1, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Wood book holder; throw pillows; wood curved nightstand; bronze mushroom floor lamp</td>
+          <td class="amount-cell">$352.15</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-31T03-26-54-976%2F1767151614976_Screenshot_2025-12-30_at_5.25.48_PM.png?alt=media&amp;token=ab17db69-51f1-4c0d-a2c9-6c2887e86c81" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-31T04-01-44-798%2F1767153704798_Screenshot_2025-12-30_at_6.01.20_PM.png?alt=media&amp;token=3503e87a-4114-4b5e-b4a8-48f25f66b631" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 1, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Wall art; 3 succulents in black pots; chenille lg down pillow for sofa</td>
+          <td class="amount-cell">$341.28</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-31T03-20-42-945%2F1767151242945_Screenshot_2025-12-30_at_5.19.49_PM.png?alt=media&amp;token=1e6d87b6-adf2-4286-8aba-0f5b95f70b81" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 1, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">7’ green eucalyptus tree in gray pot</td>
+          <td class="amount-cell">$195.06</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2025-12-31T03-23-53-141%2F1767151433141_Screenshot_2025-12-30_at_5.23.05_PM.png?alt=media&amp;token=12cbdd5d-729a-4167-b913-e63638c7ebcb" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 3, 2025</td>
+          <td class="vendor-cell">Elephant Stock</td>
+          <td class="desc-cell">2 large camping canvas art 48”x72” for 2 bunk rooms</td>
+          <td class="amount-cell">$1,387.62</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T01-24-36-047%2F1768958676047_Screen_Shot_2026-01-20_at_6.24.19_PM.png?alt=media&amp;token=f3bfd1f4-a443-45c7-a739-25a3bcd726d9" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 3, 2025</td>
+          <td class="vendor-cell">Ruggable.com</td>
+          <td class="desc-cell">8x10 flower rug &amp; 8x10 plaid rug for master &amp; guest bedrooms</td>
+          <td class="amount-cell">$664.82</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T19-45-21-219%2F1768851921219_Screenshot_2026-01-19_at_12.44.58_PM.png?alt=media&amp;token=26811237-b25e-4c25-8a8d-0ea046d18d85" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 3, 2025</td>
+          <td class="vendor-cell">Society 6</td>
+          <td class="desc-cell">2 Twin &amp; 2 Full plaid cotton comforters for bunk room</td>
+          <td class="amount-cell">$626.97</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T19-38-23-510%2F1768851503510_Screenshot_2026-01-19_at_12.33.01_PM.png?alt=media&amp;token=08a78bc3-23be-4495-9381-ac4ac3603331" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 3, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Watercolor framed wall art (town- beige tones); putting green</td>
+          <td class="amount-cell">$128.08</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T01-41-44-957%2F1768959704957_image.jpg?alt=media&amp;token=54b867eb-aefa-4349-ac41-f6bc66ac45cd" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 3, 2025</td>
+          <td class="vendor-cell">Amazon</td>
+          <td class="desc-cell">Bunk rooms: Stuffed coyotes &amp; foxes; throw blankets; wall art; throw pillows for bunks</td>
+          <td class="amount-cell">$871.32</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T20-03-06-075%2F1768852986074_IMG_2164.png?alt=media&amp;token=eff361e3-89fb-42d4-ab2c-45cb4ac95a2c" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F8728334b-cb99-4b44-a183-f8ec3972b9b9%2F114-0899309-7816204.pdf?alt=media&amp;token=5650de43-2be5-4def-8e9b-273575e7726f" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F8728334b-cb99-4b44-a183-f8ec3972b9b9%2F114-1144631-0265854.pdf?alt=media&amp;token=07785f3b-7891-4ac7-9b41-7710ccc40c8b" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 3, 2025</td>
+          <td class="vendor-cell">The Citizenry</td>
+          <td class="desc-cell">Lg Amala Jute Wall hanging for upstairs living room</td>
+          <td class="amount-cell">$250.19</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T19-16-51-341%2F1768850211341_Screenshot_2026-01-19_at_12.10.29_PM.png?alt=media&amp;token=09f9753f-d8e5-4f80-a460-bbfd30f999c9" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 4, 2025</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Wayfair import • Invoice # 4360724776 • Order date: 2025-12-04</td>
+          <td class="amount-cell">$7,500.74</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2025-12-31T00-42-53-838%2F1767141773838_Invoice_4360724776.pdf?alt=media&amp;token=6bc070e1-fdf5-456b-a190-2af77641e767" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 4, 2025</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Wayfair import • Invoice # 4372467336 • Order date: 2025-12-04</td>
+          <td class="amount-cell">$2,573.26</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2025-12-31T00-38-17-626%2F1767141497626_Invoice_4372467336.pdf?alt=media&amp;token=8bfd09b2-5450-49d0-8857-5b4caae76899" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 9, 2025</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Wayfair import • Invoice # 4374252816 • Order date: 2025-12-09</td>
+          <td class="amount-cell">$2,373.99</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2025-12-31T01-36-59-391%2F1767145019391_Invoice_4374252816.pdf?alt=media&amp;token=73a28349-d2bb-4345-bae1-71dcf5ddb20c" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 9, 2025</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Wayfair import • Invoice # 4372490186 • Order date: 2025-12-09</td>
+          <td class="amount-cell">$1,406.66</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2025-12-31T00-34-50-488%2F1767141290488_Invoice_4372490186.pdf?alt=media&amp;token=e1f27eaa-4ad9-4fe8-839a-f4e9bf17dc63" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 11, 2025</td>
+          <td class="vendor-cell">Amazon</td>
+          <td class="desc-cell">3 woven pendant lights to replace lights over kitchen island</td>
+          <td class="amount-cell">$648.54</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T05-24-05-459%2F1768973045459_IMG_2268.png?alt=media&amp;token=1f80d3cc-dcdf-4d48-af44-afbae21da57b" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 12, 2025</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Wayfair import • Invoice # 4374534786 • Order date: 2025-12-12</td>
+          <td class="amount-cell">$2,065.33</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2025-12-31T00-30-37-982%2F1767141037982_Invoice_4374534786.pdf?alt=media&amp;token=6111eac8-db4a-40b3-80b7-0428dc9d6de1" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 15, 2025</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Wayfair import • Invoice # 4375186226 • Order date: 2025-12-15</td>
+          <td class="amount-cell">$1,066.97</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2025-12-31T01-39-56-468%2F1767145196468_Invoice_4375186226.pdf?alt=media&amp;token=4a512aee-11b5-4db1-981e-5c3cc46270f7" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 15, 2025</td>
+          <td class="vendor-cell">West Elm</td>
+          <td class="desc-cell">Haven 2-Seat Bench 2-Piece Left Bumper Chaise Sectional, Performance Chenille Crossweave Tawny for Upstairs Living Room</td>
+          <td class="amount-cell">$3,445.25</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T19-08-23-144%2F1768849703144_Screenshot_2026-01-19_at_12.08.13_PM.png?alt=media&amp;token=e8e9e347-af23-4c51-b775-d99978c3d305" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 15, 2025</td>
+          <td class="vendor-cell">Etsy</td>
+          <td class="desc-cell">2 plaid pillows for upstairs sectional</td>
+          <td class="amount-cell">$102.99</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T01-28-26-537%2F1768958906537_Screen_Shot_2026-01-20_at_6.28.09_PM.png?alt=media&amp;token=0a98debb-2dd6-4d8f-94b7-1163005ae8f3" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 16, 2025</td>
+          <td class="vendor-cell">Amazon</td>
+          <td class="desc-cell">Curtains (for every space but bunk rooms); rug pads for every room; vacuum; baby high chair &amp; clip chair; portable baby crib; 2-pk utility shelving; mattress protectors for every bed; pillow protectors for every pillow (+ extras)</td>
+          <td class="amount-cell">$2,742.81</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T05-26-06-576%2F1768973166576_IMG_2309.png?alt=media&amp;token=fd4b9d39-b9fa-4952-acec-cbce346dc3f7" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F0c6f04d0-8679-4b84-97de-bf1bf00fb677%2F114-4368359-9583461.pdf?alt=media&amp;token=15d9f3cd-5916-47a9-939d-d8b6d04a3218" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F0c6f04d0-8679-4b84-97de-bf1bf00fb677%2F114-4846595-0028264.pdf?alt=media&amp;token=eb158b18-d5d2-452d-91d4-dce81a0e1b84" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F0c6f04d0-8679-4b84-97de-bf1bf00fb677%2F114-6005226-5549064.pdf?alt=media&amp;token=e53c0ebc-1067-44bf-aea5-71cb29033afc" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F0c6f04d0-8679-4b84-97de-bf1bf00fb677%2F114-6972810-2242643.pdf?alt=media&amp;token=78af65d2-9269-4d01-8881-2d297a723fdd" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 17, 2025</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Wayfair import • Invoice # 4378263386 • Order date: 2025-12-17</td>
+          <td class="amount-cell">$2,708.47</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2025-12-31T00-24-27-169%2F1767140667169_Invoice_4378263386.pdf?alt=media&amp;token=52f80b57-7609-4b78-820f-b26a67eba48b" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 18, 2025</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Wayfair import • Invoice # 4379918286 • Order date: 2025-12-18</td>
+          <td class="amount-cell">$527.31</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2025-12-31T00-20-30-300%2F1767140430300_Invoice_4379918286.pdf?alt=media&amp;token=74675448-167f-42ca-9577-5eb5137b05dc" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 22, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Pillows, wood/ marble accent table, wall art, olive green recliner, marble coasters, black mushroom floor lamp, large agate rock (No Email Receipt)</td>
+          <td class="amount-cell">$1,430.26</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T02-12-22-754%2F1768961542754_image.jpg?alt=media&amp;token=abbcc475-a26a-426e-a4a1-de22bd370dee" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 22, 2025</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Lamps, throws, black mushroom floor lamp (2 of 2), decorative accessories, light olive green 8x 10 rug, pillows</td>
+          <td class="amount-cell">$1,867.12</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T02-24-25-005%2F1768962265005_image.jpg?alt=media&amp;token=aa796890-ad67-4b10-9adb-ffba9fd5e339" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 22, 2025</td>
+          <td class="vendor-cell">Hobby Lobby</td>
+          <td class="desc-cell">Floral stems; 24”x 36” wood frame for coyote poster in bunk room</td>
+          <td class="amount-cell">$273.28</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-21T01-30-49-027%2F1768959049027_image.jpg?alt=media&amp;token=5685f521-061c-4373-adb4-da7441d6ddad" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 22, 2025</td>
+          <td class="vendor-cell">Corner Mart</td>
+          <td class="desc-cell">Gas for Suburban to Vegas for shopping at Horner Mart - Sunset Blvd</td>
+          <td class="amount-cell">$89.25</td>
+          <td class="receipt-cell"><span style="color:rgba(250,250,247,0.3);font-size:13px">—</span></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 26, 2025</td>
+          <td class="vendor-cell">1584 Design</td>
+          <td class="desc-cell">2nd Design Fee Payment</td>
+          <td class="amount-cell">$8,163.00</td>
+          <td class="receipt-cell"><span style="color:rgba(250,250,247,0.3);font-size:13px">—</span></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Dec 26, 2025</td>
+          <td class="vendor-cell">Deni&#x27;s Kitchens</td>
+          <td class="desc-cell">Kitchen Supplies &amp; Install</td>
+          <td class="amount-cell">$5,000.00</td>
+          <td class="receipt-cell"><span style="color:rgba(250,250,247,0.3);font-size:13px">—</span></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 5, 2026</td>
+          <td class="vendor-cell">BLVD Home</td>
+          <td class="desc-cell">BlvdHome Sales Order SALE74394 — TVs, mounts, and installation for Hyer&#x27;s Martinique Rental. 2x 65&quot; Samsung, 5x 55&quot; Samsung, 1x full motion mount, 6x fixed wall mounts, 7x electronic installs.</td>
+          <td class="amount-cell">$4,152.36</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com:443/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2FT-1767664312931-98tt%2F1907A224-9E8A-45BE-B805-A00A8BC09AA0.jpg?alt=media&amp;token=be078b2a-7260-4cf7-97bb-31ae59ea06fd" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 5, 2026</td>
+          <td class="vendor-cell">BLVD Home</td>
+          <td class="desc-cell">Mattresses: 4 kings, 4 fulls, and 4 twins ( free delivery)</td>
+          <td class="amount-cell">$9,039.55</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2026-01-06T01-57-33-707%2F1767664653707_image.jpg?alt=media&amp;token=6f269fcc-1c00-4758-873c-786385e089e3" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2026-01-06T01-57-37-041%2F1767664657041_image.jpg?alt=media&amp;token=45c9b50a-f633-4da5-bdd5-c59afed895c8" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2026-01-06T01-57-39-597%2F1767664659597_IMG_9041.jpeg?alt=media&amp;token=374f645a-38b3-4fff-8c04-8a4ec4c196b7" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 5, 2026</td>
+          <td class="vendor-cell">Joon Loloi</td>
+          <td class="desc-cell">*No sales tax for business account</td>
+          <td class="amount-cell">$259.00</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2026-01-06T03-48-21-511%2F1767671301511_IMG_2801.png?alt=media&amp;token=84f82fbb-e463-4e84-a3df-17ab3afab757" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-images%2F2026-01-06T03-48-22-525%2F1767671302525_IMG_2800.png?alt=media&amp;token=ee7e4c0c-6cd9-416b-8cfe-d66745573db9" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-01-06T03-48-24-032%2F1767671304032_IMG_2802.jpeg?alt=media&amp;token=935423e4-a5eb-4a47-a1f3-acd92920b24e" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 7, 2026</td>
+          <td class="vendor-cell">Amazon</td>
+          <td class="desc-cell">Bunk room art- coyote &amp; fox, luggage racks, iron &amp; board, hangers, bunk room gray throws, squeegees, plungers, BBQ utensils</td>
+          <td class="amount-cell">$1,226.04</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Fda2db1d1-fe6c-4239-8eb1-2ac7d8aa7889%2F114-3496579-9691400.pdf?alt=media&amp;token=2e6ccaf6-05c4-406a-b14e-3a026bab2b80" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Fda2db1d1-fe6c-4239-8eb1-2ac7d8aa7889%2F114-5538375-7906618.pdf?alt=media&amp;token=2524ecc0-1cb1-4153-847b-fa9af7ddc6eb" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Fda2db1d1-fe6c-4239-8eb1-2ac7d8aa7889%2F114-6727002-3813825.pdf?alt=media&amp;token=dd439cd4-8a67-45da-b01c-a7079f256cb7" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Fda2db1d1-fe6c-4239-8eb1-2ac7d8aa7889%2F114-9617882-5081824.pdf?alt=media&amp;token=25fda655-b32e-4d2f-8ec0-fd23234c4884" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-01-08T03-24-26-372%2F1767842666372_IMG_2764.png?alt=media&amp;token=68b82348-3a39-4985-b269-69d102b0029f" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-01-08T03-24-27-675%2F1767842667675_IMG_2765.png?alt=media&amp;token=d7153fb6-d935-4fc3-9fd2-528f5ce43996" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-01-08T03-24-29-005%2F1767842669005_IMG_2766.png?alt=media&amp;token=a2f798ba-5cfd-4846-ae13-54884944864c" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-01-08T03-24-30-372%2F1767842670372_IMG_2767.png?alt=media&amp;token=b8f37db4-8803-4c41-9dbf-4e34001488fd" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Fda2db1d1-fe6c-4239-8eb1-2ac7d8aa7889%2FIMG_2780.png?alt=media&amp;token=ec6a7c36-3a54-4bdc-8ba4-bd48128ab732" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Fda2db1d1-fe6c-4239-8eb1-2ac7d8aa7889%2FIMG_2776.png?alt=media&amp;token=6ac6eace-e017-4e62-a058-5151cd3d3905" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Fda2db1d1-fe6c-4239-8eb1-2ac7d8aa7889%2FIMG_2777.png?alt=media&amp;token=e86c6f84-5727-43e9-854a-2c4b1f3a61d1" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Fda2db1d1-fe6c-4239-8eb1-2ac7d8aa7889%2FIMG_2778.png?alt=media&amp;token=45a3d312-ff77-449b-900a-01daddba9060" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Fda2db1d1-fe6c-4239-8eb1-2ac7d8aa7889%2FIMG_2779.png?alt=media&amp;token=d612f5ab-1f81-4c51-bc55-f6a036524569" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 9, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">2 round beige stone top w/ wood base accent tables, beige stone accent “T” table, 2 black string framed wall art for floating shelves, “misc” gray velvet pillow</td>
+          <td class="amount-cell">$742.28</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-11T22-52-24-102%2F1768171944102_image.jpg?alt=media&amp;token=31424fae-ed81-4205-b329-5bd69ec6c2b1" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 9, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">2 metal black/ gold modern style library table lamps</td>
+          <td class="amount-cell">$130.03</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-11T22-45-37-680%2F1768171537680_image.jpg?alt=media&amp;token=56b21c6d-68b0-46ad-944c-4f6918434e17" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 9, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Double white glass shade vintage library-style desk lamp, pot of broccoli-like greenery, accessories, pillows, wall art</td>
+          <td class="amount-cell">$628.45</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-11T22-49-41-198%2F1768171781198_image.jpg?alt=media&amp;token=9e99819a-06f2-47db-af1d-1032a2e2ccad" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-11T22-49-44-221%2F1768171784221_image.jpg?alt=media&amp;token=2eccf674-8bc4-492b-a131-b8c920fe385c" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 9, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Accessories, 2 rectangle tapestry stools w/ wooden crossed legs, wall art, pillow</td>
+          <td class="amount-cell">$643.56</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-11T22-47-42-523%2F1768171662523_image.jpg?alt=media&amp;token=e05e489b-4818-4614-b7de-f36a168a2a05" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-11T22-47-44-707%2F1768171664707_image.jpg?alt=media&amp;token=ea3ba03b-36a8-4eb9-aca1-c9cf343ee831" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 11, 2026</td>
+          <td class="vendor-cell">Maverick</td>
+          <td class="desc-cell">Gas to Vegas for accessory shopping</td>
+          <td class="amount-cell">$85.13</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-11T22-21-01-494%2F1768170061493_image.jpg?alt=media&amp;token=5d323006-1be1-45d6-96af-b015207f7eb1" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 11, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">3 throws, 1 pillow</td>
+          <td class="amount-cell">$178.78</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-11T22-39-29-146%2F1768171169145_image.jpg?alt=media&amp;token=84ed8230-b496-4215-8d44-24bebfdb398e" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 11, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">2 of 2 solid wood black round accent table</td>
+          <td class="amount-cell">$85.39</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-13T01-32-28-285%2F1768267948285_image.jpg?alt=media&amp;token=c73b4b6a-4c54-41f6-8da8-73b168b13fb7" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 11, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">1st solid wood black round accent table</td>
+          <td class="amount-cell">$85.39</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-04T07-23-21-294%2F1770189801294_Screenshot_2026-02-03_at_9.23.11_PM.png?alt=media&amp;token=18da6a0a-d1f5-442a-b06c-e70559da782c" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 14, 2026</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Polywood outdoor furniture, outdoor Classic Home pillows, outdoor rugs, camel king quilt set</td>
+          <td class="amount-cell">$6,839.59</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F39dc01a3-d5a6-4e2f-93cd-93a094fe91b9%2FInvoice_4396189806.pdf?alt=media&amp;token=b12280d1-062f-4f30-9653-fcf29388389b" target="_blank" class="receipt-link">PDF ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 14, 2026</td>
+          <td class="vendor-cell">Maverick- Littlefield, AZ</td>
+          <td class="desc-cell">Gas to shop in Vegas</td>
+          <td class="amount-cell">$42.86</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T16-51-42-498%2F1768841502498_image.jpg?alt=media&amp;token=92988bee-b3e6-4b18-954d-799a65c3e066" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 15, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Returned 3 pillows</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $97.51</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T16-57-20-610%2F1768841840610_image.jpg?alt=media&amp;token=ec188f0e-d970-4c4c-b5e3-b6caf6de6610" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 15, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Returned taupe leather tufted swivel chair (damages on arm)</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $540.79</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T16-54-19-252%2F1768841659252_image.jpg?alt=media&amp;token=fde3d76b-2a43-40f1-a09c-388ef52ae863" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-01-19T16-54-23-398%2F1768841663398_IMG_2986.jpeg?alt=media&amp;token=110bd8a0-3bdf-4a7e-a3d4-e24c778c6e81" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 15, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Returned 2 lamps</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $130.03</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T16-59-50-908%2F1768841990908_image.jpg?alt=media&amp;token=0f3b811f-914c-412e-a2e9-52b0a06aa431" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 15, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Curtains</td>
+          <td class="amount-cell">$275.23</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T17-18-18-591%2F1768843098591_image.jpg?alt=media&amp;token=4d60cabf-1a2a-4eeb-99fb-1fceb422faca" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 15, 2026</td>
+          <td class="vendor-cell">Amazon</td>
+          <td class="desc-cell">Curtains, curtains rings</td>
+          <td class="amount-cell">$516.14</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-15T17-24-54-328%2F1768497894328_IMG_2984.png?alt=media&amp;token=2d4ea98b-ca9a-4932-8bf4-147f1dcd98c2" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F5cafdf4a-3579-4cf4-9d93-5de802255d20%2F114-5141671-1612245.pdf?alt=media&amp;token=8ff6eab5-664d-48d3-9040-f4663d53a5c6" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F5cafdf4a-3579-4cf4-9d93-5de802255d20%2F114-8185066-9439459.pdf?alt=media&amp;token=1a761953-9290-4b71-a0ba-0883103a709e" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F5cafdf4a-3579-4cf4-9d93-5de802255d20%2F114-8624753-9258668.pdf?alt=media&amp;token=620d5aed-bb47-4ada-9813-7648e71ab0bd" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-01-15T17-24-55-385%2F1768497895385_IMG_2985.png?alt=media&amp;token=bc25f0d4-b41e-4f4d-8f5a-5172676be01b" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 15, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Returned 2 lamps</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $108.35</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T16-58-21-664%2F1768841901664_image.jpg?alt=media&amp;token=c4320fbc-1172-46ce-82fe-506f3e06c968" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 15, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Horse framed art for MBR, 2 white agate framed wall art</td>
+          <td class="amount-cell">$238.39</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-19T17-01-19-447%2F1768842079447_image.jpg?alt=media&amp;token=56f21e32-9e36-45f4-8721-8da74c40de5f" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-01-19T17-01-23-437%2F1768842083437_image.jpg?alt=media&amp;token=99ae3304-41cf-420b-8537-4f2a7c1a7c0e" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 22, 2026</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Returned Arlington 96&quot; Sideboard (Four Hands). Original purchase: 23926e96-779b-420f-8258-6cd2ff8ed17c (Dec 12, $2,065.33, Invoice #4374534786).</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $2,065.33</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-23T04-08-02-220%2F1769141282220_IMG_3121.png?alt=media&amp;token=55c3e83c-1bd6-4b5c-a6ba-99258ceb6ffe" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-23T04-08-03-221%2F1769141283221_IMG_3120.png?alt=media&amp;token=69292c43-b4e3-4b4d-81e0-7095b8949745" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 26, 2026</td>
+          <td class="vendor-cell">Amazon</td>
+          <td class="desc-cell">Sleeping fox statue for bunk room bathroom counter</td>
+          <td class="amount-cell">$32.90</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-26T15-01-19-650%2F1769439679650_IMG_3185.png?alt=media&amp;token=6206bd02-ee57-4985-8fe4-9b5acf6c2958" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-26T15-01-21-092%2F1769439681092_IMG_3186.png?alt=media&amp;token=6d7a4032-e457-4c17-b025-e925dfa5b8b4" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F2224113c-aa3d-46c4-ab90-c761cf601a54%2F114-5145607-8477850.pdf?alt=media&amp;token=baf1c99c-e85f-47cc-8840-737db5e8b865" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-01-26T15-01-22-420%2F1769439682420_IMG_3188.jpeg?alt=media&amp;token=f4c8b8f1-cd3f-4ac8-b881-f149c2d99aa0" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 26, 2026</td>
+          <td class="vendor-cell">Amazon</td>
+          <td class="desc-cell">2 burnt orange lumbar pillow covers for fox bunk room &amp; 4 down 12x20&quot; pillow inserts</td>
+          <td class="amount-cell">$68.08</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-26T21-59-47-257%2F1769464787257_IMG_3196.png?alt=media&amp;token=d4149ed1-eea6-42d4-a153-f134717ffb2c" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-26T21-59-48-242%2F1769464788242_IMG_3197.png?alt=media&amp;token=7dae2a89-5835-47d2-b8f1-5ca6369d8925" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F76e531ad-1b39-4189-babb-2b145d8a46a3%2F114-9463149-1545041.pdf?alt=media&amp;token=ee180dc8-566a-4682-a8d6-5f6ff15f45e3" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-01-26T21-59-48-859%2F1769464788859_IMG_3195.png?alt=media&amp;token=77376fde-1857-436f-a936-64ff811cba17" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 28, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Returned marble “T” accent table back onto Hyers’ credit card.</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $108.36</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-29T22-17-31-073%2F1769725051073_image.jpg?alt=media&amp;token=004bd280-28d6-40a0-969c-68cfef64b532" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 28, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">RETURN W/ RECEIPT</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $173.38</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-03T02-45-50-223%2F1770086750223_Screenshot_2026-02-02_at_4.45.41_PM.png?alt=media&amp;token=21337ff1-1a98-47d2-8351-d70a392db3d6" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 28, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Returned 2 peacock blue pillows/ large taupe/ pink flower wall art and tapestry pouf for Hyers, but after cutoff for 30 days, so got returned on gift card- 1584 needs to buy back from Hyers.</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $290.51</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-29T23-20-23-858%2F1769728823858_image.jpg?alt=media&amp;token=e5cce0ab-34f1-44fd-ab22-910d31d3b9ca" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-29T23-20-25-479%2F1769728825479_image.jpg?alt=media&amp;token=5062b60a-a716-4d76-8baa-aaa12fdc9e6a" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-03T05-01-22-422%2F1770094882422_Screenshot_2026-02-02_at_7.01.04_PM.png?alt=media&amp;token=7743e1a8-6813-4a84-9d73-c80f8169c6fa" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 30, 2026</td>
+          <td class="vendor-cell">Amazon</td>
+          <td class="desc-cell">2 packs 6 count bath mats- RED ROCK RECENTLY DOESN&#x27;T COVER THEM ANYMORE- EXTRA COST.</td>
+          <td class="amount-cell">$58.70</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-30T21-53-13-595%2F1769809993595_IMG_3304.png?alt=media&amp;token=ffa457c4-76f9-478f-a7c0-bcdb61ed6fa1" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-01-30T21-53-14-449%2F1769809994449_IMG_3305.png?alt=media&amp;token=6d750c09-77bc-4a5b-bebc-464f8679b915" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F4aee798c-0094-49dc-a688-4dd4af9edd7a%2F114-2816109-9873045.pdf?alt=media&amp;token=f0d6308f-908b-42ac-b097-5727e0f208f1" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-01-30T21-53-15-167%2F1769809995167_IMG_3303.png?alt=media&amp;token=7ae0fb4e-89e8-4432-8893-18d5cff3b549" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 31, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Returned large wall art I didn’t use to Hyers’ 0579 card.</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $140.88</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-01T16-31-09-802%2F1769963469802_image.jpg?alt=media&amp;token=4a8fcf99-d762-489c-8291-45783ae95958" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 31, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Returned 3-geode vertical framed wall art that was damaged. 1584 needs to buy back that from Hyers.</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $86.69</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-01T03-40-05-071%2F1769917205071_IMG_3341.jpeg?alt=media&amp;token=ddd4c860-e32e-4f81-9f70-6bbcc12b917e" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 31, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Returned small tree landscape wall art I didn’t use to Hyers’ 0579 card.</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $48.76</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-01T16-32-27-059%2F1769963547059_image.jpg?alt=media&amp;token=9ece2296-178e-4ff3-9619-5603a54ab95c" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Jan 31, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Returned wall art I didn’t use to Hyers’ credit card.</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $86.69</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-01T16-29-44-297%2F1769963384297_image.jpg?alt=media&amp;token=993735d5-6ee7-49c6-901f-b78ba7b9ad24" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 1, 2026</td>
+          <td class="vendor-cell">Amazon</td>
+          <td class="desc-cell">Returning ochre throw- color was wrong. Amazing refunding $45.89</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $45.89</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-01T21-06-48-258%2F1769980008257_IMG_3373.png?alt=media&amp;token=144f79a9-5536-4813-a841-75376a7453b6" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-02-01T21-06-49-276%2F1769980009276_IMG_3375.png?alt=media&amp;token=c35b667f-cbd0-4ebf-847f-32db92130807" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 2, 2026</td>
+          <td class="vendor-cell">Amazon</td>
+          <td class="desc-cell">Pillow stuffers for covers, wooden cook book holder, 4 brown throw blankets for living room</td>
+          <td class="amount-cell">$402.87</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-02T15-24-15-163%2F1770045855163_IMG_3515.png?alt=media&amp;token=0f6eb6e1-773a-4824-bead-4afa4723e52b" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-02T15-24-15-992%2F1770045855992_IMG_3516.png?alt=media&amp;token=e77e216d-cb15-4d05-9e33-e7469801e6e1" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F96390bc9-d793-40af-905f-c76d82e5e745%2F114-6357064-0634664.pdf?alt=media&amp;token=9d683547-75dd-47c4-a1f0-0cb0fb9004eb" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-02-02T15-24-16-701%2F1770045856701_IMG_3512.png?alt=media&amp;token=2312571b-2a0d-4e66-954c-8f76a7afb260" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-02-02T15-24-17-220%2F1770045857220_IMG_3513.png?alt=media&amp;token=57cca429-717f-44a0-a35a-72328d910e09" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-02-02T15-24-17-736%2F1770045857736_IMG_3514.png?alt=media&amp;token=e5fe5d23-8125-4c39-8bec-71e50e7ef871" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 4, 2026</td>
+          <td class="vendor-cell">Home Depot</td>
+          <td class="desc-cell">2 gold curtain rods for hanging leather rug in main living room- returning 2 from Lowe’s (didn’t have a center bracket)</td>
+          <td class="amount-cell">$85.36</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-05T01-14-40-046%2F1770254080046_image.jpg?alt=media&amp;token=822e5a16-d87d-469d-b495-04c1b1f86af8" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 5, 2026</td>
+          <td class="vendor-cell">Amazon</td>
+          <td class="desc-cell">Last curtain panel for dining toom</td>
+          <td class="amount-cell">$41.07</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-05T14-32-32-863%2F1770301952863_IMG_3609.png?alt=media&amp;token=cc3f6792-efeb-43af-aa45-d936543d8a20" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-05T14-32-33-729%2F1770301953729_IMG_3610.png?alt=media&amp;token=f054e657-5d59-4223-a37f-b35744639bb3" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2F465646a7-c5da-437e-9fdc-6b83c8284d19%2F114-3254160-7849845.pdf?alt=media&amp;token=969aba66-1b8f-4874-893d-10cb5454bc04" target="_blank" class="receipt-link">PDF ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-02-05T14-32-34-753%2F1770301954753_IMG_3611.png?alt=media&amp;token=5f57ca15-3a32-441b-a3d5-556f207d0002" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 8, 2026</td>
+          <td class="vendor-cell">The Citizenry</td>
+          <td class="desc-cell">Refunded to client card a 10% discount for delay of wall hanging.</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $25.00</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-09T05-37-19-203%2F1770615439203_IMG_4188.png?alt=media&amp;token=14be72eb-1b9c-4a93-95a6-897472c426a7" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 9, 2026</td>
+          <td class="vendor-cell">Switchpoint Thrift Store</td>
+          <td class="desc-cell">4 Down pillow stuffers</td>
+          <td class="amount-cell">$9.00</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-11T19-26-55-749%2F1770838015749_image.jpg?alt=media&amp;token=1b538d90-c2cf-41fd-968a-9bf187830866" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 9, 2026</td>
+          <td class="vendor-cell">Deseret Industries Thrift Store</td>
+          <td class="desc-cell">100 kids’ books &amp; 10 games for bunk rooms and game area.</td>
+          <td class="amount-cell">$125.00</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-11T19-29-05-203%2F1770838145203_image.jpg?alt=media&amp;token=fc9b6cfa-7e0e-470c-bfbc-8162ac80291f" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-02-11T19-29-06-482%2F1770838146482_IMG_4219.jpeg?alt=media&amp;token=8995cc72-edde-4584-b705-b2a35cbb3129" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Fother-images%2F2026-02-11T19-29-06-943%2F1770838146943_IMG_4218.jpeg?alt=media&amp;token=b8f8af87-76d4-4157-9ed1-f546ceec8fb1" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 20, 2026</td>
+          <td class="vendor-cell">Target</td>
+          <td class="desc-cell">Conair Hair Dryer</td>
+          <td class="amount-cell">$21.34</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-27T00-33-17-872%2F1772152397872_image.jpg?alt=media&amp;token=42d2f6e2-28d2-4d1e-a552-f6fadcf00631" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 20, 2026</td>
+          <td class="vendor-cell">Home Depot</td>
+          <td class="desc-cell">Mop/ mop bucket/ 2 propane tanks for grill/ broom &amp; dustpan for Hyers- required by Red Rock Property Mgmt</td>
+          <td class="amount-cell">$216.42</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-28T21-30-00-041%2F1772314200041_image.jpg?alt=media&amp;token=b7f065e2-e74d-4c7d-8094-e0e94eddf3b5" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 22, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">Return throw from Hyer’s transaction and received in store credit</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $65.01</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-23T22-59-57-057%2F1771887597056_IMG_5049.jpeg?alt=media&amp;token=b0ad3c29-3f12-46d8-bf02-6624e8160ca1" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 22, 2026</td>
+          <td class="vendor-cell">Homegoods</td>
+          <td class="desc-cell">returned one decorative pillow - item sku 049182</td>
+          <td class="amount-cell"><span style="color:rgba(250,250,247,0.4)">Return: $32.50</span></td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-23T23-03-09-473%2F1771887789473_IMG_5051.jpeg?alt=media&amp;token=ae008e14-4832-41dd-80c0-dcc32168a0a1" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Feb 26, 2026</td>
+          <td class="vendor-cell">Target</td>
+          <td class="desc-cell">Hair dryer and firsthand kit required by Red Rock for Hyers</td>
+          <td class="amount-cell">$41.40</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com/v0/b/ledger-nine4.firebasestorage.app/o/migrated%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2FHyer_s_Martinique_Rental%2Freceipt-attachments%2F2026-02-27T00-20-19-829%2F1772151619829_image.jpg?alt=media&amp;token=7c03db9b-5704-445f-bdff-af18b560f017" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Apr 2, 2026</td>
+          <td class="vendor-cell">Wayfair</td>
+          <td class="desc-cell">Last set of 2 leather dining chairs</td>
+          <td class="amount-cell">$439.99</td>
+          <td class="receipt-cell"><a href="https://firebasestorage.googleapis.com:443/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Ff2TQ8SvktoeOZM51uwqb%2FF97DA483-5E8B-4122-9EC9-18AC34FED9D2.jpg?alt=media&amp;token=fb371218-2b68-477c-8cbb-37f2843b0a08" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com:443/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Ff2TQ8SvktoeOZM51uwqb%2F94DE367A-745A-4B9E-BE09-237F44022FA8.jpg?alt=media&amp;token=5c774241-28ba-49b8-b065-2d7441215fcc" target="_blank" class="receipt-link">IMG ↗</a> · <a href="https://firebasestorage.googleapis.com:443/v0/b/ledger-nine4.firebasestorage.app/o/accounts%2F1dd4fd75-8eea-4f7a-98e7-bf45b987ae94%2Ftransactions%2Ff2TQ8SvktoeOZM51uwqb%2FB7344099-C8AD-44F8-8DE8-780DAD269D74.jpg?alt=media&amp;token=6d8eded6-059e-44bd-9e86-cdb5da32cfb0" target="_blank" class="receipt-link">IMG ↗</a></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Apr 6, 2026</td>
+          <td class="vendor-cell">Install Expenses</td>
+          <td class="desc-cell">Cost of Storage, Delivery, Movers, Assembly and Install Crew</td>
+          <td class="amount-cell">$5,298.00</td>
+          <td class="receipt-cell"><span style="color:rgba(250,250,247,0.3);font-size:13px">—</span></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Apr 6, 2026</td>
+          <td class="vendor-cell">Final Design Fee</td>
+          <td class="desc-cell">Final design fee invoice (upcoming)</td>
+          <td class="amount-cell">$8,162.00</td>
+          <td class="receipt-cell"><span style="color:rgba(250,250,247,0.3);font-size:13px">—</span></td>
+        </tr>
+        <tr>
+          <td class="date-cell">Apr 6, 2026</td>
+          <td class="vendor-cell">Reimbursement for Items</td>
+          <td class="desc-cell">Reimbursement for items (upcoming)</td>
+          <td class="amount-cell">$1,996.74</td>
+          <td class="receipt-cell"><span style="color:rgba(250,250,247,0.3);font-size:13px">—</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">Generated by 1584 Design</div>
+
+</div>
+</body>
+</html>
