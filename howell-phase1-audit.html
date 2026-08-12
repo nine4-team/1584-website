@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Phase 1 Project Audit - Howell Family Orlando Home | 1584 Design</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+        :root {
+            --dark: #212121;
+            --darker: #171717;
+            --gold: #9a7d55;
+            --cream: #f8f5f0;
+            --light-grey: #f5f5f5;
+            --medium-grey: #e0e0e0;
+            --text: #333333;
+            --spacing-unit: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: white;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--dark);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: calc(var(--spacing-unit) * 6);
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            font-weight: 300;
+            margin-top: calc(var(--spacing-unit) * 4);
+            margin-bottom: calc(var(--spacing-unit) * 6);
+            color: var(--gold);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: calc(var(--spacing-unit) * 6);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-top: calc(var(--spacing-unit) * 4);
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        p {
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        ul,
+        ol {
+            padding-left: calc(var(--spacing-unit) * 3);
+        }
+
+        strong {
+            font-weight: 500;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 10);
+        }
+
+        .narrow {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: calc(var(--spacing-unit) * 6) 0;
+            position: relative;
+        }
+
+        .cream-section {
+            background-color: var(--cream);
+        }
+
+        .cover {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            min-height: 60vh;
+            background: url('images/client-audits/howell-phase1-hero.jpeg') top center / cover no-repeat;
+            position: relative;
+        }
+
+        .cover::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 1));
+        }
+
+        .logo {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo img {
+            width: 300px;
+            height: auto;
+            display: block;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        .cover h1 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-subtitle {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.75;
+            margin-top: calc(var(--spacing-unit) * 2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .audit-section {
+            background-color: white;
+            padding: calc(var(--spacing-unit) * 6);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--gold);
+        }
+
+        .audit-section h3 {
+            margin-top: 0;
+            color: var(--dark);
+            font-size: 1.4rem;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .audit-section p {
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            color: var(--text);
+        }
+
+        .audit-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: calc(var(--spacing-unit) * 2);
+        }
+
+        .sheet-link {
+            display: inline-block;
+            background-color: var(--gold);
+            color: white;
+            text-decoration: none;
+            padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 4);
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sheet-link:hover {
+            background-color: var(--darker);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .intro-section {
+            background-color: var(--cream);
+            padding: calc(var(--spacing-unit) * 8);
+            margin-bottom: calc(var(--spacing-unit) * 6);
+        }
+
+        .intro-section h2 {
+            margin-top: 0;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--medium-grey);
+            margin: calc(var(--spacing-unit) * 8) 0;
+        }
+
+        .project-summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: calc(var(--spacing-unit) * 4) 0;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-summary-table th,
+        .project-summary-table td {
+            padding: calc(var(--spacing-unit) * 3);
+            text-align: left;
+            border-bottom: 1px solid var(--medium-grey);
+        }
+
+        .project-summary-table th {
+            background-color: var(--dark);
+            color: white;
+            font-weight: 500;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .project-summary-table .amount {
+            font-weight: 500;
+            color: var(--gold);
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        .project-summary-table .net-total {
+            background-color: var(--cream);
+            border-bottom: 1px solid var(--dark);
+        }
+
+        .project-summary-table .net-total .amount {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background-color: var(--darker);
+            color: white;
+            padding: calc(var(--spacing-unit) * 6) 0;
+            text-align: center;
+            margin-top: calc(var(--spacing-unit) * 10);
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            .container {
+                padding: 0 calc(var(--spacing-unit) * 4);
+            }
+
+            .section {
+                padding: calc(var(--spacing-unit) * 8) 0;
+            }
+
+            .logo img {
+                width: min(260px, 75vw);
+            }
+
+            .audit-section,
+            .intro-section {
+                padding: calc(var(--spacing-unit) * 4);
+            }
+
+            .audit-actions {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .sheet-link {
+                display: block;
+                text-align: center;
+            }
+
+            .project-summary-table th,
+            .project-summary-table td {
+                padding: calc(var(--spacing-unit) * 2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="cover">
+        <div class="logo">
+            <img src="images/1584_logo_white_thick.png" alt="1584 Design Logo">
+        </div>
+        <h1>Phase 1 Project Audit</h1>
+        <p class="cover-subtitle">14629 Isle View Drive</p>
+    </section>
+
+    <section class="section">
+        <div class="container narrow">
+            <div class="intro-section">
+                <p>Hi Catherine,</p>
+                <p>As promised, we've prepared a comprehensive financial audit for the first phase of your project. This includes all transactions, purchases, invoices, and receipts, with links to detailed spreadsheet data for complete transparency and accountability.</p>
+                <p>The audit is organized into five key sections that track the complete financial lifecycle of the project, from initial transactions through final receipts. We encourage you to review each section and access the corresponding documentation using the provided links.</p>
+                <p>If you and Jon have any questions about this audit or need clarification on any section, please don't hesitate to reach out. We're here to help!</p>
+                <p style="margin-top: calc(var(--spacing-unit) * 4);">Gratefully,</p>
+                <p style="margin-bottom: 0;">Dakota and Lisa</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cream-section">
+        <div class="container narrow">
+            <h2>Project Spend Summary</h2>
+            <p style="margin-bottom: calc(var(--spacing-unit) * 2); color: #666;">Phase 1 spend on goods and services, excluding design fees.</p>
+
+            <table class="project-summary-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="net-total" style="background-color: white;">
+                        <td><strong>Client Purchases (Net)</strong></td>
+                        <td class="amount">$53,861.06</td>
+                    </tr>
+                    <tr style="background-color: var(--light-grey);">
+                        <td>
+                            <strong>Client Purchases (Gross)</strong>
+                            <br>
+                            <span style="font-size: 0.9em; color: #666;">Total amount of all purchases made on your behalf</span>
+                        </td>
+                        <td class="amount">$84,308.18</td>
+                    </tr>
+                    <tr style="background-color: var(--light-grey);">
+                        <td style="padding-left: calc(var(--spacing-unit) * 4);">
+                            <strong>1584 Purchases</strong>
+                            <br>
+                            <span style="font-size: 0.9em; color: #666;">Items purchased for project using 1584 Design's funds</span>
+                        </td>
+                        <td class="amount">$4,208.83</td>
+                    </tr>
+                    <tr style="background-color: var(--light-grey);">
+                        <td style="padding-left: calc(var(--spacing-unit) * 4);">
+                            <strong>Client Refunds</strong>
+                            <br>
+                            <span style="font-size: 0.9em; color: #666;">Refunds you have received for returned items</span>
+                        </td>
+                        <td class="amount">-$27,817.13</td>
+                    </tr>
+                    <tr style="background-color: var(--light-grey);">
+                        <td style="padding-left: calc(var(--spacing-unit) * 4);">
+                            <strong>1584 Credits to Client</strong>
+                            <br>
+                            <span style="font-size: 0.9em; color: #666;">Credits due from 1584 Design to you for items purchased for the Townsend project, return shipping fees, etc.</span>
+                        </td>
+                        <td class="amount">-$6,838.82</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container narrow">
+            <div class="audit-section">
+                <h3>Transaction Log</h3>
+                <p>This is the record of every transaction that 1584 Design logged during Phase 1 of your project. It includes dates, amounts, descriptions, and categorization of each transaction to provide a complete financial timeline.</p>
+                <p>This transaction log serves as our master record for all Phase 1 project-related financial activity and provides the foundation for the detailed breakdowns in subsequent sections.</p>
+                <div class="audit-actions">
+                    <a href="https://docs.google.com/spreadsheets/d/1UURa6yfQap54rJFkfZ12e-irDWTUzYvag9DtvMzK-P0/edit?gid=609756591#gid=609756591" target="_blank" rel="noopener noreferrer" class="sheet-link">View Transaction Log</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cream-section">
+        <div class="container narrow">
+            <div class="audit-section">
+                <h3>Statements &amp; Card Charges</h3>
+                <p>This section shows you where project-related transactions appear in your credit card statements and how those transactions correspond to our transaction log. It also contains a summary of all charges to your card.*</p>
+                <p>This reconciliation helps verify that all project-related expenses have been properly captured and provides clear documentation of how our logged transactions match your actual card charges.</p>
+                <p style="font-size: 0.9em; color: #666; margin-top: calc(var(--spacing-unit) * 3);">*Note: This sheet includes 3 transactions that were not present in the statement PDFs (1 potentially due to page exclusion and 2 from a later statement). These transactions are highlighted in a separate section at the bottom of the sheet for you to confirm.</p>
+                <div class="audit-actions">
+                    <a href="https://docs.google.com/spreadsheets/d/1UURa6yfQap54rJFkfZ12e-irDWTUzYvag9DtvMzK-P0/edit?gid=511068090#gid=511068090" target="_blank" rel="noopener noreferrer" class="sheet-link">View Statements &amp; Card Charges</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container narrow">
+            <div class="audit-section">
+                <h3>Itemized Purchases &amp; Disposition</h3>
+                <p>This is an itemized breakdown of everything that was purchased for your project and its disposition - meaning whether it was kept for your project, returned and refunded, or purchased by 1584 Design for use in the Townsend project.</p>
+                <p>This detailed inventory provides complete transparency into how your project funds were allocated and the final outcome of each purchase made on your behalf.</p>
+                <div class="audit-actions">
+                    <a href="https://docs.google.com/spreadsheets/d/1UURa6yfQap54rJFkfZ12e-irDWTUzYvag9DtvMzK-P0/edit?gid=262751476#gid=262751476" target="_blank" rel="noopener noreferrer" class="sheet-link">View Itemized Purchases &amp; Disposition</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cream-section">
+        <div class="container narrow">
+            <div class="audit-section">
+                <h3>Phase 1 Completion Invoice</h3>
+                <p>This is the invoice for the completion of Phase 1 of your project, adjusted for goods and services charges related to Phase 1, as well as goods and services credits related to Phase 1.</p>
+                <div class="audit-actions">
+                    <a href="https://drive.google.com/file/d/1B7pUH3PJ-kaWT_Fy2OBfwurDv4buaWCD/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="sheet-link">View Phase 1 Completion Invoice</a>
+                    <a href="https://relay.cash/pay/of_i_cmeHDYmmu41" target="_blank" rel="noopener noreferrer" class="sheet-link">Pay Invoice</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container narrow">
+            <div class="audit-section">
+                <h3>Receipt - Items Purchased for Townsend Project</h3>
+                <p>These items were originally purchased for your project but were subsequently acquired by 1584 Design for use in our Townsend project.</p>
+                <p>This receipt provides complete documentation of the items transferred and ensures proper accounting for the reallocation of these purchases.</p>
+                <div class="audit-actions">
+                    <a href="https://drive.google.com/file/d/1XXCoLXFnOstwgqQABXvcasnx-qJeGn11/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="sheet-link">View Townsend Project Receipt</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="divider"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 1584 Design | 1584design.com | Project Audit Documentation</p>
+        </div>
+    </footer>
+</body>
+</html>
