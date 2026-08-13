@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Tell us about your second home and see whether 1584 Design's full-service process is a fit.">
-  <title>Second Home Project Fit | 1584 Design</title>
+  <meta name="description" content="Tell us about your vacation home and see whether 1584 Design's full-service vacation home design process is a fit.">
+  <title>Vacation Home Project Fit | 1584 Design</title>
   <link rel="icon" href="../favicon.ico">
   <link rel="stylesheet" href="assets/redesign.css">
   <link rel="stylesheet" href="assets/qualification-survey.css">
@@ -27,8 +27,8 @@
       </picture>
       <div class="survey-image-shade"></div>
       <div class="survey-image-copy">
-        <p class="eyebrow">Second home interior design</p>
-        <p>A home designed around the way you want to gather, retreat, and make memories.</p>
+        <p class="eyebrow">Vacation home interior design</p>
+        <p>A vacation home designed to bring the people you love together and create the setting for lasting memories.</p>
       </div>
     </aside>
 
@@ -41,8 +41,8 @@
       <form id="qualification-form" data-survey-type="second_home" novalidate>
         <section class="survey-step is-active" data-step="intro" aria-labelledby="intro-title">
           <p class="eyebrow">A quick fit assessment</p>
-          <h1 id="intro-title">Tell Us About Your Second Home</h1>
-          <p class="step-lede">A few thoughtful questions will help us understand the property, your priorities, and whether our full-service design process is the right next step.</p>
+          <h1 id="intro-title">Tell Us About Your Vacation Home</h1>
+          <p class="step-lede">A few questions will help us understand the property, your priorities, and whether our full-service vacation home design process is the right next step.</p>
           <p class="time-note">About 3 minutes</p>
           <div class="survey-actions single-action">
             <button class="survey-button primary" type="button" data-next>Begin</button>
@@ -65,9 +65,9 @@
         </section>
 
         <fieldset class="survey-step" data-step="ownership">
-          <legend>Which best describes where you are in the process of owning a second home?</legend>
+          <legend>Which best describes where you are in the process of owning a vacation home?</legend>
           <div class="option-list">
-            <label class="choice-card"><input type="radio" name="ownership" value="own" required><span>I already own a second home</span></label>
+            <label class="choice-card"><input type="radio" name="ownership" value="own" required><span>I already own a vacation home</span></label>
             <label class="choice-card"><input type="radio" name="ownership" value="purchasing"><span>I am currently purchasing or building one</span></label>
             <label class="choice-card"><input type="radio" name="ownership" value="planning"><span>I plan to purchase or build one within the next 12 months</span></label>
             <label class="choice-card"><input type="radio" name="ownership" value="none"><span>None of these</span></label>
@@ -118,13 +118,13 @@
           <p class="step-intro">If you are still purchasing or building, choose the range closest to the size you expect the home to be.</p>
           <div class="option-grid compact-options">
             <label class="choice-card"><input type="radio" name="square_footage" value="under_2500" data-calculation-sqft="2500" required><span>Under 2,500 sq ft</span></label>
-            <label class="choice-card"><input type="radio" name="square_footage" value="2500_2999" data-calculation-sqft="2500"><span>2,500–2,999 sq ft</span></label>
-            <label class="choice-card"><input type="radio" name="square_footage" value="3000_3499" data-calculation-sqft="3000"><span>3,000–3,499 sq ft</span></label>
-            <label class="choice-card"><input type="radio" name="square_footage" value="3500_3999" data-calculation-sqft="3500"><span>3,500–3,999 sq ft</span></label>
-            <label class="choice-card"><input type="radio" name="square_footage" value="4000_4499" data-calculation-sqft="4000"><span>4,000–4,499 sq ft</span></label>
-            <label class="choice-card"><input type="radio" name="square_footage" value="4500_4999" data-calculation-sqft="4500"><span>4,500–4,999 sq ft</span></label>
-            <label class="choice-card"><input type="radio" name="square_footage" value="5000_5499" data-calculation-sqft="5000"><span>5,000–5,499 sq ft</span></label>
-            <label class="choice-card"><input type="radio" name="square_footage" value="5500_plus" data-calculation-sqft="5500"><span>5,500+ sq ft</span></label>
+            <label class="choice-card"><input type="radio" name="square_footage" value="2500_3000" data-calculation-sqft="2500"><span>2,500–3,000 sq ft</span></label>
+            <label class="choice-card"><input type="radio" name="square_footage" value="3001_3500" data-calculation-sqft="3001"><span>3,001–3,500 sq ft</span></label>
+            <label class="choice-card"><input type="radio" name="square_footage" value="3501_4000" data-calculation-sqft="3501"><span>3,501–4,000 sq ft</span></label>
+            <label class="choice-card"><input type="radio" name="square_footage" value="4001_4500" data-calculation-sqft="4001"><span>4,001–4,500 sq ft</span></label>
+            <label class="choice-card"><input type="radio" name="square_footage" value="4501_5000" data-calculation-sqft="4501"><span>4,501–5,000 sq ft</span></label>
+            <label class="choice-card"><input type="radio" name="square_footage" value="5001_5500" data-calculation-sqft="5001"><span>5,001–5,500 sq ft</span></label>
+            <label class="choice-card"><input type="radio" name="square_footage" value="5501_plus" data-calculation-sqft="5501"><span>5,501+ sq ft</span></label>
           </div>
           <p class="field-error" role="alert"></p>
           <div class="survey-actions"><button class="survey-button text" type="button" data-back>Back</button><button class="survey-button primary" type="button" data-next>Continue</button></div>
@@ -133,10 +133,11 @@
         <fieldset class="survey-step" data-step="investment">
           <legend>What total project investment range would feel comfortable for you?</legend>
           <p class="step-intro">This includes furnishings, accessories, design services, procurement, delivery, and installation. Your answer helps us recommend an appropriate scope. It is not a spending target.</p>
-          <div class="investment-card">
+          <div class="investment-card" id="investment-card">
             <p class="investment-label">Your comfortable range</p>
             <output id="investment-display" for="investment-upper">$105,000–$205,000</output>
-            <input type="range" id="investment-upper" name="investment_upper" step="5000" aria-describedby="investment-help">
+            <p class="investment-warning" id="investment-warning" role="status" hidden>This is below what our clients have typically needed to reach their goals. It may be possible, but it would require full creative freedom from our team so we can shop opportunistically and take advantage of deals.</p>
+            <input type="range" id="investment-upper" name="investment_upper" step="5000" aria-describedby="investment-help investment-warning">
             <div class="range-labels" id="investment-help"><span id="investment-min-label"></span><span id="investment-max-label"></span></div>
           </div>
           <div class="option-list budget-alternatives">
@@ -165,39 +166,34 @@
         </fieldset>
 
         <section class="survey-step result-step" data-step="qualified" aria-labelledby="qualified-title">
-          <p class="eyebrow">A promising fit</p>
-          <h2 id="qualified-title">Your Project Looks Like a Fit for Our Full-Service Design Process</h2>
-          <p class="step-lede">We would love to learn more about the property, your goals, and the kind of experience you want to create there.</p>
-          <div class="result-detail"><span>Next step</span><strong>A conversation with our team</strong><p>We will talk through the property and determine together whether the project and partnership are the right fit.</p></div>
-          <div class="survey-actions single-action"><a class="survey-button primary" href="../index.html#contact">Schedule a Consultation</a></div>
+          <h2 id="qualified-title">Thank You!</h2>
+          <p class="step-lede">A member of our team will reach out soon to learn more about your project and discuss next steps.</p>
+          <p class="result-call-prompt">Don’t want to wait?</p>
+          <div class="survey-actions single-action result-call-actions"><a class="survey-button primary" href="tel:+14357055304">Call Us Now</a></div>
         </section>
 
         <section class="survey-step result-step" data-step="disqualified-ownership" aria-labelledby="ownership-result-title">
           <p class="eyebrow">Thank you for sharing</p>
           <h2 id="ownership-result-title">Our Full-Service Process Is Not the Right Next Step Yet</h2>
-          <p class="step-lede">We work with people who own, are actively acquiring, or plan to purchase or build a second home within the next year.</p>
-          <div class="result-links"><a href="../guide-optin.html">Get the Second Home Design Guide</a><a href="second-home.html">Explore our second-home process</a></div>
+          <p class="step-lede">We work with people who own, are actively acquiring, or plan to purchase or build a vacation home within the next year.</p>
         </section>
 
         <section class="survey-step result-step" data-step="disqualified-scope" aria-labelledby="scope-result-title">
           <p class="eyebrow">Thank you for sharing</p>
           <h2 id="scope-result-title">Our Full-Service Process Is Not the Right Fit for This Scope</h2>
-          <p class="step-lede">We specialize in cohesive projects that include most or all of a second home. If your scope expands in the future, we would be glad to hear more about it.</p>
-          <div class="result-links"><a href="../guide-optin.html">Get the Second Home Design Guide</a><a href="second-home.html">Explore our second-home process</a></div>
+          <p class="step-lede">We specialize in cohesive projects that include most or all of a vacation home. If your scope expands in the future, we would be glad to hear more about it.</p>
         </section>
 
         <section class="survey-step result-step" data-step="disqualified-budget" aria-labelledby="budget-result-title">
           <p class="eyebrow">Thank you for sharing</p>
           <h2 id="budget-result-title">Our Full-Service Process May Not Align With This Project’s Current Budget</h2>
           <p class="step-lede">Our projects include complete design, furnishings, procurement, delivery, and installation. If your scope or investment range changes, we would be glad to revisit it with you.</p>
-          <div class="result-links"><a href="../guide-optin.html">Get the Second Home Design Guide</a><a href="second-home.html">Explore our second-home process</a></div>
         </section>
 
         <section class="survey-step result-step" data-step="disqualified-involvement" aria-labelledby="involvement-result-title">
           <p class="eyebrow">Thank you for sharing</p>
           <h2 id="involvement-result-title">Our Design Process May Not Match the Way You Want to Work</h2>
           <p class="step-lede">Our full-service process works best for owners who want to communicate their goals, give feedback at a few key points, and trust our team to lead the detailed selections and execution.</p>
-          <div class="result-links"><a href="../guide-optin.html">Get the Second Home Design Guide</a><a href="second-home.html">Explore our second-home process</a></div>
         </section>
       </form>
     </section>

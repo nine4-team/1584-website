@@ -3,18 +3,22 @@
     breakpointSqFt: 4500,
     rateBelowBreakpoint: 42,
     rateAtOrAboveBreakpoint: 38,
-    sliderSpan: 200000,
+    sliderSpan: 400000,
     sliderStep: 5000
   };
 
   const SUBMISSION_ENDPOINT = '/api/qualification-survey';
   const form = document.querySelector('#qualification-form');
   if (!form) return;
+  const isLocalPreview = location.protocol === 'file:' || ['localhost', '127.0.0.1', '::1'].includes(location.hostname);
+  const testMode = isLocalPreview && new URLSearchParams(location.search).get('test') === '1';
   const surveyType = form.dataset.surveyType || 'second_home';
   const storagePrefix = surveyType === 'vacation_rental' ? 'vacationRentalQualification' : 'secondHomeQualification';
 
   const steps = [...form.querySelectorAll('.survey-step')];
-  const standardFlow = ['intro', 'contact', 'ownership', 'scope', 'priorities', 'squareFootage', 'investment', 'involvement'];
+  const standardFlow = testMode
+    ? ['intro', 'ownership', 'scope', 'priorities', 'squareFootage', 'investment', 'involvement']
+    : ['intro', 'contact', 'ownership', 'scope', 'priorities', 'squareFootage', 'investment', 'involvement'];
   const progressLabel = document.querySelector('#progress-label');
   const progressBar = document.querySelector('#progress-bar');
   const rankingButtons = [...document.querySelectorAll('[data-priority]')];
@@ -22,6 +26,8 @@
   const rankPrompt = document.querySelector('#rank-prompt');
   const resetRanking = document.querySelector('#reset-ranking');
   const investmentSlider = document.querySelector('#investment-upper');
+  const investmentCard = document.querySelector('#investment-card');
+  const investmentWarning = document.querySelector('#investment-warning');
   const investmentDisplay = document.querySelector('#investment-display');
   const investmentMinLabel = document.querySelector('#investment-min-label');
   const investmentMaxLabel = document.querySelector('#investment-max-label');
@@ -112,7 +118,7 @@
     const payload = surveyPayload(status, lastCompletedStep);
     sessionStorage.setItem(`${storagePrefix}Partial`, JSON.stringify(payload));
 
-    if (location.protocol === 'file:') {
+    if (testMode || location.protocol === 'file:') {
       remoteRecord = { ...(remoteRecord || {}), sessionId: payload.sessionId, lastCompletedStep };
       sessionStorage.setItem(`${storagePrefix}Record`, JSON.stringify(remoteRecord));
       return true;
@@ -140,22 +146,31 @@
     if (!squareFootageChoice) return;
     const squareFeet = Number(squareFootageChoice.dataset.calculationSqft);
     const rate = squareFeet < PRICING.breakpointSqFt ? PRICING.rateBelowBreakpoint : PRICING.rateAtOrAboveBreakpoint;
-    const rawMinimum = squareFeet * rate;
-    const minimum = Math.ceil(rawMinimum / PRICING.sliderStep) * PRICING.sliderStep;
-    const maximum = minimum + PRICING.sliderSpan;
-    const midpoint = minimum + (PRICING.sliderSpan / 2);
+    const rawTypicalMinimum = squareFeet * rate;
+    const typicalMinimum = Math.ceil(rawTypicalMinimum / PRICING.sliderStep) * PRICING.sliderStep;
+    const hardMinimum = Math.round((typicalMinimum * 0.75) / PRICING.sliderStep) * PRICING.sliderStep;
+    const maximum = hardMinimum + PRICING.sliderSpan;
+    const initialUpper = hardMinimum + (PRICING.sliderSpan * 0.25);
 
-    investmentSlider.min = String(minimum);
+    investmentSlider.min = String(hardMinimum);
     investmentSlider.max = String(maximum);
     investmentSlider.step = String(PRICING.sliderStep);
-    investmentSlider.value = String(midpoint);
+    investmentSlider.value = String(initialUpper);
+    investmentSlider.dataset.typicalMinimum = String(typicalMinimum);
     calculationSqFt.value = String(squareFeet);
-    minimumInvestment.value = String(minimum);
+    minimumInvestment.value = String(hardMinimum);
     appliedRate.value = String(rate);
-    investmentMinLabel.textContent = `${money(minimum)} minimum`;
+    investmentMinLabel.textContent = `${money(hardMinimum)} minimum`;
     investmentMaxLabel.textContent = money(maximum);
-    belowMinimumCopy.textContent = `My maximum budget is less than ${money(minimum)}`;
+    belowMinimumCopy.textContent = `My maximum budget is less than ${money(hardMinimum)}`;
     updateInvestmentDisplay();
+  }
+
+  function updateInvestmentWarning() {
+    const rangeSelected = selected('investment_type')?.value === 'range';
+    const belowTypical = rangeSelected && Number(investmentSlider.value) < Number(investmentSlider.dataset.typicalMinimum || 0);
+    investmentCard.classList.toggle('is-below-typical', belowTypical);
+    investmentWarning.hidden = !belowTypical;
   }
 
   function updateInvestmentDisplay() {
@@ -163,11 +178,12 @@
     const upper = Number(investmentSlider.value || 0);
     investmentDisplay.textContent = upper === minimum ? `About ${money(minimum)}` : `${money(minimum)}–${money(upper)}`;
     if (selected('investment_type')?.value === 'range') investmentAnswer.value = investmentDisplay.textContent;
+    updateInvestmentWarning();
   }
 
   async function nextStep() {
     if (!validateStep(currentStep)) return;
-    if (currentStep === 'intro') return showStep('contact');
+    if (currentStep === 'intro') return showStep(testMode ? 'ownership' : 'contact');
     if (currentStep === 'ownership' && selected('ownership').value === 'none') {
       await saveProgress('disqualified_ownership', 'ownership');
       return showStep('disqualified-ownership');
@@ -234,6 +250,7 @@
       investmentAnswer.value = event.target.value === 'range'
         ? investmentDisplay.textContent
         : event.target.closest('.choice-card').innerText.trim();
+      updateInvestmentWarning();
     }
   });
 
@@ -258,10 +275,17 @@
   form.addEventListener('submit', event => event.preventDefault());
 
   window.addEventListener('pagehide', () => {
-    if (location.protocol === 'file:' || !remoteRecord?.contactId || currentStep === 'qualified' || currentStep.startsWith('disqualified')) return;
+    if (testMode || location.protocol === 'file:' || !remoteRecord?.contactId || currentStep === 'qualified' || currentStep.startsWith('disqualified')) return;
     const payload = surveyPayload('abandoned', remoteRecord.lastCompletedStep || 'contact');
     navigator.sendBeacon(SUBMISSION_ENDPOINT, new Blob([JSON.stringify(payload)], { type: 'application/json' }));
   });
+
+  if (testMode) {
+    form.elements.first_name.value = 'Survey';
+    form.elements.last_name.value = 'Test';
+    form.elements.email.value = 'survey-test@example.com';
+    form.elements.phone.value = '555-555-0100';
+  }
 
   updateRanking();
   showStep('intro');

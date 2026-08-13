@@ -25,7 +25,7 @@ const FIELD_IDS = {
 const ANSWER_LABELS = {
   ownership: {
     second_home: {
-      own: 'I already own a second home',
+      own: 'I already own a vacation home',
       purchasing: 'I am currently purchasing or building one',
       planning: 'I plan to purchase or build one within the next 12 months',
       none: 'None of these'
@@ -43,13 +43,13 @@ const ANSWER_LABELS = {
   },
   square_footage: {
     under_2500: 'Under 2,500 sq ft',
-    '2500_2999': '2,500–2,999 sq ft',
-    '3000_3499': '3,000–3,499 sq ft',
-    '3500_3999': '3,500–3,999 sq ft',
-    '4000_4499': '4,000–4,499 sq ft',
-    '4500_4999': '4,500–4,999 sq ft',
-    '5000_5499': '5,000–5,499 sq ft',
-    '5500_plus': '5,500+ sq ft'
+    '2500_3000': '2,500–3,000 sq ft',
+    '3001_3500': '3,001–3,500 sq ft',
+    '3501_4000': '3,501–4,000 sq ft',
+    '4001_4500': '4,001–4,500 sq ft',
+    '4501_5000': '4,501–5,000 sq ft',
+    '5001_5500': '5,001–5,500 sq ft',
+    '5501_plus': '5,501+ sq ft'
   },
   involvement: {
     fully_delegated: 'I want to share my goals and preferences at the beginning, then trust the design team to carry the project through with minimal involvement from me.',
@@ -73,7 +73,7 @@ function clean(value, length = 500) {
 
 function noteBody(payload) {
   const answers = payload.answers || {};
-  const label = payload.surveyType === 'vacation_rental' ? 'Vacation Rental' : 'Second Home';
+  const label = payload.surveyType === 'vacation_rental' ? 'Vacation Rental' : 'Vacation Home';
   const lines = [
     `${label} Qualification Survey`,
     `Status: ${clean(payload.status, 60)}`,
@@ -138,7 +138,7 @@ export async function onRequestPost(context) {
 
   const answers = payload.answers || {};
   const surveyType = payload.surveyType === 'vacation_rental' ? 'vacation_rental' : 'second_home';
-  const surveyLabel = surveyType === 'vacation_rental' ? 'Vacation Rental' : 'Second Home';
+  const surveyLabel = surveyType === 'vacation_rental' ? 'Vacation Rental' : 'Vacation Home';
   const email = clean(answers.email, 254);
   const phone = clean(answers.phone, 40);
   if (!email || !phone || !email.includes('@')) return json({ error: 'Valid contact information is required.' }, 400);
@@ -155,7 +155,7 @@ export async function onRequestPost(context) {
           email,
           phone,
           source: `${surveyLabel} Qualification Survey`,
-          tags: [`${surveyType.replace('_', '-')}-qualification`, 'qualification-started'],
+          tags: [surveyType === 'vacation_rental' ? 'vacation-rental-qualification' : 'vacation-home-qualification', 'qualification-started'],
           customFields: customFields(payload)
         })
       });
