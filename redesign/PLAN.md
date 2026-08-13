@@ -10,7 +10,7 @@ The redesign is being developed in `/redesign/` so the current homepage and live
 
 - `/redesign/` - audience-selection landing page
 - `/redesign/vacation-rental.html` - vacation rental owner service page
-- `/redesign/second-home.html` - second home owner service page
+- `/redesign/vacation-home.html` - vacation home owner service page
 
 ### Projects
 
