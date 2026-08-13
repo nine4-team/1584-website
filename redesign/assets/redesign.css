@@ -680,6 +680,7 @@ h3 { font-size: clamp(25px, 2.3vw, 34px); line-height: 1.12; }
   text-transform: uppercase;
 }
 .about-story-copy h2 { margin-bottom: 28px; }
+.about-story-mobile-title { display: none; }
 .about-story-copy p { color: #575149; }
 .about-story-copy strong { color: var(--ink); font-family: var(--serif); font-size: 1.12em; font-weight: 400; }
 .about-signoff { display: flex; flex-direction: column; gap: 2px; margin-top: 28px; }
@@ -869,7 +870,8 @@ h3 { font-size: clamp(25px, 2.3vw, 34px); line-height: 1.12; }
   .about-story-hero { text-align: left; }
   .about-story-hero h1 { font-size: clamp(27px, 8vw, 40px); white-space: normal; }
   .about-story-grid { gap: 36px; }
-  .about-story-copy h2 { font-size: clamp(36px, 11vw, 50px); }
+  .about-story-mobile-title { display: block; margin: 0; }
+  .about-story-copy h2 { display: none; }
   .about-story-image { --story-frame: 26px; }
   .process-intro { margin-bottom: 52px; }
   .process-timeline::before { left: 27px; }
