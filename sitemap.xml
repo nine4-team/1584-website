@@ -44,6 +44,32 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Project Pages -->
+  <url>
+    <loc>https://1584design.com/projects/martinique</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://1584design.com/projects/desert-color</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://1584design.com/projects/arcadia</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://1584design.com/projects/blue-pearl-alley</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://1584design.com/projects/belmont-avenue</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://1584design.com/projects/cyanne-lane</loc>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Opt-in Pages -->
   <url>
     <loc>https://1584design.com/playbook-optin</loc>

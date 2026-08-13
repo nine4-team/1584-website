@@ -1,959 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <meta name="description" content="The story behind 1584 Design — Lisa Fisher, the team, and the family interior design legacy now serving vacation rental and second home owners.">
-    <title>About Lisa Fisher & 1584 Design | 27 Years of Interior Design Expertise</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1A1A1A;
-            background-color: #F5F2ED;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Typography System */
-        .font-primary {
-            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
-        .font-secondary {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-        }
-
-        /* Color Palette */
-        .color-warm-white { background-color: #FAFAF7; }
-        .color-soft-beige { background-color: #F5F2ED; }
-        .color-warm-gray { background-color: #E8E4DF; }
-        .color-taupe { background-color: #D4C5B3; }
-        .color-rich-brown { background-color: #9a7d55; }
-        .color-charcoal { background-color: #2C2C2C; }
-        .color-warm-black { background-color: #1A1A1A; }
-
-        /* Container */
-        .container {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section {
-            padding: 80px 0;
-        }
-
-        /* Account for fixed navigation */
-        .section:first-of-type {
-            padding-top: 120px; /* 80px nav height + 40px buffer */
-        }
-
-        /* Navigation */
-        .navigation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(26, 26, 26, 1);
-            z-index: 1000;
-            padding: 0 24px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .nav-container {
-            max-width: 1440px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-            display: block;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 48px;
-        }
-
-        .nav-menu a {
-            color: #FAFAF7;
-            text-decoration: none;
-            font-family: 'Avenir', sans-serif;
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: #D4C5B3;
-        }
-
-        .nav-menu a.active {
-            color: #D4C5B3;
-            font-weight: 600;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #FAFAF7;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Single Column Layout */
-        .single-column-layout {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 48px;
-            background-color: #FAFAF7;
-            border-radius: 2px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .story-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .story-header h1 {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: clamp(42px, 6vw, 64px);
-            font-weight: 400;
-            color: #9a7d55;
-            margin-top: 24px;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-        }
-
-        .story-header .subtitle {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #2C2C2C;
-            font-weight: 400;
-        }
-
-        .story-content {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            margin-bottom: 48px;
-        }
-
-        .story-paragraph {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #2C2C2C;
-            margin-bottom: 6px;
-            margin-top: 6px;
-        }
-
-        .story-paragraph.lead {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 20px;
-            line-height: 1.8;
-            color: #1A1A1A;
-            font-weight: 400;
-        }
-
-        .story-paragraph.lead em {
-            font-size: 24px;
-            font-style: italic;
-            color: #9a7d55;
-        }
-
-        .story-paragraph.highlight {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 20px;
-            line-height: 1.8;
-            color: #1A1A1A;
-            font-weight: 400;
-            text-align: center;
-        }
-
-        .story-paragraph.highlight em {
-            font-size: 24px;
-            font-style: italic;
-            color: #9a7d55;
-        }
-
-        /* Magazine Style Heritage Container */
-        .heritage-container {
-            margin: 48px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        .heritage-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #FFFFFF;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.08);
-            margin: 16px 0;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.8);
-            transition: all 0.3s ease;
-        }
-
-        .heritage-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.12);
-        }
-
-        .heritage-item-content {
-            padding: 24px;
-            width: 100%;
-        }
-
-        .heritage-item.featured {
-            order: -1;
-        }
-
-        .heritage-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .heritage-item picture {
-            width: 100%;
-            display: block;
-        }
-
-        .heritage-image.featured-image {
-            height: auto;
-        }
-
-        .heritage-caption {
-            text-align: center;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 0 8px;
-        }
-
-        .heritage-caption.featured-caption {
-            max-width: 600px;
-        }
-
-        .heritage-caption h3 {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 20px;
-            font-weight: 400;
-            color: #9a7d55;
-            margin-bottom: 8px;
-            line-height: 1.3;
-            letter-spacing: 0.02em;
-        }
-
-        .heritage-caption.featured-caption h3 {
-            font-size: 24px;
-        }
-
-        .heritage-caption p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #2C2C2C;
-            font-style: italic;
-        }
-
-        .heritage-caption h3 {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 20px;
-            font-weight: 400;
-            color: #9a7d55;
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
-
-        .heritage-caption p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #2C2C2C;
-            font-style: italic;
-        }
-
-        /* Founder Signature */
-        .founder-signature-section {
-            margin-top: 64px;
-            padding-top: 48px;
-            border-top: 1px solid #E8E4DF;
-        }
-
-        .founder-signature {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 48px;
-            align-items: start;
-        }
-
-        .signature-image {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            object-position: center bottom;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-
-        .founder-name {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 28px;
-            font-weight: 400;
-            color: #9a7d55;
-            margin-bottom: 8px;
-        }
-
-        .founder-title {
-            font-size: 14px;
-            color: #2C2C2C;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        .founder-caption {
-            font-size: 12px;
-            color: #666;
-            text-align: center;
-            margin-top: 12px;
-            font-style: italic;
-            line-height: 1.4;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .single-column-layout {
-                padding: 24px 24px 0 24px; /* keep top spacing on narrow viewports */
-            }
-
-            .story-content {
-                gap: 24px;
-            }
-
-            .heritage-item {
-                margin: 24px 0;
-            }
-
-            .heritage-item-content {
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .section {
-                padding: 64px 0;
-            }
-
-            .section:first-of-type {
-                padding-top: 120px; /* Account for fixed navigation (80px) + buffer */
-            }
-
-            .navigation {
-                padding: 0 16px;
-            }
-
-            .nav-container {
-                height: 64px;
-            }
-
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(26, 26, 26, 0.98);
-                flex-direction: column;
-                padding: 24px;
-                gap: 24px;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .story-header {
-                text-align: center;
-                margin-bottom: 32px;
-            }
-
-            .story-header h1 {
-                font-size: clamp(38px, 6vw, 52px);
-                margin-top: 24px;
-            }
-
-            .story-paragraph.lead {
-                font-size: 18px;
-            }
-
-            .story-paragraph.lead em {
-                font-size: 20px;
-            }
-
-            .heritage-image {
-                height: auto;
-                object-fit: contain;
-            }
-
-            .founder-signature-section {
-                margin-top: 48px;
-            }
-
-            .founder-signature {
-                display: flex;
-                flex-direction: column;
-                gap: 24px;
-                text-align: center;
-                align-items: center;
-            }
-
-            .founder-signature .signature-image {
-                width: 100%;
-                max-width: 300px;
-                height: auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .single-column-layout {
-                padding: 24px 16px;
-                margin: 0 8px;
-            }
-
-            .story-header h1 {
-                font-size: clamp(34px, 6vw, 40px);
-            }
-
-            .story-paragraph {
-                font-size: 15px;
-            }
-
-            .story-paragraph.lead {
-                font-size: 16px;
-            }
-
-            .heritage-image {
-                height: auto;
-                object-fit: contain;
-            }
-
-            .heritage-item {
-                margin: 16px 0;
-            }
-
-            .heritage-item-content {
-                padding: 16px;
-            }
-
-            .heritage-caption h3 {
-                font-size: 18px;
-            }
-
-            .founder-signature-section {
-                margin-top: 32px;
-            }
-        }
-
-        /* Image and Font Rendering Optimization */
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: rgba(26, 26, 26, 1);
-            color: #FAFAF7;
-            padding: 80px 0 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .footer-content {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 80px 60px 80px;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 80px;
-            align-items: start;
-        }
-
-        .footer-brand {
-            max-width: 500px;
-        }
-
-        .footer-logo {
-            margin-bottom: 24px;
-        }
-
-        .footer-logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .footer-description {
-            font-size: 16px;
-            line-height: 1.6;
-            color: rgba(250, 250, 247, 0.8);
-            margin-bottom: 32px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(250, 250, 247, 0.1);
-            border-radius: 50%;
-            color: #FAFAF7;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: #9a7d55;
-            transform: translateY(-2px);
-        }
-
-        .footer-section h3 {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 20px;
-            font-weight: 400;
-            color: #FAFAF7;
-            margin-bottom: 24px;
-            letter-spacing: -0.01em;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(250, 250, 247, 0.8);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #D4C5B3;
-        }
-
-        .footer-contact {
-            list-style: none;
-        }
-
-        .footer-contact li {
-            margin-bottom: 16px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .footer-contact a {
-            color: rgba(250, 250, 247, 0.8);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-contact a:hover {
-            color: #D4C5B3;
-        }
-
-        .contact-icon {
-            width: 16px;
-            color: #9a7d55;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .footer-bottom {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 32px 24px 0;
-            border-top: 1px solid rgba(250, 250, 247, 0.1);
-            text-align: center;
-            color: rgba(250, 250, 247, 0.6);
-            font-size: 14px;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                padding: 0 16px 40px 16px;
-                text-align: center;
-            }
-
-            .footer-brand {
-                max-width: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer {
-                padding: 40px 0 20px;
-                width: 100vw;
-                margin-left: calc(-50vw + 50%);
-                margin-right: calc(-50vw + 50%);
-                overflow-x: hidden;
-            }
-
-            .footer-content {
-                display: grid;
-                grid-template-columns: 1fr !important;
-                gap: 20px;
-                padding: 0 16px;
-                margin: 0;
-                max-width: none;
-                width: 100%;
-            }
-
-            .footer-bottom {
-                padding: 20px 16px 0;
-                margin: 0;
-                max-width: none;
-                width: 100%;
-            }
-
-            .footer-section {
-                margin-bottom: 0;
-                width: 100%;
-                max-width: none;
-            }
-
-            .footer-brand {
-                width: 100%;
-                max-width: none;
-            }
-
-            .footer-logo img {
-                height: 40px;
-            }
-
-            .footer-description {
-                font-size: 14px;
-                line-height: 1.5;
-                margin-bottom: 20px;
-            }
-
-            .footer-section h3 {
-                font-size: 16px;
-                margin-bottom: 16px;
-            }
-
-            .footer-links a,
-            .footer-contact a {
-                font-size: 13px;
-            }
-
-            .footer-contact li {
-                margin-bottom: 12px;
-            }
-
-            .footer-social {
-                gap: 12px;
-                justify-content: center;
-            }
-
-            .social-link {
-                width: 36px;
-                height: 36px;
-            }
-
-            .footer-contact {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .footer-contact li {
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 12px;
-            }
-        }
-    </style>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "HomeAndConstructionBusiness",
-      "@id": "https://1584design.com/#business",
-          "name": "1584 Design",
-          "url": "https://1584design.com",
-      "image": "https://1584design.com/images/1584_logo_white_thick.png",
-          "telephone": "+14358623631",
-          "email": "team@1584design.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "St. George",
-            "addressRegion": "UT",
-            "addressCountry": "US"
-          },
-          "areaServed": [
-            {"@type": "City", "name": "St. George, Utah"},
-            {"@type": "City", "name": "Las Vegas, Nevada"}
-          ],
-          "founder": {
-            "@type": "Person",
-            "name": "Lisa Fisher"
-          },
-          "foundingDate": "2021-01-01",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": 54,
-            "bestRating": "5"
-          },
-          "sameAs": [
-            "https://www.instagram.com/1584_design/",
-            "https://www.facebook.com/lisa.s.fisher.92/"
-          ]
-        },
-        {
-          "@type": "Person",
-          "name": "Lisa Fisher",
-          "url": "https://1584design.com/about",
-          "jobTitle": "Founder & Interior Designer",
-          "worksFor": {"@id": "https://1584design.com/#business"},
-          "knowsAbout": ["Interior Design", "Vacation Rental Design", "Second Home Design"]
-        }
-      ]
-    }
-    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet Lisa Fisher and Dakota and discover the family design legacy behind 1584 Design.">
+  <title>About 1584 Design | Our Story</title>
+  <link rel="canonical" href="https://1584design.com/about">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/redesign/assets/redesign.css?v=5">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navigation">
-        <div class="nav-container">
-            <a href="index" class="logo">
-                <img src="images/1584_logo_white_thick.png" alt="1584 Interior Design" width="80" height="40" loading="lazy" decoding="async">
-            </a>
-                        <ul class="nav-menu">
-                <li><a href="/vacation-rental-design">SHORT-TERM RENTAL DESIGN</a></li>
-                <li><a href="/second-home-design">SECOND HOME DESIGN</a></li>
-                <li><a href="/st-george-utah">COMMUNITIES</a></li>
-                <li><a href="/portfolio">PORTFOLIO</a></li>
-                <li><a href="/#reviews">REVIEWS</a></li>
-                <li><a href="/about" class="active">ABOUT</a></li>
-                <li><a href="/#contact">CONTACT</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-        </div>
+<body class="about-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="1584 Design home"><img src="/images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+      <div class="nav-links" id="primary-menu">
+        <a href="/vacation-rental-design">Vacation Rentals</a>
+        <a href="/second-home-design">Vacation Homes</a>
+        <a href="/about" aria-current="page">About</a>
+        <a href="/portfolio">Projects</a>
+        <a class="nav-cta" href="#services">Work With Us</a>
+      </div>
     </nav>
+  </header>
 
-    <!-- About Us Section -->
-    <section id="about" class="story-section section">
-        <div class="single-column-layout">
-            <div class="story-header">
-                <h1>The Story Behind the Name</h1>
-            </div>
-
-            <div class="story-content">
-                <p class="story-paragraph lead"><em>My love for design began as a child when I would spend hours decorating and rearranging a wooden dollhouse that my uncle Glenn gave me. I was captivated by how different pieces could come together to create something beautiful, and that passion has stayed with me ever since.</em></p>
-
-                <p class="story-paragraph">With artists, woodworkers, and designers on my dad's side, it's no surprise that creativity runs in my veins. In high school, my uncle Glenn—who studied architecture and renovated homes in Miami—encouraged me to turn my love for design into a career.</p>
-
-                <p class="story-paragraph">Watching him transform homes motivated me to take my first interior design course and eventually pursue it in college.</p>
-
-                <p class="story-paragraph">After earning my design degree and working for several years in the industry, Glenn gave me a special piece of our family's history: a furniture catalog from the 1930s that belonged to my great-grandmother, Marion Kennedy, who was among the first female interior designers in the United States.</p>
-
-                <!-- Kennedy Design Book Page 1 - Right after Marion Kennedy mention -->
-                <div class="heritage-item">
-                    <picture>
-                        <source type="image/webp" srcset="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/67940facc04d892c762c4a0e.jpeg 1200w">
-                        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/67940facc04d892c762c4a0e.jpeg" alt="Kennedy Design Book Page 1" class="heritage-image" width="400" height="300" loading="lazy" decoding="async">
-                    </picture>
-                    <div class="heritage-item-content">
-                        <div class="heritage-caption">
-                            <h3>Kennedy Design Book - Page 1</h3>
-                            <p>A page from Marion Kennedy's 1930s furniture catalog showcasing her pioneering work as one of America's first female interior designers</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="story-paragraph highlight"><em>On the catalog cover was her business card, listing her phone number: 1584 W.</em></p>
-
-                <!-- Marion Kennedy Business Card - Right after the paragraph where it's mentioned -->
-                <div class="heritage-item">
-                    <picture>
-                        <source type="image/webp" srcset="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/679410f9252fad62188efea6.jpeg 1200w">
-                        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/679410f9252fad62188efea6.jpeg" alt="Marion Kennedy's Business Card" class="heritage-image" width="400" height="300" loading="lazy" decoding="async">
-                    </picture>
-                    <div class="heritage-item-content">
-                        <div class="heritage-caption">
-                            <h3>Marion Kennedy's Business Card</h3>
-                            <p>The historic business card from the 1930s featuring the phone number 1584 W that inspired our company name</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="story-paragraph">In 2021, after 27 years of experience transforming residential and commercial spaces, I started my own business with my daughter Dakota. We wanted a name that honored our family's creative legacy.</p>
-
-                <!-- Kennedy Design Book Page 2 -->
-                <div class="heritage-item">
-                    <picture>
-                        <source type="image/webp" srcset="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/67940facc04d89e97b2c4a0f.jpeg 1200w">
-                        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/67940facc04d89e97b2c4a0f.jpeg" alt="Kennedy Design Book Page 2" class="heritage-image" width="400" height="300" loading="lazy" decoding="async">
-                    </picture>
-                    <div class="heritage-item-content">
-                        <div class="heritage-caption">
-                            <h3>Kennedy Design Book - Page 2</h3>
-                            <p>Another page from the historic catalog that represents the foundation of our family's design legacy</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="story-paragraph">While looking through the catalog together, she came up with the perfect idea: <strong>1584 Design</strong>.</p>
-
-                <p class="story-paragraph">For me, the name is more than a nod to history—it's a reminder of where I come from and the creative roots that shaped me. Design has always been my passion, just like it was for my family before me, and I'm proud to carry that legacy forward.</p>
-
-                <p class="story-paragraph">Today, 1584 Design is a full-service interior design firm based in St. George, Utah. We specialize in <a href="vacation-rental-design">vacation rental design</a> and <a href="second-home-design">second home design</a> &mdash; handling everything from concept through installation so our clients receive a finished, professionally styled space. See what that looks like in our <a href="portfolio">portfolio</a>, or explore our work across the <a href="st-george-utah">St. George / Zion corridor</a> and <a href="las-vegas">Las Vegas</a>.</p>
-            </div>
-
-            <!-- Lisa Fisher Signature -->
-            <div class="founder-signature-section">
-                <div class="founder-signature">
-                    <div>
-                        <picture>
-                            <source type="image/webp" srcset="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/6794104dc21e372b39b376d3.jpeg 1200w">
-                            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/6794104dc21e372b39b376d3.jpeg" alt="Lisa Fisher and Dakota" class="signature-image" width="400" height="300" loading="lazy" decoding="async">
-                        </picture>
-                        <div class="founder-caption">Lisa and Dakota at the Las Vegas Furnishings Market</div>
-                    </div>
-                    <div>
-                        <div class="founder-name">Lisa Fisher</div>
-                        <div class="founder-title">Founder, 1584 Design</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <main id="main">
+    <section class="about-story-hero">
+      <div class="narrow">
+        <h1>The Story Behind the Name</h1>
+        <p class="lede">For generations, our family has understood that thoughtful spaces can shape the way people live and feel. 1584 Design carries that creative legacy forward.</p>
+      </div>
     </section>
 
-
-    <!-- Shared Navigation JavaScript -->
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="images/1584_logo_white_thick.png" alt="1584 Interior Design">
-                </div>
-                <p class="footer-description">
-                    We specialize in creating beautiful, functional spaces through full-service interior design. Based in St. George, Utah, serving homeowners nationwide.
-                </p>
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/lisa.s.fisher.92/" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/1584_design/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <ul class="footer-contact">
-                    <li>
-                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                        </svg>
-                        <span>St. George, Utah</span>
-                    </li>
-                    <li>
-                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                        </svg>
-                        <a href="tel:4358623631">(435) 862-3631</a>
-                    </li>
-                    <li>
-                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                        </svg>
-                        <a href="mailto:team@1584design.com">team@1584design.com</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Navigation</h3>
-                <ul class="footer-links">
-                    <li><a href="/#resources">Free Resources</a></li>
-                    <li><a href="/#reviews">Reviews</a></li>
-                    <li><a href="portfolio">Portfolio</a></li>
-                    <li><a href="/#process">Process</a></li>
-                    <li><a href="about">About Us</a></li>
-                    <li><a href="faq">FAQ</a></li>
-                </ul>
-            </div>
+    <section class="section about-story-section about-story-paper">
+      <div class="shell about-story-grid">
+        <figure class="about-story-image">
+          <div class="about-story-frame">
+            <picture>
+              <source media="(max-width: 720px)" srcset="/redesign/assets/images/about-dollhouse-720.webp">
+              <img src="/redesign/assets/images/about-dollhouse-1200.webp" alt="Detailed miniature bedroom inside a wooden dollhouse" loading="lazy" width="894" height="671">
+            </picture>
+          </div>
+        </figure>
+        <div class="about-story-copy">
+          <h2>The Dollhouse</h2>
+          <p>My love for design began as a child, when I would spend hours decorating and rearranging a wooden dollhouse that my uncle Glenn gave me. I was captivated by how different pieces could come together to create something beautiful, and that passion has stayed with me ever since.</p>
+          <p>With artists, woodworkers, and designers on my dad’s side, it’s no surprise that creativity runs in my veins. In high school, my uncle Glenn—who studied architecture and renovated homes in Miami—encouraged me to turn my love for design into a career.</p>
+          <p>Watching him transform homes motivated me to take my first interior design course and eventually pursue it in college.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="footer-bottom">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
+    <section class="section about-story-section about-story-cream">
+      <div class="shell about-story-grid about-story-reverse">
+        <figure class="about-story-image">
+          <div class="about-story-frame">
+            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/67940facc04d892c762c4a0e.jpeg" alt="Page from Marion Kennedy's 1930s furniture catalog" loading="lazy" width="1200" height="900">
+          </div>
+          <figcaption>A page from Marion Kennedy’s furniture catalog</figcaption>
+        </figure>
+        <div class="about-story-copy">
+          <h2>The Catalogue</h2>
+          <p>After earning my design degree and working for several years in the industry, Glenn gave me a special piece of our family’s history: a furniture catalog from the 1930s that belonged to my great-grandmother, Marion Kennedy, who was among the first female interior designers in the United States.</p>
+          <p>The catalog connected the career I had chosen to a creative legacy that began generations before me.</p>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="js/navigation.js"></script>
+    <section class="section about-story-section about-story-paper">
+      <div class="shell about-story-grid">
+        <figure class="about-story-image">
+          <div class="about-story-frame">
+            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/679410f9252fad62188efea6.jpeg" alt="Marion Kennedy's business card showing the phone number 1584 W" loading="lazy" width="1200" height="900">
+          </div>
+          <figcaption>Marion Kennedy’s business card</figcaption>
+        </figure>
+        <div class="about-story-copy">
+          <h2>The Card</h2>
+          <p>On the catalog cover was Marion’s business card, listing her phone number: <strong>1584 W.</strong></p>
+          <p>In 2021, after 27 years of experience transforming residential and commercial spaces, I started my own business with my daughter Dakota. We wanted a name that honored our family’s creative legacy.</p>
+          <p>While looking through the catalog together, she came up with the perfect idea: <strong>1584 Design.</strong></p>
+          <p>For me, the name is more than a nod to history—it’s a reminder of where I come from and the creative roots that shaped me. Design has always been my passion, just like it was for my family before me, and I’m proud to carry that legacy forward.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-story-section about-story-cream" id="services">
+      <div class="shell about-story-grid about-story-reverse about-story-with-services">
+        <figure class="about-story-image">
+          <div class="about-story-frame">
+            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/zTjqcEq3Ndj90wvhfc47/media/6794104dc21e372b39b376d3.jpeg" alt="Lisa Fisher and her daughter Dakota" loading="lazy" width="1200" height="900">
+          </div>
+          <figcaption>Lisa and Dakota at the Las Vegas Furnishings Market</figcaption>
+        </figure>
+        <div class="about-story-copy">
+          <h2>Carrying Our Family’s Legacy Forward</h2>
+          <p>Today, 1584 Design is a full-service interior design firm based in St. George, Utah. We specialize in vacation rental design and private vacation home design, handling everything from concept through installation so our clients receive a finished, professionally styled property.</p>
+          <div class="about-signoff" aria-label="Written by Lisa Fisher, founder of 1584 Design">
+            <span class="about-signoff-name">Lisa Fisher</span>
+            <span class="about-signoff-title">Founder, 1584 Design</span>
+          </div>
+          <div class="about-service-links about-story-service-links">
+            <a class="about-service-link" href="/vacation-rental-design">
+              <strong>Vacation Rental Design</strong>
+            </a>
+            <a class="about-service-link" href="/second-home-design">
+              <strong>Vacation Home Design</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid footer-grid-expanded">
+      <div class="footer-brand">
+        <img src="/images/1584_logo_white_thick.png" alt="1584 Design" width="120" height="60">
+        <p>Full-service interior design for vacation rentals and vacation homes.</p>
+        <div class="footer-socials" aria-label="1584 Design social media">
+          <a href="https://www.instagram.com/1584_design/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.facebook.com/lisa.s.fisher.92/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3>Services</h3>
+        <a href="/vacation-rental-design">Vacation Rental Design</a>
+        <a href="/second-home-design">Vacation Home Design</a>
+      </div>
+      <div class="footer-column">
+        <h3>Areas We Serve</h3>
+        <a href="/st-george-utah">St. George &amp; Zion Corridor</a>
+        <a href="/las-vegas">Las Vegas</a>
+      </div>
+      <div class="footer-column">
+        <h3>Communities</h3>
+        <a href="/communities/black-desert">Black Desert</a>
+        <a href="/communities/copper-rock">Copper Rock</a>
+        <a href="/communities/desert-canyons">Desert Canyons</a>
+        <a href="/communities/desert-color">Desert Color</a>
+        <a href="/communities/divario">Divario</a>
+        <a href="/communities/long-valley">Long Valley</a>
+        <a href="/communities/ocotillo-springs">Ocotillo Springs</a>
+        <a href="/communities/paradise-village">Paradise Village</a>
+        <a href="/communities/sand-hollow">Sand Hollow</a>
+        <a href="/communities/solente">Solente</a>
+        <a href="/communities/southern-shores">Southern Shores</a>
+        <a href="/communities/stone-ridge">Stone Ridge</a>
+        <a href="/communities/the-isles">The Isles</a>
+      </div>
+      <div class="footer-column">
+        <h3>Builders</h3>
+        <a href="/builders/cole-west">Cole West</a>
+        <a href="/builders/carefree-homes">CareFree Homes</a>
+      </div>
+      <div class="footer-column">
+        <h3>1584 Design</h3>
+        <a href="/about">About the Studio</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="https://share.google/JE207SJhjJ4qgwiH1" target="_blank" rel="noopener noreferrer">Client Reviews</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/redesign/assets/redesign.js?v=5"></script>
 </body>
 </html>

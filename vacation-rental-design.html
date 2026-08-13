@@ -1,874 +1,327 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <title>Vacation Rental Interior Design | Full-Service STR Design — 1584 Design</title>
-    <meta name="description" content="How we design vacation rentals to outperform their market — full-service from planning through installation. Serving St. George and nationwide.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* Reset */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Base */
-        body {
-            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            color: #FAFAF7;
-            background-color: #1A1A1A;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Navigation */
-        .navigation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(26, 26, 26, 1);
-            z-index: 1000;
-            padding: 0 24px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .nav-container {
-            max-width: 1440px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-            display: block;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 48px;
-            margin-left: auto;
-        }
-
-        .nav-menu a {
-            color: #FAFAF7;
-            text-decoration: none;
-            font-family: 'Avenir', sans-serif;
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: #D4C5B3;
-        }
-
-        .nav-menu a.active {
-            color: #D4C5B3;
-            font-weight: 600;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #FAFAF7;
-            font-size: 24px;
-            cursor: pointer;
-            margin-left: auto;
-        }
-
-        /* Article Layout */
-        .article-wrapper {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 140px 24px 80px;
-        }
-
-        /* Article Header */
-        .article-header {
-            text-align: center;
-            margin-bottom: 64px;
-            padding-bottom: 48px;
-            border-bottom: 1px solid rgba(250, 250, 247, 0.1);
-        }
-
-        .article-header h1 {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: clamp(36px, 5.5vw, 56px);
-            font-weight: 400;
-            color: #FAFAF7;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin-bottom: 20px;
-        }
-
-        .article-subtitle {
-            font-size: clamp(16px, 2.2vw, 20px);
-            line-height: 1.5;
-            color: rgba(250, 250, 247, 0.7);
-            font-weight: 400;
-            max-width: 720px;
-            margin: 0 auto 24px;
-        }
-
-        .article-byline {
-            font-size: 14px;
-            color: #9a7d55;
-            font-style: italic;
-            letter-spacing: 0.02em;
-        }
-
-        /* Section Dividers */
-        .section-divider {
-            width: 60px;
-            height: 1px;
-            background: #9a7d55;
-            margin: 56px auto;
-        }
-
-        /* Section Headers */
-        .article-wrapper h2 {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: clamp(26px, 3.5vw, 36px);
-            font-weight: 400;
-            color: #FAFAF7;
-            letter-spacing: -0.01em;
-            line-height: 1.2;
-            margin-bottom: 28px;
-        }
-
-        /* Body Text */
-        .article-wrapper p {
-            font-size: 17px;
-            line-height: 1.8;
-            color: rgba(250, 250, 247, 0.85);
-            margin-bottom: 24px;
-        }
-
-        .article-wrapper p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Lead / Callout Text */
-        .callout, .stat-highlight {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: clamp(20px, 2.8vw, 26px);
-            line-height: 1.6;
-            color: #E8DED0;
-            text-align: center;
-            padding: 36px 24px;
-            margin: 40px 0;
-            border-top: 1px solid #9a7d55;
-            border-bottom: 1px solid #9a7d55;
-            font-style: italic;
-        }
-
-        /* Bold Key Phrase */
-        .article-wrapper strong {
-            color: #FAFAF7;
-            font-weight: 600;
-        }
-
-        /* Stage Blocks */
-        .stage-block {
-            margin-bottom: 40px;
-        }
-
-        .stage-block h3 {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: clamp(20px, 2.8vw, 26px);
-            font-weight: 400;
-            color: #D4C5B3;
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        /* Meta Labels (What drives it, The test, etc.) */
-        .meta-label {
-            display: block;
-            margin-bottom: 20px;
-            font-size: 17px;
-            line-height: 1.8;
-            color: rgba(250, 250, 247, 0.85);
-        }
-
-        .meta-label strong {
-            color: #9a7d55;
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        /* Design Lens Cards */
-        .lens-card {
-            background: rgba(250, 250, 247, 0.03);
-            border: 1px solid rgba(250, 250, 247, 0.08);
-            border-radius: 4px;
-            padding: 40px 36px;
-            margin-bottom: 32px;
-        }
-
-        .lens-card h3 {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: clamp(22px, 3vw, 28px);
-            font-weight: 400;
-            color: #FAFAF7;
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-
-        .lens-label {
-            display: block;
-            margin-bottom: 16px;
-            font-size: 17px;
-            line-height: 1.8;
-            color: rgba(250, 250, 247, 0.85);
-        }
-
-        .lens-label strong {
-            color: #9a7d55;
-            font-weight: 600;
-        }
-
-        /* Bullet Lists */
-        .article-wrapper ul {
-            list-style: none;
-            margin: 0 0 24px 0;
-            padding: 0;
-        }
-
-        .article-wrapper ul li {
-            position: relative;
-            padding-left: 24px;
-            margin-bottom: 12px;
-            font-size: 17px;
-            line-height: 1.7;
-            color: rgba(250, 250, 247, 0.85);
-        }
-
-        .article-wrapper ul li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 12px;
-            width: 6px;
-            height: 6px;
-            background: #9a7d55;
-            border-radius: 50%;
-        }
-
-        /* Revenue Lever & Design Signal - distinctive styling */
-        .insight-block {
-            margin: 20px 0;
-            padding: 16px 0 16px 24px;
-            border-left: 2px solid rgba(154, 125, 85, 0.4);
-        }
-
-        .insight-block p {
-            font-size: 16px;
-            margin-bottom: 0;
-        }
-
-        .insight-block strong {
-            color: #9a7d55;
-        }
-
-        /* Comparison Table */
-        .comparison-table-wrapper {
-            margin: 36px 0;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 16px;
-        }
-
-        .comparison-table thead th {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 18px;
-            font-weight: 400;
-            color: #FAFAF7;
-            padding: 16px 20px;
-            text-align: left;
-            border-bottom: 2px solid #9a7d55;
-            white-space: nowrap;
-        }
-
-        .comparison-table thead th:first-child {
-            color: rgba(250, 250, 247, 0.6);
-        }
-
-        .comparison-table tbody td {
-            padding: 14px 20px;
-            border-bottom: 1px solid rgba(250, 250, 247, 0.08);
-            color: rgba(250, 250, 247, 0.85);
-            white-space: nowrap;
-        }
-
-        .comparison-table tbody tr:last-child td {
-            border-bottom: none;
-            font-weight: 600;
-            color: #FAFAF7;
-            padding-top: 18px;
-        }
-
-        .comparison-table tbody td:first-child {
-            color: rgba(250, 250, 247, 0.6);
-            font-size: 15px;
-        }
-
-        .comparison-table .highlight-cell {
-            color: #9a7d55;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        /* Property Comparison Blocks */
-        .property-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .property-card {
-            background: rgba(250, 250, 247, 0.03);
-            border: 1px solid rgba(250, 250, 247, 0.08);
-            border-radius: 4px;
-            padding: 28px 24px;
-        }
-
-        .property-card h4 {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 20px;
-            font-weight: 400;
-            color: #D4C5B3;
-            margin-bottom: 8px;
-        }
-
-        .property-card .budget {
-            font-size: 15px;
-            color: rgba(250, 250, 247, 0.6);
-            margin-bottom: 16px;
-            font-style: italic;
-        }
-
-        .property-card ul {
-            margin-bottom: 0;
-        }
-
-        .property-card .cash-flow-negative {
-            color: rgba(250, 100, 100, 0.9);
-            font-weight: 600;
-        }
-
-        .property-card .cash-flow-positive {
-            color: rgba(130, 200, 130, 0.9);
-            font-weight: 600;
-        }
-
-        /* Process Steps */
-        .process-steps ol {
-            list-style: none;
-            counter-reset: steps;
-            margin: 0;
-            padding: 0;
-        }
-
-        .process-steps ol li {
-            counter-increment: steps;
-            position: relative;
-            padding-left: 48px;
-            margin-bottom: 24px;
-            font-size: 17px;
-            line-height: 1.8;
-            color: rgba(250, 250, 247, 0.85);
-        }
-
-        .process-steps ol li::before {
-            content: counter(steps) ".";
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: 24px;
-            color: #9a7d55;
-            font-weight: 400;
-        }
-
-        /* Inline Links */
-        .article-wrapper a:not(.cta-button) {
-            color: #9a7d55;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(154, 125, 85, 0.3);
-            transition: border-color 0.3s ease;
-        }
-
-        .article-wrapper a:not(.cta-button):hover {
-            border-bottom-color: #9a7d55;
-        }
-
-        /* CTA */
-        .cta-section {
-            text-align: center;
-            margin: 56px 0 0;
-            padding: 48px 0;
-            border-top: 1px solid rgba(250, 250, 247, 0.1);
-        }
-
-        .cta-section p {
-            font-family: 'Baskerville', Palatino, Garamond, serif;
-            font-size: clamp(20px, 2.8vw, 26px);
-            color: #FAFAF7;
-            margin-bottom: 28px;
-            font-weight: 400;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 34px;
-            background: #9a7d55;
-            color: #FAFAF7;
-            text-decoration: none;
-            font-family: 'Avenir', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            border-radius: 25pt;
-            border: 2px solid #9a7d55;
-            transition: all 0.3s ease;
-            box-shadow: none;
-        }
-
-        .cta-button::after {
-            content: "\2192";
-            font-size: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #1A1A1A;
-            color: #FAFAF7;
-            border-color: #1A1A1A;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
-        }
-
-        .cta-button:hover::after {
-            transform: translateX(4px);
-        }
-
-        .cta-secondary {
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 15px;
-            color: rgba(250, 250, 247, 0.6);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(250, 250, 247, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .cta-secondary:hover {
-            color: #9a7d55;
-            border-bottom-color: #9a7d55;
-        }
-
-        /* Founder Signature */
-        .founder-signature {
-            margin: 40px 0 0;
-        }
-
-        .founder-name {
-            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 17px;
-            font-weight: 400;
-            color: rgba(250, 250, 247, 0.85);
-            margin-bottom: 4px;
-        }
-
-        .founder-title {
-            font-size: 12px;
-            color: rgba(250, 250, 247, 0.45);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #1A1A1A;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 40px 24px;
-            text-align: center;
-        }
-
-        .footer p {
-            font-size: 14px;
-            color: rgba(250, 250, 247, 0.4);
-            margin: 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-container {
-                height: 64px;
-            }
-
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(26, 26, 26, 0.98);
-                flex-direction: column;
-                padding: 24px;
-                gap: 24px;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .article-wrapper {
-                padding: 110px 20px 60px;
-            }
-
-            .article-header {
-                margin-bottom: 48px;
-                padding-bottom: 36px;
-            }
-
-            .section-divider {
-                margin: 40px auto;
-            }
-
-            .callout, .stat-highlight {
-                font-size: clamp(22px, 6vw, 30px);
-                padding: 28px 16px;
-                margin: 32px 0;
-            }
-
-            .property-comparison {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            .lens-card {
-                padding: 28px 24px;
-            }
-
-            .comparison-table thead th,
-            .comparison-table tbody td {
-                padding: 12px 14px;
-                font-size: 15px;
-            }
-
-            .comparison-table thead th {
-                font-size: 16px;
-            }
-
-            .cta-button {
-                padding: 14px 28px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .article-wrapper {
-                padding: 100px 16px 48px;
-            }
-
-            .article-wrapper p,
-            .article-wrapper ul li,
-            .meta-label,
-            .lens-label,
-            .process-steps ol li {
-                font-size: 16px;
-            }
-
-            .lens-card {
-                padding: 24px 20px;
-            }
-
-            .property-card {
-                padding: 20px 18px;
-            }
-
-            .comparison-table thead th,
-            .comparison-table tbody td {
-                padding: 10px 12px;
-                font-size: 14px;
-            }
-
-            .comparison-table thead th {
-                font-size: 15px;
-            }
-
-            .comparison-table .highlight-cell {
-                font-size: 16px;
-            }
-        }
-    </style>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "HomeAndConstructionBusiness",
-      "@id": "https://1584design.com/#business",
-          "name": "1584 Design",
-          "url": "https://1584design.com",
-      "image": "https://1584design.com/images/1584_logo_white_thick.png",
-          "telephone": "+14358623631",
-          "email": "team@1584design.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "St. George",
-            "addressRegion": "UT",
-            "addressCountry": "US"
-          },
-          "areaServed": [
-            {"@type": "City", "name": "St. George, Utah"},
-            {"@type": "City", "name": "Las Vegas, Nevada"}
-          ],
-          "founder": {
-            "@type": "Person",
-            "name": "Lisa Fisher"
-          },
-          "foundingDate": "2021-01-01",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": 54,
-            "bestRating": "5"
-          },
-          "sameAs": [
-            "https://www.instagram.com/1584_design/",
-            "https://www.facebook.com/lisa.s.fisher.92/"
-          ]
-        },
-        {
-          "@type": "Service",
-          "name": "Vacation Rental Interior Design",
-          "serviceType": "Vacation Rental Interior Design",
-          "url": "https://1584design.com/vacation-rental-design",
-          "provider": {"@id": "https://1584design.com/#business"},
-          "areaServed": ["St. George, UT", "Las Vegas, NV", "United States"],
-          "description": "Full-service interior design for vacation rental properties including design planning, procurement, and installation."
-        }
-      ]
-    }
-    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Full-service interior design that helps vacation rentals earn attention, support bookings, and create memorable guest stays.">
+  <title>Vacation Rental Interior Design | 1584 Design</title>
+  <link rel="canonical" href="https://1584design.com/vacation-rental-design">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/redesign/assets/redesign.css?v=5">
 </head>
-<body>
-
-    <!-- Navigation -->
-    <nav class="navigation">
-        <div class="nav-container">
-            <a href="index" class="logo">
-                <img src="images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40" loading="lazy" decoding="async">
-            </a>
-                        <ul class="nav-menu">
-                <li><a href="/vacation-rental-design" class="active">SHORT-TERM RENTAL DESIGN</a></li>
-                <li><a href="/second-home-design">SECOND HOME DESIGN</a></li>
-                <li><a href="/st-george-utah">COMMUNITIES</a></li>
-                <li><a href="/portfolio">PORTFOLIO</a></li>
-                <li><a href="/#reviews">REVIEWS</a></li>
-                <li><a href="/about">ABOUT</a></li>
-                <li><a href="/#contact">CONTACT</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
-        </div>
+<body class="vacation-rental-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="1584 Design home"><img src="/images/1584_logo_white_thick.png" alt="1584 Design" width="80" height="40"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+      <div class="nav-links" id="primary-menu">
+        <a href="/vacation-rental-design" aria-current="page">Vacation Rentals</a>
+        <a href="/second-home-design">Vacation Homes</a>
+        <a href="/about">About</a>
+        <a href="#projects">Projects</a>
+        <a class="nav-cta" href="/vacation-rental-survey">Request a Call</a>
+      </div>
     </nav>
+  </header>
 
-    <!-- Article -->
-    <article class="article-wrapper">
+  <main id="main">
+    <section class="rental-hero">
+      <div class="rental-hero-media" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 700px)" srcset="/redesign/assets/images/hyer-living-960.webp">
+          <img src="/redesign/assets/images/hyer-living-1600.webp" alt="" width="1600" height="1067">
+        </picture>
+      </div>
+      <div class="rental-hero-shade"></div>
+      <div class="rental-hero-content">
+          <p class="eyebrow">Vacation rental interior design</p>
+          <h1>Properties that Perform</h1>
+          <p class="lede">We design vacation rentals to increase bookings, strengthen rates, and help each property cash flow at its full potential.</p>
+          <div class="button-row">
+            <a class="button light" href="/vacation-rental-survey">Request a Call</a>
+          </div>
+      </div>
+    </section>
 
-        <!-- Header -->
-        <header class="article-header">
-            <h1>Interior Design That Makes Your Vacation Rental Outperform</h1>
-            <p class="article-subtitle">Full-service interior design for vacation rental investors. We handle design, procurement, and installation &mdash; so your property outperforms its market.</p>
-        </header>
-
-        <!-- Section 1: The Revenue Case for Design -->
-        <section>
-            <h2>The Revenue Case for Design</h2>
-
-            <p>Interior design is not a line item on your budget. It is a revenue lever.</p>
-
-            <p>Consider two comparable properties in St. George, Utah. Same neighborhood, same size, same purchase price. The only difference is how the interiors were approached.</p>
-
-            <div class="property-comparison">
-                <div class="property-card">
-                    <h4>Property A</h4>
-                    <p class="budget">Design budget: $50,000</p>
-                    <ul>
-                        <li>~55% occupancy at $300/night</li>
-                        <li>$60,225/year gross revenue</li>
-                        <li>$73,279/year operating expenses</li>
-                        <li class="cash-flow-negative">-$13,054/year net cash flow</li>
-                    </ul>
-                </div>
-                <div class="property-card">
-                    <h4>Property B</h4>
-                    <p class="budget">Design budget: $100,000</p>
-                    <ul>
-                        <li>~75% occupancy at $395/night</li>
-                        <li>$108,113/year gross revenue</li>
-                        <li>$82,857/year operating expenses</li>
-                        <li class="cash-flow-positive">+$25,256/year net cash flow</li>
-                    </ul>
-                </div>
-            </div>
-
-            <p>The $50,000 design difference compounds into a <strong>$141,550 five-year cash flow advantage</strong>. The designed property recoups its full investment by year 4 &mdash; while the &ldquo;savings&rdquo; on Property A cost its owner six figures in lost revenue.</p>
-
-            <div class="stat-highlight">$141,550 &mdash; the five-year cash flow swing between a property that was furnished and one that was designed.</div>
-
-            <p>The bar is going up. Guests are becoming more discerning, and booking platforms increasingly reward properties with strong quality signals. For a deeper look at the data &mdash; including the three most common spending mistakes that cost investors revenue &mdash; <a href="playbook-optin">download the free STR Design Playbook</a>.</p>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- Section 2: The 3 Performance Stages -->
-        <section>
-            <h2>The 3 Performance Stages</h2>
-
-            <p>Every design decision we make serves one of three jobs. They mirror the guest journey from first click to five-star review: <strong>Stop the Scroll</strong> (your listing photos are your storefront), <strong>Convert Browsers to Bookers</strong> (justify the premium once they click), and <strong>Create Memorable Experiences</strong> (deliver what earns five-star reviews and repeat bookings).</p>
-
-            <div class="stage-block">
-                <h3>Stage 1: Stop the Scroll</h3>
-                <p>Your listing photos are your storefront. Guests scroll through dozens of thumbnails before clicking on one. The properties that get clicks are the ones with visually distinctive, magazine-quality images. Strategic color, cohesive styling, layered accessories, proper lighting &mdash; these are the design decisions that determine whether someone pauses mid-scroll or keeps moving past another gray-couch-white-wall interior.</p>
-            </div>
-
-            <p>The full framework &mdash; including what drives each stage, the diagnostic tests we use to evaluate properties, and the design signals that separate the top tier from the rest &mdash; is in the free <a href="playbook-optin">STR Design Playbook</a>.</p>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- Section 3: Designing for Your Guest -->
-        <section>
-            <h2>Designing for Your Guest</h2>
-
-            <p>The Performance Stages tell you what design should do. The next question is who it&rsquo;s for. The most effective design starts with knowing your primary guest. Three profiles dominate vacation rentals.</p>
-
-            <!-- The Group Retreat -->
-            <div class="lens-card">
-                <h3>The Group Retreat</h3>
-                <p class="lens-label"><strong>The guest:</strong> Friend groups, bachelor/bachelorette parties, reunions, adult families.</p>
-                <p>Design that handles a full house &mdash; dining for everyone, multiple gathering zones, durable furnishings that take heavy use without showing wear. The key is making every guest feel the space was built for a group their size.</p>
-            </div>
-
-            <!-- The Family Memory House -->
-            <div class="lens-card">
-                <h3>The Family Memory House</h3>
-                <p class="lens-label"><strong>The guest:</strong> Multi-generational families, parents with kids, annual trip groups.</p>
-                <p>Kid-friendly without being childish. Bunk rooms children get excited about, a kitchen and dining setup that handles real meals, and materials that forgive the chaos of a family vacation. Families are among the most loyal guest segments &mdash; when kids love a property, families come back year after year.</p>
-            </div>
-
-            <!-- The Couples Getaway -->
-            <div class="lens-card">
-                <h3>The Couples Getaway</h3>
-                <p class="lens-label"><strong>The guest:</strong> Couples paying for intimacy, not square footage.</p>
-                <p>A luxurious master suite as the centerpiece, spa-quality details, warm and moody palette. Couples pay more per night and book based on how a space makes them feel &mdash; every detail needs to feel intentional, not assembled.</p>
-            </div>
-
-            <p>You don&rsquo;t need to pick just one. Many successful properties blend two. But you do need to be intentional. A property designed for everyone is distinctive to no one. The <a href="playbook-optin">STR Design Playbook</a> breaks down the specific design priorities and revenue levers for each guest profile &mdash; plus the design signals that separate top-performing properties from the rest.</p>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- Section 4: Full-Service from Plan to Installation -->
-        <section>
-            <h2>Full-Service from Plan to Installation</h2>
-
-            <p>We handle everything from design concept through final styling. Our process has three phases:</p>
-
-            <div class="process-steps">
-                <ol>
-                    <li><strong>Design Planning.</strong> We assess your property, your market, and your guest profile. From there we develop a complete design concept &mdash; floor plans, furniture selections, color palettes, art direction, and a detailed budget &mdash; all calibrated to maximize your property&rsquo;s performance across the 3 Performance Stages.</li>
-                    <li><strong>Procurement.</strong> We source and order every item &mdash; furnishings, decor, bedding, kitchenware, accessories, down to the last throw pillow. We manage vendors, track shipments, coordinate timelines. You don&rsquo;t manage a single delivery.</li>
-                    <li><strong>Installation.</strong> Our team installs and styles everything on site. Furniture placement, art hanging, accessory layering, bed making, kitchen stocking &mdash; we hand you a guest-ready, photograph-ready property.</li>
-                </ol>
-            </div>
-
-            <p>You don&rsquo;t manage vendors, track shipments, or coordinate deliveries. We do. As short-term rental interior designers, that&rsquo;s what full-service means &mdash; and it&rsquo;s why our clients keep coming back.</p>
-
-            <div class="callout">We work with a limited number of investors at any given time. This is intentional &mdash; obsessive care doesn&rsquo;t scale, and we&rsquo;d rather do fewer projects exceptionally.</div>
-
-            <p>Want to understand <a href="about">our story</a> and how we got here? Or <a href="portfolio">see our portfolio</a> to get a sense of the work.</p>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- Section 5: Our Markets -->
-        <section>
-            <h2>Our Markets</h2>
-
-            <p>We&rsquo;re based in St. George, Utah &mdash; the heart of the Zion corridor, one of the fastest-growing STR markets in the West. It&rsquo;s where we do most of our work, and where we know the competitive landscape inside out.</p>
-
-            <p><a href="st-george-utah">See our St. George work</a></p>
-
-            <p>We also serve Las Vegas and take select projects nationwide. If your property is in a market where design quality directly impacts revenue &mdash; and you&rsquo;re serious about outperforming your comps &mdash; we&rsquo;re interested in the conversation regardless of location.</p>
-
-            <p><a href="las-vegas">Explore our Las Vegas services</a></p>
-        </section>
-
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <p>Ready to outperform your market?</p>
-            <a href="https://1584design.com/#contact" class="cta-button">Request a Call with the 1584 Team</a>
-            <br>
-            <a href="playbook-optin" class="cta-secondary">Or get the free STR Design Playbook first</a>
-
-            <div class="founder-signature">
-                <div class="founder-name">Lisa Fisher</div>
-                <div class="founder-title">Founder, 1584 Design</div>
-            </div>
+    <section class="section cash-flow-section">
+      <div class="shell">
+        <div class="section-heading">
+          <div><h2>Designed for Cash Flow</h2></div>
+          <p class="lede">Maximizing your property's performance means designing it for the entire guest journey.</p>
         </div>
+        <div class="process-grid light cash-flow-grid">
+          <article class="process-step"><span class="step-number">01</span><h3>Engagement</h3><p>This is all about stopping the scroll. Renters scan dozens of properties and decide within seconds which ones deserve a closer look, so the design has to create distinctive moments that earn the click.</p></article>
+          <article class="process-step"><span class="step-number">02</span><h3>Conversion</h3><p>Once renters click, the property has to feel like more than a place to sleep. It needs to feel like the setting for a trip worth remembering, so the experience becomes the deciding factor instead of price.</p></article>
+          <article class="process-step"><span class="step-number">03</span><h3>Experience</h3><p>Once guests arrive, the property has to deliver on the promise that made them book. When the space feels right, functions well, and keeps friction low, guests are more likely to leave five-star reviews, return, and refer.</p></article>
+        </div>
+      </div>
+    </section>
 
-    </article>
+    <section class="section design-depth-section">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">Design Levers</p><h2>Aesthetics Aren't Enough</h2></div>
+          <p class="lede">Setting up a high-performing property doesn’t just mean making it look good. It also means anticipating, understanding, and meeting the unique needs of shorter-term renters.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step"><span class="step-number">01</span><h3>Feel</h3><p>Feel sets the emotional tone of the stay. A beautiful space helps guests feel calm, comfortable, and transported out of everyday life, so they can be present with the people they came with. Those are the moments that make the property memorable enough to recommend.</p></article>
+          <article class="process-step"><span class="step-number">02</span><h3>Function</h3><p>Function is what makes the listing promise hold up once guests arrive. It means designing around how guests actually move through the stay, so the photos are backed up by an experience that makes guests rebook.</p></article>
+          <article class="process-step"><span class="step-number">03</span><h3>Friction</h3><p>Friction is anything that pulls guests out of the experience. Anticipating those small points of resistance keeps the stay feeling smooth and helps reviews focus on comfort, details, and the kind of experience future renters want to book.</p></article>
+        </div>
+        <div class="journey-cta"><a class="button light" href="/vacation-rental-survey">Request a Call</a></div>
+      </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; <script>document.write(new Date().getFullYear())</script> 1584 Design. All rights reserved.</p>
-    </footer>
+    <section class="section projects-section" id="projects">
+      <div class="shell">
+        <div class="section-heading">
+          <div><h2>Vacation Rental Projects</h2></div>
+          <p class="lede">A few examples of how we turn vacation rental properties into finished spaces designed to attract bookings and earn stronger guest reviews.</p>
+        </div>
+        <div class="project-grid">
+          <a class="project-card" href="/projects/martinique">
+            <div class="project-image"><img src="/redesign/assets/images/hyer-kitchen-960.webp" alt="Open kitchen and island in the Martinique vacation rental" loading="lazy" width="960" height="640"></div>
+            <div class="project-copy">
+              <p class="meta">The Isles at Coral Canyon · Cole West · Washington, Utah</p>
+              <h3>Martinique</h3>
+              <p>A fully furnished, guest-ready property designed across roughly ten rooms and hundreds of individual details.</p>
+              <span class="text-link">View project</span>
+            </div>
+          </a>
+          <a class="project-card" href="/projects/desert-color">
+            <div class="project-image">
+              <picture>
+                <source media="(max-width: 700px)" srcset="/redesign/assets/images/desert-color-living-640.webp">
+                <img src="/redesign/assets/images/desert-color-living-960.webp" alt="Bright living room in the Desert Color vacation rental" loading="lazy" width="960" height="640">
+              </picture>
+            </div>
+            <div class="project-copy">
+              <p class="meta">Desert Color · Cole West · St. George, Utah</p>
+              <h3>Sensory Escape</h3>
+              <p>An inclusive family retreat with active play spaces, quieter bedrooms, and multiple indoor and outdoor gathering areas.</p>
+              <span class="text-link">View project</span>
+            </div>
+          </a>
+          <a class="project-card" href="/projects/arcadia">
+            <div class="project-image">
+              <picture>
+                <source media="(max-width: 700px)" srcset="/redesign/assets/images/arcadia-living-640.webp">
+                <img src="/redesign/assets/images/arcadia-living-960.webp" alt="Layered living room in the Hideout vacation rental" loading="lazy" width="960" height="640">
+              </picture>
+            </div>
+            <div class="project-copy">
+              <p class="meta">Arcadia Resort · Taylor Built Homes · Santa Clara, Utah</p>
+              <h3>Hideout</h3>
+              <p>A warm, layered vacation rental with dramatic gathering spaces, styled bedrooms, and outdoor moments that extend the experience.</p>
+              <span class="text-link">View project</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <script src="js/navigation.js"></script>
+    <section class="proof-strip" aria-label="1584 Design credentials">
+      <div class="shell proof-grid">
+        <div class="proof-item"><strong>27+</strong><span>Years of experience</span></div>
+        <div class="proof-item"><strong>50+</strong><span>Five-star client reviews</span></div>
+        <div class="proof-item"><strong>150+</strong><span>Five-star guest reviews</span></div>
+        <div class="proof-item"><strong>$1M+</strong><span>Client project budgets managed</span></div>
+      </div>
+    </section>
 
+    <section class="section quote-band" id="client-reviews">
+      <div class="shell quote">
+        <div class="review-stars" aria-label="Five stars">★★★★★</div>
+        <blockquote>“The villa has gone from one of the least rented to one of the most rented due to Lisa’s beautiful design transformation.”</blockquote>
+        <cite>Kelli Clark · Vacation rental client</cite>
+        <div class="button-row"><a class="button secondary" href="https://share.google/JE207SJhjJ4qgwiH1" target="_blank" rel="noopener noreferrer">Read All Client Reviews</a></div>
+      </div>
+    </section>
+
+    <section class="section guest-reviews-teaser" id="guest-reviews">
+      <div class="shell">
+        <div class="section-heading">
+          <div><h2>Guests Notice the Difference</h2></div>
+          <p class="lede">When guests mention the design, comfort, and details in five-star reviews, those reviews become booking assets that help future renters feel confident choosing your property.</p>
+        </div>
+        <div class="guest-review-grid">
+          <article class="guest-review-card">
+            <div class="review-stars" aria-label="Five stars">★★★★★</div>
+            <blockquote>“This house is absolutely extraordinary. Every floor of this home is a work of art, with stunning decor and an exceptionally pleasing layout that makes it feel like a home away from home.”</blockquote>
+          </article>
+          <article class="guest-review-card">
+            <div class="review-stars" aria-label="Five stars">★★★★★</div>
+            <blockquote>“The house is beautifully decorated and thoughtfully designed. It was easy for our large group to make meals together, watch movies, play games or just chat.”</blockquote>
+          </article>
+          <article class="guest-review-card">
+            <div class="review-stars" aria-label="Five stars">★★★★★</div>
+            <blockquote>“Our stay was simply exceptional. The decor was flawless and professionally done, with every detail thoughtfully designed to create a cozy and modern atmosphere.”</blockquote>
+          </article>
+        </div>
+        <div class="button-row">
+          <a class="button light" href="/vacation-rental-survey">Request a Call</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vacation-rental-fit">
+      <div class="shell fit-grid">
+        <div>
+          <h2>For Owners Who Want an Expert-Led Result</h2>
+          <p class="lede">Our best vacation rental projects happen when owners want the property to perform, trust professional design expertise, and are ready to delegate the hundreds of decisions required to get there.</p>
+        </div>
+        <ul class="check-list">
+          <li>You want a finished, guest-ready property — not a list of pieces to source, track, approve, and coordinate yourself.</li>
+          <li>You care about occupancy, ADR, five-star reviews, and long-term performance more than weighing in on every individual furnishing decision.</li>
+          <li>You’re hiring us for our judgment, not just our access to vendors, shopping sources, or installation support.</li>
+          <li>You want the project completed quickly and coherently so the property can get listed and start earning sooner.</li>
+          <li>You’re aligned with the quality and feel of our work, and you want us to carry the design from concept through installation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section vacation-rental-service">
+      <div class="shell">
+        <div class="section-heading process-intro">
+          <div><p class="eyebrow">Our process</p><h2>Full-Service Interior Design</h2></div>
+          <p class="lede">From the first conversation through the final reveal, we lead your vacation property through seven distinct stages.</p>
+        </div>
+        <ol class="process-timeline" aria-label="Our seven-step interior design process">
+          <li class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">01</div>
+            <article class="timeline-card">
+              <p class="timeline-label">Initial fit assessment</p>
+              <h3>Discovery</h3>
+              <p>We begin with a conversation about the property, your goals, the scope, and what you need from a design partner to determine whether the project is a strong fit.</p>
+            </article>
+          </li>
+          <li class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">02</div>
+            <article class="timeline-card">
+              <p class="timeline-label">Mutual commitment</p>
+              <h3>Agreement</h3>
+              <p>If the fit is mutual, we confirm the scope of work and formalize our agreement to move forward together.</p>
+            </article>
+          </li>
+          <li class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">03</div>
+            <article class="timeline-card">
+              <p class="timeline-label">Designer call + profiles</p>
+              <h3>Vacation Rental Profile</h3>
+              <p>After the agreement, you meet with your designer to build on what we learned during discovery and provide the additional information needed to create your property’s style profile and guest profile.</p>
+            </article>
+          </li>
+          <li class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">04</div>
+            <article class="timeline-card">
+              <p class="timeline-label">Complete design direction</p>
+              <h3>Vacation Rental Design Package</h3>
+              <p>You receive complete design boards that bring the full direction for your property into view.</p>
+            </article>
+          </li>
+          <li class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">05</div>
+            <article class="timeline-card">
+              <p class="timeline-label">Ordering + receiving</p>
+              <h3>Procurement</h3>
+              <p>We procure the items specified in the design and manage ordering, tracking, receiving, inspection, and the issues that inevitably arise along the way.</p>
+            </article>
+          </li>
+          <li class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">06</div>
+            <article class="timeline-card">
+              <p class="timeline-label">Placement + coordination</p>
+              <h3>Installation</h3>
+              <p>We manage movers, handymen, and other trades as every item is placed and styled according to design principles and installation best practices.</p>
+            </article>
+          </li>
+          <li class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">07</div>
+            <article class="timeline-card">
+              <p class="timeline-label">The finished property</p>
+              <h3>Reveal</h3>
+              <p>You walk into the completed vacation property and experience the finished home for the first time.</p>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="shell">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+          <details><summary>When should I bring 1584 Design into the project?</summary><p>As early as practical. Starting early helps avoid rushed selections, unnecessary rework, and compromises caused by long lead times or decisions that have already been finalized.</p></details>
+          <details><summary>What does full service include?</summary><p>Design planning, sourcing, ordering, vendor coordination, delivery management, installation, and final styling. The exact scope is confirmed during project assessment.</p></details>
+          <details><summary>Do you do renovations or remodels?</summary><p>No. We furnish and accessorize existing spaces with furniture, rugs, window treatments, art, lighting, bedding, and accessories. We do not provide construction, demolition, or structural remodeling.</p></details>
+          <details><summary>How long does a project take?</summary><p>Most projects take 8–16 weeks from design kickoff through installation, depending on the property’s scope and product lead times.</p></details>
+          <details><summary>How involved do we need to be?</summary><p>You share your goals and preferences at the beginning and provide feedback at key points. We handle the detailed sourcing, ordering, coordination, installation, and styling.</p></details>
+          <details><summary>What size vacation rentals do you work with?</summary><p>We specialize in whole-property vacation rentals designed for groups of 10 or more guests, where cohesive design and thoughtful function can materially affect the booking decision and guest experience.</p></details>
+          <details><summary>Can you help with listing photography?</summary><p>We design with listing photography in mind, including the angles, focal points, and distinctive moments that need to come through in the images. We do not photograph the property ourselves.</p></details>
+          <details><summary>Do you work outside Southern Utah?</summary><p>Yes. We are based in St. George and serve the Zion corridor and Las Vegas, with select projects accepted nationwide.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band">
+      <div class="shell">
+        <h2>Ready to Create a Property Guests Choose and Remember?</h2>
+        <p class="lede">Tell us about the property, your timeline, and what you want it to accomplish. We will assess whether the project is a strong fit.</p>
+        <div class="button-row"><a class="button secondary" href="/vacation-rental-survey">Request a Call</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid footer-grid-expanded">
+      <div class="footer-brand">
+        <img src="/images/1584_logo_white_thick.png" alt="1584 Design" width="120" height="60">
+        <p>Full-service interior design for vacation rentals and vacation homes.</p>
+        <div class="footer-socials" aria-label="1584 Design social media">
+          <a href="https://www.instagram.com/1584_design/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.facebook.com/lisa.s.fisher.92/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3>Services</h3>
+        <a href="/vacation-rental-design">Vacation Rental Design</a>
+        <a href="/second-home-design">Vacation Home Design</a>
+      </div>
+      <div class="footer-column">
+        <h3>Areas We Serve</h3>
+        <a href="/st-george-utah">St. George &amp; Zion Corridor</a>
+        <a href="/las-vegas">Las Vegas</a>
+      </div>
+      <div class="footer-column">
+        <h3>Communities</h3>
+        <a href="/communities/black-desert">Black Desert</a>
+        <a href="/communities/copper-rock">Copper Rock</a>
+        <a href="/communities/desert-canyons">Desert Canyons</a>
+        <a href="/communities/desert-color">Desert Color</a>
+        <a href="/communities/divario">Divario</a>
+        <a href="/communities/long-valley">Long Valley</a>
+        <a href="/communities/ocotillo-springs">Ocotillo Springs</a>
+        <a href="/communities/paradise-village">Paradise Village</a>
+        <a href="/communities/sand-hollow">Sand Hollow</a>
+        <a href="/communities/solente">Solente</a>
+        <a href="/communities/southern-shores">Southern Shores</a>
+        <a href="/communities/stone-ridge">Stone Ridge</a>
+        <a href="/communities/the-isles">The Isles</a>
+      </div>
+      <div class="footer-column">
+        <h3>Builders</h3>
+        <a href="/builders/cole-west">Cole West</a>
+        <a href="/builders/carefree-homes">CareFree Homes</a>
+      </div>
+      <div class="footer-column">
+        <h3>1584 Design</h3>
+        <a href="/about">About the Studio</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="https://share.google/JE207SJhjJ4qgwiH1" target="_blank" rel="noopener noreferrer">Client Reviews</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/redesign/assets/redesign.js?v=5"></script>
 </body>
 </html>

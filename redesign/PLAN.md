@@ -1,8 +1,12 @@
 # 1584 Design Website Redesign
 
+## Launch status
+
+The approved service pages, About page, qualification surveys, and project case studies were promoted to their production URLs in August 2026. The existing homepage remains in production; the staging landing page has not been approved for launch.
+
 ## Working agreement
 
-The redesign is being developed in `/redesign/` so the current homepage and live service pages remain untouched. The staging pages are intentionally excluded from the main navigation and sitemap until cutover is approved.
+Shared redesign assets remain in `/redesign/assets/`. Production service and About pages use the established public URLs, while case studies live under `/projects/`.
 
 ## Page architecture
 
