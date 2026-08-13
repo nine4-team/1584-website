@@ -2,7 +2,7 @@
 
 ## Launch status
 
-The approved service pages, About page, qualification surveys, and project case studies were promoted to their production URLs in August 2026. The existing homepage remains in production; the staging landing page has not been approved for launch.
+The audience-selection homepage, approved service pages, About page, qualification surveys, and project case studies were promoted to their production URLs in August 2026.
 
 ## Working agreement
 
