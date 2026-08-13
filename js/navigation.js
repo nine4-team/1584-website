@@ -290,7 +290,7 @@ function generateNavigation() {
     // Homepage uses anchor links (#reviews, #process, etc.) while all other
     // pages link back to the homepage sections via root-relative fragments.
     var secondaryNav = [
-        { text: 'STR DESIGN', href: 'vacation-rental-design.html' },
+        { text: 'SHORT-TERM RENTAL DESIGN', href: 'vacation-rental-design.html' },
         { text: 'SECOND HOME DESIGN', href: 'second-home-design.html' },
         { text: 'COMMUNITIES', href: 'st-george-utah.html' },
         { text: 'PORTFOLIO', href: 'portfolio.html' },
@@ -302,7 +302,7 @@ function generateNavigation() {
     // Define navigation structure for each page
     const navStructures = {
         'index.html': [
-            { text: 'STR DESIGN', href: 'vacation-rental-design.html' },
+            { text: 'SHORT-TERM RENTAL DESIGN', href: 'vacation-rental-design.html' },
             { text: 'SECOND HOME DESIGN', href: 'second-home-design.html' },
             { text: 'COMMUNITIES', href: 'st-george-utah.html' },
             { text: 'PORTFOLIO', href: 'portfolio.html' },
@@ -317,7 +317,7 @@ function generateNavigation() {
             return item.text === 'PORTFOLIO' ? Object.assign({}, item, { current: true }) : item;
         }),
         'vacation-rental-design.html': secondaryNav.map(function(item) {
-            return item.text === 'STR DESIGN' ? Object.assign({}, item, { current: true }) : item;
+            return item.text === 'SHORT-TERM RENTAL DESIGN' ? Object.assign({}, item, { current: true }) : item;
         }),
         'second-home-design.html': secondaryNav.map(function(item) {
             return item.text === 'SECOND HOME DESIGN' ? Object.assign({}, item, { current: true }) : item;
@@ -358,7 +358,6 @@ function generateNavigation() {
 
 // Initialize navigation features when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    generateNavigation();
     initParallax();
     initActiveNavigation();
 

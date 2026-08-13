@@ -19,15 +19,15 @@
   <!-- Region Pages -->
   <url>
     <loc>https://1584design.com/st-george-utah</loc>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://1584design.com/las-vegas</loc>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://1584design.com/st-george-vacation-rental-guide</loc>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- Core Pages -->
@@ -37,11 +37,11 @@
   </url>
   <url>
     <loc>https://1584design.com/about</loc>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://1584design.com/faq</loc>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
   <!-- Opt-in Pages -->
@@ -54,67 +54,65 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Lead Magnet Content -->
-  <url>
-    <loc>https://1584design.com/playbook</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://1584design.com/guide</loc>
-    <priority>0.7</priority>
-  </url>
-
   <!-- Community Pages -->
   <url>
     <loc>https://1584design.com/communities/desert-color</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/paradise-village</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/copper-rock</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/sand-hollow</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/ocotillo-springs</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/black-desert</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/southern-shores</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/solente</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/the-isles</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/divario</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/stone-ridge</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/long-valley</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://1584design.com/communities/desert-canyons</loc>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://1584design.com/builders/cole-west</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://1584design.com/builders/carefree-homes</loc>
+    <priority>0.5</priority>
   </url>
 </urlset>
