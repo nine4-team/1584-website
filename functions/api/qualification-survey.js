@@ -52,10 +52,10 @@ const ANSWER_LABELS = {
     '5501_plus': '5,501+ sq ft'
   },
   involvement: {
-    fully_delegated: 'I want to share my goals and preferences at the beginning, then trust the design team to carry the project through with minimal involvement from me.',
-    designer_led: 'I want to understand the vision, give feedback at key checkpoints, and trust the design team to execute it.',
-    collaborative: 'I want to collaborate on the major selections while delegating the supporting details.',
-    item_approval: 'I want to compare options and approve most individual items before anything is purchased.'
+    fully_delegated: 'I want the design team to take care of everything. I’m happy to give them full creative freedom and let them do their thing.',
+    designer_led: 'I have preferences and want to align on the overall direction, then I want the design team to take care of the rest.',
+    collaborative: 'I want to approve the major pieces, but I’m comfortable giving the design team discretion over smaller items, accessories, and finishing details.',
+    item_approval: 'I want to stay involved at the individual-item level, giving feedback and requesting changes as I see the space come together.'
   },
   priority: { budget: 'Budget', quality: 'Quality', speed: 'Speed' }
 };

@@ -82,7 +82,7 @@
     errorFor(stepName);
     if (stepName === 'ownership' && !selected('ownership')) return errorFor(stepName, 'Please choose the option that best describes your plans.'), false;
     if (stepName === 'scope' && !selected('scope')) return errorFor(stepName, 'Please choose the scope closest to what you have in mind.'), false;
-    if (stepName === 'priorities' && rankings.length !== 3) return errorFor(stepName, 'Please rank all three project priorities.'), false;
+    if (stepName === 'priorities' && rankings.length === 0) return errorFor(stepName, 'Please choose at least one project priority.'), false;
     if (stepName === 'squareFootage' && !selected('square_footage')) return errorFor(stepName, 'Please choose the closest square-footage range.'), false;
     if (stepName === 'investment' && !selected('investment_type')) return errorFor(stepName, 'Please choose the investment response that fits best.'), false;
     if (stepName === 'involvement' && !selected('involvement')) return errorFor(stepName, 'Please choose the working style that sounds most like you.'), false;
@@ -223,7 +223,7 @@
       button.setAttribute('aria-label', `${button.dataset.priority}, ${rank === -1 ? 'not ranked' : `ranked ${rank + 1}`}`);
     });
     priorityOrder.value = rankings.join(',');
-    rankPrompt.textContent = rankings.length === 0 ? 'Choose your first priority' : rankings.length === 1 ? 'Now choose your second priority' : rankings.length === 2 ? 'Choose your final priority' : 'Your priorities are ranked';
+    rankPrompt.textContent = rankings.length === 0 ? 'Choose your first priority' : rankings.length < 3 ? 'Choose another priority, or continue' : 'Your priorities are ranked';
     resetRanking.hidden = rankings.length === 0;
     errorFor('priorities');
   }

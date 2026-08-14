@@ -92,7 +92,7 @@
         <section class="survey-step" data-step="priorities" aria-labelledby="priorities-title">
           <p class="eyebrow">Your priorities</p>
           <h2 id="priorities-title">When decisions require a tradeoff, what matters most to you?</h2>
-          <p class="step-intro">Budget, quality, and speed all influence what we select, where we source it, and how we plan the project. Choose them in order from most important to least important.</p>
+          <p class="step-intro">Budget, quality, and speed all influence what we select, where we source it, and how we plan the project. Choose only the priorities that matter to you, in order from most important to least important.</p>
           <div class="rank-status" aria-live="polite"><span id="rank-prompt">Choose your first priority</span><button id="reset-ranking" type="button" hidden>Start over</button></div>
           <div class="ranking-list" id="ranking-list">
             <button class="ranking-card" type="button" data-priority="budget">
@@ -154,12 +154,12 @@
         </fieldset>
 
         <fieldset class="survey-step" data-step="involvement">
-          <legend>Which best describes how you would like to work with your designer?</legend>
+          <legend>How involved would you like to be in the design process?</legend>
           <div class="option-list detailed-options">
-            <label class="choice-card"><input type="radio" name="involvement" value="fully_delegated" required><span>I want to share my goals and preferences at the beginning, then trust the design team to carry the project through with minimal involvement from me.</span></label>
-            <label class="choice-card"><input type="radio" name="involvement" value="designer_led"><span>I want to understand the vision, give feedback at key checkpoints, and trust the design team to execute it.</span></label>
-            <label class="choice-card"><input type="radio" name="involvement" value="collaborative"><span>I want to collaborate on the major selections while delegating the supporting details.</span></label>
-            <label class="choice-card"><input type="radio" name="involvement" value="item_approval"><span>I want to compare options and approve most individual items before anything is purchased.</span></label>
+            <label class="choice-card"><input type="radio" name="involvement" value="fully_delegated" required><span>I want the design team to take care of everything. I’m happy to give them full creative freedom and let them do their thing.</span></label>
+            <label class="choice-card"><input type="radio" name="involvement" value="designer_led"><span>I have preferences and want to align on the overall direction, then I want the design team to take care of the rest.</span></label>
+            <label class="choice-card"><input type="radio" name="involvement" value="collaborative"><span>I want to approve the major pieces, but I’m comfortable giving the design team discretion over smaller items, accessories, and finishing details.</span></label>
+            <label class="choice-card"><input type="radio" name="involvement" value="item_approval"><span>I want to stay involved at the individual-item level, giving feedback and requesting changes as I see the space come together.</span></label>
           </div>
           <p class="field-error" role="alert"></p>
           <div class="survey-actions"><button class="survey-button text" type="button" data-back>Back</button><button class="survey-button primary" type="button" data-next>Continue</button></div>
@@ -203,6 +203,6 @@
     </section>
   </main>
 
-  <script src="/redesign/assets/qualification-survey.js?v=6"></script>
+  <script src="/redesign/assets/qualification-survey.js?v=7"></script>
 </body>
 </html>
