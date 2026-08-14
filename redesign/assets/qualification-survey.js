@@ -256,6 +256,9 @@
 
   form.querySelectorAll('[data-next]').forEach(button => button.addEventListener('click', nextStep));
   form.querySelectorAll('[data-back]').forEach(button => button.addEventListener('click', backStep));
+  form.querySelectorAll('[data-return-to]').forEach(button => button.addEventListener('click', () => {
+    showStep(button.dataset.returnTo);
+  }));
   form.querySelector('[data-contact-next]').addEventListener('click', async event => {
     if (!contactIsValid()) return;
     if (form.elements.company_website.value) return;
